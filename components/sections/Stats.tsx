@@ -1,2 +1,44 @@
-const stats=[['01','4','+','Năm kinh nghiệm Social Media Marketing & Personal Branding.'],['02','180','K+','Followers trên các nền tảng mạng xã hội.'],['03','20','+','Dự án và thương hiệu đã hợp tác, đồng hành.']];
-export function Stats(){return <section className="stripe"><div className="wrap"><div className="stat-row">{stats.map(([k,t,s,p],i)=><div key={k} className="stat" data-rv="up" data-dl={i*90}><span className="bar"/><span className="k">{k}</span><b><span className="num" data-t={t}>0</span>{s}</b><p>{p}</p></div>)}<div className="stat" data-rv="up" data-dl="270"><span className="bar"/><span className="k">04</span><b><span className="num" data-t="200">0</span> <small>tr – 2 tỷ</small></b><p>Doanh thu từ các dự án đã triển khai thành công.</p></div></div></div></section>}
+const stats = [
+  [
+    "01",
+    "5",
+    "+",
+    "Năm kinh nghiệm Social Media Marketing & Personal Branding.",
+  ],
+  ["02", "320", "K+", "Followers trên các nền tảng mạng xã hội."],
+  ["03", "20", "+", "Dự án và thương hiệu đã hợp tác, đồng hành."],
+];
+export function Stats() {
+  return (
+    <section className="stripe">
+      <div className="wrap">
+        <div className="stat-row">
+          {stats.map(([k, t, s, p], i) => (
+            <div key={k} className="stat" data-rv="up" data-dl={i * 90}>
+              <span className="bar" />
+              <span className="k">{k}</span>
+              <b>
+                <span className="num" data-t={t}>
+                  0
+                </span>
+                {s}
+              </b>
+              <p>{p}</p>
+            </div>
+          ))}
+          <div className="stat" data-rv="up" data-dl="270">
+            <span className="bar" />
+            <span className="k">04</span>
+            <b>
+              <span className="num" data-t="200">
+                200
+              </span>{" "}
+              <small>tr – 2 tỷ</small>
+            </b>
+            <p>Doanh thu từ các dự án đã triển khai thành công.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
