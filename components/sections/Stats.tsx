@@ -1,43 +1,91 @@
-const stats = [
-  [
-    "01",
-    "5",
-    "+",
-    "Năm kinh nghiệm Social Media Marketing & Personal Branding.",
-  ],
-  ["02", "320", "K+", "Followers trên các nền tảng mạng xã hội."],
-  ["03", "20", "+", "Dự án và thương hiệu đã hợp tác, đồng hành."],
-];
 export function Stats() {
   return (
-    <section className="stripe">
-      <div className="wrap">
-        <div className="stat-row">
-          {stats.map(([k, t, s, p], i) => (
-            <div key={k} className="stat" data-rv="up" data-dl={i * 90}>
-              <span className="bar" />
-              <span className="k">{k}</span>
-              <b>
-                <span className="num" data-t={t}>
-                  0
-                </span>
-                {s}
-              </b>
-              <p>{p}</p>
-            </div>
-          ))}
-          <div className="stat" data-rv="up" data-dl="270">
-            <span className="bar" />
-            <span className="k">04</span>
-            <b>
-              <span className="num" data-t="200">
-                200
-              </span>{" "}
-              <small>tr – 2 tỷ</small>
-            </b>
-            <p>Doanh thu từ các dự án đã triển khai thành công.</p>
+    <section className="stats-section">
+      <div className="stats-grid">
+
+        {/* 01 */}
+        <div className="stats-item" data-rv="up">
+          <div className="stats-number stats-number--lime">
+            <span className="num" data-t="5">
+              0
+            </span>
+            +
           </div>
+
+          <p className="stats-description">
+            Năm kinh nghiệm Social Media
+            <br />
+            Marketing &amp; Personal Branding.
+          </p>
         </div>
+
+        {/* 02 */}
+        <div
+          className="stats-item"
+          data-rv="up"
+          data-dl="90"
+        >
+          <div className="stats-number">
+            <span className="num" data-t="230">
+              0
+            </span>
+            K+
+          </div>
+
+          <p className="stats-description">
+            Followers trên các nền tảng
+            <br />
+            mạng xã hội.
+          </p>
+        </div>
+
+        {/* 03 */}
+        <div
+          className="stats-item"
+          data-rv="up"
+          data-dl="180"
+        >
+          <div className="stats-number">
+            <span className="num" data-t="20">
+              0
+            </span>
+            +
+          </div>
+
+          <p className="stats-description">
+            Dự án và thương hiệu đã hợp
+            <br />
+            tác, đồng hành.
+          </p>
+        </div>
+
+        {/* 04 */}
+        <div
+          className="stats-item"
+          data-rv="up"
+          data-dl="270"
+        >
+          <div className="stats-number stats-number--revenue">
+            <span className="num" data-t="200">
+              0
+            </span>
+
+            <sup>tr</sup>
+
+            <span className="stats-dash">–</span>
+
+            <span>2</span>
+
+            <sup>tỷ</sup>
+          </div>
+
+          <p className="stats-description">
+            Doanh thu từ các dự án đã triển
+            <br />
+            khai thành công.
+          </p>
+        </div>
+
       </div>
     </section>
   );

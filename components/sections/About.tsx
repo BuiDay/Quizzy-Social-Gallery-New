@@ -54,15 +54,15 @@ export function About() {
           </div>
 
           <span className="ftag f1 glass" data-d="18">
-            Social Media Manager
+          Social Media Marketing
           </span>
 
-          <span className="ftag f2 glass" data-d="13">
+          {/* <span className="ftag f2 glass" data-d="13">
             4+ năm làm nghề
-          </span>
+          </span> */}
 
           <span className="ftag f3 glass" data-d="22">
-            Việt Nam · Canada · Mỹ
+          Personal Branding
           </span>
         </div>
       </div>

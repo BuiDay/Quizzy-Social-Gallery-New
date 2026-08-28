@@ -1321,9 +1321,14 @@ h3 {
   opacity: 0.001;
   transition: clip-path 0.95s var(--out), opacity 0.45s;
 }
+
 .in[data-rv] {
   opacity: 1;
   transform: none;
+}
+
+/* Chỉ element thực sự dùng effect clip mới có clip-path */
+.in[data-rv="clip"] {
   clip-path: inset(0 0 0 0);
 }
 
@@ -1597,8 +1602,6 @@ h3 {
   background: #31243f;
 }
 
-
-
 /* ================= FLOATING TAGS ================= */
 /* GIỮ EFFECT CŨ */
 
@@ -1611,7 +1614,7 @@ h3 {
 
   padding: 11px 17px;
 
-  font-size: 14.5px;
+  font-size: 16px;
 
   font-weight: 600;
 
@@ -1654,83 +1657,116 @@ h3 {
   flex-wrap: wrap;
 }
 
-/* ---------- stat strip (1 hàng) ---------- */
-.stripe {
-  background: var(--white);
-  padding: 0 0 clamp(64px, 8vw, 110px);
+/* ============================================================
+   STATS
+   ============================================================ */
+
+.stats-section {
+  width: 100%;
+  background: #121212;
+  color: #fff;
 }
-.stat-row {
+
+.stats-grid {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--line);
 }
-.stat {
+
+/* ================= ITEM ================= */
+
+.stats-item {
   position: relative;
-  padding: clamp(26px, 3vw, 40px) clamp(18px, 2vw, 30px) clamp(26px, 3vw, 38px)
-    0;
-  border-right: 1px solid var(--line);
-  transition: background-color 0.5s var(--ease);
+
+  min-height: 158px;
+
+  padding: 26px clamp(18px, 2.2vw, 34px) 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
 }
-.stat:last-child {
-  border-right: none;
+
+.stats-item:last-child {
+  border-right: 0;
 }
-.stat:hover {
-  background: #fbfaff;
+
+/* ================= NUMBER ================= */
+
+.stats-number {
+  display: flex;
+  align-items: flex-start;
+
+  color: #fff;
+
+  font-size: clamp(48px, 5vw, 74px);
+  font-weight: 600;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+
+  white-space: nowrap;
+
+  font-variant-numeric: tabular-nums;
 }
-.stat .bar {
-  position: absolute;
-  left: 0;
-  right: 1px;
-  top: -1px;
-  height: 2px;
-  background: var(--lilac);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s var(--out);
+
+.stats-number--lime {
+  color: var(--lime);
 }
-.stat.in .bar {
-  transform: scaleX(1);
+
+/* revenue */
+
+.stats-number--revenue {
+  gap: 1px;
 }
-.stat:nth-child(2) .bar {
-  background: var(--sky);
+
+.stats-number sup {
+  position: relative;
+
+  top: -0.12em;
+
+  margin-left: 1px;
+
+  font-size: 0.38em;
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
 }
-.stat:nth-child(3) .bar {
-  background: var(--lime);
+
+.stats-dash {
+  margin: 0 4px;
 }
-.stat:nth-child(4) .bar {
-  background: var(--lilac-2);
-}
-.stat b {
-  display: block;
-  font-size: clamp(46px, 5.4vw, 82px);
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  line-height: 0.94;
-  transition: color 0.5s var(--ease);
-}
-.stat:hover b {
-  color: var(--lilac-2);
-}
-.stat b small {
-  font-size: 0.34em;
+
+/* ================= DESCRIPTION ================= */
+
+.stats-description {
+  margin-top: 24px;
+
+  color: rgba(255, 255, 255, 0.96);
+
+  font-size: clamp(11px, 0.85vw, 13px);
   font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--ink-2);
+
+  line-height: 1.35;
+
+  letter-spacing: -0.015em;
 }
-.stat p {
-  font-size: 13px;
-  color: var(--ink-2);
-  line-height: 1.55;
-  margin-top: 16px;
-  max-width: 26ch;
+
+/* ================= HOVER ================= */
+
+.stats-item {
+  transition: background-color 0.35s var(--ease);
 }
-.stat span.k {
-  display: block;
-  font-size: 10.5px;
-  letter-spacing: 0.16em;
-  color: var(--ink-3);
-  margin-bottom: 18px;
+
+.stats-item:hover {
+  background: rgba(255, 255, 255, 0.035);
 }
 
 /* ---------- gallery ---------- */
@@ -3652,9 +3688,22 @@ h3 {
     order: 1;
     padding: 0;
   }
-  .stat-row {
-    grid-template-columns: 1fr 1fr;
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+
+  .stats-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .stats-item:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .stats-number {
+    font-size: clamp(52px, 8vw, 72px);
+  }
+
   .about-grid {
     grid-template-columns:
       minmax(0, 1.05fr)
@@ -3719,17 +3768,35 @@ h3 {
     border-right: none;
     border-bottom: 1px solid var(--line);
   }
-  .stat-row {
+  .stats-grid {
     grid-template-columns: 1fr;
   }
-  .stat {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-    padding-right: 0;
+
+  .stats-item {
+    min-height: 145px;
+
+    padding: 26px 24px;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   }
-  .stat:last-child {
-    border-bottom: none;
+
+  .stats-item:nth-child(2) {
+    border-right: 0;
   }
+
+  .stats-item:last-child {
+    border-bottom: 0;
+  }
+
+  .stats-number {
+    font-size: clamp(52px, 15vw, 72px);
+  }
+
+  .stats-description {
+    margin-top: 22px;
+  }
+  
   .pains li {
     width: 100%;
     justify-content: flex-start;
