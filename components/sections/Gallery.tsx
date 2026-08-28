@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useRef } from "react";
 import { galleryItems } from "@/data/content";
 import { Art } from "@/components/ui/Art";
 import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/ui/Icons";
@@ -8,51 +9,95 @@ import { useModal } from "@/components/ui/ModalContext";
 
 export function Gallery() {
   const { openModal } = useModal();
-  const [dim, setDim] = useState(false);
+  const railRef = useRef<HTMLDivElement>(null);
+
+  const scrollRail = (direction: -1 | 1) => {
+    const rail = railRef.current;
+    if (!rail) return;
+
+    rail.scrollBy({
+      left: direction * Math.min(360, rail.clientWidth * 0.72),
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className="sec" id="gallery">
-      <div className="wrap">
+    <section className="sec gallery-section" id="gallery">
+      <div className="wrap gallery-wrap">
+        {/* HEADER — giữ nguyên */}
         <div className="shead">
           <div>
             <Eyebrow data-rv="up">01 / Tài liệu & sản phẩm số</Eyebrow>
+
             <h2 className="h2" data-rv="clip" data-dl="70">
-              Tài liệu <span className="cap sky">thực chiến</span>,<br />
+              Tài liệu <span className="cap sky">thực chiến</span>,
+              <br />
               dễ hiểu và <span className="cap lim">dễ áp dụng</span>.
             </h2>
           </div>
+
           <p className="lead" data-rv="up" data-dl="150">
-            Bốn bộ tài liệu được dùng nhiều nhất, xây từ chính công việc thật.
-            Toàn bộ thư viện 30+ sản phẩm nằm ở trang Tài liệu số.
+           <strong style={{color:"var(--lilac-2)"}} >30+ tài liệu và công cụ Social Media</strong> được xây dựng từ kinh nghiệm thực chiến, giúp bạn áp dụng ngay vào công việc.
           </p>
         </div>
-        <div
-          className={`bento ${dim ? "dim" : ""}`}
-          id="bento"
-          data-rv="up"
-          onMouseLeave={() => setDim(false)}
-        >
-          {galleryItems.map((p) => (
+
+        {/* PRODUCT RAIL */}
+        <div className="gallery-products" data-rv="up" data-dl="80">
+          <div className="gallery-products-nav">
             <button
-              key={p.t}
-              className={`card ${p.cls}`}
-              data-cur="EXPLORE"
-              onMouseEnter={() => setDim(true)}
-              onClick={() => openModal(p)}
+              type="button"
+              className="gallery-nav-btn"
+              aria-label="Tài liệu trước"
+              onClick={() => scrollRail(-1)}
             >
-              <Art variant={p.g} />
-              <div className="ctop">
-                <span className="plabel glass">{p.cat}</span>
-                <span className="arc">
-                  <ArrowUpRightIcon />
-                </span>
-              </div>
-              <div className="cbot">
-                <h3 className="h3">{p.t}</h3>
-                <p className="meta">{p.meta}</p>
-              </div>
+              ‹
             </button>
-          ))}
+
+            <button
+              type="button"
+              className="gallery-nav-btn"
+              aria-label="Tài liệu tiếp theo"
+              onClick={() => scrollRail(1)}
+            >
+              ›
+            </button>
+          </div>
+
+          <div className="gallery-products-rail" ref={railRef}>
+            {galleryItems.map((item, index) => (
+              <button
+                key={item.t}
+                type="button"
+                className={`gallery-product-card gallery-product-card--${index % 4}`}
+                data-cur="EXPLORE"
+                onClick={() => openModal(item)}
+              >
+                <div className="gallery-product-copy">
+                  <div className="gallery-product-head">
+                    <span className="gallery-product-label">
+                      {item.cat}
+                    </span>
+
+                    <span className="gallery-product-arrow" aria-hidden="true">
+                      <ArrowUpRightIcon />
+                    </span>
+                  </div>
+
+                  <div className="gallery-product-text">
+                    <h3>{item.t}</h3>
+                    <p>{item.meta}</p>
+                  </div>
+                </div>
+
+                <div className="gallery-product-visual" aria-hidden="true">
+                  <Art variant={item.g} />
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* CTA — giữ nguyên */}
         <a
           href="#gallery"
           className="linkcard"
@@ -64,10 +109,11 @@ export function Gallery() {
           <div>
             <h3 className="h3">Xem toàn bộ thư viện tài liệu</h3>
             <p>
-              30+ templates, workbook và bộ công cụ được phân loại theo
-              Strategy, Content, Personal Branding, Templates và AI.
+              30+ templates, workbook và bộ công cụ được phân loại theo Strategy,
+              Content, Personal Branding, Templates và AI.
             </p>
           </div>
+
           <span className="arc">
             <ArrowRightIcon />
           </span>
