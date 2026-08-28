@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 const links = [
   ["#top", "Trang chủ"],
   ["#gallery", "Tài liệu số"],
+  ["#courses", "Khoá học"],
   ["#services", "Dịch vụ SMM"],
+  ["#contact", "Liên hệ"],
 ] as const;
 
 export function Navbar() {
