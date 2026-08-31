@@ -9,10 +9,10 @@ import { Courses } from "@/components/sections/Courses";
 import { Services } from "@/components/sections/Services";
 import { Projects } from "@/components/sections/Projects";
 import { Outcome } from "@/components/sections/Outcome";
-import { Clients } from "@/components/sections/Clients";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
+import { Newsletter } from "@/components/sections/Newsletter";
 
 export default function Home(){
   return <ModalProvider>
@@ -27,10 +27,10 @@ export default function Home(){
       <Services />
       <Projects />
       <Outcome />
-      <Clients />
       <Testimonials />
       <FinalCTA />
+      <Newsletter />
     </main>
-    <Footer />
+    {/* <Footer /> */}
   </ModalProvider>;
 }

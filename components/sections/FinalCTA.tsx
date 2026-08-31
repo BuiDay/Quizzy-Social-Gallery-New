@@ -1,3 +1,100 @@
-import { ArrowRightIcon, CheckIcon } from "@/components/ui/Icons";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-export function FinalCTA(){return <section className="final sec"><span className="fs fs1" data-d="16"/><span className="fs fs2" data-d="22"/><span className="fs fs3" data-d="28"/><div className="wrap"><div className="final-in"><div><Eyebrow data-rv="up">Bắt đầu từ hôm nay</Eyebrow><h2 className="h1 sell" data-rv="clip" data-dl="70">Bạn không thiếu kiến thức. Bạn thiếu <span className="it">một hệ thống</span>.</h2><p className="lead" data-rv="up" data-dl="140">Mọi thứ ở đây đều đi ra từ công việc thật: tài liệu mình dùng với khách hàng, quy trình mình chạy mỗi ngày. Bạn không phải mò lại con đường mình đã đi.</p><ul className="pains" data-rv="up" data-dl="190"><li><CheckIcon/>Lưu cả trăm bài hay nhưng chưa áp dụng được bài nào</li><li><CheckIcon/>Đăng đều mỗi ngày mà số vẫn đứng yên</li><li><CheckIcon/>Muốn nhận job freelance nhưng chưa có gì để đưa khách xem</li></ul></div><div className="cta-box" data-rv="scale" data-dl="120"><h3>Bắt đầu ở đâu cũng được — miễn là bắt đầu.</h3><p>Tải một bộ tài liệu về dùng thử trước, hoặc vào thẳng khóa học nếu bạn muốn được review bài trực tiếp.</p><div className="cta-row"><a href="#gallery" className="bigcta mag" data-cur="OPEN"><span>Khám phá thư viện tài liệu <ArrowRightIcon/></span></a><a href="#courses" className="cta-2" data-cur="hover">Xem khóa học đang mở <ArrowRightIcon/></a></div><div className="trust"><span><i/>500+ học viên đã bắt đầu trước bạn</span><span><i/>30+ tài liệu dùng được ngay, không phải học lý thuyết</span><span><i/>Cập nhật liên tục, không tính thêm phí</span></div></div></div></div></section>}
+export function FinalCTA() {
+    return (
+      <section className="final-cta" id="final-cta">
+        <div className="wrap">
+          <div className="final-cta-shell" data-rv="up">
+            {/* ================= LEFT ================= */}
+            <div className="final-cta-copy">
+              <h2
+                className="final-cta-title"
+                data-rv="up"
+                data-dl="70"
+              >
+                Học Social Media{" "}
+                <span className="final-cta-highlight final-cta-highlight--lime">
+                  dễ hơn
+                </span>
+  
+            
+  
+                với một{" "}
+                <span className="final-cta-highlight final-cta-highlight--sky">
+                  lộ trình rõ ràng
+                </span>
+              </h2>
+  
+              <div
+                className="final-cta-description"
+                data-rv="up"
+                data-dl="140"
+              >
+                <p>
+                  Những gì mình chia sẻ đều đến từ công việc thật, tài liệu
+                  mình dùng với khách hàng, quy trình mình chạy mỗi ngày.
+                </p>
+  
+                <p>
+                  Bạn không phải mò lại con đường mình đã đi.
+                </p>
+              </div>
+            </div>
+  
+            {/* ================= RIGHT ================= */}
+            <div
+              className="final-cta-box"
+              data-rv="up"
+              data-dl="180"
+            >
+              <h3>
+                Bắt đầu lộ trình của bạn
+                <br />
+                ngay bây giờ!
+              </h3>
+  
+              <div className="final-cta-actions">
+                <a
+                  href="#gallery"
+                  className="final-cta-btn final-cta-btn--dark mag"
+                  data-cur="OPEN"
+                >
+                  <span>Khám phá thư viện tài liệu</span>
+  
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+  
+                <a
+                  href="#courses"
+                  className="final-cta-btn final-cta-btn--light mag"
+                  data-cur="OPEN"
+                >
+                  <span>Xem các khóa học đang mở</span>
+  
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }

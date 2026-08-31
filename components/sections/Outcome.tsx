@@ -1,10 +1,124 @@
-import { Art } from "@/components/ui/Art";
-import { Eyebrow } from "@/components/ui/Eyebrow";
+import Image from "next/image";
+// import QuizzyOutcome from "@/assets/images/quizzy-outcome.jpg";
 
-const outcomes=[
-  {g:'g1',k:'Thu nhập',t:'20',suffix:'–100',small:'triệu/tháng',p:'Mức thu nhập mục tiêu học viên hướng tới từ kỹ năng Social Media.'},
-  {g:'g2',k:'Cộng đồng',t:'500',suffix:'+',p:'Học viên đã tin tưởng và áp dụng vào công việc của mình.'},
-  {g:'g3',k:'Thư viện',t:'30',suffix:'+',p:'Tài liệu, templates và sản phẩm số dùng được ngay.'},
-  {g:'g4',k:'Chất lượng',t:'100',suffix:'%',p:'Kiến thức thực chiến, cập nhật liên tục theo thị trường.'},
-];
-export function Outcome(){return <section className="outcome sec"><div className="wrap"><Eyebrow data-rv="up">Outcome</Eyebrow><h2 className="h1 oc-head" data-rv="clip" data-dl="70" style={{marginTop:18}}>Nếu bạn đang <span className="cap lil">mắc kẹt</span> giữa việc học và việc làm thật —</h2><p className="lead oc-lead" data-rv="up" data-dl="150">…thì đây là chỗ để bạn rút ngắn khoảng cách đó. Không phải lý thuyết, mà là những gì mình đã dùng để đi làm, nhận dự án và sống được bằng nghề này.</p><div className="oc-grid">{outcomes.map((o,i)=><div className="oc" key={o.k} data-rv="up" data-dl={i*90}><div className="oc-vis"><Art variant={o.g}/><span className="kicker glass">{o.k}</span></div><div className="oc-body"><b><span className="num" data-t={o.t}>0</span>{o.suffix} {o.small?<small>{o.small}</small>:null}</b><p>{o.p}</p></div></div>)}</div></div></section>}
+export function Outcome() {
+  return (
+    <section className="outcome sec" id="outcome">
+      <div className="wrap">
+        {/* ================= HEADER ================= */}
+        <div className="outcome-head">
+          <h2
+            className="outcome-main-title"
+            data-rv="up"
+            data-dl="70"
+          >
+            Muốn học{" "}
+            <span className="outcome-highlight outcome-highlight--lime">
+              Social Media
+            </span>
+
+            <br />
+
+            nhưng{" "}
+            <span className="outcome-highlight outcome-highlight--outline">
+              chưa biết
+            </span>{" "}
+            bắt đầu từ đâu?
+          </h2>
+
+          <p
+            className="outcome-intro"
+            data-rv="up"
+            data-dl="140"
+          >
+            <strong>Quizzy Social Gallery</strong> là nơi mình gom lại những
+            kiến thức, framework, templates và kinh nghiệm thực tế mình đã tích
+            lũy trong quá trình làm Social Media để bạn có
+            <br />
+            <b>
+              một nền tảng để bắt đầu, dễ học và dễ áp dụng vào công việc.
+            </b>
+          </p>
+        </div>
+
+        {/* ================= CONTENT ================= */}
+        <div className="outcome-layout">
+          {/* LEFT PHOTO */}
+          <div
+            className="outcome-photo-card"
+            data-rv="scale"
+          >
+            {/* <Image
+              src={QuizzyOutcome}
+              alt="Quizzy Social Media"
+              className="outcome-photo"
+              fill
+              sizes="(max-width: 768px) 100vw, 35vw"
+            /> */}
+
+            <div className="outcome-income-card">
+              <span className="outcome-income-label">
+                <span className="outcome-income-dot" />
+                MỨC THU NHẬP
+              </span>
+
+              <div className="outcome-income-number">
+                50–100
+                <small>triệu/tháng</small>
+              </div>
+
+              <p>
+                Thu nhập tiềm năng từ công việc
+                <br />
+                Social Media.
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT STATS */}
+          <div className="outcome-stats">
+            <article
+              className="outcome-stat-card outcome-stat-card--purple"
+              data-rv="up"
+              data-dl="90"
+            >
+              <strong>1000+</strong>
+
+              <p>
+                Học viên đã học và ứng dụng vào
+                <br />
+                công việc.
+              </p>
+            </article>
+
+            <article
+              className="outcome-stat-card outcome-stat-card--blue"
+              data-rv="up"
+              data-dl="150"
+            >
+              <strong>30+</strong>
+
+              <p>
+                Tài liệu, templates và digital
+                <br />
+                products có thể dùng ngay.
+              </p>
+            </article>
+
+            <article
+              className="outcome-stat-card outcome-stat-card--black"
+              data-rv="up"
+              data-dl="210"
+            >
+              <strong>100% thực chiến</strong>
+
+              <p>
+                Kiến thức từ những gì mình đã làm và trải nghiệm thực tế.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

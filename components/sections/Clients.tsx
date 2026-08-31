@@ -1,2 +1,0 @@
-const clients=['QCC Mastery','Lumière','Sōra','Atlas','Cará','Northwind','Verso','Meridian','Bloom','Tide'];
-export function Clients(){return <section className="clients sec" id="clients"><div className="wrap"><span className="cl-label" data-rv="up">Selected clients</span><div className="cl-grid" data-rv="up" data-dl="80">{clients.map(c=><div className="cl" key={c}><b>{c}</b></div>)}</div></div></section>}
