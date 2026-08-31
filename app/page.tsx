@@ -31,6 +31,6 @@ export default function Home(){
       <FinalCTA />
       <Newsletter />
     </main>
-    {/* <Footer /> */}
+    <Footer />
   </ModalProvider>;
 }
