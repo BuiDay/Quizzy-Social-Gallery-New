@@ -5388,3 +5388,468 @@ button.card {
     width: 100%;
   }
 }
+
+
+ /* ============================================================
+   PRODUCTS — NEWSLETTER CTA
+   ============================================================ */
+
+   .products-newsletter {
+    width: 100%;
+  
+    padding:
+      clamp(40px, 6vw, 76px)
+      0
+      clamp(80px, 9vw, 120px);
+  
+    background: #fff;
+  }
+  
+  .products-newsletter-wrap {
+    width: min(1200px, 90vw);
+    margin-inline: auto;
+  }
+  
+  
+  /* ============================================================
+     OUTER SHELL
+     ============================================================ */
+  
+  .products-newsletter-shell {
+    position: relative;
+  
+    width: 100%;
+  
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 1.35fr)
+      minmax(360px, .85fr);
+  
+    gap: clamp(20px, 7vw, 50px);
+  
+    align-items: center;
+  
+    padding:
+      clamp(46px, 5.5vw, 72px)
+      clamp(44px, 5vw, 70px);
+  
+    border-radius: 30px;
+  
+    overflow: hidden;
+  
+    background:
+      linear-gradient(
+        115deg,
+        #fff5f6 0%,
+        #f8eff8 48%,
+        #eadcf9 100%
+      );
+  
+    box-shadow:
+      0 14px 38px
+      rgba(76, 48, 120, .07);
+  }
+  
+  
+  /* ============================================================
+     LEFT COPY
+     ============================================================ */
+  
+  .products-newsletter-copy {
+    min-width: 0;
+  }
+  
+  .products-newsletter-title {
+    margin: 0;
+  
+    color: #080808;
+  
+    font-size:
+      clamp(42px, 4.5vw, 48px);
+  
+    font-weight: 600;
+  
+    line-height: 1.06;
+  
+    letter-spacing: -.06em;
+  }
+  
+  
+  /* HIGHLIGHTS */
+  
+  .products-newsletter-highlight {
+    display: inline-flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    padding:
+      .01em
+      .18em
+      .08em;
+  
+    border-radius: var(--pill);
+  
+    line-height: .94;
+  }
+  
+  .products-newsletter-highlight--sky {
+    background: var(--sky);
+  }
+  
+  .products-newsletter-highlight--lime {
+    background: var(--lime);
+  }
+  
+  
+  /* DESCRIPTION */
+  
+  .products-newsletter-description {
+    max-width: 560px;
+  
+    margin-top:
+      clamp(28px, 3vw, 38px);
+  
+    color: var(--ink-2);
+  
+    font-size:
+      clamp(14px, 1.15vw, 18px);
+  
+    line-height: 1.65;
+  
+    letter-spacing: -.01em;
+  }
+  
+  
+  /* ============================================================
+     COURSE BUTTON
+     ============================================================ */
+  
+  .products-newsletter-course-btn {
+    width: min(100%, 310px);
+  
+    min-height: 54px;
+  
+    margin-top:
+      clamp(28px, 3vw, 38px);
+  
+    padding:
+      0
+      28px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: space-between;
+  
+    gap: 18px;
+  
+    border-radius: var(--pill);
+  
+    background: #111;
+  
+    color: #fff;
+  
+    font-size: 16px;
+  
+    font-weight: 600;
+  
+    transition:
+      background-color .35s var(--ease),
+      transform .4s var(--out),
+      box-shadow .35s var(--ease);
+  }
+  
+  .products-newsletter-course-btn svg {
+    width: 20px;
+    height: 20px;
+  
+    flex: 0 0 auto;
+  
+    transition:
+      transform .4s var(--out);
+  }
+  
+  .products-newsletter-course-btn:hover {
+    background: var(--lilac-2);
+  
+    transform: translateY(-3px);
+  
+    box-shadow:
+      0 14px 28px
+      rgba(169, 127, 221, .2);
+  }
+  
+  .products-newsletter-course-btn:hover svg {
+    transform: translateX(5px);
+  }
+  
+  
+  /* ============================================================
+     NEWSLETTER CARD
+     ============================================================ */
+  
+  .products-newsletter-card {
+    width: 100%;
+  
+    padding:
+      clamp(30px, 3.4vw, 46px)
+      clamp(28px, 3vw, 42px);
+  
+    border-radius: 26px;
+  
+    background:
+      rgba(255, 255, 255, .72);
+  
+    border:
+      1px solid
+      rgba(255, 255, 255, .9);
+  
+    backdrop-filter:
+      blur(16px);
+  
+    -webkit-backdrop-filter:
+      blur(16px);
+  }
+  
+  .products-newsletter-card h3 {
+    margin: 0;
+  
+    color: var(--ink);
+  
+    font-size:
+      clamp(18px, 1.5vw, 22px);
+  
+    font-weight: 600;
+  
+    line-height: 1.2;
+  
+    letter-spacing: -.025em;
+  }
+  
+  .products-newsletter-card > p {
+    max-width: 410px;
+  
+    margin-top: 16px;
+  
+    color: var(--ink-3);
+  
+    font-size:
+      clamp(12px, 1vw, 14px);
+  
+    line-height: 1.6;
+  }
+  
+  
+  /* ============================================================
+     NEWSLETTER FORM
+     ============================================================ */
+  
+  .products-newsletter-form {
+    width: 100%;
+  
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+  
+    gap: 14px;
+  
+    align-items: center;
+  
+    margin-top: 28px;
+  }
+  
+  
+  /* INPUT */
+  
+  .products-newsletter-form input {
+    width: 100%;
+    min-width: 0;
+  
+    height: 48px;
+  
+    padding:
+      0
+      20px;
+  
+    border:
+      1px solid
+      var(--line);
+  
+    border-radius:
+      var(--pill);
+  
+    outline: none;
+  
+    background:
+      rgba(255, 255, 255, .76);
+  
+    color:
+      var(--ink);
+  
+    font: inherit;
+  
+    font-size: 14px;
+  
+    transition:
+      border-color .3s var(--ease),
+      background-color .3s var(--ease),
+      box-shadow .3s var(--ease);
+  }
+  
+  .products-newsletter-form input::placeholder {
+    color:
+      var(--ink-3);
+  }
+  
+  .products-newsletter-form input:focus {
+    background: #fff;
+  
+    border-color:
+      var(--lilac);
+  
+    box-shadow:
+      0 0 0 3px
+      rgba(169, 127, 221, .08);
+  }
+  
+  
+  /* ============================================================
+     SUBMIT
+     ============================================================ */
+  
+  .products-newsletter-submit {
+    min-width: 96px;
+  
+    height: 48px;
+  
+    padding:
+      0
+      20px;
+  
+    border-radius:
+      var(--pill);
+  
+    background:
+      var(--lilac);
+  
+    color: #fff;
+  
+    font-size: 14px;
+  
+    font-weight: 600;
+  
+    transition:
+      background-color .3s var(--ease),
+      transform .35s var(--out),
+      box-shadow .35s var(--ease);
+  }
+  
+  .products-newsletter-submit:hover {
+    background:
+      var(--lilac-2);
+  
+    transform:
+      translateY(-2px);
+  
+    box-shadow:
+      0 10px 24px
+      rgba(169, 127, 221, .25);
+  }
+  
+  
+  /* ============================================================
+     TABLET
+     ============================================================ */
+  
+  @media (max-width: 900px) {
+  
+    .products-newsletter-shell {
+      grid-template-columns: 1fr;
+  
+      gap: 40px;
+    }
+  
+    .products-newsletter-card {
+      max-width: 620px;
+    }
+  }
+  
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (max-width: 580px) {
+  
+    .products-newsletter {
+      padding:
+        34px
+        0
+        80px;
+    }
+  
+    .products-newsletter-wrap {
+      width:
+        min(
+          100% - 34px,
+          1200px
+        );
+    }
+  
+    .products-newsletter-shell {
+      padding:
+        34px
+        22px;
+  
+      border-radius: 24px;
+    }
+  
+    .products-newsletter-title {
+      font-size:
+        clamp(38px, 10.5vw, 50px);
+    }
+  
+    .products-newsletter-title br {
+      display: none;
+    }
+  
+    .products-newsletter-course-btn {
+      width: 100%;
+    }
+  
+    .products-newsletter-card {
+      padding:
+        28px
+        20px;
+  
+      border-radius: 22px;
+    }
+  
+    .products-newsletter-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .products-newsletter-submit {
+      width: 100%;
+    }
+  }
+  
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    .products-newsletter-course-btn,
+    .products-newsletter-course-btn svg,
+    .products-newsletter-submit,
+    .products-newsletter-form input {
+      transition: none;
+    }
+  }

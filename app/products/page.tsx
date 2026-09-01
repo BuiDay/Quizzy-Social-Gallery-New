@@ -6,7 +6,7 @@ import { ModalProvider } from "@/components/ui/ModalContext";
 import "../../styles/products.css";
 import { PaidProductsSection } from "@/components/products/PaidProductsSection";
 import { FreeProductsSection } from "@/components/products/FreeProductsSection";
-import { ProductsNewsletterCTA } from "@/components/products/ProductsNewsletterCTA";
+import { NewsletterCTA } from "@/components/ui/NewsletterCTA";
 
 export default function ProductsPage() {
   return <ModalProvider>
@@ -16,7 +16,7 @@ export default function ProductsPage() {
       <ProductsHero />
       <PaidProductsSection />
       <FreeProductsSection />
-      <ProductsNewsletterCTA />
+      <NewsletterCTA />
     </main>
     <Footer />
   </ModalProvider>

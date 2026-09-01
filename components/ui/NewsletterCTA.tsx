@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-export function ProductsNewsletterCTA() {
+export function NewsletterCTA() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
