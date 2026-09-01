@@ -647,7 +647,7 @@
     display: grid;
   
     grid-template-columns:
-      minmax(0, 1.3fr)
+      minmax(0, 1.5fr)
       minmax(220px, 0.7fr);
   
     gap:
@@ -794,7 +794,7 @@
     position: relative;
   
     width:
-      min(100%, 250px);
+      min(100%, 300px);
   
     aspect-ratio: 1;
   
@@ -817,10 +817,7 @@
       22%
       30%
       25%;
-  
-    background:
-      var(--lilac-soft);
-  
+    
     color:
       var(--lilac-2);
   
@@ -1208,6 +1205,7 @@
     display: flex;
   
     align-items: center;
+    justify-content: center;
   
     padding:
       clamp(30px, 4vw, 56px);
