@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   ["#top", "Trang chủ"],
-  ["#gallery", "Tài liệu số"],
+  ["/products", "Tài liệu số"],
   ["#courses", "Khoá học"],
   ["#services", "Dịch vụ SMM"],
   ["#contact", "Liên hệ"],
