@@ -8,6 +8,7 @@ import potential4 from "@/assets/images/TikTok Ideas Hacking/6.png";
 import potential5 from "@/assets/images/TikTok Ideas Hacking/7.png";
 import potential6 from "@/assets/images/TikTok Ideas Hacking/8.png";
 import potential7 from "@/assets/images/TikTok Ideas Hacking/9.png";
+import potential8 from "@/assets/images/TikTok Ideas Hacking/10.png";
 
 export function TiktokPotentialSection() {
   const videos = [
@@ -18,6 +19,7 @@ export function TiktokPotentialSection() {
     { id: 5, label: potential5 },
     { id: 6, label: potential6 },
     { id: 7, label: potential7 },
+    { id: 8, label: potential8 },
   ];
 
   const sliderVideos = [...videos, ...videos];
