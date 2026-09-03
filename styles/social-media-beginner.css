@@ -1,0 +1,5152 @@
+/* ============================================================
+   SOCIAL MEDIA BEGINNER — HERO
+   ============================================================ */
+
+.smb-hero {
+  position: relative;
+
+  width: 100%;
+
+  height: 100vh;
+  min-height: 720px;
+
+  padding-top:
+    clamp(34px, 4vw, 54px);
+
+  background: #fff;
+
+  overflow: hidden;
+}
+
+
+.smb-hero-inner {
+  width:
+    min(1200px, 90vw);
+
+  height:
+    calc(100% - 74px);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+     BREADCRUMB
+     ============================================================ */
+
+.smb-breadcrumb {
+  width: fit-content;
+
+  min-height: 32px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    0 18px;
+
+  border:
+    1px solid rgba(18, 18, 18, .16);
+
+  border-radius:
+    var(--pill);
+
+  background:
+    rgba(255, 255, 255, .88);
+
+  color:
+    #171717;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing:
+    .13em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.smb-breadcrumb-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background:
+    var(--lilac);
+}
+
+
+/* ============================================================
+     GRID
+     ============================================================ */
+
+.smb-hero-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .92fr) minmax(400px, 1.08fr);
+
+  gap:
+    clamp(52px, 7vw, 110px);
+
+  align-items: center;
+
+  height:
+    calc(100% - 70px);
+
+  margin-top:
+    clamp(26px, 3vw, 42px);
+}
+
+
+/* ============================================================
+     TITLE AREA
+     ============================================================ */
+
+.smb-hero-title-area {
+  position: relative;
+
+  min-width: 0;
+}
+
+
+.smb-title-row {
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    clamp(12px, 1.5vw, 20px);
+
+  width: fit-content;
+}
+
+
+.smb-title-row+.smb-title-row {
+  margin-top: 10px;
+}
+
+
+.smb-title-row--social {
+  margin-left: 0px;
+}
+
+
+.smb-title-row--media {
+  margin-left: 0;
+}
+
+
+.smb-title-row--ebook {
+  margin-left:
+    clamp(54px, 6vw, 110px);
+}
+
+
+/* ============================================================
+     STAR
+     ============================================================ */
+
+.smb-title-star {
+  display: block;
+
+  flex: 0 0 auto;
+
+  color:
+    var(--lilac);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(66px, 7vw, 104px);
+
+  font-weight: 300;
+
+  line-height: .7;
+}
+
+
+/* ============================================================
+     TITLE PILLS
+     ============================================================ */
+
+.smb-title-pill {
+  min-height:
+    clamp(72px, 7vw, 102px);
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    .1em .8em .1em;
+
+  border:
+    1.4px solid #111;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    #fff;
+
+  color:
+    #030303;
+
+  font-size:
+    clamp(58px, 6.1vw, 88px);
+
+  font-weight: 600;
+
+  line-height: .88;
+
+  letter-spacing:
+    -.065em;
+
+  white-space:
+    nowrap;
+
+  transition:
+    transform .45s var(--out),
+    background-color .35s var(--ease);
+}
+
+
+.smb-title-pill--lime {
+  background:
+    var(--lime);
+}
+
+
+.smb-title-pill:hover {
+  transform:
+    translateY(-4px);
+}
+
+
+/* ============================================================
+     PURPLE ARROW
+     ============================================================ */
+
+.smb-title-arrow {
+  width:
+    clamp(72px, 7vw, 98px);
+
+  aspect-ratio:
+    1.55;
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lilac);
+
+  color: #fff;
+
+  transition:
+    transform .4s var(--out),
+    background-color .3s var(--ease);
+}
+
+
+.smb-title-arrow svg {
+  width: 25px;
+  height: 25px;
+
+  transition:
+    transform .4s var(--out);
+}
+
+
+.smb-title-arrow:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    var(--lilac-2);
+}
+
+
+.smb-title-arrow:hover svg {
+  transform:
+    translateX(5px);
+}
+
+
+/* ============================================================
+     PRODUCT SIDE
+     ============================================================ */
+
+.smb-hero-product {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* ============================================================
+     PRODUCT VISUAL
+     ============================================================ */
+
+.smb-product-visual {
+  position: relative;
+  border: 1px solid black;
+  width: 100%;
+  border-radius: 30px;
+
+  min-height:
+    clamp(300px, 31vw, 430px);
+}
+
+
+/* main outlined frame */
+
+.smb-product-placeholder {
+  position: absolute;
+
+  inset:
+    16px 12px 20px 12px;
+
+  border:
+    1px solid rgba(18, 18, 18, .6);
+
+  border-radius:
+    10px;
+
+  background:
+    #fff;
+}
+
+
+/* actual image */
+
+.smb-product-image {
+  object-fit: contain;
+  border-radius: 30px;
+}
+
+
+/* ============================================================
+     FLOATING TAGS
+     ============================================================ */
+
+.smb-product-tag.ftag {
+  position: absolute;
+
+  z-index: 5;
+
+  padding:
+    9px 15px;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    rgba(255, 255, 255, .92);
+
+  color:
+    #262626;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  white-space:
+    nowrap;
+
+  box-shadow:
+    0 12px 30px rgba(27, 20, 37, .09);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  will-change:
+    transform;
+}
+
+
+.smb-product-tag--strategy {
+  top: 13%;
+
+  left: -8%;
+}
+
+
+.smb-product-tag--plan {
+  top: 2%;
+
+  right: -3%;
+}
+
+
+.smb-product-tag--marketing {
+  right: -9%;
+
+  bottom: 7%;
+}
+
+
+/* ============================================================
+     PRICE
+     ============================================================ */
+
+.smb-product-price-area {
+  width:
+    min(100%, 470px);
+
+  margin:
+    clamp(8px, 1vw, 16px) auto 0;
+
+  text-align:
+    center;
+}
+
+
+.smb-product-price-label {
+  margin: 0;
+
+  color:
+    #383838;
+
+  font-size:
+    clamp(11px, .95vw, 18px);
+
+  font-weight: 500;
+
+  text-transform:
+    uppercase;
+}
+
+
+.smb-product-price {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-top: 10px;
+}
+
+
+.smb-product-price strong {
+  color:
+    #151515;
+
+  font-size:
+    clamp(38px, 3.4vw, 52px);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing:
+    -.045em;
+}
+
+
+.smb-product-price del {
+  color:
+    #a3a3a3;
+
+  font-size:
+    clamp(11px, 1vw, 16px);
+
+  font-weight: 500;
+}
+
+
+/* ============================================================
+     BUY BUTTON
+     ============================================================ */
+
+.smb-product-buy {
+  width: fit-content;
+
+  min-height: 44px;
+
+  margin:
+    18px auto 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  padding:
+    0 20px;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #111;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition:
+    transform .4s var(--out),
+    background-color .3s var(--ease),
+    color .3s var(--ease);
+}
+
+
+.smb-product-buy svg {
+  width: 17px;
+  height: 17px;
+
+  transition:
+    transform .4s var(--out);
+}
+
+
+.smb-product-buy:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    #111;
+
+  color:
+    #fff;
+}
+
+
+.smb-product-buy:hover svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* ============================================================
+     HERO ENTRANCE
+     ============================================================ */
+
+.smb-hero-enter {
+  --delay: 0s;
+
+  opacity: 0;
+
+  transform:
+    translateY(26px);
+
+  animation:
+    smbHeroEnter .85s var(--out) var(--delay) forwards;
+}
+
+
+@keyframes smbHeroEnter {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* ============================================================
+     MARQUEE
+     ============================================================ */
+
+.smb-hero-marquee {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  height:
+    clamp(54px, 5vw, 74px);
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    #f0e5ff;
+
+  border-top:
+    1px solid rgba(105, 70, 150, .06);
+
+  z-index: 5;
+}
+
+
+.smb-hero-marquee-track {
+  display: flex;
+
+  align-items: center;
+
+  width:
+    max-content;
+
+  animation:
+    smbHeroMarquee 28s linear infinite;
+
+  will-change:
+    transform;
+}
+
+
+.smb-hero-marquee-item {
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    clamp(24px, 3vw, 42px);
+
+  padding-right:
+    clamp(24px, 3vw, 42px);
+
+  color:
+    #111;
+
+  font-size:
+    clamp(15px, 1.6vw, 22px);
+
+  font-weight: 500;
+
+  white-space:
+    nowrap;
+}
+
+
+.smb-marquee-star {
+  color:
+    var(--lilac);
+
+  font-size:
+    clamp(22px, 2vw, 30px);
+}
+
+
+@keyframes smbHeroMarquee {
+
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+}
+
+
+/* ============================================================
+     LARGE LAPTOP
+     ============================================================ */
+
+@media (max-width: 1200px) {
+
+  .smb-hero-grid {
+    grid-template-columns:
+      minmax(0, .95fr) minmax(380px, 1fr);
+
+    gap: 56px;
+  }
+
+
+  .smb-title-pill {
+    font-size:
+      clamp(52px, 5.8vw, 76px);
+  }
+
+
+  .smb-title-star {
+    font-size:
+      clamp(62px, 6.5vw, 90px);
+  }
+}
+
+
+/* ============================================================
+     TABLET
+     ============================================================ */
+
+@media (max-width: 1000px) {
+
+  .smb-hero {
+    min-height: 680px;
+  }
+
+
+  .smb-hero-grid {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(340px, .9fr);
+
+    gap: 42px;
+  }
+
+
+  .smb-title-pill {
+    min-height: 64px;
+
+    font-size:
+      clamp(46px, 5.8vw, 66px);
+  }
+
+
+  .smb-title-star {
+    font-size:
+      clamp(56px, 6.5vw, 78px);
+  }
+
+
+  .smb-title-arrow {
+    width:
+      clamp(66px, 6.5vw, 86px);
+  }
+}
+
+
+/* ============================================================
+     SMALL TABLET
+     ============================================================ */
+
+@media (max-width: 820px) {
+
+  .smb-hero {
+    height: auto;
+
+    min-height: 100vh;
+
+    padding-bottom: 110px;
+  }
+
+
+  .smb-hero-inner {
+    height: auto;
+  }
+
+
+  .smb-hero-grid {
+    grid-template-columns: 1fr;
+
+    height: auto;
+
+    gap: 64px;
+  }
+
+
+  .smb-hero-title-area {
+    width: fit-content;
+
+    margin-inline: auto;
+  }
+
+
+  .smb-product-visual {
+    width:
+      min(100%, 600px);
+
+    margin-inline: auto;
+  }
+
+
+  .smb-product-tag--strategy {
+    left: 0;
+  }
+
+
+  .smb-product-tag--plan {
+    right: 0;
+  }
+
+
+  .smb-product-tag--marketing {
+    right: 0;
+  }
+
+
+  .smb-hero-marquee {
+    height: 62px;
+  }
+}
+
+
+/* ============================================================
+     MOBILE
+     ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smb-hero {
+    min-height: 100vh;
+
+    padding-top: 24px;
+
+    padding-bottom: 96px;
+  }
+
+
+  .smb-hero-inner {
+    width:
+      min(100% - 28px,
+        1200px);
+  }
+
+
+  .smb-breadcrumb {
+    padding:
+      0 13px;
+
+    font-size: 7px;
+  }
+
+
+  .smb-hero-grid {
+    margin-top: 32px;
+
+    gap: 48px;
+  }
+
+
+  .smb-title-row {
+    gap: 8px;
+  }
+
+
+  .smb-title-row+.smb-title-row {
+    margin-top: 7px;
+  }
+
+
+  .smb-title-row--social {
+    margin-left: 0;
+  }
+
+
+  .smb-title-row--ebook {
+    margin-left: 38px;
+  }
+
+
+  .smb-title-pill {
+    min-height: 58px;
+
+    font-size:
+      clamp(42px, 13vw, 58px);
+  }
+
+
+  .smb-title-star {
+    font-size: 54px;
+  }
+
+
+  .smb-title-arrow {
+    width: 62px;
+  }
+
+
+  /* PRODUCT */
+
+  .smb-product-visual {
+    min-height: 330px;
+  }
+
+
+  .smb-product-tag.ftag {
+    font-size: 7px;
+
+    padding:
+      7px 10px;
+  }
+
+
+  .smb-product-tag--strategy {
+    top: 15%;
+    left: -1%;
+  }
+
+
+  .smb-product-tag--plan {
+    top: 2%;
+    right: -1%;
+  }
+
+
+  .smb-product-tag--marketing {
+    right: -1%;
+    bottom: 8%;
+  }
+
+
+  /* PRICE */
+
+  .smb-product-price strong {
+    font-size: 40px;
+  }
+
+
+  .smb-product-price {
+    gap: 10px;
+  }
+
+
+  /* MARQUEE */
+
+  .smb-hero-marquee {
+    height: 58px;
+  }
+
+
+  .smb-hero-marquee-item {
+    font-size: 14px;
+  }
+}
+
+
+/* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+
+@media (max-width: 420px) {
+
+  .smb-title-pill {
+    min-height: 52px;
+
+    font-size:
+      clamp(37px, 12vw, 48px);
+  }
+
+
+  .smb-title-star {
+    font-size: 48px;
+  }
+
+
+  .smb-title-arrow {
+    width: 56px;
+  }
+
+
+  .smb-title-row--ebook {
+    margin-left: 26px;
+  }
+
+
+  .smb-product-visual {
+    min-height: 300px;
+  }
+
+
+  .smb-product-price strong {
+    font-size: 36px;
+  }
+}
+
+
+/* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smb-hero-enter {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
+  }
+
+
+  .smb-hero-marquee-track {
+    animation: none;
+  }
+
+
+  .smb-title-pill,
+  .smb-title-arrow,
+  .smb-title-arrow svg,
+  .smb-product-buy,
+  .smb-product-buy svg {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   SOCIAL MEDIA BEGINNER — JOURNEY
+   ============================================================ */
+
+.smb-journey {
+  width: 100%;
+
+  padding:
+    clamp(80px, 8vw, 120px) 0;
+
+  background: #fff;
+}
+
+
+.smb-journey-shell {
+  width:
+    min(1200px, 90vw);
+
+  min-height:
+    clamp(520px, 48vw, 580px);
+
+  display: grid;
+
+  grid-template-columns:
+    1.08fr .92fr;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    #251b35;
+}
+
+
+/* ============================================================
+   LEFT
+   ============================================================ */
+
+.smb-journey-content {
+  padding:
+    clamp(32px, 4vw, 40px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  color: #fff;
+}
+
+
+.smb-journey-title {
+  margin: 0;
+
+  max-width: 680px;
+
+  color: #fff;
+
+  font-size:
+    clamp(27px, 2.5vw, 38px);
+
+  font-weight: 600;
+
+  line-height: 1.12;
+
+  letter-spacing:
+    -.045em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   OPPORTUNITY GRID
+   ============================================================ */
+
+.smb-journey-cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-top:
+    clamp(28px, 3vw, 40px);
+}
+
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.smb-journey-card {
+  display: grid;
+
+  grid-template-columns:
+    56px 1fr;
+
+  column-gap: 14px;
+
+  align-items: center;
+
+  padding:
+    20px;
+
+  min-height: 152px;
+
+  border:
+    1px solid rgba(255, 255, 255, .14);
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, .09);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  transition:
+    transform .4s var(--out),
+    background-color .35s var(--ease),
+    border-color .35s var(--ease);
+}
+
+
+.smb-journey-card:hover {
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255, 255, 255, .13);
+
+  border-color:
+    rgba(255, 255, 255, .24);
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.smb-journey-icon {
+  width: 56px;
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  color: #111;
+}
+
+
+.smb-journey-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+.smb-journey-icon--lime {
+  background:
+    #e6ffbc;
+}
+
+
+.smb-journey-icon--pink {
+  background:
+    #f5e2fa;
+}
+
+
+.smb-journey-icon--blue {
+  background:
+    #dceeff;
+}
+
+
+/* ============================================================
+   CARD TITLE
+   ============================================================ */
+
+.smb-journey-card h3 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size:
+    clamp(14px, 1.15vw, 17px);
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -.025em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   CARD DESCRIPTION
+   ============================================================ */
+
+.smb-journey-card p {
+  grid-column:
+    1 / -1;
+
+  margin:
+    16px 0 0;
+
+  color:
+    rgba(255, 255, 255, .72);
+
+  font-size:
+    clamp(10px, .85vw, 13px);
+
+  line-height: 1.4;
+
+  letter-spacing:
+    -.01em;
+}
+
+
+/* ============================================================
+   RIGHT GALLERY
+   ============================================================ */
+
+.smb-journey-gallery {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 100%;
+
+  overflow: hidden;
+
+  background:
+    #d9d9d9;
+}
+
+
+/* ============================================================
+   SLIDES
+   ============================================================ */
+
+.smb-journey-slides {
+  position: absolute;
+
+  inset: 0;
+}
+
+
+.smb-journey-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  opacity: 0;
+
+  transform:
+    scale(1.04);
+
+  transition:
+    opacity 1s var(--ease),
+    transform 5.8s ease;
+}
+
+
+.smb-journey-image.is-active {
+  opacity: 1;
+
+  transform:
+    scale(1);
+}
+
+
+/* ============================================================
+   DOTS
+   ============================================================ */
+
+.smb-journey-dots {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+  bottom: 26px;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.smb-journey-dot {
+  width: 14px;
+  height: 14px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, .8);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, .08);
+
+  transition:
+    transform .3s var(--out),
+    background-color .3s ease;
+}
+
+
+.smb-journey-dot:hover {
+  transform:
+    scale(1.15);
+}
+
+
+.smb-journey-dot.is-active {
+  background:
+    var(--lilac);
+
+  transform:
+    scale(1.05);
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+  .smb-journey-shell {
+    grid-template-columns:
+      1.05fr .95fr;
+  }
+
+
+  .smb-journey-content {
+    padding:
+      38px 32px;
+  }
+
+
+  .smb-journey-card {
+    grid-template-columns:
+      48px 1fr;
+
+    padding: 16px;
+  }
+
+
+  .smb-journey-icon {
+    width: 48px;
+    height: 44px;
+  }
+
+}
+
+
+/* ============================================================
+   SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 820px) {
+
+  .smb-journey-shell {
+    grid-template-columns:
+      1fr;
+
+    min-height: 0;
+  }
+
+
+  .smb-journey-gallery {
+    min-height: 620px;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smb-journey {
+    padding:
+      64px 0;
+  }
+
+
+  .smb-journey-shell {
+    width:
+      min(100% - 28px,
+        1200px);
+
+    border-radius: 22px;
+  }
+
+
+  .smb-journey-content {
+    padding:
+      34px 22px;
+  }
+
+
+  .smb-journey-title {
+    font-size:
+      clamp(27px, 8vw, 36px);
+  }
+
+
+  .smb-journey-title br {
+    display: none;
+  }
+
+
+  /* cards */
+
+  .smb-journey-cards {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+
+    margin-top: 28px;
+  }
+
+
+  .smb-journey-card {
+    min-height: 0;
+
+    grid-template-columns:
+      50px 1fr;
+
+    padding: 16px;
+  }
+
+
+  .smb-journey-card p {
+    margin-top: 13px;
+
+    font-size: 11px;
+  }
+
+
+  /* image */
+
+  .smb-journey-gallery {
+    min-height: 520px;
+  }
+
+
+  .smb-journey-dots {
+    bottom: 20px;
+  }
+
+
+  .smb-journey-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smb-journey-image {
+    transition:
+      opacity .3s ease;
+  }
+
+
+  .smb-journey-card,
+  .smb-journey-dot {
+    transition: none;
+  }
+
+}
+
+
+
+/* ============================================================
+   SOCIAL MEDIA DIRECTIONS
+   ============================================================ */
+
+.smb-directions {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(76px, 7vw, 110px) 0 clamp(68px, 6vw, 96px);
+
+  overflow: hidden;
+
+  background:
+    #f1e7ff;
+}
+
+
+.smb-directions-inner {
+  width:
+    min(1200px, 90vw);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+     HEADING
+     ============================================================ */
+
+.smb-directions-title {
+  margin: 0;
+
+  color:
+    #080808;
+
+  font-size:
+    clamp(38px, 4.1vw, 58px);
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing:
+    -.055em;
+}
+
+
+/* ============================================================
+     HEADING — OUTLINE
+     ============================================================ */
+
+.smb-directions-outline {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    .1em .3em .1em;
+
+  border:
+    1.3px solid rgba(17, 17, 17, .75);
+
+  border-radius:
+    var(--pill);
+
+  background:
+    rgba(255, 255, 255, .78);
+
+  line-height: .94;
+}
+
+
+/* ============================================================
+     HEADING — HIGHLIGHTS
+     ============================================================ */
+
+.smb-directions-highlight {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    .1em .3em .1em;
+
+  border-radius:
+    var(--pill);
+
+  line-height: .94;
+}
+
+
+.smb-directions-highlight--purple {
+  background:
+    var(--lilac);
+
+  color: #fff;
+}
+
+
+.smb-directions-highlight--lime {
+  background:
+    var(--lime);
+
+  color: #080808;
+}
+
+
+/* ============================================================
+     CLOUD
+     ============================================================ */
+
+.smb-directions-cloud {
+  position: relative;
+
+  width:
+    min(1080px, 100%);
+
+  height:
+    clamp(225px, 21vw, 285px);
+
+  margin:
+    clamp(40px, 4.5vw, 58px) auto 0;
+}
+
+
+/* ============================================================
+     OUTER CHIP
+     entrance animation ONLY
+     ============================================================ */
+
+.smb-direction-chip {
+  --chip-rotate: 0deg;
+  --chip-hover-rotate: 4deg;
+  --chip-delay: 0s;
+
+  position: absolute;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  /*
+      trạng thái ban đầu:
+      box nằm cao phía trên
+    */
+  transform:
+    translate3d(0, -170px, 0) rotate(calc(var(--chip-rotate) - 5deg)) scale(.9);
+
+  transform-origin:
+    center center;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* ============================================================
+     INNER CHIP
+     hover animation ONLY
+     ============================================================ */
+
+.smb-direction-chip-inner {
+  min-height:
+    clamp(46px, 4.3vw, 60px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    0 clamp(22px, 2.4vw, 36px);
+
+  border-radius:
+    999px;
+
+  color: inherit;
+
+  font-size:
+    clamp(15px, 1.3vw, 20px);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  white-space:
+    nowrap;
+
+  transform:
+    scale(1) rotate(0deg);
+
+  transform-origin:
+    center;
+
+  box-shadow:
+    0 8px 18px rgba(40, 24, 60, .035);
+
+  transition:
+    transform .42s var(--out),
+    box-shadow .35s var(--ease),
+    filter .35s var(--ease);
+
+  will-change:
+    transform;
+}
+
+
+/* ============================================================
+     ENTRANCE
+     xổ / rơi từ trên xuống
+     ============================================================ */
+
+.smb-directions.is-visible .smb-direction-chip {
+  animation:
+    smbDirectionDrop .95s cubic-bezier(.16, 1, .3, 1) var(--chip-delay) both;
+}
+
+
+@keyframes smbDirectionDrop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(0, -180px, 0) rotate(calc(var(--chip-rotate) - 7deg)) scale(.86);
+  }
+
+
+  46% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 18px, 0) rotate(calc(var(--chip-rotate) + 2deg)) scale(1.035);
+  }
+
+
+  66% {
+    transform:
+      translate3d(0, -9px, 0) rotate(var(--chip-rotate)) scale(.985);
+  }
+
+
+  82% {
+    transform:
+      translate3d(0, 4px, 0) rotate(var(--chip-rotate)) scale(1.008);
+  }
+
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0) rotate(var(--chip-rotate)) scale(1);
+  }
+}
+
+
+/* ============================================================
+     HOVER
+     hover chỉ tác động inner
+     => không ảnh hưởng entrance animation
+     ============================================================ */
+
+.smb-direction-chip:hover {
+  z-index: 30;
+}
+
+
+.smb-direction-chip:hover .smb-direction-chip-inner {
+  transform:
+    scale(1.09) rotate(var(--chip-hover-rotate));
+
+  box-shadow:
+    0 18px 38px rgba(42, 25, 63, .15);
+
+  filter:
+    brightness(1.025);
+}
+
+
+/* ============================================================
+     COLORS
+     ============================================================ */
+
+.smb-direction-chip--purple .smb-direction-chip-inner {
+  background:
+    #a979e4;
+
+  color: #fff;
+}
+
+
+.smb-direction-chip--lime .smb-direction-chip-inner {
+  background:
+    var(--lime);
+
+  color:
+    #080808;
+}
+
+
+.smb-direction-chip--blue .smb-direction-chip-inner {
+  background:
+    #a8d9f6;
+
+  color:
+    #080808;
+}
+
+
+.smb-direction-chip--black .smb-direction-chip-inner {
+  background:
+    #050505;
+
+  color:
+    #fff;
+}
+
+
+.smb-direction-chip--white .smb-direction-chip-inner {
+  border:
+    1px solid rgba(20, 20, 20, .18);
+
+  background:
+    rgba(255, 255, 255, .96);
+
+  color:
+    #080808;
+}
+
+
+/* ============================================================
+     DESKTOP POSITION
+     XẾP GẦN NHAU HƠN
+     ============================================================ */
+
+/* ROW 1 */
+
+.smb-direction-chip--agency {
+  top: 10%;
+  left: 7%;
+}
+
+
+.smb-direction-chip--freelance {
+  top: 7%;
+  left: 27%;
+}
+
+
+.smb-direction-chip--creator {
+  top: 5%;
+  left: 46%;
+}
+
+
+.smb-direction-chip--branding {
+  top: 17%;
+  right: 10%;
+}
+
+
+/* ROW 2 */
+
+.smb-direction-chip--corporation {
+  top: 34%;
+  left: 2%;
+}
+
+
+.smb-direction-chip--specialist {
+  top: 31%;
+  left: 23%;
+}
+
+
+.smb-direction-chip--smes {
+  top: 33%;
+  left: 57%;
+}
+
+
+/* ROW 3 */
+
+.smb-direction-chip--startup {
+  top: 60%;
+  left: 12%;
+}
+
+
+.smb-direction-chip--influencer {
+  top: 57%;
+  left: 35%;
+}
+
+
+.smb-direction-chip--community {
+  top: 50%;
+  right: 2%;
+}
+
+
+/* ============================================================
+     OPTIONAL MICRO FLOAT AFTER ENTER
+     ============================================================ */
+
+.smb-directions.is-visible .smb-direction-chip {
+  animation:
+    smbDirectionDropSmooth 1.05s cubic-bezier(.16, 1, .3, 1) var(--chip-delay) both;
+}
+
+
+@keyframes smbDirectionDropSmooth {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(0, -150px, 0) rotate(calc(var(--chip-rotate) - 4deg)) scale(.94);
+  }
+
+
+  30% {
+    opacity: .5;
+  }
+
+
+  65% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, -22px, 0) rotate(var(--chip-rotate)) scale(.985);
+  }
+
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0) rotate(var(--chip-rotate)) scale(1);
+  }
+}
+
+@keyframes smbDirectionFloatA {
+
+  0%,
+  100% {
+    translate:
+      0 0;
+  }
+
+  50% {
+    translate:
+      0 -3px;
+  }
+}
+
+
+@keyframes smbDirectionFloatB {
+
+  0%,
+  100% {
+    translate:
+      0 0;
+  }
+
+  50% {
+    translate:
+      0 3px;
+  }
+}
+
+
+/* ============================================================
+     HOVER FIX FOR FLOAT ANIMATION
+     ============================================================ */
+
+.smb-direction-chip:hover .smb-direction-chip-inner {
+  animation-play-state:
+    paused;
+}
+
+
+/* ============================================================
+     LARGE TABLET
+     ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .smb-directions-cloud {
+    width: 100%;
+
+    height: 270px;
+  }
+
+
+  .smb-direction-chip-inner {
+    min-height: 50px;
+
+    padding:
+      0 25px;
+  }
+
+
+  .smb-direction-chip--agency {
+    left: 2%;
+  }
+
+
+  .smb-direction-chip--freelance {
+    left: 24%;
+  }
+
+
+  .smb-direction-chip--creator {
+    left: 47%;
+  }
+
+
+  .smb-direction-chip--branding {
+    right: 0;
+  }
+
+
+  .smb-direction-chip--corporation {
+    left: 0;
+  }
+
+
+  .smb-direction-chip--specialist {
+    left: 21%;
+  }
+
+
+  .smb-direction-chip--smes {
+    left: 61%;
+  }
+
+
+  .smb-direction-chip--startup {
+    left: 7%;
+  }
+
+
+  .smb-direction-chip--influencer {
+    left: 34%;
+  }
+
+
+  .smb-direction-chip--community {
+    right: 0;
+  }
+
+}
+
+
+/* ============================================================
+     TABLET
+     ============================================================ */
+
+@media (max-width: 900px) {
+
+  .smb-directions-title {
+    font-size:
+      clamp(36px, 5vw, 52px);
+  }
+
+
+  .smb-directions-cloud {
+    height: 260px;
+  }
+
+
+  .smb-direction-chip-inner {
+    min-height: 48px;
+
+    padding:
+      0 21px;
+
+    font-size:
+      clamp(14px, 1.6vw, 17px);
+  }
+
+
+  .smb-direction-chip--agency {
+    left: 1%;
+  }
+
+
+  .smb-direction-chip--freelance {
+    left: 23%;
+  }
+
+
+  .smb-direction-chip--creator {
+    left: 47%;
+  }
+
+
+  .smb-direction-chip--branding {
+    right: -1%;
+  }
+
+
+  .smb-direction-chip--corporation {
+    left: 0;
+  }
+
+
+  .smb-direction-chip--specialist {
+    left: 22%;
+  }
+
+
+  .smb-direction-chip--smes {
+    left: 63%;
+  }
+
+
+  .smb-direction-chip--startup {
+    left: 6%;
+  }
+
+
+  .smb-direction-chip--influencer {
+    left: 34%;
+  }
+
+
+  .smb-direction-chip--community {
+    right: 0;
+  }
+
+}
+
+
+/* ============================================================
+     SMALL TABLET
+     ============================================================ */
+
+@media (max-width: 820px) {
+
+  .smb-directions-title br {
+    display: none;
+  }
+
+
+  .smb-directions-cloud {
+    height: auto;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    gap:
+      13px 10px;
+
+    margin-top: 48px;
+  }
+
+
+  .smb-direction-chip {
+    position: relative;
+
+    inset: auto !important;
+  }
+
+
+  .smb-directions.is-visible .smb-direction-chip {
+    animation:
+      smbDirectionDropTablet .9s cubic-bezier(.16, 1, .3, 1) var(--chip-delay) both;
+  }
+
+
+  @keyframes smbDirectionDropTablet {
+
+    0% {
+      opacity: 0;
+
+      transform:
+        translate3d(0, -90px, 0) rotate(calc(var(--chip-rotate) - 3deg)) scale(.94);
+    }
+
+
+    45% {
+      opacity: .7;
+    }
+
+
+    100% {
+      opacity: 1;
+
+      transform:
+        translate3d(0, 0, 0) rotate(var(--chip-rotate)) scale(1);
+    }
+  }
+
+}
+
+
+/* ============================================================
+     MOBILE
+     ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smb-directions {
+    padding:
+      64px 0 70px;
+  }
+
+
+  .smb-directions-inner {
+    width:
+      min(100% - 30px,
+        1200px);
+  }
+
+
+  .smb-directions-title {
+    font-size:
+      clamp(34px, 9.5vw, 45px);
+
+    line-height: 1.09;
+  }
+
+
+  .smb-directions-cloud {
+    justify-content:
+      flex-start;
+
+    gap:
+      12px 8px;
+
+    margin-top: 42px;
+  }
+
+
+  .smb-direction-chip-inner {
+    min-height: 44px;
+
+    padding:
+      0 18px;
+
+    font-size: 13px;
+  }
+
+
+  .smb-direction-chip:hover .smb-direction-chip-inner {
+    transform:
+      scale(1.06) rotate(var(--chip-hover-rotate));
+  }
+
+}
+
+
+/* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+
+@media (max-width: 420px) {
+
+  .smb-direction-chip-inner {
+    min-height: 42px;
+
+    padding:
+      0 16px;
+
+    font-size: 12px;
+  }
+
+
+  .smb-directions-cloud {
+    gap:
+      10px 7px;
+  }
+
+}
+
+
+/* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smb-direction-chip,
+  .smb-directions.is-visible .smb-direction-chip {
+    opacity: 1;
+
+    animation: none;
+
+    transform:
+      rotate(var(--chip-rotate));
+  }
+
+
+  .smb-direction-chip-inner,
+  .smb-directions.is-visible .smb-direction-chip .smb-direction-chip-inner {
+    animation: none;
+
+    transition: none;
+  }
+
+
+  .smb-direction-chip:hover .smb-direction-chip-inner {
+    transform:
+      scale(1.04) rotate(var(--chip-hover-rotate));
+  }
+
+}
+
+
+/* ============================================================
+   SOCIAL MEDIA BEGINNER — REASON SECTION
+   ============================================================ */
+
+.smb-reason {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+
+/* ============================================================
+   TOP
+   ============================================================ */
+
+.smb-reason-top {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(82px, 8vw, 118px) 0 clamp(82px, 8vw, 118px);
+
+  background: #fff;
+
+  overflow: hidden;
+}
+
+
+.smb-reason-glow {
+  position: absolute;
+
+  left: -4%;
+  top: 12%;
+
+  width:
+    clamp(360px, 42vw, 620px);
+
+  height:
+    clamp(240px, 26vw, 360px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(ellipse at center,
+      rgba(168, 210, 255, 0.82) 0%,
+      rgba(185, 205, 255, 0.45) 30%,
+      rgba(191, 165, 244, 0.2) 55%,
+      rgba(255, 255, 255, 0) 76%);
+
+  filter: blur(48px);
+}
+
+
+.smb-reason-top::after {
+  content: "";
+
+  position: absolute;
+
+  right: 12%;
+  top: 34%;
+
+
+  width:
+    clamp(300px, 36vw, 520px);
+
+  height:
+    clamp(120px, 12vw, 190px);
+
+  border-radius: 50%;
+
+  background: radial-gradient(ellipse at center,
+      rgba(190, 151, 244, 0.48) 0%,
+      rgba(190, 151, 244, 0.28) 45%,
+      rgba(190, 151, 244, 0) 100%);
+
+  filter: blur(34px);
+
+  pointer-events: none;
+}
+
+
+.smb-reason-top-inner {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.smb-reason-heading {
+  margin: 0;
+
+  color: #080808;
+
+  font-size:
+    clamp(38px, 4vw, 60px);
+
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  letter-spacing: -.055em;
+}
+
+
+.smb-reason-heading-highlight {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 10px;
+
+  padding:
+    .02em .23em .08em;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    #a984e8;
+
+  color: #fff;
+
+  line-height: .94;
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.smb-reason-description {
+  max-width: 900px;
+
+  margin:
+    clamp(28px, 3vw, 40px) 0 0;
+
+  color:
+    #67616e;
+
+  font-size:
+    clamp(14px, 1.1vw, 17px);
+
+  font-weight: 400;
+
+  line-height: 1.42;
+
+  letter-spacing: -.01em;
+}
+
+
+/* ============================================================
+   BOTTOM
+   ============================================================ */
+
+.smb-reason-bottom {
+  width: 100%;
+
+  padding:
+    clamp(76px, 7vw, 108px) 0;
+
+  background:
+    #f5f2ef;
+}
+
+
+.smb-reason-bottom-inner {
+  width:
+    min(1200px, 90vw);
+
+  margin-inline: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.16fr) minmax(320px, .84fr);
+
+  gap:
+    clamp(56px, 8vw, 130px);
+
+  align-items: center;
+}
+
+
+/* ============================================================
+   LEFT STATEMENT
+   ============================================================ */
+
+.smb-reason-statement h3 {
+  margin: 0;
+
+  color:
+    #070707;
+
+  font-size:
+    clamp(42px, 4.3vw, 64px);
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: -.06em;
+
+  text-transform: uppercase;
+}
+
+
+.smb-reason-statement h3 span {
+  display: inline;
+
+  padding:
+    .01em .11em .06em;
+
+  background:
+    var(--lime);
+
+  line-height: .95;
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+
+/* ============================================================
+   FRAMEWORK CARD
+   ============================================================ */
+
+.smb-reason-framework {
+  width: 100%;
+  max-width: 430px;
+
+  justify-self: end;
+
+  padding:
+    clamp(28px, 2.7vw, 38px);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, .97);
+
+  box-shadow:
+    0 14px 40px rgba(41, 28, 48, .08);
+
+  transition:
+    transform .45s var(--out),
+    box-shadow .4s var(--ease);
+}
+
+
+.smb-reason-framework:hover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 22px 50px rgba(41, 28, 48, .12);
+}
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.smb-reason-framework-intro {
+  margin: 0;
+
+  color:
+    #37313a;
+  text-align: justify;
+  font-size:
+    clamp(12px, 1vw, 16px);
+
+  line-height: 1.45;
+
+  letter-spacing: -.01em;
+}
+
+
+.smb-reason-framework-intro strong {
+  color:
+    #a77ce0;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   LIST
+   ============================================================ */
+
+.smb-reason-framework-list {
+  margin-top: 20px;
+}
+
+
+.smb-reason-framework-item {
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  border-top:
+    1px solid #e7e3e8;
+
+  color:
+    #3a343d;
+
+  font-size:
+    clamp(11px, .95vw, 14px);
+
+  transition:
+    padding-left .35s var(--out);
+}
+
+
+.smb-reason-framework-item:hover {
+  padding-left: 5px;
+}
+
+
+/* ============================================================
+   DOT
+   ============================================================ */
+
+.smb-reason-framework-dot {
+  width: 18px;
+  height: 18px;
+
+  flex:
+    0 0 18px;
+
+  border:
+    1px solid rgba(10, 10, 10, .4);
+
+  border-radius: 50%;
+}
+
+
+.smb-reason-framework-dot--lime {
+  background:
+    var(--lime);
+}
+
+
+.smb-reason-framework-dot--purple {
+  background:
+    #ae84e8;
+}
+
+
+.smb-reason-framework-dot--blue {
+  background:
+    #9fd1f3;
+}
+
+
+.smb-reason-framework-dot--white {
+  background:
+    #fff;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .smb-reason-bottom-inner {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(280px, .8fr);
+
+    gap: 48px;
+  }
+
+
+  .smb-reason-statement h3 {
+    font-size:
+      clamp(36px, 5vw, 54px);
+  }
+
+}
+
+
+/* ============================================================
+   SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 760px) {
+
+  .smb-reason-description br,
+  .smb-reason-framework-intro br {
+    display: none;
+  }
+
+
+  .smb-reason-bottom-inner {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+  }
+
+
+  .smb-reason-framework {
+    max-width: 520px;
+    justify-self: start;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smb-reason-top {
+    padding:
+      72px 0 80px;
+  }
+
+
+  .smb-reason-top-inner,
+  .smb-reason-bottom-inner {
+    width:
+      min(100% - 32px,
+        1200px);
+  }
+
+
+  .smb-reason-heading {
+    font-size:
+      clamp(34px, 9.6vw, 44px);
+  }
+
+
+  .smb-reason-heading br {
+    display: none;
+  }
+
+
+  .smb-reason-heading-highlight {
+    margin-top: 8px;
+  }
+
+
+  .smb-reason-description {
+    margin-top: 26px;
+
+    font-size: 13px;
+  }
+
+
+  .smb-reason-bottom {
+    padding:
+      58px 0 68px;
+  }
+
+
+  .smb-reason-statement h3 {
+    font-size:
+      clamp(36px, 10vw, 48px);
+  }
+
+
+  .smb-reason-framework {
+    padding:
+      26px 20px;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smb-reason-framework,
+  .smb-reason-framework-item {
+    transition: none;
+  }
+
+
+  .smb-reason-framework:hover {
+    transform: none;
+  }
+
+}
+
+
+/* ============================================================
+   SOCIAL MEDIA BEGINNER — SALARY
+   ============================================================ */
+
+.smb-salary {
+  width: 100%;
+
+  padding:
+    clamp(80px, 8vw, 120px) 0;
+
+  overflow: hidden;
+
+  background:
+    #fff;
+}
+
+
+.smb-salary-inner {
+  width:
+    min(1200px, 90vw);
+
+  margin-inline: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(360px, .8fr) minmax(0, 1.2fr);
+
+  gap:
+    clamp(20px, 8vw, 40px);
+
+  align-items: center;
+}
+
+
+/* ============================================================
+     LEFT CARD
+     ============================================================ */
+
+.smb-salary-card {
+  width: 100%;
+
+  min-height:
+    clamp(380px, 37vw, 400px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    clamp(24px, 3vw, 30px);
+
+  border:
+    1px solid rgba(27, 20, 37, .24);
+
+  border-radius: 16px;
+
+  background:
+    #fff;
+
+  transition:
+    transform .45s var(--out),
+    box-shadow .4s var(--ease);
+}
+
+
+.smb-salary-card:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 20px 44px rgba(45, 31, 63, .08);
+}
+
+
+/* ============================================================
+     CARD TITLE
+     ============================================================ */
+
+.smb-salary-card h3 {
+  margin: 0;
+
+  color: #111;
+
+  font-size:
+    clamp(18px, 1.55vw, 23px);
+
+  font-weight: 600;
+
+  line-height: 1.18;
+
+  letter-spacing:
+    -.035em;
+}
+
+
+/* ============================================================
+     CHART
+     ============================================================ */
+
+.smb-salary-chart {
+  width: 100%;
+
+  height:
+    clamp(245px, 24vw, 310px);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap:
+    clamp(14px, 1.6vw, 24px);
+}
+
+
+/* ============================================================
+     COLUMN
+     ============================================================ */
+
+.smb-salary-column {
+  --salary-delay: 0s;
+
+  height: 100%;
+
+  flex:
+    1 1 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 9px;
+}
+
+
+/* ============================================================
+     VALUE
+     ============================================================ */
+
+.smb-salary-value {
+  color:
+    #9f70dc;
+
+  font-size:
+    clamp(11px, 1vw, 14px);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+
+  /* initial */
+
+  opacity: 0;
+
+  transform:
+    translateY(12px);
+
+  transition:
+    opacity .55s ease var(--salary-delay),
+    transform .7s var(--out) var(--salary-delay);
+}
+
+
+/* ============================================================
+     BAR
+     ============================================================ */
+
+.smb-salary-bar {
+  position: relative;
+
+  width:
+    min(100%, 68px);
+
+  flex: 0 0 auto;
+
+  overflow: hidden;
+
+  border-radius:
+    7px 7px 0 0;
+
+  background:
+    #eee4fb;
+
+
+  /*
+      animation giống source HTML:
+      bar grow từ dưới lên
+    */
+
+  transform:
+    scaleY(0);
+
+  transform-origin:
+    bottom center;
+
+  transition:
+    transform 1.05s cubic-bezier(.16, 1, .3, 1) var(--salary-delay);
+}
+
+
+/* ============================================================
+     PURPLE FILL
+     ============================================================ */
+
+.smb-salary-bar-fill {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  display: block;
+
+  background:
+    #a97fdd;
+}
+
+
+/* ============================================================
+     WHEN SECTION ENTERS VIEW
+     ============================================================ */
+
+.smb-salary.is-visible .smb-salary-bar {
+  transform:
+    scaleY(1);
+}
+
+
+.smb-salary.is-visible .smb-salary-value {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* ============================================================
+     SOURCE
+     ============================================================ */
+
+.smb-salary-source {
+  margin:
+    18px 0 0;
+
+  color:
+    #9a949e;
+
+  font-size:
+    clamp(8px, .7vw, 12px);
+
+  line-height: 1.4;
+
+  letter-spacing:
+    -.005em;
+}
+
+
+/* ============================================================
+     RIGHT CONTENT
+     ============================================================ */
+
+.smb-salary-content {
+  max-width: 700px;
+}
+
+
+/* ============================================================
+     TITLE
+     ============================================================ */
+
+.smb-salary-title {
+  margin: 0;
+
+  color:
+    #090909;
+
+  font-size:
+    clamp(36px, 3.8vw, 50px);
+
+  font-weight: 600;
+
+  line-height: 1.03;
+
+  letter-spacing:
+    -.055em;
+}
+
+
+.smb-salary-title span {
+  display: inline-block;
+
+  margin-top: 7px;
+
+  padding:
+    .1em .5em .1em;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #080808;
+
+  line-height: .95;
+}
+
+
+/* ============================================================
+     BODY
+     ============================================================ */
+
+.smb-salary-copy {
+  max-width: 600px;
+
+  margin-top:
+    clamp(8px, 2.7vw, 10px);
+}
+
+
+.smb-salary-copy p {
+  margin: 0;
+
+  color:
+    #928b95;
+
+  font-size:
+    clamp(14px, 1.1vw, 17px);
+
+  line-height: 1.;
+
+  letter-spacing:
+    -.01em;
+}
+
+
+.smb-salary-copy p+p {
+  margin-top: 10px;
+}
+
+
+/* ============================================================
+     CALLOUT
+     ============================================================ */
+
+.smb-salary-callout {
+  margin:
+    clamp(20px, 2.2vw, 28px) 0 0;
+
+  color:
+    #ad7ce2;
+
+  font-size:
+    clamp(18px, 1.7vw, 24px);
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing:
+    -.025em;
+}
+
+
+/* ============================================================
+     CTA
+     ============================================================ */
+
+.smb-salary-cta {
+  width:
+    min(100%, 530px);
+
+  min-height:
+    clamp(55px, 5vw, 64px);
+
+  margin-top:
+    clamp(20px, 3vw, 24px);
+
+  padding:
+    0 clamp(24px, 2.5vw, 34px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap:
+    clamp(24px, 3vw, 42px);
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #090909;
+
+  font-size:
+    clamp(10px, .9vw, 18px);
+
+  font-weight: 600;
+
+  text-align: center;
+
+  transition:
+    transform .4s var(--out),
+    background-color .35s var(--ease),
+    color .35s var(--ease);
+}
+
+
+.smb-salary-cta svg {
+  width: 19px;
+  height: 19px;
+
+  flex: 0 0 auto;
+
+  transition:
+    transform .4s var(--out);
+}
+
+
+.smb-salary-cta:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    #111;
+
+  color:
+    #fff;
+}
+
+
+.smb-salary-cta:hover svg {
+  transform:
+    translateX(5px);
+}
+
+
+/* ============================================================
+     TABLET
+     ============================================================ */
+
+@media (max-width: 900px) {
+
+  .smb-salary-inner {
+    grid-template-columns:
+      minmax(320px, .9fr) minmax(0, 1.1fr);
+
+    gap: 48px;
+  }
+
+
+  .smb-salary-card {
+    min-height: 420px;
+
+    padding: 28px;
+  }
+
+
+  .smb-salary-chart {
+    gap: 12px;
+  }
+
+
+  .smb-salary-bar {
+    max-width: 54px;
+  }
+
+}
+
+
+/* ============================================================
+     SMALL TABLET
+     ============================================================ */
+
+@media (max-width: 760px) {
+
+  .smb-salary-inner {
+    grid-template-columns: 1fr;
+
+    gap: 54px;
+  }
+
+
+  .smb-salary-card {
+    width:
+      min(100%, 600px);
+
+    min-height: 460px;
+  }
+
+
+  .smb-salary-content {
+    max-width: 600px;
+  }
+
+}
+
+
+/* ============================================================
+     MOBILE
+     ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smb-salary {
+    padding:
+      64px 0 76px;
+  }
+
+
+  .smb-salary-inner {
+    width:
+      min(100% - 30px,
+        1200px);
+
+    gap: 48px;
+  }
+
+
+  .smb-salary-card {
+    min-height: 400px;
+
+    padding:
+      26px 20px;
+  }
+
+
+  .smb-salary-card h3 {
+    font-size: 18px;
+  }
+
+
+  .smb-salary-chart {
+    height: 235px;
+
+    gap: 8px;
+  }
+
+
+  .smb-salary-value {
+    font-size: 10px;
+  }
+
+
+  .smb-salary-bar {
+    max-width: 48px;
+  }
+
+
+  .smb-salary-title {
+    font-size:
+      clamp(35px, 9.7vw, 46px);
+  }
+
+
+  .smb-salary-title br {
+    display: none;
+  }
+
+
+  .smb-salary-copy p {
+    font-size: 13px;
+  }
+
+
+  .smb-salary-callout {
+    font-size: 19px;
+  }
+
+
+  .smb-salary-cta {
+    width: 100%;
+
+    min-height: 56px;
+
+    justify-content:
+      space-between;
+
+    padding:
+      0 22px;
+
+    font-size: 10px;
+
+    text-align: left;
+  }
+
+}
+
+
+/* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+
+@media (max-width: 420px) {
+
+  .smb-salary-chart {
+    gap: 6px;
+  }
+
+
+  .smb-salary-value {
+    font-size: 9px;
+  }
+
+
+  .smb-salary-bar {
+    max-width: 43px;
+  }
+
+}
+
+
+/* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smb-salary-bar {
+    transform: none;
+
+    transition: none;
+  }
+
+
+  .smb-salary-value {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+
+  .smb-salary-card,
+  .smb-salary-cta,
+  .smb-salary-cta svg {
+    transition: none;
+  }
+
+}
+
+
+/* ============================================================
+   SOCIAL MEDIA BEGINNER — DOCUMENT INSIDE
+   ============================================================ */
+
+.smb-document {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #fff;
+}
+
+
+/* ============================================================
+   BLACK NAV
+   ============================================================ */
+
+.smb-document-nav {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(54px, 5.5vw, 60px) 0 clamp(54px, 5vw, 60px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 88% 115%,
+      rgba(205, 252, 86, .31) 0%,
+      rgba(205, 252, 86, .16) 20%,
+      rgba(205, 252, 86, .06) 39%,
+      rgba(205, 252, 86, 0) 61%),
+    #050505;
+
+  color: #fff;
+}
+
+
+/* ============================================================
+   PURPLE MOUSE GLOW
+   ============================================================ */
+
+.smb-document-mouse-glow {
+  position: absolute;
+
+  z-index: 0;
+
+  top: 0;
+  left: 0;
+
+  width:
+    clamp(380px, 38vw, 600px);
+
+  height:
+    clamp(260px, 30vw, 440px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: .86;
+
+  background:
+    radial-gradient(circle,
+      rgba(181, 140, 238, .61) 0%,
+      rgba(160, 118, 224, .39) 27%,
+      rgba(128, 83, 195, .19) 48%,
+      rgba(105, 68, 161, .07) 63%,
+      rgba(105, 68, 161, 0) 78%);
+
+  filter:
+    blur(48px);
+
+  transform:
+    translate3d(0,
+      0,
+      0) translate(-50%,
+      -50%);
+
+  will-change:
+    transform;
+
+  transition:
+    opacity .4s ease;
+}
+
+
+.smb-document-nav:hover .smb-document-mouse-glow {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   NAV CONTENT
+   ============================================================ */
+
+.smb-document-nav-inner {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   ARROW
+   ============================================================ */
+
+.smb-document-down {
+  color: #fff;
+
+  font-size:
+    clamp(45px, 4.6vw, 66px);
+
+  font-weight: 600;
+
+  line-height: .8;
+
+  animation:
+    smbDocumentArrow 1.8s ease-in-out infinite;
+}
+
+
+@keyframes smbDocumentArrow {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(7px);
+  }
+}
+
+
+/* ============================================================
+   NAV TITLE
+   ============================================================ */
+
+.smb-document-nav-title {
+  margin:
+    clamp(26px, 2.7vw, 38px) 0 0;
+
+  color: #fff;
+
+  font-size:
+    clamp(34px, 4vw, 58px);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing:
+    -.055em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   TABS
+   ============================================================ */
+
+.smb-document-tabs {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap:
+    clamp(16px, 1.8vw, 24px);
+
+  margin-top:
+    clamp(30px, 3.4vw, 46px);
+}
+
+
+.smb-document-tab {
+  width:
+    clamp(43px, 4vw, 68px);
+
+  height:
+    clamp(43px, 4vw, 68px);
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid rgba(255,
+      255,
+      255,
+      .72);
+
+  border-radius: 7px;
+
+  background:
+    rgba(255,
+      255,
+      255,
+      .13);
+
+  color: #fff;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  backdrop-filter:
+    blur(7px);
+
+  -webkit-backdrop-filter:
+    blur(7px);
+
+  transition:
+    transform .4s var(--out),
+    background-color .3s var(--ease),
+    color .3s var(--ease),
+    border-color .3s var(--ease);
+}
+
+
+.smb-document-tab:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    var(--lime);
+}
+
+
+.smb-document-tab.is-active {
+  border-color:
+    var(--lime);
+
+  background:
+    var(--lime);
+
+  color:
+    #0a0a0a;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+
+.smb-document-content {
+  width: 100%;
+
+  padding:
+    clamp(34px, 4vw, 54px) 0 clamp(82px, 8vw, 118px);
+
+  background:
+    linear-gradient(180deg,
+      #fff 0%,
+      #fff 52%,
+      #fbf8ff 100%);
+}
+
+
+.smb-document-content-inner {
+  width:
+    min(1200px, 90vw);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.smb-document-card {
+  width: 100%;
+  border: 2px solid white;
+  min-height:
+    clamp(500px, 47vw, 550px);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .94fr) minmax(360px, 1.06fr);
+
+  gap:
+    clamp(50px, 6vw, 86px);
+
+  align-items: center;
+  justify-items: center;
+
+  padding:
+    clamp(28px, 4vw, 40px);
+
+  border-radius: 26px;
+
+  background:
+    #fbf7ff;
+
+  box-shadow:
+    0 12px 38px rgba(59,
+      42,
+      82,
+      .08);
+
+  animation:
+    smbDocumentCardEnter .72s var(--out) both;
+}
+
+
+@keyframes smbDocumentCardEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px) scale(.988);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) scale(1);
+  }
+}
+
+
+/* ============================================================
+   LEFT
+   ============================================================ */
+
+.smb-document-copy {
+  min-width: 0;
+}
+
+
+/* ============================================================
+   NUMBER
+   ============================================================ */
+
+.smb-document-number {
+  display: block;
+
+  color:
+    #a77ce3;
+
+  font-size:
+    clamp(72px,
+      7vw,
+      84px);
+
+  font-weight: 600;
+
+  line-height: .82;
+
+  letter-spacing:
+    -.07em;
+
+  animation:
+    smbDocumentNumberEnter .75s var(--out) .04s both;
+}
+
+
+@keyframes smbDocumentNumberEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* ============================================================
+   MAIN COPY
+   ============================================================ */
+
+.smb-document-main {
+  margin-top:
+    clamp(12px,
+      3.5vw,
+      20px);
+}
+
+
+/* ============================================================
+   CHAPTER TITLE
+   ============================================================ */
+
+.smb-document-main h3 {
+  margin: 0;
+
+  max-width: 18ch;
+
+  color:
+    #080808;
+
+  font-size:
+    clamp(29px,
+      2.8vw,
+      43px);
+
+  font-weight: 600;
+
+  line-height: 1.04;
+
+  letter-spacing:
+    -.055em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.smb-document-description {
+  max-width: 450px;
+
+  margin-top: 18px;
+
+  color:
+    #8c8691;
+
+  font-size:
+    clamp(12px,
+      1vw,
+      15px);
+
+  line-height: 1.46;
+
+  letter-spacing:
+    -.01em;
+}
+
+
+/* ============================================================
+   LABEL
+   ============================================================ */
+
+.smb-document-content-label {
+  margin-top:
+    clamp(12px,
+      3vw,
+      20px);
+
+  padding-bottom: 10px;
+
+  border-bottom:
+    1px solid #ded9e1;
+
+  color:
+    #9f98a3;
+
+  font-size: px;
+
+  font-weight: 500;
+
+  letter-spacing:
+    .025em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   POINTS
+   ============================================================ */
+
+.smb-document-points {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+.smb-document-points li {
+  display: grid;
+
+  grid-template-columns:
+    8px minmax(0, 1fr);
+
+  gap: 11px;
+
+  align-items: start;
+
+  padding:
+    11px 0;
+
+  border-bottom:
+    1px solid #e4e0e6;
+
+  color:
+    #77717d;
+
+  font-size:
+    clamp(11px,
+      .92vw,
+      14px);
+
+  line-height: 1.38;
+}
+
+
+.smb-document-points li i {
+  width: 6px;
+  height: 6px;
+
+  margin-top: .45em;
+
+  border-radius: 50%;
+
+  background:
+    #a97fdd;
+
+  transition:
+    transform .3s var(--out);
+}
+
+
+.smb-document-points li:hover i {
+  transform:
+    scale(1.45);
+}
+
+
+/* ============================================================
+   PREVIEW
+   ============================================================ */
+
+.smb-document-preview {
+  position: relative;
+
+  width: 80%;
+
+  aspect-ratio:
+    4 / 4.7;
+
+  overflow: hidden;
+
+  border:
+    1.4px solid #dcc5f8;
+
+  border-radius: 18px;
+
+  background:
+    #fff;
+
+  animation:
+    smbDocumentPreviewEnter .8s var(--out) .07s both;
+}
+
+
+@keyframes smbDocumentPreviewEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(26px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+
+/* ============================================================
+   REAL IMAGE
+   ============================================================ */
+
+.smb-document-preview-image {
+  object-fit: contain;
+
+  padding: 20px;
+
+  transition:
+    transform .7s var(--out);
+}
+
+
+.smb-document-card:hover .smb-document-preview-image {
+  transform:
+    scale(1.018);
+}
+
+
+/* ============================================================
+   PLACEHOLDER
+   ============================================================ */
+
+.smb-document-preview-placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  background:
+    linear-gradient(145deg,
+      #fff,
+      #fdfaff);
+
+  color:
+    #9a6ed8;
+}
+
+
+.smb-document-preview-placeholder span {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    .09em;
+}
+
+
+.smb-document-preview-placeholder small {
+  color:
+    #aaa3ae;
+
+  font-size: 8px;
+
+  letter-spacing:
+    .11em;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .smb-document-card {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(300px, .9fr);
+
+    gap: 38px;
+
+    min-height: 540px;
+  }
+
+
+  .smb-document-main h3 {
+    font-size:
+      clamp(27px,
+        3.4vw,
+        38px);
+  }
+
+}
+
+
+/* ============================================================
+   SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 760px) {
+
+  .smb-document-card {
+    grid-template-columns:
+      1fr;
+
+    min-height: 0;
+
+    gap: 42px;
+  }
+
+
+  .smb-document-preview {
+    width:
+      min(100%,
+        520px);
+
+    aspect-ratio:
+      4 / 4.25;
+  }
+
+
+  .smb-document-main h3 {
+    max-width: 20ch;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smb-document-nav {
+    padding:
+      48px 0 52px;
+  }
+
+
+  .smb-document-nav-title {
+    max-width: 350px;
+
+    font-size:
+      clamp(29px,
+        8.5vw,
+        40px);
+  }
+
+
+  /* TABS */
+
+  .smb-document-tabs {
+    gap: 9px;
+
+    margin-top: 30px;
+  }
+
+
+  .smb-document-tab {
+    width: 41px;
+    height: 41px;
+  }
+
+
+  /* CONTENT */
+
+  .smb-document-content {
+    padding:
+      24px 0 72px;
+  }
+
+
+  .smb-document-content-inner {
+    width:
+      min(100% - 28px,
+        1200px);
+  }
+
+
+  /* CARD */
+
+  .smb-document-card {
+    padding:
+      30px 22px;
+
+    border-radius:
+      22px;
+  }
+
+
+  .smb-document-number {
+    font-size: 76px;
+  }
+
+
+  .smb-document-main {
+    margin-top: 28px;
+  }
+
+
+  .smb-document-main h3 {
+    font-size:
+      clamp(29px,
+        8vw,
+        38px);
+  }
+
+
+  .smb-document-description {
+    font-size: 12px;
+  }
+
+
+  .smb-document-preview {
+    border-radius:
+      15px;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smb-document-down {
+    animation: none;
+  }
+
+
+  .smb-document-card,
+  .smb-document-number,
+  .smb-document-preview {
+    animation: none;
+  }
+
+
+  .smb-document-tab,
+  .smb-document-preview-image,
+  .smb-document-points li i {
+    transition: none;
+  }
+
+}
+
+
+
+/* ============================================================
+   SOCIAL MEDIA BEGINNER — FINAL OFFER
+   ============================================================ */
+
+.smb-final-offer {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(82px, 8vw, 118px) 0 clamp(86px, 8vw, 120px);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(180deg,
+      #f5ecff 0%,
+      #ffffff 43%,
+      #ffffff 100%);
+}
+
+
+/* ============================================================
+     SUBTLE BACKGROUND GLOW
+     ============================================================ */
+
+.smb-final-offer::before {
+  content: "";
+
+  position: absolute;
+
+  top: -160px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width:
+    clamp(580px, 70vw, 1000px);
+
+  height: 400px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(ellipse at center,
+      rgba(190, 151, 244, .2) 0%,
+      rgba(184, 150, 232, .09) 44%,
+      rgba(184, 150, 232, 0) 74%);
+
+  filter:
+    blur(50px);
+
+  pointer-events: none;
+}
+
+
+.smb-final-offer-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(1200px, 90vw);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+     TOP COPY
+     ============================================================ */
+
+.smb-final-offer-copy {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+     HEADING
+     ============================================================ */
+
+.smb-final-offer-heading {
+  margin: 0;
+
+  color:
+    #080808;
+
+  font-size:
+    clamp(34px, 3.8vw, 56px);
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing:
+    -.055em;
+}
+
+
+/* ============================================================
+     OUTLINE
+     ============================================================ */
+
+.smb-final-offer-outline {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    .1em .4em .1em;
+
+  border:
+    1.3px solid rgba(17, 17, 17, .75);
+
+  border-radius:
+    var(--pill);
+
+  background:
+    rgba(255, 255, 255, .7);
+
+  line-height:
+    .94;
+}
+
+
+/* ============================================================
+     LIME HIGHLIGHT
+     ============================================================ */
+
+.smb-final-offer-highlight {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    .1em .4em .1em;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #080808;
+
+  line-height:
+    .94;
+}
+
+
+/* ============================================================
+     DESCRIPTION
+     ============================================================ */
+
+.smb-final-offer-description {
+  max-width: 920px;
+
+  margin-top:
+    clamp(12px, 3vw, 20px);
+
+  color:
+    #746d79;
+
+  font-size:
+    clamp(13px, 1.05vw, 18px);
+
+  line-height:
+    1.55;
+
+  letter-spacing:
+    -.008em;
+}
+
+
+.smb-final-offer-description strong {
+  color:
+    #aa7ce4;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+     DOWN ARROW
+     ============================================================ */
+
+.smb-final-offer-down {
+  margin-top:
+    clamp(12px, 3vw, 20px);
+
+  color:
+    #080808;
+
+  font-size:
+    clamp(50px, 5vw, 70px);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-align: center;
+
+  animation:
+    smbFinalOfferArrow 1.8s ease-in-out infinite;
+}
+
+
+@keyframes smbFinalOfferArrow {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(8px);
+  }
+
+}
+
+
+/* ============================================================
+     SUBTITLE
+     ============================================================ */
+
+.smb-final-offer-subtitle {
+  position: relative;
+
+  width: fit-content;
+
+  margin:
+    clamp(24px, 2.6vw, 34px) auto 0;
+
+  color:
+    #090909;
+
+  font-size:
+    clamp(25px, 2.7vw, 40px);
+
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -.055em;
+
+  text-align: center;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* SOCIAL MEDIA */
+
+.smb-final-offer-subtitle span {
+  position: relative;
+
+  display: inline-block;
+
+  padding-bottom: 4px;
+}
+
+
+/* animated underline */
+
+.smb-final-offer-subtitle span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 3px;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left center;
+
+  transition:
+    transform 1s var(--out) .45s;
+}
+
+
+/*
+    HomeInteractions thêm .in
+    khi scroll đến element
+  */
+
+.smb-final-offer-subtitle.in span::after {
+  transform:
+    scaleX(1);
+}
+
+
+/* ============================================================
+     BUY CARD
+     ============================================================ */
+
+.smb-final-buy-card {
+  width:
+    min(100%, 1120px);
+
+  min-height:
+    clamp(320px, 31vw, 400px);
+
+  margin:
+    clamp(30px, 3vw, 42px) auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr) minmax(380px, 1fr);
+
+  overflow: hidden;
+
+  border-radius:
+    18px;
+
+  background:
+    #050505;
+
+  color:
+    #fff;
+
+  box-shadow:
+    0 18px 46px rgba(27, 20, 37, .11);
+
+  transition:
+    transform .45s var(--out),
+    box-shadow .4s var(--ease);
+    padding:
+    clamp(20px, 2vw, 30px);
+}
+
+
+.smb-final-buy-card:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 26px 58px rgba(27, 20, 37, .15);
+}
+
+
+/* ============================================================
+     LEFT VISUAL
+     ============================================================ */
+
+.smb-final-buy-visual {
+  position: relative;
+
+  min-height:
+    clamp(280px, 30vw, 300px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    clamp(20px, 2vw, 30px);
+
+
+  background:
+    #050505;
+  border-radius: 40px;
+}
+
+
+/* ============================================================
+     ACTUAL IMAGE
+     ============================================================ */
+
+.smb-final-buy-image {
+  object-fit: fill;
+  border-radius: 40px;
+  transition:
+    transform .8s var(--out);
+}
+
+
+.smb-final-buy-card:hover .smb-final-buy-image {
+  transform:
+    scale(1.025);
+}
+
+
+/* ============================================================
+     TEMP PLACEHOLDER
+     ============================================================ */
+
+.smb-final-buy-placeholder {
+  width: 100%;
+  height: 100%;
+
+  min-height: 270px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid rgba(255, 255, 255, .12);
+
+  border-radius: 12px;
+
+  color:
+    rgba(255, 255, 255, .32);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    .1em;
+}
+
+
+/* ============================================================
+     RIGHT CONTENT
+     ============================================================ */
+
+.smb-final-buy-content {
+  padding:
+    clamp(34px, 4vw, 54px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* ============================================================
+     LABEL
+     ============================================================ */
+
+.smb-final-price-label {
+  color:
+    rgba(255, 255, 255, .78);
+
+  font-size:
+    clamp(9px, 1vw, 18px);
+
+  font-weight: 500;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+     DIVIDER
+     ============================================================ */
+
+.smb-final-price-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin:
+    16px 0 clamp(20px, 2vw, 26px);
+
+  background:
+    rgba(255, 255, 255, .22);
+}
+
+
+/* ============================================================
+     PRICE
+     ============================================================ */
+
+.smb-final-price-row {
+  display: flex;
+
+  align-items: baseline;
+
+  flex-wrap: wrap;
+
+  gap:
+    clamp(14px, 1.5vw, 22px);
+}
+
+
+.smb-final-price-row strong {
+  color:
+    var(--lime);
+
+  font-size:
+    clamp(44px, 4.8vw, 68px);
+
+  font-weight: 600;
+
+  line-height:
+    .95;
+
+  letter-spacing:
+    -.06em;
+}
+
+
+.smb-final-price-row del {
+  color:
+    rgba(255, 255, 255, .46);
+
+  font-size:
+    clamp(10px, .9vw, 14px);
+
+  font-weight: 400;
+}
+
+
+/* ============================================================
+     NOTE
+     ============================================================ */
+
+.smb-final-price-note {
+  margin:
+    14px 0 0;
+
+  color:
+    rgba(255, 255, 255, .88);
+
+  font-size:
+    clamp(10px, .85vw, 16px);
+
+  line-height:
+    1.4;
+}
+
+
+/* ============================================================
+     BUY BUTTON
+     ============================================================ */
+
+.smb-final-buy-button {
+  width:
+    min(100%, 390px);
+
+  min-height:
+    clamp(52px, 4.5vw, 58px);
+
+  margin-top:
+    clamp(26px, 2.8vw, 36px);
+
+  padding:
+    0 clamp(22px, 2.4vw, 30px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 24px;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #090909;
+
+  font-size:
+    clamp(11px, .9vw, 18px);
+
+  font-weight: 500;
+
+  transition:
+    transform .4s var(--out),
+    background-color .35s var(--ease),
+    color .35s var(--ease);
+}
+
+
+.smb-final-buy-button svg {
+  width: 19px;
+  height: 19px;
+
+  flex: 0 0 auto;
+
+  transition:
+    transform .4s var(--out);
+}
+
+
+.smb-final-buy-button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    #fff;
+
+  color:
+    #090909;
+}
+
+
+.smb-final-buy-button:hover svg {
+  transform:
+    translateX(5px);
+}
+
+
+/* ============================================================
+     TABLET
+     ============================================================ */
+
+@media (max-width: 900px) {
+
+  .smb-final-buy-card {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(340px, 1fr);
+  }
+
+
+  .smb-final-buy-content {
+    padding:
+      32px;
+  }
+
+}
+
+
+/* ============================================================
+     SMALL TABLET
+     ============================================================ */
+
+@media (max-width: 760px) {
+
+  .smb-final-offer-heading br,
+  .smb-final-offer-description br {
+    display: none;
+  }
+
+
+  .smb-final-buy-card {
+    grid-template-columns: 1fr;
+  }
+
+
+  .smb-final-buy-visual {
+    min-height: 360px;
+  }
+
+
+  .smb-final-buy-content {
+    padding:
+      32px 28px 38px;
+  }
+
+}
+
+
+/* ============================================================
+     MOBILE
+     ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smb-final-offer {
+    padding:
+      68px 0 76px;
+  }
+
+
+  .smb-final-offer-inner {
+    width:
+      min(100% - 30px,
+        1200px);
+  }
+
+
+  .smb-final-offer-heading {
+    font-size:
+      clamp(32px, 9vw, 43px);
+  }
+
+
+  .smb-final-offer-description {
+    margin-top: 26px;
+
+    font-size: 13px;
+  }
+
+
+  .smb-final-offer-subtitle {
+    font-size:
+      clamp(28px, 8vw, 38px);
+
+    text-align: left;
+  }
+
+
+  .smb-final-buy-card {
+    border-radius:
+      16px;
+  }
+
+
+  .smb-final-buy-visual {
+    min-height: 300px;
+
+    padding: 18px;
+  }
+
+
+  .smb-final-buy-content {
+    padding:
+      28px 22px 32px;
+  }
+
+
+  .smb-final-price-row strong {
+    font-size:
+      clamp(42px, 12vw, 54px);
+  }
+
+
+  .smb-final-buy-button {
+    width: 100%;
+  }
+
+}
+
+
+/* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smb-final-offer-down {
+    animation: none;
+  }
+
+
+  .smb-final-offer-subtitle span::after {
+    transform:
+      scaleX(1);
+
+    transition: none;
+  }
+
+
+  .smb-final-buy-card,
+  .smb-final-buy-image,
+  .smb-final-buy-button,
+  .smb-final-buy-button svg {
+    transition: none;
+  }
+
+}
