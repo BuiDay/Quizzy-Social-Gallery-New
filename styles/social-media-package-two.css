@@ -1,0 +1,3032 @@
+
+/* ============================================================
+   SOCIAL MEDIA PACKAGE 02 — HERO
+   ============================================================ */
+
+   .smpkg2-hero {
+    --smpkg2-lime: #cdfc56;
+    --smpkg2-purple: #a97fdd;
+    --smpkg2-ease: cubic-bezier(.16, 1, .3, 1);
+  
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+  
+    padding-top: clamp(25px, 3vw, 45px);
+  
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  .smpkg2-hero-inner {
+    width: min(1200px, 90vw);
+    height: calc(100% - 70px);
+    margin-inline: auto;
+  }
+  
+  /* ============================================================
+     BREADCRUMB
+     ============================================================ */
+  
+  .smpkg2-breadcrumb {
+    width: fit-content;
+    min-height: 34px;
+  
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  
+    padding: 0 15px;
+  
+    border: 1px solid rgba(27, 20, 37, .16);
+    border-radius: 999px;
+  
+    background: #fff;
+    color: #242128;
+  
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .11em;
+    white-space: nowrap;
+  }
+  
+  .smpkg2-breadcrumb-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+  
+    border-radius: 50%;
+    background: var(--smpkg2-purple);
+  }
+  
+  /* ============================================================
+     MAIN GRID
+     ============================================================ */
+  
+  .smpkg2-hero-grid {
+    height: calc(100% - 64px);
+  
+    display: grid;
+    grid-template-columns:
+      minmax(0, .93fr)
+      minmax(0, 1.07fr);
+  
+    align-items: center;
+    gap: clamp(28px, 4vw, 60px);
+  }
+  
+  .smpkg2-hero-left,
+  .smpkg2-hero-right {
+    min-width: 0;
+  }
+  
+  /* ============================================================
+     LEFT — CAPSULE TITLE
+     ============================================================ */
+  
+  .smpkg2-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(7px, .8vw, 11px);
+  
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .smpkg2-title-row {
+    display: flex;
+    align-items: center;
+    gap: clamp(9px, 1vw, 15px);
+  
+    width: fit-content;
+    max-width: 100%;
+  }
+  
+  .smpkg2-star {
+    display: block;
+    flex: 0 0 auto;
+  
+    color: var(--smpkg2-purple);
+  
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(60px, 6.3vw, 90px);
+    font-weight: 400;
+    line-height: .8;
+  }
+  
+  .smpkg2-title-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: clamp(67px, 6.7vw, 98px);
+    max-width: 100%;
+  
+    padding: .025em .21em .11em;
+  
+    border: 1.3px solid #111;
+    border-radius: 999px;
+  
+    background: #fff;
+    color: #050505;
+  
+    font-size: clamp(53px, 6.1vw, 87px);
+    font-weight: 700;
+    line-height: .9;
+    letter-spacing: -.065em;
+    white-space: nowrap;
+  
+    transition: transform .4s var(--smpkg2-ease);
+  }
+  
+  .smpkg2-title-pill:hover {
+    transform: translateY(-3px);
+  }
+  
+  .smpkg2-title-pill--lime {
+    background: var(--smpkg2-lime);
+  }
+  
+  /* PURPLE ARROW */
+  
+  .smpkg2-title-arrow {
+    width: clamp(52px, 5.2vw, 75px);
+    height: clamp(52px, 5.2vw, 75px);
+  
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+  
+    border-radius: 50%;
+  
+    background: #be92ed;
+    color: #fff;
+  
+    text-decoration: none;
+  
+    transition:
+      transform .4s var(--smpkg2-ease),
+      background-color .3s ease;
+  }
+  
+  .smpkg2-title-arrow svg {
+    width: 26px;
+    height: 26px;
+  
+    transition: transform .4s var(--smpkg2-ease);
+  }
+  
+  .smpkg2-title-arrow:hover {
+    transform: translateY(-3px);
+    background: var(--smpkg2-purple);
+  }
+  
+  .smpkg2-title-arrow:hover svg {
+    transform: translateX(5px);
+  }
+  
+  /* ============================================================
+     PACKAGE CONTENTS
+     ============================================================ */
+  
+  .smpkg2-package-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(7px, .85vw, 11px);
+  
+    width: fit-content;
+    max-width: 100%;
+  
+    margin: clamp(27px, 3vw, 43px) 0 0;
+    padding: 0 0 0 clamp(37px, 6vw, 90px);
+  
+    list-style: none;
+  }
+  
+  .smpkg2-package-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  
+    color: #74717d;
+  
+    font-size: clamp(15px, 1.35vw, 20px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -.015em;
+    white-space: nowrap;
+  }
+  
+  .smpkg2-package-list li span:first-child {
+    color: #947452;
+  }
+  
+  /* ============================================================
+     RIGHT — PRODUCT IMAGE
+     ============================================================ */
+  
+  .smpkg2-hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+  }
+  
+  .smpkg2-visual {
+    position: relative;
+    width: 100%;
+    height: clamp(270px, 29vw, 415px);
+  }
+  
+  .smpkg2-product-image {
+    object-fit: contain;
+    object-position: center;
+  
+    transition: transform .8s var(--smpkg2-ease);
+  }
+  
+  .smpkg2-visual:hover .smpkg2-product-image {
+    transform: scale(1.025);
+  }
+  
+  /* PLACEHOLDER — WHEN PRODUCT IMAGE IS NOT PROVIDED */
+  
+  .smpkg2-visual-placeholder {
+    position: absolute;
+    inset: 9% 10%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  
+    border-radius: 11px;
+  
+    background:
+      radial-gradient(
+        ellipse at 78% 20%,
+        rgba(169, 127, 221, .16),
+        transparent 55%
+      ),
+      #211d22;
+  
+    color: #fff;
+    text-align: center;
+  }
+  
+  .smpkg2-visual-placeholder > span {
+    font-size: clamp(23px, 2.8vw, 39px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -.05em;
+  }
+  
+  .smpkg2-visual-placeholder > strong {
+    padding: 6px 14px;
+    border-radius: 5px;
+  
+    background: #e3bf33;
+    color: #fff;
+  
+    font-size: clamp(15px, 1.7vw, 23px);
+  }
+  
+  .smpkg2-visual-placeholder > small {
+    margin-top: 5px;
+  
+    color: rgba(255, 255, 255, .55);
+  
+    font-size: 9px;
+    letter-spacing: .12em;
+  }
+  
+  /* ============================================================
+     FLOATING TAGS — CONTROLLED BY HOMEINTERACTIONS
+     ============================================================ */
+  
+  .smpkg2-tag {
+    position: absolute;
+    z-index: 3;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: 31px;
+    padding: 7px 12px;
+  
+    border-radius: 999px;
+  
+    background: rgba(255, 255, 255, .95);
+    color: #302d33;
+  
+    box-shadow:
+      0 9px 27px rgba(27, 20, 37, .09);
+  
+    font-size: clamp(9px, .83vw, 12px);
+    font-weight: 500;
+    white-space: nowrap;
+  
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
+  
+  .smpkg2-tag.ftag {
+    will-change: transform;
+  }
+  
+  .smpkg2-tag--proposal {
+    top: 4%;
+    right: 0;
+  }
+  
+  .smpkg2-tag--audit {
+    top: 41%;
+    left: -2%;
+  }
+  
+  .smpkg2-tag--report {
+    right: -1%;
+    bottom: 3%;
+  }
+  
+  /*
+    Không thêm animation hoặc transition: transform
+    cho .smpkg2-tag.
+  
+    HomeInteractions điều khiển transform của .ftag
+    thông qua data-d để tag di chuyển theo chuột.
+  */
+  
+  /* ============================================================
+     PRICE AREA
+     ============================================================ */
+  
+  .smpkg2-price-area {
+    width: 100%;
+    margin-top: clamp(0px, 1vw, 13px);
+  
+    text-align: center;
+    scroll-margin-top: 100px;
+  }
+  
+  .smpkg2-price-label {
+    margin: 0;
+  
+    color: #29272b;
+  
+    font-size: clamp(12px, 1vw, 15px);
+    font-weight: 400;
+    line-height: 1.35;
+  }
+  
+  .smpkg2-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+    gap: clamp(12px, 1.4vw, 20px);
+    margin-top: 9px;
+  }
+  
+  .smpkg2-price-row strong {
+    color: #1b1b1b;
+  
+    font-size: clamp(38px, 3.8vw, 56px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -.065em;
+  }
+  
+  .smpkg2-price-row del {
+    color: #a1a1a1;
+  
+    font-size: clamp(12px, 1vw, 16px);
+    font-weight: 400;
+  }
+  
+  /* ============================================================
+     BUY BUTTON
+     ============================================================ */
+  
+  .smpkg2-buy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  
+    min-height: 42px;
+  
+    margin-top: 17px;
+    padding: 0 20px;
+  
+    border: 0;
+    border-radius: 999px;
+  
+    background: var(--smpkg2-lime);
+    color: #111;
+  
+    font: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+  
+    cursor: pointer;
+  
+    transition:
+      transform .4s var(--smpkg2-ease),
+      background-color .3s ease,
+      color .3s ease;
+  }
+  
+  .smpkg2-buy-arrow {
+    font-size: 21px;
+    line-height: 1;
+  
+    transition: transform .4s var(--smpkg2-ease);
+  }
+  
+  .smpkg2-buy-button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    background: #111;
+    color: #fff;
+  }
+  
+  .smpkg2-buy-button:hover:not(:disabled)
+  .smpkg2-buy-arrow {
+    transform: translateX(5px);
+  }
+  
+  .smpkg2-buy-button:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+  }
+  
+  .smpkg2-title-arrow:focus-visible,
+  .smpkg2-buy-button:focus-visible {
+    outline: 2px solid var(--smpkg2-purple);
+    outline-offset: 4px;
+  }
+  
+  /* ============================================================
+     BOTTOM MARQUEE
+     ============================================================ */
+  
+  .smpkg2-marquee {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  
+    height: 65px;
+  
+    display: flex;
+    align-items: center;
+  
+    overflow: hidden;
+  
+    background: #f2e7ff;
+    color: #141119;
+  }
+  
+  .smpkg2-marquee-track {
+    display: flex;
+    align-items: center;
+  
+    width: max-content;
+  
+    animation:
+      smpkg2MarqueeMove
+      28s linear infinite;
+  
+    will-change: transform;
+  }
+  
+  .smpkg2-marquee-group {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  
+  .smpkg2-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+  
+    gap: clamp(22px, 3vw, 43px);
+    padding-right: clamp(22px, 3vw, 43px);
+  
+    font-size: clamp(17px, 1.5vw, 22px);
+    font-weight: 600;
+    letter-spacing: -.035em;
+    line-height: 1;
+  
+    white-space: nowrap;
+  }
+  
+  .smpkg2-marquee-star {
+    color: var(--smpkg2-purple);
+  
+    font-size: 24px;
+    line-height: 1;
+  }
+  
+  @keyframes smpkg2MarqueeMove {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  
+  /* ============================================================
+     HERO ENTRANCE — NO DATA-RV
+     ============================================================ */
+  
+  .smpkg2-enter {
+    --smpkg2-delay: 0s;
+  
+    opacity: 0;
+    transform: translateY(25px);
+  
+    animation:
+      smpkg2HeroEnter
+      .85s var(--smpkg2-ease)
+      var(--smpkg2-delay)
+      forwards;
+  }
+  
+  @keyframes smpkg2HeroEnter {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ============================================================
+     LAPTOP
+     ============================================================ */
+  
+  @media (max-width: 1200px) {
+    .smpkg2-hero-grid {
+      gap: 25px;
+    }
+  
+    .smpkg2-title-pill {
+      min-height: clamp(59px, 6vw, 78px);
+      font-size: clamp(48px, 5.7vw, 74px);
+    }
+  
+    .smpkg2-star {
+      font-size: clamp(56px, 6vw, 75px);
+    }
+  
+    .smpkg2-title-arrow {
+      width: 58px;
+      height: 58px;
+    }
+  
+    .smpkg2-package-list {
+      padding-left: 35px;
+    }
+  }
+  
+  /* ============================================================
+     TABLET
+     ============================================================ */
+  
+  @media (max-width: 820px) {
+    .smpkg2-hero {
+      height: auto;
+      min-height: 100vh;
+  
+      padding-bottom: 65px;
+    }
+  
+    .smpkg2-hero-inner {
+      height: auto;
+    }
+  
+    .smpkg2-hero-grid {
+      height: auto;
+      grid-template-columns: 1fr;
+  
+      gap: 35px;
+      margin: 43px auto 45px;
+    }
+  
+    .smpkg2-hero-left {
+      width: fit-content;
+      max-width: 100%;
+      margin-inline: auto;
+    }
+  
+    .smpkg2-title-pill {
+      min-height: 0;
+      font-size: clamp(55px, 9vw, 77px);
+    }
+  
+    .smpkg2-star {
+      font-size: clamp(64px, 10vw, 84px);
+    }
+  
+    .smpkg2-package-list {
+      padding-left: 12%;
+    }
+  
+    .smpkg2-visual {
+      width: min(100%, 620px);
+      height: clamp(310px, 58vw, 440px);
+  
+      margin-inline: auto;
+    }
+  
+    .smpkg2-price-area {
+      margin-top: 12px;
+    }
+  
+    .smpkg2-marquee {
+      position: relative;
+      height: 60px;
+    }
+  }
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (max-width: 580px) {
+    .smpkg2-hero {
+      padding-top: 24px;
+      padding-bottom: 0;
+    }
+  
+    .smpkg2-hero-inner {
+      width: calc(100% - 30px);
+    }
+  
+    .smpkg2-breadcrumb {
+      min-height: 31px;
+  
+      gap: 8px;
+      padding: 0 11px;
+  
+      font-size: 8px;
+      letter-spacing: .06em;
+    }
+  
+    .smpkg2-hero-grid {
+      gap: 27px;
+      margin-top: 34px;
+      margin-bottom: 40px;
+    }
+  
+    .smpkg2-title {
+      gap: 6px;
+    }
+  
+    .smpkg2-title-row {
+      gap: 8px;
+    }
+  
+    .smpkg2-title-pill {
+      padding: .07em .18em .13em;
+  
+      font-size: clamp(39px, 10.5vw, 60px);
+    }
+  
+    .smpkg2-star {
+      font-size: clamp(45px, 12vw, 64px);
+    }
+  
+    .smpkg2-title-arrow {
+      width: clamp(42px, 11vw, 56px);
+      height: clamp(42px, 11vw, 56px);
+    }
+  
+    .smpkg2-title-arrow svg {
+      width: 21px;
+      height: 21px;
+    }
+  
+    .smpkg2-package-list {
+      align-items: flex-start;
+  
+      gap: 8px;
+      margin-top: 26px;
+      padding-left: 7%;
+    }
+  
+    .smpkg2-package-list li {
+      font-size: clamp(13px, 3.8vw, 17px);
+    }
+  
+    .smpkg2-visual {
+      height: clamp(250px, 73vw, 360px);
+    }
+  
+    .smpkg2-tag {
+      min-height: 27px;
+      padding: 5px 8px;
+      font-size: 7px;
+    }
+  
+    .smpkg2-tag--audit {
+      left: 0;
+    }
+  
+    .smpkg2-tag--proposal,
+    .smpkg2-tag--report {
+      right: 0;
+    }
+  
+    .smpkg2-price-row strong {
+      font-size: clamp(37px, 10vw, 47px);
+    }
+  
+    .smpkg2-price-row del {
+      font-size: 12px;
+    }
+  
+    .smpkg2-marquee {
+      height: 55px;
+    }
+  
+    .smpkg2-marquee-item {
+      font-size: 16px;
+    }
+  }
+  
+  /* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+  
+  @media (max-width: 390px) {
+    .smpkg2-title-pill {
+      font-size: 10.2vw;
+    }
+  
+    .smpkg2-title-row {
+      gap: 6px;
+    }
+  
+    .smpkg2-title-arrow {
+      width: 39px;
+      height: 39px;
+    }
+  }
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .smpkg2-enter {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  
+    .smpkg2-marquee-track {
+      animation: none;
+    }
+  
+    .smpkg2-title-pill,
+    .smpkg2-title-arrow,
+    .smpkg2-title-arrow svg,
+    .smpkg2-product-image,
+    .smpkg2-buy-button,
+    .smpkg2-buy-arrow {
+      transition: none;
+    }
+  }
+
+
+  
+/* ============================================================
+   SOCIAL MEDIA PACKAGE 02 — EXPERIENCE SECTION
+   ============================================================ */
+
+.smpkg2-exp {
+    position: relative;
+    width: 100%;
+  
+    padding:
+      clamp(85px, 9vw, 130px)
+      0
+      clamp(70px, 8vw, 110px);
+  
+    overflow: hidden;
+  
+    background: #fff;
+    color: #171419;
+  }
+  
+  .smpkg2-exp-inner {
+    width: min(1200px, 90vw);
+    margin-inline: auto;
+  }
+  
+  /* ============================================================
+     TOP GRID
+     ============================================================ */
+  
+  .smpkg2-exp-hero {
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, 0.94fr)
+      minmax(0, 1.06fr);
+  
+    align-items: center;
+  
+    gap: clamp(35px, 5vw, 75px);
+  
+    min-height: clamp(380px, 42vw, 540px);
+  }
+  
+  .smpkg2-exp-hero__left,
+  .smpkg2-exp-hero__right {
+    min-width: 0;
+  }
+  
+  /* ============================================================
+     TOP HEADING
+     ============================================================ */
+  
+  .smpkg2-exp-title {
+    max-width: 460px;
+  
+    margin: 0;
+  
+    color: #111;
+  
+    font-size: clamp(38px, 4.5vw, 65px);
+    font-weight: 700;
+  
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+  
+    text-transform: uppercase;
+  }
+  
+  .smpkg2-exp-counter {
+    display: inline-block;
+    color: #a97fdd;
+    white-space: nowrap;
+  }
+  
+  /* ============================================================
+     INTRO TEXT
+     ============================================================ */
+  
+  .smpkg2-exp-intro {
+    max-width: 440px;
+  
+    margin: clamp(25px, 3vw, 42px) 0 0;
+  
+    color: #77717d;
+  
+    font-size: clamp(14px, 1.12vw, 17px);
+    font-weight: 400;
+  
+    line-height: 1.55;
+    letter-spacing: -0.015em;
+  }
+  
+  .smpkg2-exp-intro strong {
+    color: #9c6bd7;
+    font-weight: 700;
+  }
+  
+  /* ============================================================
+     VERTICAL DOCUMENT WALL
+     ============================================================ */
+  
+  .smpkg2-exp-wall {
+    position: relative;
+  
+    width: 100%;
+    height: clamp(390px, 45vw, 550px);
+  
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  
+    gap: clamp(12px, 1.4vw, 18px);
+  
+    overflow: hidden;
+  
+    -webkit-mask-image:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        #000 12%,
+        #000 88%,
+        transparent 100%
+      );
+  
+    mask-image:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        #000 12%,
+        #000 88%,
+        transparent 100%
+      );
+  }
+  
+  /* ============================================================
+     DOCUMENT COLUMNS
+     ============================================================ */
+  
+  .smpkg2-exp-wall__column {
+    min-width: 0;
+    height: 100%;
+  
+    overflow: hidden;
+  }
+  
+  .smpkg2-exp-wall__track {
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    will-change: transform;
+  }
+  
+  .smpkg2-exp-wall__column--up
+  .smpkg2-exp-wall__track {
+    animation:
+      smpkg2ExpWallUp
+      34s linear infinite;
+  }
+  
+  .smpkg2-exp-wall__column--down
+  .smpkg2-exp-wall__track {
+    animation:
+      smpkg2ExpWallDown
+      29s linear infinite;
+  }
+  
+  .smpkg2-exp-wall:hover
+  .smpkg2-exp-wall__track {
+    animation-play-state: paused;
+  }
+  
+  .smpkg2-exp-wall__group {
+    display: flex;
+    flex-direction: column;
+  
+    flex: 0 0 auto;
+  
+    gap: clamp(12px, 1.4vw, 18px);
+    padding-bottom: clamp(12px, 1.4vw, 18px);
+  }
+  
+  /*
+    Hai nhóm tài liệu trong mỗi track có chiều cao bằng nhau.
+    Di chuyển 50% chiều cao track giúp vòng lặp liên tục.
+  */
+  
+  @keyframes smpkg2ExpWallUp {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+  
+  @keyframes smpkg2ExpWallDown {
+    from {
+      transform: translate3d(0, -50%, 0);
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  /* ============================================================
+     DOCUMENT MOCKUP
+     ============================================================ */
+  
+  .smpkg2-exp-doc {
+    width: 100%;
+  
+    overflow: hidden;
+  
+    border: 1px solid #e8e0ee;
+    border-radius: 13px;
+  
+    background: #fff;
+  
+    box-shadow:
+      0 9px 25px rgba(67, 40, 104, 0.08);
+  }
+  
+  .smpkg2-exp-doc__bar {
+    display: flex;
+    align-items: center;
+  
+    gap: 5px;
+  
+    min-height: 30px;
+    padding: 7px 10px;
+  
+    border-bottom: 1px solid #ede5f2;
+  
+    background: #f8f2ff;
+  }
+  
+  .smpkg2-exp-doc__bar > span {
+    width: 6px;
+    height: 6px;
+  
+    flex: 0 0 6px;
+    border-radius: 50%;
+  
+    background: #dbcfeb;
+  }
+  
+  .smpkg2-exp-doc__bar small {
+    min-width: 0;
+    margin-left: 5px;
+  
+    overflow: hidden;
+  
+    color: #8e8599;
+  
+    font-size: clamp(7px, 0.65vw, 10px);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* DOCUMENT BODY */
+  
+  .smpkg2-exp-doc__body {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 10px;
+  
+    min-height: clamp(132px, 14vw, 185px);
+    padding: clamp(11px, 1.3vw, 17px);
+  }
+  
+  .smpkg2-exp-doc__title {
+    color: #2c2633;
+  
+    font-size: clamp(10px, 0.9vw, 13px);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  
+  /* ============================================================
+     TEXT LINES
+     ============================================================ */
+  
+  .smpkg2-exp-doc__lines {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 6px;
+  }
+  
+  .smpkg2-exp-doc__lines i {
+    display: block;
+  
+    width: 90%;
+    height: 7px;
+  
+    border-radius: 999px;
+    background: #e5e3e8;
+  }
+  
+  .smpkg2-exp-doc__lines i:nth-child(2) {
+    width: 70%;
+  }
+  
+  .smpkg2-exp-doc__lines i:nth-child(3) {
+    width: 82%;
+  }
+  
+  .smpkg2-exp-doc__lines--bottom i {
+    height: 6px;
+  }
+  
+  .smpkg2-exp-doc__highlight {
+    height: 36px;
+  
+    border-radius: 7px;
+  
+    background:
+      linear-gradient(
+        110deg,
+        #f0e2ff,
+        #e8d6fb
+      );
+  }
+  
+  /* ============================================================
+     PRICING TABLE
+     ============================================================ */
+  
+  .smpkg2-exp-doc__pricing {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+  
+    gap: 5px;
+  }
+  
+  .smpkg2-exp-doc__pricing span {
+    min-height: 16px;
+  
+    border-radius: 4px;
+  
+    background: #e9e7eb;
+  }
+  
+  .smpkg2-exp-doc__pricing span:nth-child(even) {
+    background: #e9dbfc;
+  }
+  
+  .smpkg2-exp-doc__pricing--report {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  
+  .smpkg2-exp-doc__pricing--report span {
+    min-height: 12px;
+  }
+  
+  /* ============================================================
+     REPORT CHART
+     ============================================================ */
+  
+  .smpkg2-exp-doc__chart {
+    width: 100%;
+    height: 65px;
+  }
+  
+  /* ============================================================
+     AUDIT / CALENDAR GRID
+     ============================================================ */
+  
+  .smpkg2-exp-doc__calendar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  
+    gap: 5px;
+  }
+  
+  .smpkg2-exp-doc__calendar span {
+    aspect-ratio: 1.35;
+  
+    border-radius: 4px;
+    background: #bed7f6;
+  }
+  
+  .smpkg2-exp-doc__calendar span:nth-child(3n + 2) {
+    background: #eee3ff;
+  }
+  
+  .smpkg2-exp-doc__calendar span:nth-child(3n) {
+    background: #f5d8e9;
+  }
+  
+  /* ============================================================
+     CLIENT RETENTION CARD
+     ============================================================ */
+  
+  .smpkg2-exp-pride {
+    display: grid;
+  
+    grid-template-columns:
+      minmax(125px, 0.3fr)
+      minmax(0, 0.7fr);
+  
+    align-items: center;
+  
+    gap: clamp(25px, 4vw, 55px);
+  
+    width: min(100%, 1000px);
+  
+    margin:
+      clamp(55px, 7vw, 100px)
+      auto
+      0;
+  
+    padding: clamp(25px, 4vw, 48px);
+  
+    border: 1px solid #e8d8f9;
+    border-radius: 26px;
+  
+    background:
+      linear-gradient(
+        110deg,
+        #faf5ff 0%,
+        #f8f3ff 100%
+      );
+  
+    box-shadow:
+      0 10px 26px rgba(111, 77, 158, 0.075);
+  }
+  
+  /* ============================================================
+     99% RING
+     ============================================================ */
+  
+  .smpkg2-exp-ring {
+    position: relative;
+  
+    width: clamp(135px, 15vw, 180px);
+    aspect-ratio: 1;
+  
+    margin-inline: auto;
+  }
+  
+  .smpkg2-exp-ring svg {
+    width: 100%;
+    height: 100%;
+  
+    overflow: visible;
+  
+    transform: rotate(-90deg);
+  }
+  
+  .smpkg2-exp-ring__track,
+  .smpkg2-exp-ring__progress {
+    fill: none;
+    stroke-width: 11;
+  }
+  
+  .smpkg2-exp-ring__track {
+    stroke: #eadcf9;
+  }
+  
+  .smpkg2-exp-ring__progress {
+    stroke: url(#smpkg2ExpRingGradient);
+    stroke-linecap: round;
+  
+    stroke-dasharray: 433.54;
+    stroke-dashoffset: 433.54;
+  
+    transition:
+      stroke-dashoffset 1.65s
+      cubic-bezier(.16, 1, .3, 1)
+      0.18s;
+  }
+  
+  .smpkg2-exp-pride.is-in
+  .smpkg2-exp-ring__progress {
+    stroke-dashoffset: 4.34;
+  }
+  
+  /* RING CENTER LABEL */
+  
+  .smpkg2-exp-ring__label {
+    position: absolute;
+    inset: 0;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    text-align: center;
+  }
+  
+  .smpkg2-exp-ring__label strong {
+    color: #9267d0;
+  
+    font-size: clamp(30px, 3.2vw, 43px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+  
+  .smpkg2-exp-ring__label span {
+    margin-top: 7px;
+  
+    color: #9267d0;
+  
+    font-size: clamp(10px, 0.85vw, 12px);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  
+  /* ============================================================
+     RETENTION TEXT
+     ============================================================ */
+  
+  .smpkg2-exp-pride__copy {
+    min-width: 0;
+  }
+  
+  .smpkg2-exp-pride__copy p {
+    margin: 0;
+  
+    color: #35303b;
+  
+    font-size: clamp(17px, 1.6vw, 23px);
+    line-height: 1.4;
+  }
+  
+  .smpkg2-exp-pride__copy strong {
+    display: block;
+  
+    max-width: 580px;
+  
+    margin-top: 25px;
+  
+    color: #171419;
+  
+    font-size: clamp(18px, 1.8vw, 26px);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  
+  /* ============================================================
+     WORKFLOW INTRO
+     ============================================================ */
+  
+  .smpkg2-exp-workflow-intro {
+    max-width: 1050px;
+  
+    margin:
+      clamp(34px, 4vw, 55px)
+      auto
+      0;
+  
+    color: #77717d;
+  
+    font-size: clamp(14px, 1.12vw, 17px);
+    line-height: 1.55;
+  }
+  
+  .smpkg2-exp-workflow-intro strong {
+    color: #5a5261;
+    font-weight: 700;
+  }
+  
+  /* ============================================================
+     WORKFLOW
+     ============================================================ */
+  
+  .smpkg2-exp-workflow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+    gap: clamp(8px, 1.3vw, 17px);
+  
+    max-width: 1100px;
+  
+    margin:
+      clamp(24px, 3vw, 42px)
+      auto
+      0;
+  
+    padding: 0 8px;
+  }
+  
+  .smpkg2-exp-workflow__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: clamp(8px, 1.2vw, 16px);
+  }
+  
+  .smpkg2-exp-workflow__pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: 35px;
+  
+    padding: 9px 16px;
+  
+    border-radius: 999px;
+  
+    background: #f0e7fc;
+    color: #9b70d3;
+  
+    font-size: clamp(11px, 0.9vw, 13px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+  
+    opacity: 0;
+    transform: translateY(15px);
+  
+    transition:
+      opacity 0.5s ease,
+      transform 0.7s cubic-bezier(.16, 1, .3, 1);
+  }
+  
+  .smpkg2-exp-workflow__arrow {
+    color: #a97fdd;
+  
+    font-size: 18px;
+    font-weight: 700;
+  
+    opacity: 0;
+  
+    transition: opacity 0.45s ease;
+  }
+  
+  /* STAGGERED ENTRANCE */
+  
+  .smpkg2-exp-workflow.is-in
+  .smpkg2-exp-workflow__pill {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .smpkg2-exp-workflow.is-in
+  .smpkg2-exp-workflow__arrow {
+    opacity: 1;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(1)
+  .smpkg2-exp-workflow__pill {
+    transition-delay: 0.06s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(2)
+  .smpkg2-exp-workflow__pill {
+    transition-delay: 0.2s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(3)
+  .smpkg2-exp-workflow__pill {
+    transition-delay: 0.34s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(4)
+  .smpkg2-exp-workflow__pill {
+    transition-delay: 0.48s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(5)
+  .smpkg2-exp-workflow__pill {
+    transition-delay: 0.62s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(1)
+  .smpkg2-exp-workflow__arrow {
+    transition-delay: 0.13s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(2)
+  .smpkg2-exp-workflow__arrow {
+    transition-delay: 0.27s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(3)
+  .smpkg2-exp-workflow__arrow {
+    transition-delay: 0.41s;
+  }
+  
+  .smpkg2-exp-workflow__item:nth-child(4)
+  .smpkg2-exp-workflow__arrow {
+    transition-delay: 0.55s;
+  }
+  
+  /* ============================================================
+     CLOSING TEXT
+     ============================================================ */
+  
+  .smpkg2-exp-closing {
+    max-width: 1050px;
+  
+    margin:
+      clamp(40px, 5vw, 70px)
+      auto
+      0;
+  
+    color: #77717d;
+  
+    font-size: clamp(14px, 1.12vw, 17px);
+    line-height: 1.55;
+  }
+  
+  /* ============================================================
+     LOCAL SCROLL REVEAL
+     ============================================================ */
+  
+  .smpkg2-exp-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+  
+    transition:
+      opacity 0.8s ease,
+      transform 0.95s
+      cubic-bezier(.16, 1, .3, 1);
+  }
+  
+  .smpkg2-exp-reveal.is-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ============================================================
+     TABLET
+     ============================================================ */
+  
+  @media (max-width: 900px) {
+    .smpkg2-exp-hero {
+      gap: 30px;
+    }
+  
+    .smpkg2-exp-title {
+      font-size: clamp(35px, 4.5vw, 48px);
+    }
+  
+    .smpkg2-exp-wall {
+      height: 420px;
+    }
+  
+    .smpkg2-exp-pride {
+      gap: 25px;
+    }
+  }
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (max-width: 760px) {
+    .smpkg2-exp {
+      padding: 70px 0 80px;
+    }
+  
+    .smpkg2-exp-hero {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  
+    .smpkg2-exp-title {
+      max-width: 100%;
+      font-size: clamp(38px, 8vw, 57px);
+    }
+  
+    .smpkg2-exp-intro {
+      max-width: 550px;
+      margin-top: 23px;
+    }
+  
+    .smpkg2-exp-hero__right {
+      width: 100%;
+      max-width: 540px;
+      margin-inline: auto;
+    }
+  
+    .smpkg2-exp-wall {
+      height: clamp(320px, 76vw, 430px);
+    }
+  
+    .smpkg2-exp-pride {
+      margin-top: 55px;
+    }
+  }
+  
+  @media (max-width: 580px) {
+    .smpkg2-exp-inner {
+      width: calc(100% - 30px);
+    }
+  
+    .smpkg2-exp-title {
+      font-size: clamp(35px, 10vw, 48px);
+    }
+  
+    .smpkg2-exp-intro,
+    .smpkg2-exp-workflow-intro,
+    .smpkg2-exp-closing {
+      font-size: 13px;
+    }
+  
+    /* DOCUMENT WALL */
+  
+    .smpkg2-exp-wall {
+      gap: 10px;
+      height: 330px;
+    }
+  
+    .smpkg2-exp-wall__group {
+      gap: 10px;
+      padding-bottom: 10px;
+    }
+  
+    .smpkg2-exp-doc__body {
+      min-height: 118px;
+      padding: 9px;
+      gap: 7px;
+    }
+  
+    .smpkg2-exp-doc__bar {
+      padding: 6px;
+    }
+  
+    .smpkg2-exp-doc__bar > span {
+      width: 4px;
+      height: 4px;
+      flex-basis: 4px;
+    }
+  
+    .smpkg2-exp-doc__title {
+      font-size: 9px;
+    }
+  
+    .smpkg2-exp-doc__lines i {
+      height: 5px;
+    }
+  
+    .smpkg2-exp-doc__highlight {
+      height: 25px;
+    }
+  
+    .smpkg2-exp-doc__chart {
+      height: 48px;
+    }
+  
+    /* RETENTION CARD */
+  
+    .smpkg2-exp-pride {
+      grid-template-columns: 1fr;
+  
+      gap: 20px;
+      padding: 26px 22px;
+  
+      border-radius: 21px;
+      text-align: center;
+    }
+  
+    .smpkg2-exp-ring {
+      width: 140px;
+    }
+  
+    .smpkg2-exp-pride__copy p {
+      font-size: 16px;
+    }
+  
+    .smpkg2-exp-pride__copy strong {
+      margin-top: 14px;
+      font-size: 18px;
+    }
+  
+    .smpkg2-exp-desktop-break {
+      display: none;
+    }
+  
+    /* WORKFLOW */
+  
+    .smpkg2-exp-workflow {
+      gap: 10px;
+      padding: 0;
+    }
+  
+    .smpkg2-exp-workflow__item {
+      gap: 8px;
+    }
+  
+    .smpkg2-exp-workflow__pill {
+      min-height: 32px;
+  
+      padding: 8px 11px;
+  
+      font-size: 10px;
+      white-space: normal;
+    }
+  
+    .smpkg2-exp-workflow__arrow {
+      font-size: 15px;
+    }
+  
+    .smpkg2-exp-closing {
+      margin-top: 35px;
+    }
+  }
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .smpkg2-exp-reveal,
+    .smpkg2-exp-reveal.is-in {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  
+    .smpkg2-exp-wall__track {
+      animation: none !important;
+    }
+  
+    .smpkg2-exp-ring__progress {
+      stroke-dashoffset: 4.34;
+      transition: none;
+    }
+  
+    .smpkg2-exp-workflow__pill,
+    .smpkg2-exp-workflow__arrow {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  
+/* ============================================================
+   SOCIAL MEDIA PACKAGE 02 — 3 ESSENTIAL DOCUMENTS
+   ============================================================ */
+
+.smpkg2-exp-trio {
+    width: min(100%, 1000px);
+  
+    margin:
+      clamp(36px, 5vw, 65px)
+      auto
+      0;
+  }
+  
+  /* ============================================================
+     TITLE
+     ============================================================ */
+  
+  .smpkg2-exp-trio__title {
+    margin: 0 0 clamp(26px, 3.5vw, 44px);
+  
+    color: #111;
+  
+    font-size: clamp(27px, 3vw, 42px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.045em;
+  
+    text-align: center;
+  }
+  
+  .smpkg2-exp-trio__highlight {
+    display: inline;
+  
+    padding: 0.015em 0.24em 0.07em;
+  
+    border-radius: 999px;
+  
+    background: #a97fdd;
+    color: #fff;
+  
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  
+  .smpkg2-exp-trio__outline {
+    display: inline;
+  
+    padding: 0.005em 0.18em 0.045em;
+  
+    border: 1.5px solid #111;
+    border-radius: 999px;
+  
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  
+  /* ============================================================
+     THREE-COLUMN LAYOUT
+     ============================================================ */
+  
+  .smpkg2-exp-trio__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  
+    align-items: center;
+  
+    gap: clamp(13px, 2vw, 24px);
+  }
+  
+  .smpkg2-exp-trio__item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  
+    gap: 11px;
+  
+    min-width: 0;
+  
+    opacity: 0;
+  
+    transform: translateY(34px) scale(0.96);
+  
+    transition:
+      opacity 0.75s ease,
+      transform 0.95s cubic-bezier(.16, 1, .3, 1);
+  }
+  
+  /* Xuất hiện lần lượt khi section được kích hoạt */
+  
+  .smpkg2-exp-trio.is-in
+  .smpkg2-exp-trio__item {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  .smpkg2-exp-trio__item--proposal {
+    transition-delay: 0.12s;
+  }
+  
+  .smpkg2-exp-trio__item--audit {
+    transition-delay: 0.25s;
+  }
+  
+  .smpkg2-exp-trio__item--report {
+    transition-delay: 0.38s;
+  }
+  
+  /* ============================================================
+     LABELS
+     ============================================================ */
+  
+  .smpkg2-exp-trio__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+    min-height: 34px;
+  
+    padding: 8px 12px;
+  
+    border-radius: 999px;
+  
+    background: #f2e8ff;
+    color: #9262d0;
+  
+    font-size: clamp(10px, 1vw, 14px);
+    font-weight: 700;
+    line-height: 1.2;
+  
+    text-align: center;
+  }
+  
+  /* ============================================================
+     PASTEL LANDSCAPE
+     ============================================================ */
+  
+  .smpkg2-exp-trio__image {
+    position: relative;
+    isolation: isolate;
+  
+    width: 100%;
+    aspect-ratio: 1.12;
+  
+    overflow: hidden;
+  
+    border-radius: 20px;
+  
+    background:
+      linear-gradient(
+        180deg,
+        #c5ecff 0%,
+        #dcf4ff 52%,
+        #f7feff 100%
+      );
+  
+    transition:
+      transform 0.65s cubic-bezier(.16, 1, .3, 1),
+      box-shadow 0.45s ease;
+  }
+  
+  .smpkg2-exp-trio__item:hover
+  .smpkg2-exp-trio__image {
+    transform: translateY(-7px) scale(1.025);
+  
+    box-shadow:
+      0 16px 28px rgba(115, 85, 155, 0.13);
+  }
+  
+  /* ============================================================
+     CLOUD
+     ============================================================ */
+  
+  .smpkg2-exp-trio__cloud {
+    position: absolute;
+    z-index: 2;
+  
+    top: 24%;
+    left: 50%;
+  
+    width: 38%;
+    height: 17%;
+  
+    transform: translateX(-50%);
+  }
+  
+  .smpkg2-exp-trio__cloud span {
+    position: absolute;
+  
+    display: block;
+  
+    background: #fff;
+  }
+  
+  .smpkg2-exp-trio__cloud span:nth-child(1) {
+    left: 0;
+    bottom: 0;
+  
+    width: 55%;
+    height: 65%;
+  
+    border-radius: 999px;
+  }
+  
+  .smpkg2-exp-trio__cloud span:nth-child(2) {
+    left: 23%;
+    bottom: 0;
+  
+    width: 53%;
+    height: 100%;
+  
+    border-radius: 50% 50% 36% 36%;
+  }
+  
+  .smpkg2-exp-trio__cloud span:nth-child(3) {
+    right: 0;
+    bottom: 0;
+  
+    width: 50%;
+    height: 65%;
+  
+    border-radius: 999px;
+  }
+  
+  /* ============================================================
+     BACK HILL
+     ============================================================ */
+  
+  .smpkg2-exp-trio__hill {
+    position: absolute;
+  
+    left: -8%;
+  
+    display: block;
+  
+    width: 116%;
+  }
+  
+  .smpkg2-exp-trio__hill--back {
+    z-index: 2;
+  
+    bottom: -2%;
+  
+    height: 36%;
+  
+    background: #c6e58b;
+  
+    clip-path: polygon(
+      0 27%,
+      8% 17%,
+      17% 11%,
+      27% 11%,
+      38% 18%,
+      49% 29%,
+      60% 32%,
+      73% 24%,
+      86% 27%,
+      100% 35%,
+      100% 100%,
+      0 100%
+    );
+  }
+  
+  /* ============================================================
+     FRONT HILL
+     ============================================================ */
+  
+  .smpkg2-exp-trio__hill--front {
+    z-index: 3;
+  
+    bottom: -1%;
+  
+    height: 29%;
+  
+    background: #8da700;
+  
+    clip-path: polygon(
+      0 44%,
+      9% 51%,
+      20% 53%,
+      32% 48%,
+      43% 31%,
+      55% 22%,
+      67% 22%,
+      78% 33%,
+      89% 44%,
+      100% 40%,
+      100% 100%,
+      0 100%
+    );
+  }
+  
+  /* ============================================================
+     MIDDLE CARD — SLIGHTLY HIGHER
+     ============================================================ */
+  
+  .smpkg2-exp-trio__item--audit {
+    align-self: center;
+  }
+  
+  .smpkg2-exp-trio__item--audit
+  .smpkg2-exp-trio__hill--back {
+    height: 40%;
+  }
+  
+  .smpkg2-exp-trio__item--audit
+  .smpkg2-exp-trio__hill--front {
+    height: 34%;
+  }
+  
+  /* ============================================================
+     BOTTOM CALLOUT
+     ============================================================ */
+  
+  .smpkg2-exp-trio__callout {
+    width: 100%;
+  
+    margin-top: clamp(20px, 2.5vw, 32px);
+  
+    padding:
+      clamp(17px, 2vw, 25px)
+      clamp(20px, 3vw, 38px);
+  
+    border-radius: 13px;
+  
+    background:
+      linear-gradient(
+        105deg,
+        #aa80df 0%,
+        #b488e3 48%,
+        #a77cd9 100%
+      );
+  
+    color: #fff;
+  
+    font-size: clamp(13px, 1.25vw, 17px);
+    font-weight: 600;
+    line-height: 1.4;
+  
+    text-align: center;
+  
+    box-shadow:
+      0 9px 22px rgba(122, 76, 180, 0.15);
+  
+    opacity: 0;
+    transform: translateY(22px);
+  
+    transition:
+      opacity 0.75s ease 0.48s,
+      transform 0.9s cubic-bezier(.16, 1, .3, 1) 0.48s;
+  }
+  
+  .smpkg2-exp-trio.is-in
+  .smpkg2-exp-trio__callout {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .smpkg2-exp-trio__callout span {
+    display: inline;
+  
+    padding: 0.06em 0.22em;
+  
+    border-radius: 5px;
+  
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+  
+    font-weight: 800;
+  
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  
+  /* ============================================================
+     TABLET
+     ============================================================ */
+  
+  @media (max-width: 900px) {
+    .smpkg2-exp-trio__grid {
+      gap: 12px;
+    }
+  
+    .smpkg2-exp-trio__image {
+      border-radius: 15px;
+    }
+  
+    .smpkg2-exp-trio__label {
+      min-height: 32px;
+      padding: 7px 9px;
+    }
+  }
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (max-width: 580px) {
+    .smpkg2-exp-trio {
+      margin-top: 38px;
+    }
+  
+    .smpkg2-exp-trio__title {
+      margin-bottom: 27px;
+  
+      font-size: clamp(23px, 6.3vw, 31px);
+      line-height: 1.32;
+    }
+  
+    .smpkg2-exp-trio__grid {
+      grid-template-columns: 1fr;
+  
+      gap: 23px;
+  
+      width: min(100%, 360px);
+      margin-inline: auto;
+    }
+  
+    .smpkg2-exp-trio__item {
+      gap: 9px;
+    }
+  
+    .smpkg2-exp-trio__image {
+      aspect-ratio: 1.45;
+      border-radius: 17px;
+    }
+  
+    .smpkg2-exp-trio__label {
+      min-height: 34px;
+      font-size: 12px;
+    }
+  
+    .smpkg2-exp-trio__callout {
+      margin-top: 29px;
+      padding: 19px 17px;
+  
+      font-size: 13px;
+    }
+  }
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .smpkg2-exp-trio__item,
+    .smpkg2-exp-trio__callout {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  
+    .smpkg2-exp-trio__image {
+      transition: none;
+    }
+  }
+
+
+  /* ============================================================
+   SOCIAL MEDIA PACKAGE 02 — WHO IS THIS FOR
+   ============================================================ */
+
+.smpkg2-who {
+    position: relative;
+  
+    width: 100%;
+    height: 230vh;
+  
+    overflow: clip;
+  
+    background:
+      radial-gradient(
+        circle at 15% 23%,
+        rgba(169, 127, 221, 0.29) 0%,
+        rgba(169, 127, 221, 0.09) 15%,
+        transparent 31%
+      ),
+      radial-gradient(
+        circle at 81% 78%,
+        rgba(205, 252, 86, 0.08) 0%,
+        transparent 30%
+      ),
+      #050505;
+  
+    color: #fff;
+  }
+  
+  /* ============================================================
+     PINNED VIEWPORT
+     ============================================================ */
+  
+  .smpkg2-who__pin {
+    position: sticky;
+    top: 0;
+  
+    width: 100%;
+    height: 100vh;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    overflow: hidden;
+  }
+  
+  /* ============================================================
+     TOP
+     ============================================================ */
+  
+  .smpkg2-who__topline {
+    position: absolute;
+    z-index: 5;
+  
+    top: 0;
+    left: 50%;
+  
+    width: min(
+      1240px,
+      92vw
+    );
+  
+    padding-top:
+      clamp(
+        25px,
+        3.7vw,
+        45px
+      );
+  
+    transform:
+      translateX(-50%);
+  }
+  
+  /* TITLE */
+  
+  .smpkg2-who__title {
+    margin: 0;
+  
+    color: #fff;
+  
+    font-size:
+      clamp(
+        31px,
+        3.3vw,
+        50px
+      );
+  
+    font-weight: 700;
+  
+    line-height: 1.05;
+  
+    letter-spacing:
+      -0.05em;
+  
+    text-transform: uppercase;
+  }
+  
+  /* ============================================================
+     STEP INDICATOR
+     ============================================================ */
+  
+  .smpkg2-who__steps {
+    display: flex;
+    align-items: center;
+  
+    gap: 8px;
+  
+    margin-top: 17px;
+  }
+  
+  .smpkg2-who__step {
+    display: inline-flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    min-width: 53px;
+  
+    padding:
+      8px
+      12px;
+  
+    border:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.22
+      );
+  
+    border-radius:
+      999px;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.5
+      );
+  
+    font-size: 10px;
+  
+    font-weight: 700;
+  
+    letter-spacing:
+      0.08em;
+  
+    transition:
+      background-color
+        0.35s ease,
+      color
+        0.35s ease,
+      border-color
+        0.35s ease,
+      transform
+        0.35s
+        cubic-bezier(
+          0.16,
+          1,
+          0.3,
+          1
+        );
+  }
+  
+  .smpkg2-who__step.is-active {
+    background: #cdfc56;
+  
+    border-color:
+      #cdfc56;
+  
+    color: #111;
+  
+    transform:
+      translateY(-2px);
+  }
+  
+  /* ============================================================
+     HORIZONTAL TRACK
+     ============================================================ */
+  
+  .smpkg2-who__track {
+    display: flex;
+  
+    align-items: center;
+  
+    gap:
+      clamp(
+        18px,
+        2vw,
+        30px
+      );
+  
+    width: max-content;
+  
+    padding:
+      0
+      8vw;
+  
+    margin-top:
+      8vh;
+  
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  
+    will-change:
+      transform;
+  
+    backface-visibility:
+      hidden;
+  }
+  
+  /*
+  IMPORTANT:
+  
+  Không thêm:
+  transition: transform ...
+  
+  Track đã được lerp bằng JS.
+  Nếu thêm transition CSS
+  sẽ làm horizontal scroll lag.
+  */
+  
+  /* ============================================================
+     NORMAL CARDS
+     ============================================================ */
+  
+  .smpkg2-who__card {
+    position: relative;
+  
+    flex: 0 0 auto;
+  
+    width:
+      min(
+        480px,
+        72vw
+      );
+  
+    min-height:
+      clamp(
+        310px,
+        31vw,
+        380px
+      );
+  
+    display: flex;
+    flex-direction: column;
+  
+    padding:
+      clamp(
+        25px,
+        2.5vw,
+        36px
+      );
+  
+    overflow: hidden;
+  
+    border:
+      1.5px solid
+      rgba(
+        169,
+        127,
+        221,
+        0.18
+      );
+  
+    border-radius:
+      18px;
+  
+    background:
+      linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f9f8fb 100%
+      );
+  
+    color: #151316;
+  
+    box-shadow:
+      0
+      15px
+      35px
+      rgba(
+        0,
+        0,
+        0,
+        0.27
+      );
+  
+    transition:
+      transform
+        0.55s
+        cubic-bezier(
+          0.16,
+          1,
+          0.3,
+          1
+        ),
+      box-shadow
+        0.4s ease,
+      border-color
+        0.4s ease;
+  }
+  
+  /* HOVER */
+  
+  .smpkg2-who__card:not(
+    .smpkg2-who__card--end
+  ):hover {
+    transform:
+      translateY(-8px);
+  
+    box-shadow:
+      0
+      25px
+      48px
+      rgba(
+        0,
+        0,
+        0,
+        0.35
+      );
+  }
+  
+  /* ============================================================
+     FEATURED CARD — 02
+     ============================================================ */
+  
+  .smpkg2-who__card.is-featured {
+    border-color:
+      #a97fdd;
+  
+    box-shadow:
+      0
+      0
+      0
+      1px
+      rgba(
+        169,
+        127,
+        221,
+        0.28
+      )
+      inset,
+  
+      0
+      0
+      27px
+      rgba(
+        169,
+        127,
+        221,
+        0.24
+      ),
+  
+      0
+      18px
+      37px
+      rgba(
+        0,
+        0,
+        0,
+        0.31
+      );
+  }
+  
+  /* ============================================================
+     NUMBER
+     ============================================================ */
+  
+  .smpkg2-who__no {
+    color:
+      rgba(
+        27,
+        24,
+        31,
+        0.14
+      );
+  
+    font-size:
+      clamp(
+        43px,
+        4.5vw,
+        68px
+      );
+  
+    font-weight: 700;
+  
+    line-height: 1;
+  
+    letter-spacing:
+      -0.06em;
+  }
+  
+  /* ============================================================
+     CARD BODY
+     ============================================================ */
+  
+  .smpkg2-who__body {
+    max-width: 31ch;
+  
+    margin-top: 10px;
+  }
+  
+  .smpkg2-who__card-title {
+    margin: 0;
+  
+    color: #151316;
+  
+    font-size:
+      clamp(
+        24px,
+        2.3vw,
+        36px
+      );
+  
+    font-weight: 700;
+  
+    line-height: 1;
+  
+    letter-spacing:
+      -0.045em;
+  
+    text-transform: uppercase;
+  }
+  
+  .smpkg2-who__card-desc {
+    max-width: 33ch;
+  
+    margin:
+      24px
+      0
+      0;
+  
+    color: #858087;
+  
+    font-size:
+      clamp(
+        13px,
+        1.05vw,
+        16px
+      );
+  
+    line-height: 1.45;
+  
+    letter-spacing:
+      -0.01em;
+  }
+  
+  /* ============================================================
+     FINAL LIME CARD
+     ============================================================ */
+  
+  .smpkg2-who__card--end {
+    width:
+      min(
+        420px,
+        67vw
+      );
+  
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    gap: 17px;
+  
+    padding:
+      clamp(
+        27px,
+        3vw,
+        44px
+      );
+  
+    border-color:
+      #cdfc56;
+  
+    background:
+      #cdfc56;
+  
+    color: #111;
+  
+    text-align: center;
+  }
+  
+  .smpkg2-who__end-star {
+    color:
+      rgba(
+        120,
+        72,
+        176,
+        0.72
+      );
+  
+    font-size:
+      clamp(
+        38px,
+        4vw,
+        56px
+      );
+  
+    line-height: 1;
+  }
+  
+  /* END TEXT */
+  
+  .smpkg2-who__end-text {
+    max-width: 14ch;
+  
+    margin: 0;
+  
+    color: #111;
+  
+    font-size:
+      clamp(
+        21px,
+        2.1vw,
+        31px
+      );
+  
+    font-weight: 700;
+  
+    line-height: 1.12;
+  
+    letter-spacing:
+      -0.04em;
+  }
+  
+  .smpkg2-who__end-text span {
+    display: inline;
+  
+    padding:
+      0
+      0.12em;
+  
+    border-radius:
+      3px;
+  
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.65
+      );
+  
+    box-decoration-break:
+      clone;
+  
+    -webkit-box-decoration-break:
+      clone;
+  }
+  
+  /* ============================================================
+     FINAL CARD HOVER
+     ============================================================ */
+  
+  .smpkg2-who__card--end {
+    transition:
+      transform
+        0.55s
+        cubic-bezier(
+          0.16,
+          1,
+          0.3,
+          1
+        ),
+      box-shadow
+        0.4s ease;
+  }
+  
+  .smpkg2-who__card--end:hover {
+    transform:
+      translateY(-8px)
+      rotate(-1deg);
+  
+    box-shadow:
+      0
+      25px
+      45px
+      rgba(
+        205,
+        252,
+        86,
+        0.14
+      );
+  }
+  
+  /* ============================================================
+     DESKTOP / MEDIUM
+     ============================================================ */
+  
+  @media (
+    max-width: 1100px
+  ) {
+    .smpkg2-who__card {
+      width:
+        min(
+          430px,
+          72vw
+        );
+    }
+  
+    .smpkg2-who__track {
+      padding:
+        0
+        6vw;
+    }
+  }
+  
+  /* ============================================================
+     MOBILE / TABLET
+     ============================================================ */
+  
+  @media (
+    max-width: 880px
+  ) {
+    .smpkg2-who {
+      height: auto;
+  
+      padding:
+        50px
+        0
+        65px;
+    }
+  
+    .smpkg2-who__pin {
+      position: relative;
+  
+      height: auto;
+  
+      overflow: visible;
+  
+      justify-content:
+        flex-start;
+    }
+  
+    /* TOP */
+  
+    .smpkg2-who__topline {
+      position: relative;
+  
+      top: auto;
+      left: auto;
+  
+      width:
+        calc(
+          100% - 32px
+        );
+  
+      margin-inline:
+        auto;
+  
+      padding-top: 0;
+  
+      transform: none;
+    }
+  
+    .smpkg2-who__title {
+      font-size:
+        clamp(
+          28px,
+          7vw,
+          39px
+        );
+    }
+  
+    .smpkg2-who__steps {
+      display: none;
+    }
+  
+    /* TRACK */
+  
+    .smpkg2-who__track {
+      width: auto;
+  
+      display: flex;
+      flex-direction: column;
+  
+      gap: 18px;
+  
+      margin-top:
+        28px;
+  
+      padding:
+        0
+        16px;
+  
+      transform:
+        none !important;
+    }
+  
+    /* CARD */
+  
+    .smpkg2-who__card,
+    .smpkg2-who__card--end {
+      width: 100%;
+      min-height: auto;
+    }
+  
+    .smpkg2-who__card {
+      padding:
+        24px
+        21px;
+  
+      border-radius:
+        17px;
+    }
+  
+    .smpkg2-who__no {
+      font-size:
+        45px;
+    }
+  
+    .smpkg2-who__body {
+      max-width: none;
+    }
+  
+    .smpkg2-who__card-title {
+      font-size:
+        clamp(
+          25px,
+          7vw,
+          34px
+        );
+    }
+  
+    .smpkg2-who__card-desc {
+      max-width:
+        48ch;
+  
+      margin-top:
+        16px;
+  
+      font-size:
+        13px;
+    }
+  
+    /* END */
+  
+    .smpkg2-who__card--end {
+      min-height: 250px;
+    }
+  
+    .smpkg2-who__end-text {
+      max-width: 16ch;
+  
+      font-size:
+        clamp(
+          24px,
+          6vw,
+          31px
+        );
+    }
+  }
+  
+  /* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+  
+  @media (
+    max-width: 480px
+  ) {
+    .smpkg2-who {
+      padding:
+        42px
+        0
+        55px;
+    }
+  
+    .smpkg2-who__title {
+      font-size:
+        29px;
+    }
+  
+    .smpkg2-who__card-title {
+      font-size:
+        26px;
+    }
+  
+    .smpkg2-who__end-star {
+      font-size:
+        38px;
+    }
+  
+    .smpkg2-who__end-text {
+      font-size:
+        23px;
+    }
+  }
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (
+    prefers-reduced-motion:
+    reduce
+  ) {
+    .smpkg2-who__track {
+      transform:
+        none !important;
+  
+      will-change:
+        auto;
+    }
+  
+    .smpkg2-who__card,
+    .smpkg2-who__step {
+      transition: none;
+    }
+  }

@@ -3193,7 +3193,7 @@
   font-size:
     clamp(14px, 1.1vw, 17px);
 
-  line-height: 1.;
+  line-height: 1.6;
 
   letter-spacing:
     -.01em;

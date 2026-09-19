@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Media Bundle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..600;1,400..600&family=Space+Grotesk:wght@300..700&display=swap">
+<style>
+  :root{
+    --paper:#FFFFFF; --paper-2:#F3EBFD; --white:#FFFFFF;
+    --ink:#1B1425; --ink-2:#4A4257; --ink-soft:#7D7689;
+    --purple:#A97FDD; --purple-deep:#8A5FCF; --purple-tint:#F3EBFD;
+    --lime:#CDFC56; --lime-deep:#B4E63A; --sky:#A7CAF0; --pink:#F2B6D6;
+    --line:rgba(27,20,37,.14);
+    --r-lg:28px; --r-md:20px; --r-pill:999px; --maxw:1140px;
+    --fd:'Space Grotesk','Helvetica Neue',Inter,system-ui,sans-serif;
+    --fb:'Space Grotesk','Helvetica Neue',Inter,system-ui,sans-serif;
+    --fs:'Playfair Display',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-.003em;}
+  h1,h2,h3,h4{font-family:var(--fd);margin:0;line-height:1.05;letter-spacing:-.03em;text-wrap:balance;font-weight:700;}
+  p{margin:0;} a{color:inherit;text-decoration:none;} img{max-width:100%;display:block;}
+  :focus-visible{outline:3px solid var(--purple);outline-offset:3px;border-radius:8px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .section{padding:92px 0;}
+
+  .eyebrow{font-family:var(--fd);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-deep);}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--white);color:var(--ink-2);}
+  .pill.dot::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--purple);}
+  .hl{background:var(--lime);border-radius:8px;padding:0 8px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+  .hlp{color:var(--purple-deep);font-weight:600;}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:600;font-size:15px;padding:15px 28px;border-radius:var(--r-pill);background:var(--ink);color:#fff;border:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(27,20,37,.5);}
+  .btn.lime{background:var(--lime);color:var(--ink);}
+  .btn .ar{transition:transform .2s;} .btn:hover .ar{transform:translateX(4px);}
+
+  /* progress + totop */
+  .progressbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--purple),var(--lime));z-index:1000;transition:width .12s linear;}
+  .totop{position:fixed;right:20px;bottom:20px;z-index:800;width:48px;height:48px;border-radius:50%;background:var(--purple);color:#fff;display:grid;place-items:center;border:none;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .35s,transform .35s,background .3s;box-shadow:0 12px 26px -10px rgba(124,92,252,.6);}
+  .totop.on{opacity:1;pointer-events:auto;transform:none;}
+  .totop:hover{background:var(--purple-deep);transform:translateY(-3px);}
+  .totop svg{width:20px;height:20px;}
+
+  /* nav */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:var(--maxw);margin:0 auto;}
+  .brand{font-family:var(--fd);font-weight:700;font-size:20px;letter-spacing:-.04em;}
+  .brand i{color:var(--purple);font-style:normal;}
+
+  /* hero */
+  .hero{padding:40px 0 64px;text-align:center;position:relative;overflow:hidden;}
+  .hero .eyebrow{display:inline-block;margin-bottom:18px;}
+  .hero h1{font-size:clamp(40px,8vw,88px);text-transform:uppercase;line-height:.98;letter-spacing:-.04em;}
+  .hero h1 .cap{display:inline-block;border:2px solid var(--ink);border-radius:var(--r-pill);padding:0 .28em .06em;}
+  .hero-sub{max-width:620px;margin:22px auto 0;font-size:18px;color:var(--ink-2);}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-top:30px;}
+  .hero-note{font-family:var(--fd);font-weight:600;font-size:14px;color:var(--ink-2);}
+  .hero-note s{color:var(--ink-soft);font-weight:400;margin-left:6px;}
+
+  /* problem lead */
+  .plead{text-align:center;}
+  .plead h2{font-size:clamp(26px,4.2vw,44px);text-transform:uppercase;max-width:20ch;margin:0 auto 16px;}
+  .plead p{font-size:17px;color:var(--ink-2);max-width:60ch;margin:0 auto;}
+
+  /* ===== workflow circular map (scrollytelling) ===== */
+  .wf{position:relative;height:560vh;}
+  .wf-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(180deg,#fff,#f7f2fe);}
+  .wf-inner{width:min(1080px,92vw);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;}
+  .wf-copy .eyebrow{display:inline-block;margin-bottom:14px;}
+  .wf-copy>h2{font-size:clamp(24px,3vw,38px);text-transform:uppercase;margin-bottom:26px;max-width:16ch;}
+  .wf-stepnum{font-family:var(--fd);font-weight:700;font-size:clamp(46px,6vw,72px);color:transparent;-webkit-text-stroke:2px var(--purple);line-height:.9;letter-spacing:-.04em;}
+  .wf-steptitle{font-size:clamp(22px,2.6vw,30px);text-transform:uppercase;margin:10px 0 12px;}
+  .wf-stepdesc{font-size:16px;color:var(--ink-2);max-width:38ch;min-height:3em;}
+  .wf-dots{display:flex;gap:8px;margin-top:26px;}
+  .wf-dots i{width:26px;height:5px;border-radius:9px;background:var(--line);transition:background .3s;}
+  .wf-dots i.on{background:var(--purple);}
+
+  .wf-stage{position:relative;aspect-ratio:1/1;width:100%;max-width:460px;margin:0 auto;}
+  .wf-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+  .wf-prog{transition:stroke-dashoffset .2s linear;}
+  .wf-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:40%;height:40%;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--fd);font-weight:700;font-size:clamp(11px,1.5vw,15px);text-transform:uppercase;line-height:1.18;padding:12px;z-index:2;}
+  .wf-center b{color:var(--lime);display:block;}
+  .wf-node{position:absolute;width:21%;height:21%;transform:translate(-50%,-50%);border-radius:20px;background:var(--white);border:1.5px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:3px;transition:transform .45s cubic-bezier(.16,1,.3,1),background .4s,border-color .4s,box-shadow .4s;cursor:pointer;z-index:3;padding:6px;}
+  .wf-node b{font-family:var(--fd);font-weight:700;font-size:clamp(13px,1.7vw,18px);}
+  .wf-node span{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;color:var(--ink-2);line-height:1.1;}
+  .wf-node.active{transform:translate(-50%,-50%) scale(1.22);background:var(--purple);border-color:var(--purple);box-shadow:0 18px 42px -16px rgba(124,92,252,.6);}
+  .wf-node.active b,.wf-node.active span{color:#fff;}
+  .n1{left:50%;top:9%;} .n2{left:89%;top:37%;} .n3{left:74%;top:84%;} .n4{left:26%;top:84%;} .n5{left:11%;top:37%;}
+  .wf-mlist{display:none;}
+
+  /* transition line */
+  .tline{text-align:center;}
+  .tline .big{font-size:clamp(24px,4vw,40px);text-transform:uppercase;max-width:22ch;margin:0 auto 18px;}
+  .tline p{color:var(--ink-2);max-width:54ch;margin:0 auto 12px;font-size:16.5px;}
+
+  /* testimonials */
+  .tms .tm-head{text-align:center;}
+  .tms .tm-head .eyebrow{display:inline-block;margin-bottom:14px;}
+  .tms .tm-head h2{font-size:clamp(24px,4vw,42px);text-transform:uppercase;max-width:22ch;margin:0 auto;}
+  .tms .tm-note{text-align:center;font-size:13px;color:var(--ink-soft);margin:14px auto 46px;}
+  .tm-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .tm{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px 26px;box-shadow:0 18px 40px -28px rgba(76,48,120,.3);display:flex;flex-direction:column;gap:18px;margin:0;transition:transform .3s,box-shadow .3s;}
+  .tm:hover{transform:translateY(-6px);box-shadow:0 26px 50px -26px rgba(76,48,120,.4);}
+  .tm .stars{display:flex;gap:5px;}
+  .tm .stars i{width:7px;height:7px;border-radius:50%;background:var(--lime-deep);}
+  .tm q{quotes:none;font-family:var(--fs);font-style:italic;font-size:17px;line-height:1.55;color:var(--ink);}
+  .tm .who{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .tm .av{width:42px;height:42px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;font-family:var(--fd);font-weight:700;color:#fff;font-size:14px;}
+  .tm:nth-child(1) .av{background:linear-gradient(140deg,var(--purple),var(--purple-deep));}
+  .tm:nth-child(2) .av{background:linear-gradient(140deg,var(--sky),#6f9fdc);}
+  .tm:nth-child(3) .av{background:linear-gradient(140deg,var(--lime-deep),#8bbf2e);color:var(--ink);}
+  .tm .who b{display:block;font-size:14px;font-weight:700;}
+  .tm .who span{font-size:12px;color:var(--ink-soft);}
+  @media(max-width:820px){.tm-wall{grid-template-columns:1fr;}}
+
+  /* work gallery (proof of work) */
+  .gal .gal-head{text-align:center;margin-bottom:14px;}
+  .gal .gal-head .eyebrow{display:inline-block;margin-bottom:14px;}
+  .gal .gal-head h2{font-size:clamp(24px,4vw,44px);text-transform:uppercase;max-width:20ch;margin:0 auto;}
+  .gal .gal-note{text-align:center;font-size:13px;color:var(--ink-soft);margin:14px auto 44px;}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(138px,15.5vw,178px);gap:14px;}
+  .gi{border-radius:18px;overflow:hidden;position:relative;background-size:cover;background-position:center;box-shadow:0 16px 36px -26px rgba(76,48,120,.4);transition:transform .3s ease;}
+  .gi:hover{transform:translateY(-5px);}
+  .gi .gi-hint{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:rgba(255,255,255,.9);}
+  .gi .gi-hint svg{width:26px;height:26px;}
+  .gi .gi-hint span{font-size:11px;font-weight:600;}
+  .gi .gi-cap{position:absolute;left:12px;bottom:12px;z-index:2;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);border-radius:10px;padding:6px 12px;font-size:11px;font-weight:700;color:var(--ink);}
+  .gi1{grid-column:1/3;grid-row:1/3;background:linear-gradient(150deg,#c9a7ef,#a97fdd);}
+  .gi2{grid-column:3/4;grid-row:1/2;background:linear-gradient(150deg,#a7caf0,#7fb0e6);}
+  .gi3{grid-column:4/5;grid-row:1/2;background:linear-gradient(150deg,#d7f36a,#a9d92e);}
+  .gi4{grid-column:3/4;grid-row:2/3;background:linear-gradient(150deg,#f2b6d6,#e488b8);}
+  .gi5{grid-column:4/5;grid-row:2/3;background:linear-gradient(150deg,#e8dcfa,#c6b0e6);}
+  .gi6{grid-column:1/3;grid-row:3/4;background:linear-gradient(150deg,#c6b0e6,#9d86c9);}
+  .gi7{grid-column:3/5;grid-row:3/4;background:linear-gradient(150deg,#f5e6c8,#e9c98f);}
+  @media(max-width:720px){
+    .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+    .gi1{grid-column:1/3;grid-row:1/3;} .gi2{grid-column:1/2;grid-row:3/4;} .gi3{grid-column:2/3;grid-row:3/4;}
+    .gi4{grid-column:1/2;grid-row:4/5;} .gi5{grid-column:2/3;grid-row:4/5;}
+    .gi6{grid-column:1/3;grid-row:5/6;} .gi7{grid-column:1/3;grid-row:6/7;}
+  }
+
+  /* work wall (drifting polaroids) */
+  .ww{overflow:hidden;}
+  .ww-rows{display:flex;flex-direction:column;gap:22px;}
+  .ww-row{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);}
+  .ww-track{display:flex;gap:22px;width:max-content;padding:14px 0;animation:wwL 48s linear infinite;}
+  .ww-row.r2 .ww-track{animation:wwR 54s linear infinite;}
+  .ww-row:hover .ww-track{animation-play-state:paused;}
+  @keyframes wwL{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes wwR{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+  .ww-card{flex:0 0 auto;width:232px;background:#fff;border-radius:8px;padding:12px 12px 0;box-shadow:0 16px 34px -20px rgba(76,48,120,.4);transform:rotate(var(--r,-2deg));transition:transform .35s cubic-bezier(.16,1,.3,1);}
+  .ww-track .ww-card:nth-child(even){--r:2.2deg;}
+  .ww-card:hover{transform:rotate(0deg) translateY(-6px) scale(1.03);z-index:5;position:relative;}
+  .ww-photo{aspect-ratio:4/3;border-radius:4px;overflow:hidden;position:relative;background-size:cover;background-position:center;display:grid;place-items:center;color:rgba(255,255,255,.9);}
+  .ww-photo svg{width:26px;height:26px;}
+  .ww-card figcaption{font-family:var(--fs);font-style:italic;text-align:center;padding:12px 4px 14px;font-size:14px;color:var(--ink);}
+  .ww-card figcaption small{display:block;font-family:var(--fd);font-style:normal;font-weight:600;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;}
+  .pp1{background:linear-gradient(150deg,#c9a7ef,#a97fdd);} .pp2{background:linear-gradient(150deg,#a7caf0,#7fb0e6);}
+  .pp3{background:linear-gradient(150deg,#d7f36a,#a9d92e);} .pp4{background:linear-gradient(150deg,#f2b6d6,#e488b8);}
+  .pp5{background:linear-gradient(150deg,#c6b0e6,#9d86c9);} .pp6{background:linear-gradient(150deg,#f5e6c8,#e9c98f);}
+  @media(prefers-reduced-motion:reduce){.ww-track{animation:none;}}
+
+  /* bundle intro */
+  .bintro{background:var(--paper-2);}
+  .bintro .wrap{text-align:center;}
+  .bintro h2{font-size:clamp(28px,5vw,54px);text-transform:uppercase;margin:14px 0 20px;}
+  .bintro p{color:var(--ink-2);max-width:52ch;margin:0 auto 30px;font-size:17px;}
+  .flow-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;}
+  .flow-chips .fc{font-family:var(--fd);font-weight:700;font-size:clamp(13px,1.6vw,16px);text-transform:uppercase;padding:11px 20px;border-radius:var(--r-pill);background:var(--white);border:1.5px solid var(--ink);}
+  .flow-chips .fc:nth-child(4n+1){background:var(--purple);border-color:var(--purple);color:#fff;}
+  .flow-chips .fc:nth-child(4n+3){background:var(--lime);border-color:var(--lime);}
+  .flow-chips .arw{color:var(--purple);font-weight:700;}
+
+  /* template details */
+  .tpls .sec-head{text-align:center;margin-bottom:56px;}
+  .tpls .sec-head h2{font-size:clamp(28px,5vw,52px);text-transform:uppercase;}
+  .tpls .sec-head .pill{margin-bottom:16px;}
+  .tpl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px);align-items:center;padding:34px 0;border-top:1px solid var(--line);}
+  .tpl:first-of-type{border-top:none;}
+  .tpl:nth-child(even) .tpl-visual{order:-1;}
+  .tpl-num{font-family:var(--fd);font-weight:700;font-size:clamp(50px,7vw,84px);color:transparent;-webkit-text-stroke:2px var(--purple);line-height:.85;margin-bottom:14px;}
+  .tpl h3{font-size:clamp(21px,2.6vw,30px);text-transform:uppercase;margin-bottom:12px;line-height:1.12;}
+  .tpl .lead{font-size:16px;color:var(--ink-2);max-width:44ch;font-family:var(--fs);font-style:italic;}
+  .tpl-visual{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 28px;box-shadow:0 20px 44px -30px rgba(76,48,120,.35);}
+  .tpl-visual .vlab{font-family:var(--fd);font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px;}
+  .tpl-list{list-style:none;padding:0;margin:0;}
+  .tpl-list li{position:relative;padding:12px 0 12px 26px;font-size:15px;color:var(--ink-2);border-top:1px solid var(--line);}
+  .tpl-list li:first-child{border-top:none;}
+  .tpl-list li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:9px;border-radius:50%;background:var(--lime);border:1.5px solid var(--ink);}
+  @media(max-width:820px){.tpl{grid-template-columns:1fr;gap:24px;}.tpl:nth-child(even) .tpl-visual{order:0;}}
+
+  /* value */
+  .value{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:clamp(36px,5vw,64px);position:relative;overflow:hidden;}
+  .value::before{content:"";position:absolute;inset:0;background:radial-gradient(460px circle at 90% 6%,rgba(169,127,221,.4),transparent 55%),radial-gradient(360px circle at 6% 110%,rgba(205,252,86,.14),transparent 55%);}
+  .value>*{position:relative;}
+  .value .eyebrow{color:var(--lime);}
+  .value h2{font-size:clamp(26px,4vw,44px);text-transform:uppercase;margin:14px 0 20px;color:#fff;max-width:20ch;}
+  .value>p{color:#d8d6df;max-width:56ch;font-size:16.5px;margin-bottom:26px;}
+  .vqs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .vq{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;}
+  .vq b{font-family:var(--fs);font-style:italic;font-weight:500;font-size:19px;color:var(--lime);display:block;margin-bottom:8px;}
+  .vq p{font-size:14px;color:#cfcdd6;line-height:1.5;}
+  @media(max-width:720px){.vqs{grid-template-columns:1fr;}}
+
+  /* price */
+  .price{background:var(--ink);color:#fff;text-align:center;border-radius:var(--r-lg);padding:clamp(40px,5vw,64px);position:relative;overflow:hidden;}
+  .price::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at 88% 8%,rgba(169,127,221,.4),transparent 55%),radial-gradient(320px circle at 6% 100%,rgba(205,252,86,.16),transparent 55%);}
+  .price>*{position:relative;}
+  .price .eyebrow{color:#b7b5ae;}
+  .price h2{font-size:clamp(24px,4vw,40px);text-transform:uppercase;margin:12px 0 8px;color:#fff;}
+  .price h2 .u{background:var(--lime);color:var(--ink);border-radius:10px;padding:0 10px;}
+  .price-now{font-family:var(--fd);font-weight:700;font-size:clamp(52px,9vw,88px);line-height:1;color:var(--lime);margin:22px 0 6px;}
+  .price-now s{font-size:.3em;color:var(--ink-soft);font-weight:400;margin-left:12px;vertical-align:middle;}
+  .price .btn{margin-top:26px;}
+  .price-note{margin-top:26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px 22px;max-width:520px;margin-left:auto;margin-right:auto;font-size:14px;color:#d8d6df;}
+  .price-note b{color:var(--lime);}
+
+  /* footer */
+  .foot{padding:52px 24px;text-align:center;}
+  .foot .fb{font-family:var(--fd);font-weight:700;font-size:30px;}
+  .foot .fb i{color:var(--purple);font-style:normal;}
+  .foot p{color:var(--ink-soft);font-size:14px;margin-top:8px;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,1,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media(max-width:820px){
+    .section{padding:64px 0;}
+    .wf{height:auto;}
+    .wf-sticky{position:static;height:auto;padding:56px 0;}
+    .wf-inner{grid-template-columns:1fr;gap:36px;}
+    .wf-stage{display:none;}
+    .wf-dynamic{display:none;}
+    .wf-mlist{display:block;margin-top:6px;}
+    .wf-mlist .mi{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line);}
+    .wf-mlist .mi:first-child{border-top:none;}
+    .wf-mlist .mi b{font-family:var(--fd);font-weight:700;color:var(--purple-deep);font-size:18px;}
+    .wf-mlist .mi h4{font-size:16px;text-transform:uppercase;margin-bottom:4px;}
+    .wf-mlist .mi p{font-size:14px;color:var(--ink-2);}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .wf-node,.wf-prog{transition:none;}
+    *{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<div class="progressbar" id="pbar"></div>
+
+<nav class="nav">
+  <div class="brand">QUIZZY<i>.</i></div>
+  <span class="pill dot">Social Media Bundle</span>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Bộ tài liệu + template</span>
+    <h1>Social Media <span class="cap">Bundle</span></h1>
+    <p class="hero-sub">Trọn bộ template đi theo cả quy trình làm việc với client — dành cho người làm Social Media Marketing.</p>
+    <div class="hero-cta">
+      <a href="#price" class="btn">Sở hữu bundle <span class="ar">→</span></a>
+      <span class="hero-note">Chỉ 599.000đ <s>1.299.000đ</s></span>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM LEAD -->
+<section class="section" style="padding-bottom:40px;">
+  <div class="wrap plead reveal">
+    <span class="pill dot" style="margin-bottom:18px;">Bắt đầu từ thực tế</span>
+    <h2>Làm Social Media cho một client thực sự gồm những gì?</h2>
+    <p>Từ lúc tìm cơ hội → thuyết phục khách hàng → bắt đầu dự án → triển khai → đo lường kết quả, một người làm Social Media phải đi qua rất nhiều bước. Cuộn xuống để xem toàn bộ quy trình.</p>
+  </div>
+</section>
+
+<!-- WORKFLOW CIRCULAR MAP -->
+<section class="wf" id="workflow">
+  <div class="wf-sticky">
+    <div class="wf-inner">
+      <div class="wf-copy">
+        <span class="eyebrow">Quy trình làm việc với client</span>
+        <h2>Mỗi bước lại cần một loại tài liệu khác nhau</h2>
+        <div class="wf-dynamic">
+          <div class="wf-stepnum" id="wfNum">01</div>
+          <div class="wf-steptitle" id="wfTitle">Social Media Portfolio</div>
+          <p class="wf-stepdesc" id="wfDesc">Cần Portfolio để giới thiệu năng lực — cho khách thấy bạn giỏi đến đâu.</p>
+          <div class="wf-dots" id="wfDots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="wf-mlist">
+          <div class="mi"><b>01</b><div><h4>Portfolio</h4><p>Giới thiệu năng lực để khách thấy bạn giỏi đến đâu.</p></div></div>
+          <div class="mi"><b>02</b><div><h4>Proposal</h4><p>Thuyết phục và biến quan tâm thành hợp đồng.</p></div></div>
+          <div class="mi"><b>03</b><div><h4>Audit</h4><p>Chỉ ra chính xác kênh cần cải thiện ở đâu, vì sao.</p></div></div>
+          <div class="mi"><b>04</b><div><h4>Strategy &amp; Plan</h4><p>Biết mình sẽ đi đâu, đăng gì, theo lịch nào.</p></div></div>
+          <div class="mi"><b>05</b><div><h4>Monthly Report</h4><p>Chứng minh mình đã làm được những gì.</p></div></div>
+        </div>
+      </div>
+
+      <div class="wf-stage" aria-hidden="true">
+        <svg class="wf-ring" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="41" fill="none" stroke="rgba(27,20,37,.14)" stroke-width="0.5" stroke-dasharray="1.6 2.4"/>
+          <circle class="wf-prog" id="wfProg" cx="50" cy="50" r="41" fill="none" stroke="#A97FDD" stroke-width="1.3" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-90 50 50)"/>
+        </svg>
+        <div class="wf-center">SOCIAL MEDIA<b>WORKFLOW</b></div>
+        <a class="wf-node n1 active" href="#tpl1"><b>01</b><span>Portfolio</span></a>
+        <a class="wf-node n2" href="#tpl2"><b>02</b><span>Proposal</span></a>
+        <a class="wf-node n3" href="#tpl3"><b>03</b><span>Audit</span></a>
+        <a class="wf-node n4" href="#tpl4"><b>04</b><span>Strategy &amp; Plan</span></a>
+        <a class="wf-node n5" href="#tpl5"><b>05</b><span>Report</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- WORK WALL (proof of work) -->
+<section class="section gal ww">
+  <div class="wrap">
+    <div class="gal-head reveal">
+      <span class="eyebrow">Proof of work</span>
+      <h2>Đã áp dụng thực tế cho nhiều client khác nhau</h2>
+    </div>
+    <p class="gal-note reveal">Tường ảnh làm việc — thay bằng ảnh/screenshot thật của bạn (proposal, audit, report, ảnh họp client…). Rê chuột để dừng.</p>
+  </div>
+  <div class="ww-rows">
+    <div class="ww-row">
+      <div class="ww-track">
+        <figure class="ww-card"><div class="ww-photo pp1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Proposal<small>Client · F&amp;B</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Audit<small>Beauty brand</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Strategy<small>Startup</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Content Plan<small>Agency</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Monthly Report<small>E-commerce</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Portfolio<small>Personal brand</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Proposal<small>Client · F&amp;B</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Audit<small>Beauty brand</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Strategy<small>Startup</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Content Plan<small>Agency</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Monthly Report<small>E-commerce</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Portfolio<small>Personal brand</small></figcaption></figure>
+      </div>
+    </div>
+    <div class="ww-row r2">
+      <div class="ww-track">
+        <figure class="ww-card"><div class="ww-photo pp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Content Calendar<small>Cafe chain</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Audit<small>Fashion</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Proposal<small>Education</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Report<small>Local business</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Strategy<small>SaaS</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Làm việc với client<small>Workshop</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Content Calendar<small>Cafe chain</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Audit<small>Fashion</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Proposal<small>Education</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Report<small>Local business</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Strategy<small>SaaS</small></figcaption></figure>
+        <figure class="ww-card"><div class="ww-photo pp5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.5 4h7a1 1 0 0 1 .8.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.5"/></svg></div><figcaption>Làm việc với client<small>Workshop</small></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLE INTRO -->
+<section class="section bintro">
+  <div class="wrap reveal">
+    <span class="eyebrow">Một bộ template đi theo cả quy trình</span>
+    <h2>Social Media Bundle</h2>
+    <p>Bạn không cần tự tạo lại mọi thứ từ con số 0. Chỉ cần hiểu cách sử dụng, customize theo client và áp dụng vào project của mình.</p>
+    <div class="flow-chips">
+      <span class="fc">Portfolio</span><span class="arw">→</span>
+      <span class="fc">Proposal</span><span class="arw">→</span>
+      <span class="fc">Audit</span><span class="arw">→</span>
+      <span class="fc">Strategy</span><span class="arw">→</span>
+      <span class="fc">Plan</span><span class="arw">→</span>
+      <span class="fc">Report</span>
+    </div>
+  </div>
+</section>
+
+<!-- TEMPLATE DETAILS -->
+<section class="section tpls">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="pill dot">Khám phá bên trong tài liệu</span>
+      <h2>Bên trong bundle có gì?</h2>
+    </div>
+
+    <div class="tpl reveal" id="tpl1">
+      <div>
+        <div class="tpl-num">01</div>
+        <h3>Social Media Portfolio</h3>
+        <p class="lead">Có năng lực nhưng không biết show thì khách hàng cũng khó biết bạn giỏi đến đâu.</p>
+      </div>
+      <div class="tpl-visual">
+        <div class="vlab">Bên trong template</div>
+        <ul class="tpl-list">
+          <li>Hướng dẫn xây dựng Social Media Portfolio chuyên nghiệp.</li>
+          <li>Cách trình bày kinh nghiệm và năng lực cá nhân.</li>
+          <li>Template Portfolio customize theo personal brand.</li>
+          <li>Tạo ấn tượng chuyên nghiệp ngay từ lần đầu gửi proposal.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tpl reveal" id="tpl2">
+      <div>
+        <div class="tpl-num">02</div>
+        <h3>Social Media Proposal</h3>
+        <p class="lead">Đã có khách quan tâm — đây là lúc biến "quan tâm" thành "ký hợp đồng".</p>
+      </div>
+      <div class="tpl-visual">
+        <div class="vlab">Bên trong template</div>
+        <ul class="tpl-list">
+          <li>Template Social Media Proposal chuyên nghiệp.</li>
+          <li>Cấu trúc proposal trình bày dịch vụ rõ ràng.</li>
+          <li>Cách trình bày scope of work.</li>
+          <li>Template pricing cho từng hạng mục dịch vụ.</li>
+          <li>Tự tin hơn khi pitch và gửi proposal cho client.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tpl reveal" id="tpl3">
+      <div>
+        <div class="tpl-num">03</div>
+        <h3>Social Media Audit</h3>
+        <p class="lead">Đừng chỉ nói "kênh này cần cải thiện". Hãy cho client thấy chính xác cần cải thiện ở đâu và vì sao.</p>
+      </div>
+      <div class="tpl-visual">
+        <div class="vlab">Bên trong template</div>
+        <ul class="tpl-list">
+          <li>Framework audit Social Media.</li>
+          <li>Hướng dẫn phân tích từng yếu tố trên kênh.</li>
+          <li>Xác định điểm mạnh, điểm yếu và cơ hội.</li>
+          <li>Cách đưa ra recommendation dựa trên dữ liệu.</li>
+          <li>Biến audit thành tài liệu có giá trị để làm việc với client.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tpl reveal" id="tpl4">
+      <div>
+        <div class="tpl-num">04</div>
+        <h3>Social Media Strategy &amp; Plan</h3>
+        <p class="lead">Không có strategy thì rất dễ rơi vào cảnh hôm nay nghĩ gì thì đăng đó.</p>
+      </div>
+      <div class="tpl-visual">
+        <div class="vlab">Bên trong template</div>
+        <ul class="tpl-list">
+          <li>Framework xây dựng Social Media Strategy.</li>
+          <li>Xác định target audience và content direction.</li>
+          <li>Xây dựng content pillars và định hướng nội dung.</li>
+          <li>Template Social Media Plan &amp; Content Calendar.</li>
+          <li>Dễ dàng theo dõi task, timeline và tiến độ của team.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tpl reveal" id="tpl5">
+      <div>
+        <div class="tpl-num">05</div>
+        <h3>Social Media Monthly Report</h3>
+        <p class="lead">Giúp client nhìn thấy rõ hiệu quả công việc, thay vì một bảng số liệu dài ngoằng.</p>
+      </div>
+      <div class="tpl-visual">
+        <div class="vlab">Bên trong template</div>
+        <ul class="tpl-list">
+          <li>Template Monthly Report chuyên nghiệp.</li>
+          <li>Các nhóm chỉ số quan trọng cần theo dõi.</li>
+          <li>Cách trình bày số liệu trực quan, dễ hiểu.</li>
+          <li>Hướng dẫn tổng hợp và diễn giải kết quả.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section class="section">
+  <div class="wrap">
+    <div class="value reveal">
+      <span class="eyebrow">Không chỉ là template</span>
+      <h2>Mình không muốn bạn chỉ download một đống file rồi không biết dùng</h2>
+      <p>Trong bundle có hướng dẫn và diễn giải để bạn hiểu cách dùng, thay vì phải đoán. Bạn có thể tái sử dụng cho nhiều khách hàng và dự án khác nhau.</p>
+      <div class="vqs">
+        <div class="vq"><b>Dùng để làm gì?</b><p>Mỗi template gắn với một bước cụ thể trong quy trình làm việc với client.</p></div>
+        <div class="vq"><b>Tại sao cần nó?</b><p>Hiểu vai trò của từng tài liệu để dùng đúng lúc, đúng chỗ.</p></div>
+        <div class="vq"><b>Adapt thế nào?</b><p>Cách customize cho từng client, từng ngành hàng, từng project.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="section" id="price" style="padding-top:0;">
+  <div class="wrap">
+    <div class="price reveal">
+      <span class="eyebrow">Full workflow làm việc với client</span>
+      <h2>Tất cả gom lại trong <span class="u">một bundle duy nhất</span></h2>
+      <div class="price-now"><span class="cup" data-to="599000" data-fmt="vnd">0đ</span> <s>1.299.000đ</s></div>
+      <a href="#" class="btn lime">Sở hữu bundle ngay <span class="ar">→</span></a>
+      <div class="price-note">✳ <b>Update mỗi quý:</b> Bạn không chỉ nhận template hiện tại, mà còn tiếp tục được cập nhật và dùng những tài liệu mới bổ sung.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="fb">QUIZZY<i>.</i></div>
+  <p>Social Media Bundle — full workflow template cho người làm Social Media Marketing.</p>
+</footer>
+
+<button class="totop" id="totop" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<script>
+  /* progress + back to top */
+  (function(){
+    var pb=document.getElementById('pbar'),tt=document.getElementById('totop');
+    function onScroll(){
+      var h=document.documentElement.scrollHeight-window.innerHeight;
+      var p=h>0?window.scrollY/h:0;
+      if(pb)pb.style.width=(p*100)+'%';
+      if(tt){window.scrollY>600?tt.classList.add('on'):tt.classList.remove('on');}
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+    if(tt)tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  })();
+
+  /* workflow scrollytelling */
+  (function(){
+    var wf=document.getElementById('workflow');if(!wf)return;
+    var nodes=[].slice.call(wf.querySelectorAll('.wf-node'));
+    var prog=document.getElementById('wfProg');
+    var numEl=document.getElementById('wfNum'),titleEl=document.getElementById('wfTitle'),descEl=document.getElementById('wfDesc');
+    var dots=[].slice.call(document.querySelectorAll('#wfDots i'));
+    var steps=[
+      {n:'01',t:'Social Media Portfolio',d:'Cần Portfolio để giới thiệu năng lực — cho khách thấy bạn giỏi đến đâu.'},
+      {n:'02',t:'Social Media Proposal',d:'Cần Proposal để thuyết phục và biến "quan tâm" thành "ký hợp đồng".'},
+      {n:'03',t:'Social Media Audit',d:'Cần Audit để chỉ ra chính xác kênh cần cải thiện ở đâu và vì sao.'},
+      {n:'04',t:'Strategy & Plan',d:'Cần Strategy và Plan để biết mình sẽ đi đâu và đăng gì theo lịch nào.'},
+      {n:'05',t:'Monthly Report',d:'Cần Report để chứng minh mình đã làm được những gì cho client.'}
+    ];
+    var cur=-1;
+    function set(i){
+      if(i===cur)return;cur=i;
+      nodes.forEach(function(nd,k){nd.classList.toggle('active',k===i);});
+      dots.forEach(function(d,k){d.classList.toggle('on',k===i);});
+      var s=steps[i];
+      if(numEl)numEl.textContent=s.n;if(titleEl)titleEl.textContent=s.t;if(descEl)descEl.textContent=s.d;
+    }
+    function onScroll(){
+      var r=wf.getBoundingClientRect();
+      var denom=r.height-window.innerHeight;
+      var p=denom>0?Math.min(Math.max(-r.top/denom,0),1):0;
+      if(prog)prog.style.strokeDashoffset=(100*(1-p)).toFixed(2);
+      set(Math.min(4,Math.floor(p*4.999)));
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);set(0);onScroll();
+  })();
+
+  /* count-up */
+  (function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function fmt(el,n){if(el.dataset.fmt==='vnd')return Math.round(n).toLocaleString('vi-VN')+'đ';return Math.round(n)+(el.dataset.suffix||'');}
+    function run(el){var to=parseFloat(el.dataset.to),t0=null,dur=1300;
+      function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var e=1-Math.pow(1-p,3);el.textContent=fmt(el,to*e);if(p<1)requestAnimationFrame(step);else el.textContent=fmt(el,to);}
+      requestAnimationFrame(step);}
+    var cups=[].slice.call(document.querySelectorAll('.cup'));
+    if(reduce||!('IntersectionObserver' in window)){cups.forEach(function(el){el.textContent=fmt(el,parseFloat(el.dataset.to));});return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);io.unobserve(x.target);}});},{threshold:.5});
+    cups.forEach(function(el){io.observe(el);});
+  })();
+
+  /* reveal */
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>

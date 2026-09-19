@@ -1,0 +1,4937 @@
+/* ============================================================
+   SOCIAL MEDIA BUNDLE — HERO
+   ============================================================ */
+
+   .smbundle-hero {
+  position: relative;
+
+  width: 100%;
+
+  height: 100vh;
+  min-height: 720px;
+
+  padding-top:
+    clamp(34px, 4vw, 54px);
+
+  overflow: hidden;
+
+  background: #fff;
+}
+
+
+.smbundle-hero-inner {
+  width:
+    min(1200px, 90vw);
+
+  height:
+    calc(100% - 72px);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+
+.smbundle-breadcrumb {
+  width: fit-content;
+
+  min-height: 32px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    0
+    18px;
+
+  border:
+    1px solid
+    rgba(18, 18, 18, .16);
+
+  border-radius:
+    var(--pill);
+
+  background:
+    rgba(255, 255, 255, .9);
+
+  color:
+    #171717;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing:
+    .13em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.smbundle-breadcrumb-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--lilac);
+}
+
+
+/* ============================================================
+   HERO GRID
+   ============================================================ */
+
+.smbundle-hero-grid {
+  height:
+    calc(100% - 62px);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .92fr)
+    minmax(420px, 1.08fr);
+
+  gap:
+    clamp(48px, 6vw, 94px);
+
+  align-items: center;
+
+  margin-top:
+    clamp(22px, 2.5vw, 36px);
+}
+
+
+/* ============================================================
+   LEFT
+   ============================================================ */
+
+.smbundle-hero-left {
+  min-width: 0;
+}
+
+
+.smbundle-title {
+  width: fit-content;
+}
+
+
+/* ============================================================
+   TITLE ROW
+   ============================================================ */
+
+.smbundle-title-row {
+  width: fit-content;
+
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    clamp(12px, 1.4vw, 19px);
+}
+
+
+.smbundle-title-row + .smbundle-title-row {
+  margin-top: 10px;
+}
+
+
+.smbundle-title-row--social {
+  margin-left: 10px;
+}
+
+
+.smbundle-title-row--media {
+  margin-left: 0;
+}
+
+
+/* ============================================================
+   STAR
+   ============================================================ */
+
+.smbundle-star {
+  flex: 0 0 auto;
+
+  color:
+    var(--lilac);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(68px, 7vw, 104px);
+
+  font-weight: 300;
+
+  line-height: .7;
+}
+
+
+/* ============================================================
+   TITLE PILLS
+   ============================================================ */
+
+.smbundle-title-pill {
+  min-height:
+    clamp(72px, 7vw, 100px);
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    .01em
+    .22em
+    .08em;
+
+  border:
+    1.4px solid
+    #101010;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    #fff;
+
+  color:
+    #020202;
+
+  font-size:
+    clamp(60px, 6.2vw, 90px);
+
+  font-weight: 600;
+
+  line-height:
+    .88;
+
+  letter-spacing:
+    -.065em;
+
+  white-space:
+    nowrap;
+
+  transition:
+    transform .45s
+    var(--out);
+}
+
+
+.smbundle-title-pill--lime {
+  background:
+    var(--lime);
+}
+
+
+.smbundle-title-pill:hover {
+  transform:
+    translateY(-4px);
+}
+
+
+/* ============================================================
+   ARROW
+   ============================================================ */
+
+.smbundle-title-arrow {
+  width:
+    clamp(76px, 7vw, 102px);
+
+  aspect-ratio:
+    1.55;
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lilac);
+
+  color: #fff;
+
+  transition:
+    transform .4s
+    var(--out),
+    background-color .35s
+    var(--ease);
+}
+
+
+.smbundle-title-arrow svg {
+  width: 25px;
+  height: 25px;
+
+  transition:
+    transform .4s
+    var(--out);
+}
+
+
+.smbundle-title-arrow:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    var(--lilac-2);
+}
+
+
+.smbundle-title-arrow:hover svg {
+  transform:
+    translateX(5px);
+}
+
+
+/* ============================================================
+   LEFT SUBTITLE
+   ============================================================ */
+
+.smbundle-subtitle {
+  margin:
+    clamp(28px, 3vw, 40px)
+    0
+    0
+    12px;
+
+  color:
+    #111;
+
+  font-size:
+    clamp(18px, 1.7vw, 25px);
+
+  font-weight: 600;
+
+  line-height:
+    1.15;
+
+  letter-spacing:
+    -.025em;
+}
+
+
+/* ============================================================
+   RIGHT
+   ============================================================ */
+
+.smbundle-hero-right {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* ============================================================
+   PRODUCT VISUAL
+   ============================================================ */
+
+.smbundle-product-visual {
+  position: relative;
+
+  width: 100%;
+
+  min-height:
+    clamp(310px, 30vw, 430px);
+}
+
+
+/* ============================================================
+   REAL PRODUCT IMAGE
+   ============================================================ */
+
+.smbundle-product-image {
+  object-fit: contain;
+
+  object-position:
+    center;
+
+  padding:
+    8px
+    18px;
+
+  transition:
+    transform .8s
+    var(--out);
+}
+
+
+.smbundle-product-visual:hover
+.smbundle-product-image {
+  transform:
+    scale(1.025);
+}
+
+
+/* ============================================================
+   TEMP PLACEHOLDER
+   ============================================================ */
+
+.smbundle-product-placeholder {
+  position: absolute;
+
+  inset:
+    7%
+    7%
+    6%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #211e1d,
+      #34302b
+    );
+
+  color: #fff;
+
+  box-shadow:
+    0 24px 50px
+    rgba(35, 27, 20, .12);
+}
+
+
+.smbundle-product-placeholder span {
+  font-size:
+    clamp(34px, 3.8vw, 58px);
+
+  font-weight: 600;
+
+  line-height: .95;
+
+  letter-spacing:
+    -.06em;
+}
+
+
+.smbundle-product-placeholder strong {
+  padding:
+    4px
+    12px;
+
+  background:
+    #e3b916;
+
+  color: #fff;
+
+  font-size:
+    clamp(18px, 1.8vw, 28px);
+}
+
+
+/* ============================================================
+   FLOATING TAGS
+   ============================================================ */
+
+.smbundle-product-tag.ftag {
+  position: absolute;
+
+  z-index: 5;
+
+  padding:
+    9px
+    16px;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    rgba(255, 255, 255, .92);
+
+  color:
+    #333;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  white-space:
+    nowrap;
+
+  box-shadow:
+    0 12px 30px
+    rgba(27, 20, 37, .09);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  will-change:
+    transform;
+}
+
+
+.smbundle-product-tag--proposal {
+  top: 31%;
+  left: -7%;
+}
+
+
+.smbundle-product-tag--portfolio {
+  top: 2%;
+  right: 2%;
+}
+
+
+.smbundle-product-tag--template {
+  right: -4%;
+  bottom: 11%;
+}
+
+
+/* ============================================================
+   PRICE AREA
+   ============================================================ */
+
+.smbundle-price-area {
+  width:
+    min(100%, 490px);
+
+  margin:
+    clamp(4px, .8vw, 12px)
+    auto
+    0;
+
+  text-align:
+    center;
+}
+
+
+.smbundle-price-label {
+  margin: 0;
+
+  color:
+    #333;
+
+  font-size:
+    clamp(11px, .95vw, 14px);
+
+  font-weight: 500;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   PRICE
+   ============================================================ */
+
+.smbundle-price-row {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: center;
+
+  gap:
+    clamp(15px, 1.5vw, 22px);
+
+  margin-top: 10px;
+}
+
+
+.smbundle-price-row strong {
+  color:
+    #141414;
+
+  font-size:
+    clamp(40px, 3.8vw, 56px);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing:
+    -.05em;
+}
+
+
+.smbundle-price-row del {
+  color:
+    #aaa;
+
+  font-size:
+    clamp(11px, 1vw, 14px);
+
+  font-weight: 500;
+}
+
+
+/* ============================================================
+   BUY
+   ============================================================ */
+
+.smbundle-buy {
+  min-height: 45px;
+
+  width: fit-content;
+
+  margin:
+    18px
+    auto
+    0;
+
+  padding:
+    0
+    21px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #101010;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  transition:
+    transform .4s
+    var(--out),
+    background-color .3s
+    var(--ease),
+    color .3s
+    var(--ease);
+}
+
+
+.smbundle-buy svg {
+  width: 17px;
+  height: 17px;
+
+  transition:
+    transform .4s
+    var(--out);
+}
+
+
+.smbundle-buy:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    #111;
+
+  color:
+    #fff;
+}
+
+
+.smbundle-buy:hover svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* ============================================================
+   HERO ENTRANCE
+   ============================================================ */
+
+.smbundle-enter {
+  --delay: 0s;
+
+  opacity: 0;
+
+  transform:
+    translateY(26px);
+
+  animation:
+    smbundleHeroEnter
+    .85s
+    var(--out)
+    var(--delay)
+    forwards;
+}
+
+
+@keyframes smbundleHeroEnter {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+
+.smbundle-marquee {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  z-index: 5;
+
+  width: 100%;
+
+  height:
+    clamp(55px, 5vw, 72px);
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+
+  border-top:
+    1px solid
+    rgba(105, 70, 150, .05);
+}
+
+
+.smbundle-marquee-track {
+  display: flex;
+
+  align-items: center;
+
+  width:
+    max-content;
+
+  will-change:
+    transform;
+
+  animation:
+    smbundleMarquee
+    28s
+    linear
+    infinite;
+}
+
+
+.smbundle-marquee-item {
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    clamp(26px, 3vw, 42px);
+
+  padding-right:
+    clamp(26px, 3vw, 42px);
+
+  color: #111;
+
+  white-space: nowrap;
+}
+
+
+.smbundle-marquee-item span {
+  font-size:
+    clamp(16px, 1.6vw, 23px);
+
+  font-weight: 500;
+}
+
+
+.smbundle-marquee-item i {
+  color:
+    var(--lilac);
+
+  font-size:
+    clamp(20px, 2vw, 28px);
+
+  font-style: normal;
+}
+
+
+@keyframes smbundleMarquee {
+
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+
+}
+
+
+/* ============================================================
+   LARGE LAPTOP
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+  .smbundle-hero-grid {
+    grid-template-columns:
+      minmax(0, .95fr)
+      minmax(390px, 1fr);
+
+    gap: 54px;
+  }
+
+
+  .smbundle-title-pill {
+    font-size:
+      clamp(52px, 5.8vw, 78px);
+  }
+
+
+  .smbundle-star {
+    font-size:
+      clamp(60px, 6.5vw, 90px);
+  }
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+  .smbundle-hero {
+    min-height: 680px;
+  }
+
+
+  .smbundle-hero-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(340px, .9fr);
+
+    gap: 40px;
+  }
+
+
+  .smbundle-title-pill {
+    min-height: 64px;
+
+    font-size:
+      clamp(46px, 5.8vw, 66px);
+  }
+
+
+  .smbundle-star {
+    font-size:
+      clamp(56px, 6.5vw, 78px);
+  }
+
+
+  .smbundle-title-arrow {
+    width:
+      clamp(66px, 6.5vw, 86px);
+  }
+
+}
+
+
+/* ============================================================
+   SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 820px) {
+
+  .smbundle-hero {
+    height: auto;
+
+    min-height: 100vh;
+
+    padding-bottom: 110px;
+  }
+
+
+  .smbundle-hero-inner {
+    height: auto;
+  }
+
+
+  .smbundle-hero-grid {
+    height: auto;
+
+    grid-template-columns:
+      1fr;
+
+    gap: 58px;
+  }
+
+
+  .smbundle-title {
+    margin-inline: auto;
+  }
+
+
+  .smbundle-subtitle {
+    text-align: center;
+
+    margin-left: 0;
+  }
+
+
+  .smbundle-product-visual {
+    width:
+      min(100%, 620px);
+
+    margin-inline: auto;
+  }
+
+
+  .smbundle-product-tag--proposal {
+    left: 0;
+  }
+
+
+  .smbundle-product-tag--portfolio {
+    right: 0;
+  }
+
+
+  .smbundle-product-tag--template {
+    right: 0;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smbundle-hero {
+    padding-top: 24px;
+
+    padding-bottom: 96px;
+  }
+
+
+  .smbundle-hero-inner {
+    width:
+      min(
+        100% - 28px,
+        1200px
+      );
+  }
+
+
+  .smbundle-breadcrumb {
+    padding:
+      0
+      13px;
+
+    font-size: 7px;
+  }
+
+
+  .smbundle-hero-grid {
+    margin-top: 32px;
+
+    gap: 48px;
+  }
+
+
+  .smbundle-title-row {
+    gap: 8px;
+  }
+
+
+  .smbundle-title-row + .smbundle-title-row {
+    margin-top: 7px;
+  }
+
+
+  .smbundle-title-row--social {
+    margin-left: 0;
+  }
+
+
+  .smbundle-title-pill {
+    min-height: 58px;
+
+    font-size:
+      clamp(42px, 13vw, 58px);
+  }
+
+
+  .smbundle-star {
+    font-size: 54px;
+  }
+
+
+  .smbundle-title-arrow {
+    width: 62px;
+  }
+
+
+  .smbundle-subtitle {
+    margin-top: 26px;
+
+    font-size:
+      clamp(17px, 5vw, 21px);
+  }
+
+
+  /* visual */
+
+  .smbundle-product-visual {
+    min-height: 330px;
+  }
+
+
+  .smbundle-product-tag.ftag {
+    padding:
+      7px
+      10px;
+
+    font-size: 7px;
+  }
+
+
+  .smbundle-product-tag--proposal {
+    left: -1%;
+  }
+
+
+  .smbundle-product-tag--portfolio {
+    right: -1%;
+  }
+
+
+  .smbundle-product-tag--template {
+    right: -1%;
+  }
+
+
+  /* price */
+
+  .smbundle-price-row strong {
+    font-size: 40px;
+  }
+
+
+  .smbundle-marquee {
+    height: 58px;
+  }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 420px) {
+
+  .smbundle-title-pill {
+    min-height: 52px;
+
+    font-size:
+      clamp(37px, 12vw, 48px);
+  }
+
+
+  .smbundle-star {
+    font-size: 48px;
+  }
+
+
+  .smbundle-title-arrow {
+    width: 56px;
+  }
+
+
+  .smbundle-product-visual {
+    min-height: 300px;
+  }
+
+
+  .smbundle-price-row strong {
+    font-size: 36px;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .smbundle-enter {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
+  }
+
+
+  .smbundle-marquee-track {
+    animation: none;
+  }
+
+
+  .smbundle-title-pill,
+  .smbundle-title-arrow,
+  .smbundle-title-arrow svg,
+  .smbundle-product-image,
+  .smbundle-buy,
+  .smbundle-buy svg {
+    transition: none;
+  }
+
+}
+
+
+/* ============================================================
+   SOCIAL MEDIA BUNDLE — WORKFLOW
+   ============================================================ */
+
+   .smbundle-workflow {
+  width: 100%;
+
+  background: #fff;
+}
+
+
+/* ============================================================
+   SCROLLYTELLING CONTAINER
+
+   560vh giống logic source HTML
+   ============================================================ */
+
+.smbundle-workflow-scroll {
+  position: relative;
+
+  height: 660vh;
+}
+
+
+/* ============================================================
+   STICKY VIEWPORT
+   ============================================================ */
+
+.smbundle-workflow-sticky {
+  position: sticky;
+
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #ffffff 57%,
+      #f8f3ff 100%
+    );
+}
+
+
+/* ============================================================
+   SHELL
+   ============================================================ */
+
+.smbundle-workflow-shell {
+  width:
+    min(1200px, 90vw);
+
+  height: 100%;
+
+  margin-inline: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.smbundle-workflow-intro {
+  flex: 0 0 auto;
+
+  text-align: center;
+}
+
+
+.smbundle-workflow-intro h2 {
+  margin: 0;
+
+  color:
+    #080808;
+
+  font-size:
+    clamp(
+      32px,
+      3.5vw,
+      52px
+    );
+
+  font-weight: 600;
+
+  line-height:
+    1.12;
+
+  letter-spacing:
+    -.05em;
+}
+
+
+/* ============================================================
+   OUTLINE WORD
+   ============================================================ */
+
+.smbundle-workflow-outline {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    .01em
+    .15em
+    .06em;
+
+  border:
+    1.3px solid
+    rgba(
+      17,
+      17,
+      17,
+      .75
+    );
+
+  border-radius:
+    var(--pill);
+
+  line-height:
+    .94;
+}
+
+
+/* ============================================================
+   PURPLE
+   ============================================================ */
+
+.smbundle-workflow-purple {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    .01em
+    .16em
+    .06em;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lilac);
+
+  color: #fff;
+
+  line-height:
+    .94;
+}
+
+
+/* ============================================================
+   LIME
+   ============================================================ */
+
+.smbundle-workflow-lime {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    .01em
+    .16em
+    .06em;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #080808;
+
+  line-height:
+    .94;
+}
+
+
+/* ============================================================
+   INTRO DESCRIPTION
+   ============================================================ */
+
+.smbundle-workflow-intro p {
+  max-width: 970px;
+
+  margin:
+    clamp(
+      28px,
+      3vw,
+      38px
+    )
+    auto
+    0;
+
+  color:
+    #8b868e;
+
+  font-size:
+    clamp(
+      14px,
+      1.3vw,
+      19px
+    );
+
+  line-height:
+    1.45;
+
+  letter-spacing:
+    -.01em;
+}
+
+
+/* ============================================================
+   GRID
+   ============================================================ */
+
+.smbundle-workflow-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .9fr)
+    minmax(400px, 1.1fr);
+
+  gap:
+    clamp(
+      50px,
+      8vw,
+      120px
+    );
+
+  align-items: center;
+
+  margin-top:
+    clamp(
+      44px,
+      5vw,
+      68px
+    );
+}
+
+
+/* ============================================================
+   LEFT COPY
+   ============================================================ */
+
+.smbundle-workflow-copy {
+  min-width: 0;
+}
+
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
+.smbundle-workflow-eyebrow {
+  width: fit-content;
+
+  min-height: 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    0
+    18px;
+
+  border:
+    1px solid
+    rgba(
+      18,
+      18,
+      18,
+      .16
+    );
+
+  border-radius:
+    var(--pill);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .86
+    );
+
+  color:
+    #79737d;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing:
+    .13em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.smbundle-workflow-eyebrow span {
+  width: 7px;
+  height: 7px;
+
+  flex:
+    0 0 7px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--lilac);
+}
+
+
+/* ============================================================
+   DYNAMIC COPY
+   ============================================================ */
+
+.smbundle-workflow-dynamic {
+  margin-top:
+    clamp(
+      24px,
+      2.8vw,
+      34px
+    );
+
+  animation:
+    smbundleWorkflowCopyEnter
+    .65s
+    var(--out)
+    both;
+}
+
+
+@keyframes smbundleWorkflowCopyEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ============================================================
+   NUMBER
+   ============================================================ */
+
+.smbundle-workflow-number {
+  color:
+    #a97ae4;
+
+  font-size:
+    clamp(
+      58px,
+      5.7vw,
+      82px
+    );
+
+  font-weight: 600;
+
+  line-height:
+    .85;
+
+  letter-spacing:
+    -.065em;
+}
+
+
+/* ============================================================
+   STEP TITLE
+   ============================================================ */
+
+.smbundle-workflow-dynamic h3 {
+  margin:
+    clamp(
+      19px,
+      2vw,
+      26px
+    )
+    0
+    0;
+
+  max-width:
+    11ch;
+
+  color:
+    #070707;
+
+  font-size:
+    clamp(
+      38px,
+      4vw,
+      58px
+    );
+
+  font-weight: 600;
+
+  line-height:
+    1.04;
+
+  letter-spacing:
+    -.06em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.smbundle-workflow-dynamic p {
+  max-width:
+    430px;
+
+  min-height:
+    3em;
+
+  margin-top:
+    clamp(
+      24px,
+      2.7vw,
+      34px
+    );
+
+  color:
+    #77717d;
+
+  font-size:
+    clamp(
+      14px,
+      1.3vw,
+      18px
+    );
+
+  line-height:
+    1.48;
+}
+
+
+/* ============================================================
+   MINI PROGRESS
+   ============================================================ */
+
+.smbundle-workflow-mini-progress {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top:
+    clamp(
+      23px,
+      2.7vw,
+      34px
+    );
+}
+
+
+.smbundle-workflow-mini-progress button {
+  width: 36px;
+  height: 4px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius:
+    999px;
+
+  background:
+    #dedbdf;
+
+  cursor: pointer;
+
+  transition:
+    width .4s
+      var(--out),
+    background-color .35s
+      ease;
+}
+
+
+.smbundle-workflow-mini-progress button.is-active {
+  width: 39px;
+
+  background:
+    var(--lilac);
+}
+
+
+/* ============================================================
+   STAGE
+   ============================================================ */
+
+.smbundle-workflow-stage {
+  position: relative;
+
+  width: 100%;
+
+  max-width:
+    470px;
+
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
+   SVG RING
+   ============================================================ */
+
+.smbundle-workflow-ring {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow:
+    visible;
+}
+
+
+.smbundle-workflow-ring-progress {
+  transition:
+    stroke-dashoffset
+    .14s
+    linear;
+
+  filter:
+    drop-shadow(
+      0
+      2px
+      4px
+      rgba(
+        169,
+        127,
+        221,
+        .15
+      )
+    );
+}
+
+
+/* ============================================================
+   CENTER
+   ============================================================ */
+
+.smbundle-workflow-center {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  width: 40%;
+  height: 40%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  padding: 15px;
+
+  border-radius: 50%;
+
+  background:
+    #1d1727;
+
+  color: #fff;
+
+  text-align: center;
+
+  box-shadow:
+    0 18px 44px
+    rgba(
+      27,
+      20,
+      37,
+      .08
+    );
+}
+
+
+.smbundle-workflow-center span {
+  font-size:
+    clamp(
+      11px,
+      1.25vw,
+      15px
+    );
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+.smbundle-workflow-center strong {
+  color:
+    var(--lime);
+
+  font-size:
+    clamp(
+      10px,
+      1vw,
+      13px
+    );
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* ============================================================
+   NODE BASE
+   ============================================================ */
+   .smbundle-workflow-node {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 18%;
+  height: 18%;
+
+  padding: 7px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border:
+    1.4px solid
+    rgba(27, 20, 37, .14);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, .96);
+
+  color: #1b1425;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transform:
+    translate(-50%, -50%);
+
+  box-shadow:
+    0 8px 22px
+    rgba(50, 35, 65, .025);
+
+  transition:
+    transform .48s
+    cubic-bezier(.16, 1, .3, 1),
+    background-color .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease,
+    color .4s ease;
+}
+
+
+.smbundle-workflow-node b {
+  font-size:
+    clamp(
+      14px,
+      1.5vw,
+      19px
+    );
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+.smbundle-workflow-node span {
+  max-width: 95%;
+
+  color:
+    #625b68;
+
+  font-size:
+    clamp(
+      6px,
+      .7vw,
+      9px
+    );
+
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    color .4s
+    ease;
+}
+
+
+/* ============================================================
+   NODE ACTIVE
+   ============================================================ */
+
+.smbundle-workflow-node.is-active {
+  z-index: 5;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(1.18);
+
+  border-color:
+    var(--lilac);
+
+  background:
+    var(--lilac);
+
+  color:
+    #fff;
+
+  box-shadow:
+    0 22px 45px
+    -15px
+    rgba(
+      124,
+      92,
+      252,
+      .48
+    );
+}
+
+
+.smbundle-workflow-node.is-active span {
+  color: #fff;
+}
+
+
+/* hover inactive */
+
+.smbundle-workflow-node:not(.is-active):hover {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(1.07);
+
+  border-color:
+    var(--lilac);
+
+  box-shadow:
+    0 14px 30px
+    rgba(
+      70,
+      45,
+      100,
+      .09
+    );
+}
+
+
+/* ============================================================
+   NODE POSITIONS
+   ============================================================ */
+
+   .smbundle-workflow-node--1 {
+  left: 50%;
+  top: 9%;
+}
+
+.smbundle-workflow-node--2 {
+  left: 85.5%;
+  top: 29.5%;
+}
+
+.smbundle-workflow-node--3 {
+  left: 85.5%;
+  top: 70.5%;
+}
+
+.smbundle-workflow-node--4 {
+  left: 50%;
+  top: 91%;
+}
+
+.smbundle-workflow-node--5 {
+  left: 14.5%;
+  top: 70.5%;
+}
+
+.smbundle-workflow-node--6 {
+  left: 14.5%;
+  top: 29.5%;
+}
+
+/* ============================================================
+   MOBILE LIST
+   ============================================================ */
+
+.smbundle-workflow-mobile-list {
+  display: none;
+}
+
+
+/* ============================================================
+   LAPTOP HEIGHT SAFETY
+   ============================================================ */
+
+@media (
+  max-height: 820px
+)
+and
+(
+  min-width: 821px
+) {
+
+  .smbundle-workflow-intro h2 {
+    font-size:
+      clamp(
+        29px,
+        3.2vw,
+        44px
+      );
+  }
+
+
+  .smbundle-workflow-intro p {
+    margin-top: 20px;
+
+    font-size: 14px;
+  }
+
+
+  .smbundle-workflow-grid {
+    margin-top: 32px;
+  }
+
+
+  .smbundle-workflow-stage {
+    max-width: 370px;
+  }
+
+
+  .smbundle-workflow-dynamic h3 {
+    font-size:
+      clamp(
+        34px,
+        3.5vw,
+        48px
+      );
+  }
+
+
+  .smbundle-workflow-number {
+    font-size:
+      56px;
+  }
+
+
+  .smbundle-workflow-dynamic p {
+    margin-top: 18px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* ============================================================
+   TABLET / MOBILE
+   ============================================================ */
+
+@media (max-width: 820px) {
+
+  /*
+    giống source HTML:
+    mobile không dùng sticky
+  */
+
+  .smbundle-workflow-scroll {
+    height: auto;
+  }
+
+
+  .smbundle-workflow-sticky {
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    padding:
+      70px
+      0;
+
+    overflow:
+      visible;
+  }
+
+
+  .smbundle-workflow-shell {
+    height: auto;
+  }
+
+
+  .smbundle-workflow-intro h2 br {
+    display: none;
+  }
+
+
+  .smbundle-workflow-intro p br {
+    display: none;
+  }
+
+
+  .smbundle-workflow-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 40px;
+
+    margin-top: 52px;
+  }
+
+
+  /* hide dynamic circle */
+
+  .smbundle-workflow-dynamic,
+  .smbundle-workflow-mini-progress,
+  .smbundle-workflow-stage {
+    display: none;
+  }
+
+
+  /* show mobile list */
+
+  .smbundle-workflow-mobile-list {
+    display: block;
+
+    margin-top: 4px;
+  }
+
+
+  .smbundle-workflow-mobile-list article {
+    display: grid;
+
+    grid-template-columns:
+      44px
+      1fr;
+
+    gap: 16px;
+
+    padding:
+      18px
+      0;
+
+    border-top:
+      1px solid
+      rgba(
+        27,
+        20,
+        37,
+        .14
+      );
+  }
+
+
+  .smbundle-workflow-mobile-list article:first-child {
+    border-top: 0;
+  }
+
+
+  .smbundle-workflow-mobile-list article > b {
+    color:
+      var(--lilac-2);
+
+    font-size: 19px;
+
+    font-weight: 600;
+  }
+
+
+  .smbundle-workflow-mobile-list h4 {
+    margin: 0;
+
+    color:
+      #111;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    text-transform:
+      uppercase;
+  }
+
+
+  .smbundle-workflow-mobile-list p {
+    margin:
+      6px
+      0
+      0;
+
+    color:
+      #77717d;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 580px) {
+
+  .smbundle-workflow-shell {
+    width:
+      min(
+        100% - 30px,
+        1200px
+      );
+  }
+
+
+  .smbundle-workflow-sticky {
+    padding:
+      60px
+      0;
+  }
+
+
+  .smbundle-workflow-intro {
+    text-align: left;
+  }
+
+
+  .smbundle-workflow-intro h2 {
+    font-size:
+      clamp(
+        33px,
+        9.2vw,
+        43px
+      );
+  }
+
+
+  .smbundle-workflow-intro p {
+    font-size: 13px;
+  }
+
+
+  .smbundle-workflow-grid {
+    margin-top: 42px;
+  }
+
+
+  .smbundle-workflow-eyebrow {
+    padding:
+      0
+      13px;
+
+    font-size: 7px;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .smbundle-workflow-node,
+  .smbundle-workflow-ring-progress,
+  .smbundle-workflow-mini-progress button {
+    transition: none;
+  }
+
+
+  .smbundle-workflow-dynamic {
+    animation: none;
+  }
+
+}
+
+
+
+/* ============================================================
+   SOCIAL MEDIA BUNDLE — CLIENT PROOF
+   ============================================================ */
+/* 
+   .smbundle-client-proof {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(74px, 7vw, 104px)
+    0
+    clamp(80px, 7vw, 110px);
+
+  overflow: hidden;
+
+  background:
+    #fff;
+}
+
+
+.smbundle-client-proof::before,
+.smbundle-client-proof::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(55px);
+  opacity: 0.95;
+}
+
+.smbundle-client-proof::before {
+  left: -80px;
+  top: 110px;
+  width: 260px;
+  height: 260px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(167, 214, 255, 0.65) 0%,
+      rgba(167, 214, 255, 0.28) 42%,
+      rgba(167, 214, 255, 0) 74%
+    );
+}
+
+.smbundle-client-proof::after {
+  right: -80px;
+  top: 120px;
+  width: 260px;
+  height: 260px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(226, 182, 255, 0.6) 0%,
+      rgba(226, 182, 255, 0.26) 42%,
+      rgba(226, 182, 255, 0) 74%
+    );
+} */
+
+.smbundle-client-proof {
+  position: relative;
+  width: 100%;
+  padding:
+    clamp(74px, 7vw, 104px)
+    0
+    clamp(80px, 7vw, 110px);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 8% 42%,
+      rgba(171, 215, 255, 0.55) 0%,
+      rgba(171, 215, 255, 0.28) 16%,
+      rgba(171, 215, 255, 0.12) 28%,
+      rgba(171, 215, 255, 0) 42%
+    ),
+    radial-gradient(
+      circle at 92% 40%,
+      rgba(224, 182, 255, 0.5) 0%,
+      rgba(224, 182, 255, 0.25) 16%,
+      rgba(224, 182, 255, 0.1) 28%,
+      rgba(224, 182, 255, 0) 42%
+    ),
+    #fff;
+}
+
+/* ============================================================
+   COPY WRAP
+   ============================================================ */
+
+.smbundle-client-proof-copy {
+  width:
+    min(1200px, 90vw);
+
+  margin-inline:
+    auto;
+
+  text-align:
+    center;
+}
+
+
+/* ============================================================
+   LOCAL SCROLL REVEAL
+   ============================================================ */
+
+.smbundle-proof-reveal {
+  opacity: 0;
+
+  transform:
+    translateY(30px);
+
+  transition:
+    opacity
+    .75s
+    ease,
+    transform
+    .95s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    );
+}
+
+
+.smbundle-proof-reveal--1 {
+  transition-delay:
+    .02s;
+}
+
+
+.smbundle-proof-reveal--2 {
+  transition-delay:
+    .1s;
+}
+
+
+.smbundle-proof-reveal--3 {
+  transition-delay:
+    .18s;
+}
+
+
+.smbundle-proof-reveal--4 {
+  transition-delay:
+    .27s;
+}
+
+
+.smbundle-client-proof.is-visible
+.smbundle-proof-reveal {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.smbundle-client-proof-intro {
+  max-width:
+    860px;
+
+  margin-inline:
+    auto;
+}
+
+
+.smbundle-client-proof-intro p {
+  margin: 0;
+
+  color:
+    #77717e;
+
+  font-size:
+    clamp(
+      13px,
+      1.05vw,
+      16px
+    );
+
+  font-weight:
+    400;
+
+  line-height:
+    1.55;
+
+  letter-spacing:
+    -.01em;
+}
+
+
+.smbundle-client-proof-intro p + p {
+  margin-top:
+    20px;
+}
+
+
+.smbundle-client-proof-intro strong {
+  color:
+    #ad7ce4;
+
+  font-weight:
+    600;
+}
+
+
+/* ============================================================
+   ARROW
+   ============================================================ */
+
+.smbundle-client-proof-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top:
+    clamp(
+      24px,
+      2.8vw,
+      36px
+    );
+}
+
+
+/*
+  Arrow animation nằm ở child
+  để không conflict transform reveal
+*/
+
+.smbundle-client-proof-arrow-icon {
+  display: block;
+
+  color:
+    #080808;
+
+  font-size:
+    clamp(
+      44px,
+      4.4vw,
+      62px
+    );
+
+  font-weight:
+    600;
+
+  line-height: 1;
+
+  animation:
+    smbundleProofArrow
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes smbundleProofArrow {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(7px);
+  }
+
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.smbundle-client-proof-title {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    fit-content;
+
+  margin:
+    clamp(
+      20px,
+      2.4vw,
+      30px
+    )
+    auto
+    0;
+
+  color:
+    #080808;
+
+  font-size:
+    clamp(
+      30px,
+      3.4vw,
+      50px
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    1.08;
+
+  letter-spacing:
+    -.06em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   TITLE GLOW
+   ============================================================ */
+
+.smbundle-client-proof-title::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  left: 50%;
+  top: 52%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  width:
+    min(
+      820px,
+      92vw
+    );
+
+  height:
+    200px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(
+        146,
+        204,
+        255,
+        .48
+      )
+      0%,
+      rgba(
+        166,
+        178,
+        250,
+        .25
+      )
+      34%,
+      rgba(
+        188,
+        142,
+        237,
+        .15
+      )
+      54%,
+      rgba(
+        255,
+        255,
+        255,
+        0
+      )
+      76%
+    );
+
+  filter:
+    blur(38px);
+
+  pointer-events:
+    none;
+}
+
+
+/* ============================================================
+   LIME TITLE
+   ============================================================ */
+
+.smbundle-client-proof-title span {
+  display:
+    inline-block;
+
+  margin-top:
+    8px;
+
+  padding:
+    .01em
+    .21em
+    .075em;
+
+  border-radius:
+    var(--pill);
+
+  background:
+    var(--lime);
+
+  color:
+    #080808;
+
+  line-height:
+    .94;
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.smbundle-client-proof-description {
+  max-width:
+    860px;
+
+  margin:
+    clamp(
+      30px,
+      3vw,
+      40px
+    )
+    auto
+    0;
+
+  color:
+    #7e7885;
+
+  font-size:
+    clamp(
+      13px,
+      1vw,
+      16px
+    );
+
+  line-height:
+    1.55;
+
+  letter-spacing:
+    -.01em;
+}
+
+
+.smbundle-client-proof-description strong {
+  color:
+    #ad7ce4;
+
+  font-weight:
+    600;
+}
+
+
+/* ============================================================
+   WALL REVEAL
+   ============================================================ */
+
+.smbundle-proof-wall-reveal {
+  opacity: 0;
+
+  transform:
+    translateY(44px);
+
+  transition:
+    opacity
+    .85s
+    ease
+    .36s,
+    transform
+    1.05s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    )
+    .36s;
+}
+
+
+.smbundle-client-proof.is-visible
+.smbundle-proof-wall-reveal {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* ============================================================
+   WORK WALL
+   ============================================================ */
+
+.smbundle-ww {
+  width: 100%;
+
+  margin-top:
+    clamp(
+      42px,
+      5vw,
+      64px
+    );
+
+  overflow:
+    hidden;
+}
+
+
+/* ============================================================
+   WW ROWS
+   Port từ .ww-rows source HTML
+   ============================================================ */
+
+.smbundle-ww-rows {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    22px;
+}
+
+
+/* ============================================================
+   WW ROW
+   ============================================================ */
+
+.smbundle-ww-row {
+  width: 100%;
+
+  overflow:
+    hidden;
+
+  -webkit-mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      #000 7%,
+      #000 93%,
+      transparent
+    );
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      #000 7%,
+      #000 93%,
+      transparent
+    );
+}
+
+
+/* ============================================================
+   WW TRACK
+   giống source:
+   gap 22
+   padding 14
+   48s
+   ============================================================ */
+
+.smbundle-ww-track {
+  display: flex;
+
+  gap:
+    22px;
+
+  width:
+    max-content;
+
+  padding:
+    14px
+    0;
+
+  will-change:
+    transform;
+
+  animation:
+    smbundleWwLeft
+    48s
+    linear
+    infinite;
+}
+
+
+/* ============================================================
+   SECOND ROW
+   54s reverse
+   ============================================================ */
+
+.smbundle-ww-row--reverse
+.smbundle-ww-track {
+  animation:
+    smbundleWwRight
+    54s
+    linear
+    infinite;
+}
+
+
+/* ============================================================
+   HOVER ROW = PAUSE
+   ============================================================ */
+
+.smbundle-ww-row:hover
+.smbundle-ww-track {
+  animation-play-state:
+    paused;
+}
+
+
+/* ============================================================
+   MARQUEE ANIMATION
+   ============================================================ */
+
+@keyframes smbundleWwLeft {
+
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+
+}
+
+
+@keyframes smbundleWwRight {
+
+  from {
+    transform:
+      translateX(-50%);
+  }
+
+  to {
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* ============================================================
+   POLAROID CARD
+   giống .ww-card source
+   ============================================================ */
+
+.smbundle-ww-card {
+  --ww-rotate:
+    -2deg;
+
+  position:
+    relative;
+
+  flex:
+    0
+    0
+    auto;
+
+  width:
+    232px;
+
+  margin: 0;
+
+  padding:
+    12px
+    12px
+    0;
+
+  border-radius:
+    8px;
+
+  background:
+    #fff;
+
+  box-shadow:
+    0
+    16px
+    34px
+    -20px
+    rgba(
+      76,
+      48,
+      120,
+      .4
+    );
+
+  transform:
+    rotate(
+      var(--ww-rotate)
+    );
+
+  transition:
+    transform
+    .35s
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    ),
+    box-shadow
+    .35s
+    ease;
+
+  transform-origin:
+    center;
+}
+
+
+/* ============================================================
+   EVEN CARD
+   ============================================================ */
+
+.smbundle-ww-track
+.smbundle-ww-card:nth-child(even) {
+  --ww-rotate:
+    2.2deg;
+}
+
+
+/* ============================================================
+   CARD HOVER
+   giống source
+   ============================================================ */
+
+.smbundle-ww-card:hover {
+  position:
+    relative;
+
+  z-index: 5;
+
+  transform:
+    rotate(0deg)
+    translateY(-6px)
+    scale(1.03);
+
+  box-shadow:
+    0
+    25px
+    44px
+    -20px
+    rgba(
+      76,
+      48,
+      120,
+      .45
+    );
+}
+
+
+/* ============================================================
+   PHOTO
+   ============================================================ */
+
+.smbundle-ww-photo {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    4 / 3;
+
+  overflow:
+    hidden;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    4px;
+
+  background:
+    linear-gradient(
+      150deg,
+      #c9a7ef,
+      #a97fdd
+    );
+}
+
+
+/* ============================================================
+   REAL IMAGE
+   ============================================================ */
+
+.smbundle-ww-image {
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  transition:
+    transform
+    .65s
+    var(--out);
+}
+
+
+.smbundle-ww-card:hover
+.smbundle-ww-image {
+  transform:
+    scale(1.04);
+}
+
+
+/* ============================================================
+   PLACEHOLDER
+   ============================================================ */
+
+.smbundle-ww-placeholder {
+  position:
+    absolute;
+
+  inset: 0;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      .88
+    );
+}
+
+
+.smbundle-ww-placeholder svg {
+  width:
+    27px;
+
+  height:
+    27px;
+}
+
+
+/* ============================================================
+   PLACEHOLDER COLORS
+   pp1 → pp6 từ source
+   ============================================================ */
+
+.smbundle-ww-track
+.smbundle-ww-card:nth-child(6n + 1)
+.smbundle-ww-photo {
+  background:
+    linear-gradient(
+      150deg,
+      #c9a7ef,
+      #a97fdd
+    );
+}
+
+
+.smbundle-ww-track
+.smbundle-ww-card:nth-child(6n + 2)
+.smbundle-ww-photo {
+  background:
+    linear-gradient(
+      150deg,
+      #a7caf0,
+      #7fb0e6
+    );
+}
+
+
+.smbundle-ww-track
+.smbundle-ww-card:nth-child(6n + 3)
+.smbundle-ww-photo {
+  background:
+    linear-gradient(
+      150deg,
+      #d7f36a,
+      #a9d92e
+    );
+}
+
+
+.smbundle-ww-track
+.smbundle-ww-card:nth-child(6n + 4)
+.smbundle-ww-photo {
+  background:
+    linear-gradient(
+      150deg,
+      #f2b6d6,
+      #e488b8
+    );
+}
+
+
+.smbundle-ww-track
+.smbundle-ww-card:nth-child(6n + 5)
+.smbundle-ww-photo {
+  background:
+    linear-gradient(
+      150deg,
+      #c6b0e6,
+      #9d86c9
+    );
+}
+
+
+.smbundle-ww-track
+.smbundle-ww-card:nth-child(6n + 6)
+.smbundle-ww-photo {
+  background:
+    linear-gradient(
+      150deg,
+      #f5e6c8,
+      #e9c98f
+    );
+}
+
+
+/* ============================================================
+   CAPTION
+   ============================================================ */
+
+.smbundle-ww-card
+figcaption {
+  padding:
+    12px
+    4px
+    14px;
+
+  color:
+    #1b1425;
+
+  font-size:
+    14px;
+
+  font-style:
+    italic;
+
+  line-height:
+    1.25;
+
+  text-align:
+    center;
+}
+
+
+/* ============================================================
+   CAPTION SMALL
+   ============================================================ */
+
+.smbundle-ww-card
+figcaption
+small {
+  display:
+    block;
+
+  margin-top:
+    6px;
+
+  color:
+    #8c8594;
+
+  font-size:
+    10px;
+
+  font-style:
+    normal;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .09em;
+
+  line-height:
+    1.2;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (
+  max-width: 900px
+) {
+
+  .smbundle-ww-rows {
+    gap:
+      18px;
+  }
+
+
+  .smbundle-ww-track {
+    gap:
+      18px;
+
+    padding:
+      12px
+      0;
+  }
+
+
+  .smbundle-ww-card {
+    width:
+      210px;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (
+  max-width: 580px
+) {
+
+  .smbundle-client-proof {
+    padding:
+      62px
+      0
+      72px;
+  }
+
+
+  .smbundle-client-proof-copy {
+    width:
+      min(
+        100% - 30px,
+        1200px
+      );
+  }
+
+
+  /* COPY */
+
+  .smbundle-client-proof-intro p,
+  .smbundle-client-proof-description {
+    font-size:
+      12px;
+  }
+
+
+  .smbundle-client-proof-intro br,
+  .smbundle-client-proof-description br {
+    display:
+      none;
+  }
+
+
+  /* TITLE */
+
+  .smbundle-client-proof-title {
+    font-size:
+      clamp(
+        28px,
+        8vw,
+        38px
+      );
+  }
+
+
+  .smbundle-client-proof-title br {
+    display:
+      none;
+  }
+
+
+  .smbundle-client-proof-title span {
+    margin-top:
+      7px;
+  }
+
+
+  /* WALL */
+
+  .smbundle-ww {
+    margin-top:
+      38px;
+  }
+
+
+  .smbundle-ww-rows {
+    gap:
+      14px;
+  }
+
+
+  .smbundle-ww-row {
+    -webkit-mask-image:
+      linear-gradient(
+        90deg,
+        transparent,
+        #000 3%,
+        #000 97%,
+        transparent
+      );
+
+    mask-image:
+      linear-gradient(
+        90deg,
+        transparent,
+        #000 3%,
+        #000 97%,
+        transparent
+      );
+  }
+
+
+  .smbundle-ww-track {
+    gap:
+      14px;
+
+    padding:
+      10px
+      0;
+  }
+
+
+  .smbundle-ww-card {
+    width:
+      185px;
+
+    padding:
+      9px
+      9px
+      0;
+  }
+
+
+  .smbundle-ww-card
+  figcaption {
+    padding:
+      10px
+      3px
+      12px;
+
+    font-size:
+      12px;
+  }
+
+
+  .smbundle-ww-card
+  figcaption
+  small {
+    margin-top:
+      5px;
+
+    font-size:
+      8px;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .smbundle-proof-reveal,
+  .smbundle-proof-wall-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+
+  .smbundle-client-proof-arrow-icon {
+    animation:
+      none;
+  }
+
+
+  .smbundle-ww-track,
+  .smbundle-ww-row--reverse
+  .smbundle-ww-track {
+    animation:
+      none;
+  }
+
+
+  .smbundle-ww-card,
+  .smbundle-ww-image {
+    transition:
+      none;
+  }
+
+}
+
+
+
+/* ============================================================
+   SOCIAL MEDIA BUNDLE — DOCUMENT INSIDE
+   ============================================================ */
+
+   .smbundle-document {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.smbundle-document-intro {
+  padding: clamp(65px, 7vw, 100px) 0;
+  background: #fcfaf8;
+}
+
+.smbundle-document-intro-inner {
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(50px, 8vw, 120px);
+}
+
+.smbundle-document-intro-copy h2 {
+  margin: 0;
+
+  font-size: clamp(37px, 4.2vw, 62px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  color: #090909;
+}
+
+.smbundle-document-intro-copy h2 span {
+  display: inline;
+  padding: 0.015em 0.13em 0.065em;
+
+  background: #cdfc56;
+  color: #090909;
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* INTRO CARD */
+
+.smbundle-document-intro-card {
+  width: 100%;
+  padding: clamp(22px, 2.6vw, 36px);
+
+  border-radius: 20px;
+  background: #fff;
+
+  box-shadow: 0 14px 42px rgba(43, 29, 59, 0.09);
+}
+
+.smbundle-document-intro-card > p {
+  margin: 0 0 20px;
+
+  color: #242126;
+  font-size: clamp(12px, 1vw, 15px);
+  line-height: 1.5;
+}
+
+.smbundle-document-intro-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.smbundle-document-intro-card li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+
+  padding: 14px 0;
+  border-top: 1px solid #e8e5eb;
+
+  color: #49444d;
+  font-size: clamp(11px, 0.94vw, 14px);
+  line-height: 1.45;
+}
+
+.smbundle-document-intro-dot {
+  width: 9px;
+  height: 9px;
+  margin-top: 0.35em;
+
+  border: 1px solid rgba(27, 20, 37, 0.4);
+  border-radius: 50%;
+}
+
+.smbundle-document-intro-dot--lime {
+  background: #cdfc56;
+}
+
+.smbundle-document-intro-dot--purple {
+  background: #a97fdd;
+}
+
+.smbundle-document-intro-dot--blue {
+  background: #a7caf0;
+}
+
+.smbundle-document-intro-dot--white {
+  background: #fff;
+}
+
+/* ============================================================
+   BLACK NAV
+   ============================================================ */
+
+.smbundle-document-nav {
+  position: relative;
+  isolation: isolate;
+
+  padding: clamp(56px, 6vw, 84px) 0
+    clamp(56px, 5vw, 76px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 83% 105%,
+      rgba(205, 252, 86, 0.28) 0%,
+      rgba(205, 252, 86, 0.1) 25%,
+      transparent 52%
+    ),
+    #050505;
+
+  color: #fff;
+}
+
+/* PURPLE MOUSE GLOW */
+
+.smbundle-document-glow {
+  position: absolute;
+  z-index: -1;
+
+  left: 0;
+  top: 0;
+
+  width: clamp(360px, 40vw, 590px);
+  height: clamp(280px, 32vw, 460px);
+
+  border-radius: 50%;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(169, 127, 221, 0.5) 0%,
+      rgba(169, 127, 221, 0.26) 34%,
+      rgba(169, 127, 221, 0.08) 56%,
+      transparent 76%
+    );
+
+  filter: blur(46px);
+
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* NAV CONTENT */
+
+.smbundle-document-nav-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.smbundle-document-arrow {
+  display: block;
+  color: #fff;
+
+  font-size: clamp(46px, 5vw, 72px);
+  font-weight: 600;
+  line-height: 1;
+
+  animation: smbundleDocumentArrow 1.8s ease-in-out infinite;
+}
+
+@keyframes smbundleDocumentArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.smbundle-document-nav-inner h2 {
+  margin: clamp(25px, 3vw, 38px) 0 0;
+
+  color: #fff;
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   TABS
+   ============================================================ */
+
+.smbundle-document-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: clamp(14px, 1.8vw, 24px);
+  margin-top: clamp(30px, 3.5vw, 44px);
+}
+
+.smbundle-document-tab {
+  width: clamp(43px, 4vw, 52px);
+  height: clamp(43px, 4vw, 52px);
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.smbundle-document-tab:hover {
+  transform: translateY(-3px);
+  border-color: #cdfc56;
+}
+
+.smbundle-document-tab.is-active {
+  background: #cdfc56;
+  border-color: #cdfc56;
+  color: #111;
+
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.smbundle-document-content {
+  padding: clamp(30px, 4vw, 54px) 0
+    clamp(82px, 8vw, 120px);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff 0%,
+      #fff 55%,
+      #fcf9ff 100%
+    );
+}
+
+.smbundle-document-content-inner {
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+}
+
+/* ============================================================
+   ACTIVE CARD
+   ============================================================ */
+
+.smbundle-document-card {
+  width: 100%;
+  min-height: clamp(490px, 44vw, 620px);
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  align-items: center;
+
+  gap: clamp(48px, 6vw, 86px);
+  padding: clamp(32px, 4vw, 58px);
+
+  border: 1px solid rgba(169, 127, 221, 0.08);
+  border-radius: 26px;
+
+  background: #fcf7ff;
+
+  box-shadow: 0 12px 38px rgba(59, 42, 82, 0.08);
+
+  animation:
+    smbundleDocumentCardEnter
+    0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes smbundleDocumentCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ============================================================
+   LEFT COPY
+   ============================================================ */
+
+.smbundle-document-card-copy {
+  min-width: 0;
+}
+
+.smbundle-document-number {
+  display: block;
+
+  color: #a97fdd;
+
+  font-size: clamp(70px, 7.3vw, 108px);
+  font-weight: 600;
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+}
+
+.smbundle-document-card-main {
+  margin-top: clamp(29px, 3.5vw, 46px);
+}
+
+.smbundle-document-card-main h3 {
+  max-width: 20ch;
+  margin: 0;
+
+  color: #080808;
+
+  font-size: clamp(27px, 2.8vw, 43px);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.smbundle-document-description {
+  max-width: 430px;
+  margin: 17px 0 0;
+
+  color: #827c86;
+
+  font-size: clamp(12px, 1vw, 15px);
+  line-height: 1.48;
+}
+
+/* LIST LABEL */
+
+.smbundle-document-list-label {
+  margin-top: clamp(27px, 3vw, 39px);
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #ded9e1;
+
+  color: #9b949f;
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* CONTENT LIST */
+
+.smbundle-document-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.smbundle-document-list li {
+  display: grid;
+  grid-template-columns: 7px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid #e7e1e9;
+
+  color: #77717d;
+  font-size: clamp(11px, 0.92vw, 14px);
+  line-height: 1.4;
+}
+
+.smbundle-document-list li:last-child {
+  border-bottom: 0;
+}
+
+.smbundle-document-bullet {
+  width: 5px;
+  height: 5px;
+  margin-top: 0.48em;
+
+  border-radius: 50%;
+  background: #a97fdd;
+}
+
+/* ============================================================
+   RIGHT PREVIEW
+   ============================================================ */
+
+.smbundle-document-preview {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 4.65;
+
+  overflow: hidden;
+
+  border: 1.5px solid #ddc7fb;
+  border-radius: 17px;
+
+  background: #fff;
+
+  animation:
+    smbundleDocumentPreviewEnter
+    0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+}
+
+@keyframes smbundleDocumentPreviewEnter {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.smbundle-document-preview-image {
+  object-fit: contain;
+  padding: 14px;
+
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smbundle-document-card:hover .smbundle-document-preview-image {
+  transform: scale(1.02);
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .smbundle-document-intro-inner {
+    gap: 40px;
+  }
+
+  .smbundle-document-card {
+    gap: 34px;
+    padding: 34px;
+  }
+
+  .smbundle-document-card-main h3 {
+    font-size: clamp(26px, 3.4vw, 36px);
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 760px) {
+  .smbundle-document-intro-inner {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .smbundle-document-intro-copy h2 {
+    font-size: clamp(34px, 7vw, 48px);
+  }
+
+  .smbundle-document-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 38px;
+  }
+
+  .smbundle-document-preview {
+    width: min(100%, 520px);
+    aspect-ratio: 4 / 4.3;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .smbundle-document-intro {
+    padding: 58px 0 64px;
+  }
+
+  .smbundle-document-intro-inner,
+  .smbundle-document-nav-inner,
+  .smbundle-document-content-inner {
+    width: calc(100% - 30px);
+  }
+
+  .smbundle-document-intro-copy h2 {
+    font-size: clamp(33px, 8.5vw, 43px);
+  }
+
+  .smbundle-document-intro-card {
+    padding: 23px 20px;
+  }
+
+  .smbundle-document-nav {
+    padding: 48px 0 54px;
+  }
+
+  .smbundle-document-nav-inner h2 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .smbundle-document-tabs {
+    gap: 10px;
+  }
+
+  .smbundle-document-tab {
+    width: 42px;
+    height: 42px;
+  }
+
+  .smbundle-document-content {
+    padding: 25px 0 75px;
+  }
+
+  .smbundle-document-card {
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .smbundle-document-number {
+    font-size: 76px;
+  }
+
+  .smbundle-document-card-main {
+    margin-top: 27px;
+  }
+
+  .smbundle-document-card-main h3 {
+    font-size: clamp(29px, 7.5vw, 38px);
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .smbundle-document-arrow,
+  .smbundle-document-card,
+  .smbundle-document-preview {
+    animation: none;
+  }
+
+  .smbundle-document-tab,
+  .smbundle-document-preview-image {
+    transition: none;
+  }
+}
+
+
+/* ============================================================
+   SOCIAL MEDIA BUNDLE — TEMPLATE VALUE
+   ============================================================ */
+
+   .smbundle-template-value {
+  position: relative;
+  width: 100%;
+
+  padding: clamp(30px, 4vw, 54px) 0
+    clamp(34px, 4.5vw, 64px);
+
+  background: #fbf6ff;
+  overflow: hidden;
+}
+
+.smbundle-template-value-inner {
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+}
+
+/* ============================================================
+   MAIN BLACK PANEL
+   ============================================================ */
+
+.smbundle-template-value-panel {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+
+  padding: clamp(28px, 3.2vw, 44px);
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      ellipse at 92% 12%,
+      rgba(169, 127, 221, 0.2) 0%,
+      rgba(169, 127, 221, 0.07) 31%,
+      transparent 60%
+    ),
+    linear-gradient(
+      115deg,
+      #080708 0%,
+      #151118 55%,
+      #09080b 100%
+    );
+
+  box-shadow: 0 18px 48px rgba(27, 20, 37, 0.12);
+}
+
+/* ============================================================
+   TOP CONTENT
+   ============================================================ */
+
+.smbundle-template-value-top {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap: clamp(22px, 3vw, 48px);
+
+  margin-bottom: clamp(24px, 2.7vw, 38px);
+}
+
+/* HEADLINE */
+
+.smbundle-template-value-heading {
+  margin: 0;
+
+  color: #cdfc56;
+
+  font-size: clamp(31px, 3.3vw, 49px);
+  font-weight: 700;
+
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+/* DESCRIPTION */
+
+.smbundle-template-value-description {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: clamp(12px, 1.05vw, 15px);
+  font-weight: 400;
+
+  line-height: 1.52;
+  letter-spacing: -0.015em;
+}
+
+/* ============================================================
+   THREE CARDS
+   ============================================================ */
+
+.smbundle-template-value-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.smbundle-template-value-card {
+  min-width: 0;
+  min-height: 118px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: clamp(17px, 1.8vw, 25px);
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 13px;
+
+  background: #3d3246;
+
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.smbundle-template-value-card:nth-child(2) {
+  background: #41364a;
+}
+
+.smbundle-template-value-card:nth-child(3) {
+  background: #594665;
+}
+
+.smbundle-template-value-card h3 {
+  margin: 0 0 10px;
+
+  color: #cdfc56;
+
+  font-size: clamp(15px, 1.3vw, 19px);
+  font-weight: 700;
+
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+
+  text-transform: uppercase;
+}
+
+.smbundle-template-value-card p {
+  max-width: 29ch;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.91);
+
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 400;
+
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+/* CARD HOVER */
+
+.smbundle-template-value-card:hover {
+  transform: translateY(-5px);
+
+  background: #67517a;
+
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   SCROLL REVEAL — NO DATA-RV
+   ============================================================ */
+
+.smbundle-template-value.is-visible
+.smbundle-template-value-heading {
+  animation:
+    smbundleTemplateValueEnter
+    0.8s cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+.smbundle-template-value.is-visible
+.smbundle-template-value-description {
+  animation:
+    smbundleTemplateValueEnter
+    0.8s cubic-bezier(0.16, 1, 0.3, 1)
+    0.1s both;
+}
+
+.smbundle-template-value.is-visible
+.smbundle-template-value-card {
+  animation:
+    smbundleTemplateValueEnter
+    0.85s cubic-bezier(0.16, 1, 0.3, 1)
+    var(--card-delay) both;
+}
+
+@keyframes smbundleTemplateValueEnter {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .smbundle-template-value-top {
+    gap: 24px;
+  }
+
+  .smbundle-template-value-heading {
+    font-size: clamp(30px, 4vw, 42px);
+  }
+
+  .smbundle-template-value-card {
+    padding: 18px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 760px) {
+  .smbundle-template-value-top {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .smbundle-template-value-heading {
+    font-size: clamp(35px, 7vw, 46px);
+  }
+
+  .smbundle-template-value-description {
+    max-width: 560px;
+  }
+
+  .smbundle-template-value-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .smbundle-template-value-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .smbundle-template-value-card p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .smbundle-template-value {
+    padding: 32px 0 48px;
+  }
+
+  .smbundle-template-value-inner {
+    width: calc(100% - 30px);
+  }
+
+  .smbundle-template-value-panel {
+    padding: 27px 20px;
+    border-radius: 17px;
+  }
+
+  .smbundle-template-value-heading {
+    font-size: clamp(33px, 9vw, 43px);
+  }
+
+  .smbundle-template-value-description {
+    font-size: 12px;
+  }
+
+  .smbundle-template-value-card h3 {
+    font-size: 17px;
+  }
+
+  .smbundle-template-value-card p {
+    font-size: 13px;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .smbundle-template-value.is-visible
+  .smbundle-template-value-heading,
+  .smbundle-template-value.is-visible
+  .smbundle-template-value-description,
+  .smbundle-template-value.is-visible
+  .smbundle-template-value-card {
+    animation: none;
+  }
+
+  .smbundle-template-value-card {
+    transition: none;
+  }
+}
+
+
+
+/* ============================================================
+   SOCIAL MEDIA BUNDLE — FINAL OFFER
+   ============================================================ */
+
+   .smbundle-final-offer {
+  position: relative;
+  width: 100%;
+
+  padding:
+    clamp(70px, 7vw, 100px)
+    0
+    clamp(80px, 8vw, 120px);
+
+  overflow: hidden;
+  background: #fff;
+}
+
+.smbundle-final-offer-inner {
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+}
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.smbundle-final-offer-heading {
+  text-align: center;
+}
+
+.smbundle-final-offer-eyebrow {
+  display: block;
+
+  margin-bottom: clamp(17px, 2vw, 25px);
+
+  color: #a97fdd;
+
+  font-size: clamp(11px, 0.95vw, 14px);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.smbundle-final-offer-heading h2 {
+  margin: 0;
+
+  color: #090909;
+
+  font-size: clamp(34px, 4vw, 58px);
+  font-weight: 600;
+  line-height: 1.13;
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+.smbundle-final-offer-highlight {
+  display: inline-block;
+
+  margin-top: 4px;
+
+  padding:
+    0.035em
+    0.34em
+    0.105em;
+
+  border-radius: 999px;
+
+  background: #cdfc56;
+  color: #090909;
+
+  line-height: 1;
+}
+
+/* ============================================================
+   PURCHASE CARD
+   ============================================================ */
+
+.smbundle-final-offer-card {
+  width: min(100%, 1120px);
+  min-height: 360px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: clamp(20px, 3vw, 46px);
+
+  margin:
+    clamp(34px, 4vw, 54px)
+    auto
+    0;
+
+  padding: clamp(24px, 3vw, 42px);
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #050505;
+  color: #fff;
+
+  box-shadow:
+    0 18px 50px
+    rgba(27, 20, 37, 0.11);
+}
+
+/* ============================================================
+   LEFT — PRODUCT VISUAL
+   ============================================================ */
+
+.smbundle-final-offer-visual {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  height: clamp(240px, 27vw, 340px);
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smbundle-final-offer-image {
+  object-fit: contain;
+  object-position: center;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smbundle-final-offer-card:hover
+.smbundle-final-offer-image {
+  transform: scale(1.025);
+}
+
+/* PLACEHOLDER — CHỈ HIỆN KHI CHƯA CÓ ẢNH */
+
+.smbundle-final-offer-placeholder {
+  width: 88%;
+  aspect-ratio: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #272127,
+      #111
+    );
+
+  color: #fff;
+
+  text-align: center;
+}
+
+.smbundle-final-offer-placeholder span {
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.smbundle-final-offer-placeholder strong {
+  padding: 4px 13px;
+
+  border-radius: 5px;
+  background: #d7b324;
+
+  font-size: clamp(13px, 1.4vw, 18px);
+}
+
+.smbundle-final-offer-placeholder small {
+  margin-top: 8px;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+/* ============================================================
+   RIGHT — PRODUCT INFO
+   ============================================================ */
+
+.smbundle-final-offer-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* PRICE LABEL */
+
+.smbundle-final-offer-price-label {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: clamp(10px, 0.85vw, 12px);
+  font-weight: 500;
+
+  text-transform: uppercase;
+}
+
+/* DIVIDER */
+
+.smbundle-final-offer-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 15px 0 24px;
+
+  background:
+    rgba(255, 255, 255, 0.22);
+}
+
+/* PRICE */
+
+.smbundle-final-offer-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  gap: clamp(14px, 1.6vw, 23px);
+}
+
+.smbundle-final-offer-price strong {
+  color: #cdfc56;
+
+  font-size: clamp(44px, 4.7vw, 66px);
+  font-weight: 600;
+  line-height: 1;
+
+  letter-spacing: -0.065em;
+}
+
+.smbundle-final-offer-price del {
+  color: rgba(255, 255, 255, 0.46);
+
+  font-size: clamp(11px, 0.95vw, 14px);
+  font-weight: 400;
+}
+
+/* NOTES */
+
+.smbundle-final-offer-note,
+.smbundle-final-offer-update {
+  max-width: 420px;
+
+  color: rgba(255, 255, 255, 0.91);
+
+  font-size: clamp(11px, 0.9vw, 13px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.smbundle-final-offer-note {
+  margin: 14px 0 0;
+}
+
+.smbundle-final-offer-update {
+  margin: 20px 0 0;
+}
+
+/* ============================================================
+   CTA
+   ============================================================ */
+
+.smbundle-final-offer-button {
+  width: min(100%, 390px);
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 22px;
+
+  margin-top: 24px;
+  padding: 0 25px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #cdfc56;
+  color: #0a0a0a;
+
+  font: inherit;
+  font-size: clamp(11px, 0.9vw, 13px);
+  font-weight: 500;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s
+    cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.smbundle-final-offer-button svg {
+  width: 20px;
+  height: 20px;
+
+  flex: 0 0 auto;
+
+  transition:
+    transform 0.4s
+    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smbundle-final-offer-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+
+  background: #fff;
+  color: #090909;
+}
+
+.smbundle-final-offer-button:hover:not(:disabled) svg {
+  transform: translateX(5px);
+}
+
+.smbundle-final-offer-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   LOCAL SCROLL ENTRANCE
+   NO DATA-RV
+   ============================================================ */
+
+.smbundle-final-offer.is-visible
+.smbundle-final-offer-eyebrow {
+  animation:
+    smbundleFinalEnter
+    0.7s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+.smbundle-final-offer.is-visible
+.smbundle-final-offer-heading h2 {
+  animation:
+    smbundleFinalEnter
+    0.8s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.1s
+    both;
+}
+
+.smbundle-final-offer.is-visible
+.smbundle-final-offer-card {
+  animation:
+    smbundleFinalEnter
+    0.9s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.2s
+    both;
+}
+
+@keyframes smbundleFinalEnter {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .smbundle-final-offer-card {
+    gap: 22px;
+    padding: 27px;
+  }
+
+  .smbundle-final-offer-price strong {
+    font-size: clamp(39px, 4.5vw, 54px);
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 760px) {
+  .smbundle-final-offer-card {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding: 27px;
+  }
+
+  .smbundle-final-offer-visual {
+    height: 310px;
+  }
+
+  .smbundle-final-offer-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  .smbundle-final-offer {
+    padding: 65px 0 80px;
+  }
+
+  .smbundle-final-offer-inner {
+    width: calc(100% - 30px);
+  }
+
+  .smbundle-final-offer-heading h2 {
+    font-size: clamp(31px, 8.2vw, 42px);
+  }
+
+  .smbundle-final-offer-highlight {
+    padding:
+      0.075em
+      0.22em
+      0.13em;
+  }
+
+  .smbundle-final-offer-card {
+    margin-top: 32px;
+
+    padding: 21px;
+
+    border-radius: 15px;
+  }
+
+  .smbundle-final-offer-visual {
+    height: 240px;
+  }
+
+  .smbundle-final-offer-divider {
+    margin: 13px 0 20px;
+  }
+
+  .smbundle-final-offer-price strong {
+    font-size: clamp(40px, 11vw, 52px);
+  }
+
+  .smbundle-final-offer-update {
+    margin-top: 16px;
+  }
+
+  .smbundle-final-offer-button {
+    width: 100%;
+    margin-top: 23px;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .smbundle-final-offer.is-visible
+  .smbundle-final-offer-eyebrow,
+  .smbundle-final-offer.is-visible
+  .smbundle-final-offer-heading h2,
+  .smbundle-final-offer.is-visible
+  .smbundle-final-offer-card {
+    animation: none;
+  }
+
+  .smbundle-final-offer-image,
+  .smbundle-final-offer-button,
+  .smbundle-final-offer-button svg {
+    transition: none;
+  }
+}
