@@ -1,0 +1,862 @@
+
+/* ============================================================
+   DESIGN THINKING DOCUMENTS — HERO
+   ============================================================ */
+
+   .dth-hero {
+    --dth-lime: #cdfc56;
+    --dth-purple: #a97fdd;
+    --dth-ease: cubic-bezier(.16, 1, .3, 1);
+  
+    position: relative;
+  
+    width: 100%;
+    height: 100vh;
+    min-height: 740px;
+  
+    padding-top: clamp(30px, 4vw, 58px);
+  
+    overflow: hidden;
+  
+    background: #fff;
+    color: #111;
+  }
+  
+  .dth-hero-inner {
+    width: min(1240px, 90vw);
+    height: calc(100% - 88px);
+  
+    margin-inline: auto;
+  }
+  
+  /* ============================================================
+     BREADCRUMB
+     ============================================================ */
+  
+  .dth-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+  
+    width: fit-content;
+    min-height: 39px;
+  
+    padding: 0 19px;
+  
+    border: 1px solid #dedbe2;
+    border-radius: 999px;
+  
+    background: #fff;
+    color: #28252d;
+  
+    font-size: clamp(9px, .77vw, 11px);
+    font-weight: 600;
+    letter-spacing: .11em;
+    white-space: nowrap;
+  }
+  
+  .dth-breadcrumb-dot {
+    width: 8px;
+    height: 8px;
+  
+    flex: 0 0 8px;
+  
+    border-radius: 50%;
+    background: var(--dth-purple);
+  }
+  
+  /* ============================================================
+     MAIN HERO GRID
+     ============================================================ */
+  
+  .dth-hero-grid {
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, .94fr)
+      minmax(0, 1.06fr);
+  
+    align-items: center;
+  
+    gap: clamp(24px, 3.5vw, 55px);
+  
+    height: calc(100% - 66px);
+  }
+  
+  .dth-hero-left,
+  .dth-hero-right {
+    min-width: 0;
+  }
+  
+  /* ============================================================
+     LEFT — CAPSULE TITLE
+     ============================================================ */
+  
+  .dth-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+    gap: clamp(8px, .85vw, 13px);
+  
+    width: fit-content;
+    max-width: 100%;
+  
+    margin: 0;
+  }
+  
+  .dth-title-row {
+    display: flex;
+    align-items: center;
+  
+    gap: clamp(9px, 1.2vw, 18px);
+  
+    width: fit-content;
+    max-width: 100%;
+  }
+  
+  .dth-title-star {
+    display: block;
+    flex: 0 0 auto;
+  
+    color: var(--dth-purple);
+  
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(76px, 7.5vw, 116px);
+    font-weight: 400;
+    line-height: .8;
+  }
+  
+  .dth-title-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: clamp(75px, 7.8vw, 112px);
+    max-width: 100%;
+  
+    padding: .025em .23em .11em;
+  
+    border: 1.4px solid #111;
+    border-radius: 999px;
+  
+    background: #fff;
+    color: #050505;
+  
+    font-size: clamp(63px, 7.1vw, 105px);
+    font-weight: 700;
+  
+    line-height: .9;
+    letter-spacing: -.065em;
+    white-space: nowrap;
+  
+    transition:
+      transform .4s var(--dth-ease);
+  }
+  
+  .dth-title-pill:hover {
+    transform: translateY(-3px);
+  }
+  
+  .dth-title-pill--lime {
+    background: var(--dth-lime);
+  }
+  
+  /* ============================================================
+     PURPLE ARROW
+     ============================================================ */
+  
+  .dth-title-arrow {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+  
+    width: clamp(68px, 7vw, 99px);
+    height: clamp(56px, 6vw, 84px);
+  
+    border-radius: 999px;
+  
+    background: var(--dth-purple);
+    color: #fff;
+  
+    text-decoration: none;
+  
+    transition:
+      transform .4s var(--dth-ease),
+      background-color .3s ease;
+  }
+  
+  .dth-title-arrow svg {
+    width: clamp(25px, 2.5vw, 35px);
+    height: clamp(25px, 2.5vw, 35px);
+  
+    transition:
+      transform .4s var(--dth-ease);
+  }
+  
+  .dth-title-arrow:hover {
+    transform: translateY(-3px);
+  
+    background: #9162d1;
+  }
+  
+  .dth-title-arrow:hover svg {
+    transform: translateX(6px);
+  }
+  
+  /* ============================================================
+     SUBTITLE
+     ============================================================ */
+  
+  .dth-hero-subtitle {
+    max-width: 580px;
+  
+    margin: clamp(28px, 3vw, 43px) 0 0;
+  
+    color: #111;
+  
+    font-size: clamp(19px, 2vw, 30px);
+    font-weight: 700;
+  
+    line-height: 1.2;
+    letter-spacing: -.035em;
+  }
+  
+  /* ============================================================
+     RIGHT — PRODUCT MOCKUP
+     ============================================================ */
+  
+  .dth-hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+  }
+  
+  .dth-visual {
+    position: relative;
+  
+    width: 100%;
+    height: clamp(310px, 31vw, 445px);
+  }
+  
+  .dth-product-image {
+    object-fit: contain;
+    object-position: center;
+  
+    transition:
+      transform .8s var(--dth-ease);
+  }
+  
+  .dth-visual:hover .dth-product-image {
+    transform: scale(1.025);
+  }
+  
+  /* PLACEHOLDER — WHEN NO MOCKUP IMAGE IS PROVIDED */
+  
+  .dth-visual-placeholder {
+    position: absolute;
+    inset: 10% 7%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 12px;
+    padding: 25px;
+  
+    border: 1px solid #e8d9f5;
+    border-radius: 18px;
+  
+    background:
+      radial-gradient(
+        circle at 80% 15%,
+        #e9dcff,
+        transparent 50%
+      ),
+      linear-gradient(
+        145deg,
+        #fbf8ff,
+        #fff
+      );
+  
+    text-align: center;
+  }
+  
+  .dth-visual-placeholder > span {
+    color: #a97fdd;
+  
+    font-size: clamp(17px, 2vw, 27px);
+    font-weight: 700;
+  
+    letter-spacing: -.03em;
+  }
+  
+  .dth-visual-placeholder > strong {
+    color: #111;
+  
+    font-size: clamp(30px, 3.3vw, 49px);
+    font-weight: 700;
+  
+    line-height: 1.05;
+    letter-spacing: -.06em;
+  }
+  
+  .dth-visual-placeholder > small {
+    color: #89808e;
+  
+    font-size: clamp(9px, .85vw, 12px);
+    font-weight: 600;
+    letter-spacing: .06em;
+  }
+  
+  /* ============================================================
+     FLOATING TAGS
+     ============================================================ */
+  
+  .dth-tag {
+    position: absolute;
+    z-index: 3;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: 38px;
+    padding: 9px 17px;
+  
+    border-radius: 999px;
+  
+    background: rgba(255, 255, 255, .95);
+    color: #302d33;
+  
+    box-shadow:
+      0 12px 35px rgba(39, 25, 55, .09);
+  
+    font-size: clamp(10px, .91vw, 13px);
+    font-weight: 500;
+    white-space: nowrap;
+  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .dth-tag.ftag {
+    will-change: transform;
+  }
+  
+  .dth-tag--principles {
+    top: 1%;
+    right: 1%;
+  }
+  
+  .dth-tag--brief {
+    top: 28%;
+    left: -3%;
+  }
+  
+  .dth-tag--canva {
+    right: -2%;
+    bottom: 12%;
+  }
+  
+  /*
+    Không thêm CSS animation hoặc transition: transform
+    trực tiếp vào .dth-tag.
+  
+    HomeInteractions hiện tại sẽ điều khiển transform
+    của .ftag dựa trên data-d.
+  */
+  
+  /* ============================================================
+     PRICE AREA
+     ============================================================ */
+  
+  .dth-price-area {
+    width: 100%;
+  
+    margin-top: clamp(7px, 1.3vw, 18px);
+  
+    text-align: center;
+    scroll-margin-top: 100px;
+  }
+  
+  .dth-price-label {
+    margin: 0;
+  
+    color: #29272b;
+  
+    font-size: clamp(14px, 1.2vw, 18px);
+    font-weight: 400;
+  
+    line-height: 1.3;
+  }
+  
+  .dth-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+    gap: clamp(13px, 1.5vw, 23px);
+  
+    margin-top: 11px;
+  }
+  
+  .dth-price-row strong {
+    color: #1b1b1b;
+  
+    font-size: clamp(42px, 4.1vw, 61px);
+    font-weight: 700;
+  
+    line-height: 1;
+    letter-spacing: -.065em;
+  }
+  
+  .dth-price-row del {
+    color: #a1a1a1;
+  
+    font-size: clamp(13px, 1.1vw, 17px);
+    font-weight: 400;
+  }
+  
+  /* ============================================================
+     BUY BUTTON
+     ============================================================ */
+  
+  .dth-buy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 13px;
+    min-height: 49px;
+  
+    margin-top: 19px;
+    padding: 0 24px;
+  
+    border: 0;
+    border-radius: 999px;
+  
+    background: var(--dth-lime);
+    color: #111;
+  
+    font: inherit;
+    font-size: clamp(11px, .95vw, 14px);
+    font-weight: 500;
+  
+    text-decoration: none;
+  
+    cursor: pointer;
+  
+    transition:
+      transform .4s var(--dth-ease),
+      background-color .3s ease,
+      color .3s ease;
+  }
+  
+  .dth-buy-arrow {
+    font-size: 23px;
+    line-height: 1;
+  
+    transition:
+      transform .4s var(--dth-ease);
+  }
+  
+  .dth-buy-button:hover:not(:disabled) {
+    transform: translateY(-3px);
+  
+    background: #111;
+    color: #fff;
+  }
+  
+  .dth-buy-button:hover:not(:disabled)
+  .dth-buy-arrow {
+    transform: translateX(5px);
+  }
+  
+  .dth-buy-button:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+  }
+  
+  .dth-title-arrow:focus-visible,
+  .dth-buy-button:focus-visible {
+    outline: 2px solid var(--dth-purple);
+    outline-offset: 4px;
+  }
+  
+  /* ============================================================
+     BOTTOM MARQUEE
+     ============================================================ */
+  
+  .dth-marquee {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  
+    display: flex;
+    align-items: center;
+  
+    height: 78px;
+  
+    overflow: hidden;
+  
+    background: #f2e8ff;
+    color: #141119;
+  }
+  
+  .dth-marquee-track {
+    display: flex;
+    align-items: center;
+  
+    width: max-content;
+  
+    animation:
+      dthMarqueeMove
+      30s linear infinite;
+  
+    will-change: transform;
+  }
+  
+  .dth-marquee-group {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  
+  .dth-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+  
+    gap: clamp(25px, 3vw, 47px);
+  
+    padding-right: clamp(25px, 3vw, 47px);
+  
+    color: #17121e;
+  
+    font-size: clamp(20px, 1.8vw, 27px);
+    font-weight: 600;
+  
+    line-height: 1;
+    letter-spacing: -.035em;
+  
+    white-space: nowrap;
+  }
+  
+  .dth-marquee-star {
+    color: var(--dth-purple);
+  
+    font-size: 28px;
+    line-height: 1;
+  }
+  
+  @keyframes dthMarqueeMove {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  
+  /* ============================================================
+     HERO ENTRANCE — NO DATA-RV
+     ============================================================ */
+  
+  .dth-enter {
+    --dth-delay: 0s;
+  
+    opacity: 0;
+    transform: translateY(27px);
+  
+    animation:
+      dthHeroEnter
+      .9s var(--dth-ease)
+      var(--dth-delay)
+      forwards;
+  }
+  
+  @keyframes dthHeroEnter {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ============================================================
+     LAPTOP
+     ============================================================ */
+  
+  @media (max-width: 1200px) {
+    .dth-hero-grid {
+      gap: 22px;
+    }
+  
+    .dth-title-pill {
+      min-height: clamp(65px, 7vw, 90px);
+      font-size: clamp(56px, 6.5vw, 86px);
+    }
+  
+    .dth-title-star {
+      font-size: clamp(64px, 7vw, 91px);
+    }
+  
+    .dth-title-arrow {
+      width: 70px;
+      height: 62px;
+    }
+  
+    .dth-hero-subtitle {
+      font-size: clamp(18px, 1.9vw, 24px);
+    }
+  }
+  
+  /* ============================================================
+     TABLET
+     ============================================================ */
+  
+  @media (max-width: 820px) {
+    .dth-hero {
+      height: auto;
+      min-height: 100vh;
+  
+      padding-bottom: 0;
+    }
+  
+    .dth-hero-inner {
+      height: auto;
+    }
+  
+    .dth-hero-grid {
+      height: auto;
+  
+      grid-template-columns: 1fr;
+  
+      gap: 38px;
+  
+      margin: 45px auto 48px;
+    }
+  
+    .dth-hero-left {
+      width: fit-content;
+      max-width: 100%;
+  
+      margin-inline: auto;
+    }
+  
+    .dth-title-pill {
+      min-height: 0;
+      font-size: clamp(58px, 9vw, 86px);
+    }
+  
+    .dth-title-star {
+      font-size: clamp(66px, 10vw, 96px);
+    }
+  
+    .dth-hero-subtitle {
+      font-size: clamp(19px, 3vw, 25px);
+    }
+  
+    .dth-visual {
+      width: min(100%, 640px);
+      height: clamp(330px, 60vw, 450px);
+  
+      margin-inline: auto;
+    }
+  
+    .dth-price-area {
+      margin-top: 12px;
+    }
+  
+    .dth-marquee {
+      position: relative;
+      height: 65px;
+    }
+  }
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (max-width: 580px) {
+    .dth-hero {
+      padding-top: 23px;
+    }
+  
+    .dth-hero-inner {
+      width: calc(100% - 30px);
+    }
+  
+    .dth-breadcrumb {
+      min-height: 32px;
+  
+      gap: 8px;
+      padding: 0 11px;
+  
+      font-size: 8px;
+      letter-spacing: .045em;
+    }
+  
+    .dth-breadcrumb-dot {
+      width: 6px;
+      height: 6px;
+      flex-basis: 6px;
+    }
+  
+    .dth-hero-grid {
+      gap: 26px;
+  
+      margin-top: 38px;
+      margin-bottom: 42px;
+    }
+  
+    .dth-title {
+      gap: 7px;
+    }
+  
+    .dth-title-row {
+      gap: 8px;
+    }
+  
+    .dth-title-pill {
+      padding: .07em .18em .13em;
+  
+      font-size: clamp(43px, 10.8vw, 61px);
+    }
+  
+    .dth-title-star {
+      font-size: clamp(49px, 12vw, 69px);
+    }
+  
+    .dth-title-arrow {
+      width: clamp(48px, 12vw, 64px);
+      height: clamp(42px, 11vw, 57px);
+    }
+  
+    .dth-title-arrow svg {
+      width: 22px;
+      height: 22px;
+    }
+  
+    .dth-hero-subtitle {
+      margin-top: 27px;
+  
+      font-size: clamp(17px, 4.5vw, 21px);
+      line-height: 1.3;
+    }
+  
+    .dth-desktop-break {
+      display: none;
+    }
+  
+    .dth-visual {
+      height: clamp(265px, 73vw, 365px);
+    }
+  
+    .dth-tag {
+      min-height: 27px;
+  
+      padding: 6px 9px;
+  
+      font-size: 8px;
+    }
+  
+    .dth-tag--principles {
+      top: 2%;
+      right: 0;
+    }
+  
+    .dth-tag--brief {
+      top: 29%;
+      left: 0;
+    }
+  
+    .dth-tag--canva {
+      right: 0;
+      bottom: 10%;
+    }
+  
+    .dth-price-label {
+      font-size: 12px;
+    }
+  
+    .dth-price-row strong {
+      font-size: clamp(38px, 10vw, 49px);
+    }
+  
+    .dth-price-row del {
+      font-size: 12px;
+    }
+  
+    .dth-buy-button {
+      min-height: 43px;
+      margin-top: 17px;
+    }
+  
+    .dth-marquee {
+      height: 57px;
+    }
+  
+    .dth-marquee-item {
+      font-size: 17px;
+    }
+  
+    .dth-marquee-star {
+      font-size: 21px;
+    }
+  }
+  
+  /* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+  
+  @media (max-width: 390px) {
+    .dth-title-pill {
+      font-size: 10.4vw;
+    }
+  
+    .dth-title-row {
+      gap: 6px;
+    }
+  
+    .dth-title-arrow {
+      width: 42px;
+      height: 42px;
+    }
+  
+    .dth-breadcrumb {
+      font-size: 7px;
+    }
+  }
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .dth-enter {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  
+    .dth-marquee-track {
+      animation: none;
+    }
+  
+    .dth-title-pill,
+    .dth-title-arrow,
+    .dth-title-arrow svg,
+    .dth-product-image,
+    .dth-buy-button,
+    .dth-buy-arrow {
+      transition: none;
+    }
+  }

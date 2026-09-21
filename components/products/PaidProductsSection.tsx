@@ -74,7 +74,7 @@ const products: Product[] = [
 
   {
     id: 5,
-    slug: "tu-duy-thiet-ke-voi-canva",
+    slug: "design-thinking",
     title: "TƯ DUY THIẾT KẾ VỚI CANVA",
     description:
       "Giúp bạn hiểu cách tư duy layout, visual và bố cục để ứng dụng linh hoạt trên Canva.",
