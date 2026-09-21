@@ -1,5 +1,6 @@
 import { SocialMediaPackageOneExploreSection } from "@/components/products/detail/SocialMediaPackageOne/SocialMediaPackageOneExploreSection";
 import { SocialMediaPackageOneFeedbackSection } from "@/components/products/detail/SocialMediaPackageOne/SocialMediaPackageOneFeedbackSection";
+import { SocialMediaPackageOneFinalOfferSection } from "@/components/products/detail/SocialMediaPackageOne/SocialMediaPackageOneFinalOfferSection";
 import { SocialMediaPackageOneHero } from "@/components/products/detail/SocialMediaPackageOne/SocialMediaPackageOneHero";
 import { SocialMediaPackageOneIntroSection } from "@/components/products/detail/SocialMediaPackageOne/SocialMediaPackageOneIntroSection";
 import { SocialMediaPackageOneWhoSection } from "@/components/products/detail/SocialMediaPackageOne/SocialMediaPackageOneWhoSection";
@@ -21,6 +22,7 @@ export default function SocialMediaPackageOnePage() {
         <SocialMediaPackageOneWhoSection />
         <SocialMediaPackageOneFeedbackSection />
         <SocialMediaPackageOneExploreSection />
+        <SocialMediaPackageOneFinalOfferSection />
         <NewsletterCTA />
       </main>
       <Footer />

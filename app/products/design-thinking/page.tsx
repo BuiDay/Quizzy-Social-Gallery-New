@@ -1,5 +1,10 @@
 
+import { DesignThinkingBeforeAfterSection } from "@/components/products/detail/DesignThinking/DesignThinkingBeforeAfterSection";
+import { DesignThinkingDocumentInsideSection } from "@/components/products/detail/DesignThinking/DesignThinkingDocumentInsideSection";
+import { DesignThinkingFinalOfferSection } from "@/components/products/detail/DesignThinking/DesignThinkingFinalOfferSection";
 import { DesignThinkingHero } from "@/components/products/detail/DesignThinking/DesignThinkingHero";
+import { DesignThinkingMindsetSection } from "@/components/products/detail/DesignThinking/DesignThinkingMindsetSection";
+import { DesignThinkingVisualEraSection } from "@/components/products/detail/DesignThinking/DesignThinkingVisualEraSection";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/sections/Navbar";
 import { SiteEffects } from "@/components/SiteEffects";
@@ -14,6 +19,11 @@ export default function DesignThinkingPage() {
       <Navbar />
       <main>
         <DesignThinkingHero />
+        <DesignThinkingVisualEraSection />
+        <DesignThinkingBeforeAfterSection />
+        <DesignThinkingMindsetSection />
+        <DesignThinkingDocumentInsideSection />
+        <DesignThinkingFinalOfferSection />
         <NewsletterCTA />
       </main>
       <Footer />
