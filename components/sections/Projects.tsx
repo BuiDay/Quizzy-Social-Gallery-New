@@ -8,10 +8,12 @@ import { projects } from "@/data/content";
 import { Art } from "@/components/ui/Art";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { useModal } from "@/components/ui/ModalContext";
+import { useRouter } from "next/navigation";
+
 
 export function Projects() {
-  const { openModal } = useModal();
+  const router = useRouter()
+
   const rail = useRef<HTMLDivElement>(null);
   const [bar, setBar] = useState({ width: 14, left: 0 });
   const drag = useRef({ down: false, x: 0, scroll: 0, moved: 0 });
@@ -80,26 +82,11 @@ export function Projects() {
                 className="project-card"
                 data-cur="VIEW"
                 aria-label={`Xem case study ${p.t}`}
-                onClick={() =>
-                  openModal({
-                    g: p.g,
-                    cat: p.cat,
-                    meta: `${p.c} · ${p.y}`,
-                    t: p.t,
-                    d: p.d,
-                    ch: p.ch,
-                    stats: p.stats,
-                    l1: "Mình đã làm gì",
-                    l2: "Kết quả",
-                    a: p.work,
-                    b: p.res,
-                    cta: "Trao đổi về dự án tương tự",
-                  })
-                }
-              >
-                {/* IMAGE */}
+                onClick={() => router.push(`${p.slug}`)}
+                >
+      
                 <div className="project-card-visual">
-                  <Art variant={p.g} />
+                <Art variant={p.g} url={p.thumnail} alt={p.t}/>
   
                   <span className="project-card-badge glass">
                     Social Media
@@ -157,25 +144,10 @@ export function Projects() {
                 className="project-card"
                 data-cur="VIEW"
                 aria-label={`Xem case study ${p.t}`}
-                onClick={() =>
-                  openModal({
-                    g: p.g,
-                    cat: p.cat,
-                    meta: `${p.c} · ${p.y}`,
-                    t: p.t,
-                    d: p.d,
-                    ch: p.ch,
-                    stats: p.stats,
-                    l1: "Mình đã làm gì",
-                    l2: "Kết quả",
-                    a: p.work,
-                    b: p.res,
-                    cta: "Trao đổi về dự án tương tự",
-                  })
-                }
+                onClick={() => router.push(`${p.slug}`)}
               >
                 <div className="project-card-visual">
-                  <Art variant={p.g} />
+                  <Art variant={p.g} url={p.thumnail} alt={p.t} className=" project-card-visual-personal"/>
   
                   <span className="project-card-badge glass">
                     Personal Branding

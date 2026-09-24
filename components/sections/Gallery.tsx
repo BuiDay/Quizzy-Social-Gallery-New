@@ -6,10 +6,12 @@ import { Art } from "@/components/ui/Art";
 import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/ui/Icons";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { useModal } from "@/components/ui/ModalContext";
+import { useRouter } from 'next/navigation'
 
 export function Gallery() {
   const { openModal } = useModal();
   const railRef = useRef<HTMLDivElement>(null);
+  const router = useRouter()
 
   const scrollRail = (direction: -1 | 1) => {
     const rail = railRef.current;
@@ -70,7 +72,7 @@ export function Gallery() {
                 type="button"
                 className={`gallery-product-card gallery-product-card--${index % 4}`}
                 data-cur="EXPLORE"
-                onClick={() => openModal(item)}
+                onClick={() => router.push(`/products/${item.slug}`)}
               >
                 <div className="gallery-product-copy">
                   <div className="gallery-product-head">
@@ -90,7 +92,7 @@ export function Gallery() {
                 </div>
 
                 <div className="gallery-product-visual" aria-hidden="true">
-                  <Art variant={item.g} />
+                  <Art variant={item.g} url={item.thumnail} alt={item.meta}/>
                 </div>
               </button>
             ))}
@@ -99,7 +101,7 @@ export function Gallery() {
 
         {/* CTA — giữ nguyên */}
         <a
-          href="#gallery"
+          href="/products"
           className="linkcard"
           style={{ marginTop: 14 }}
           data-rv="up"

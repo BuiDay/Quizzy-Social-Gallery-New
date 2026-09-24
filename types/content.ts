@@ -1,7 +1,7 @@
 export type ModalContent = {
   t: string;
   cat: string;
-  g: string;
+  g: any;
   meta: string;
   d: string;
   a: string[];
@@ -11,6 +11,8 @@ export type ModalContent = {
   cta?: string;
   ch?: string;
   stats?: [string, string][];
+  thumnail?:any;
+  slug:string
 };
 
 export type GalleryItem = ModalContent & {
@@ -21,12 +23,8 @@ export type ProjectItem = {
   t: string;
   c: string;
   y: string;
-  g: string;
+  g: any;
   cat: string;
-  role: string;
-  d: string;
-  ch: string;
-  work: string[];
-  res: string[];
-  stats: [string, string][];
+  thumnail?:any;
+  slug:string
 };

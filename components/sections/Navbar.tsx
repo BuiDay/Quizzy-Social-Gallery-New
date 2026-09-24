@@ -1,24 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const links = [
-  ["#top", "Trang chủ"],
+  ["/", "Trang chủ"],
   ["/products", "Tài liệu số"],
   ["/courses", "Khoá học"],
   ["/services", "Dịch vụ SMM"],
-  ["#contact", "Liên hệ"],
+  ["/contact", "Liên hệ"],
 ] as const;
 
 export function Navbar() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [small, setSmall] = useState(false);
-  const [active, setActive] = useState("#top");
+  const [active, setActive] = useState(pathname);
 
   useEffect(() => {
     const onScroll = () => {
       setSmall(window.scrollY > 50);
-      let current = "#top";
+
+      if (pathname !== "/") {
+        setActive(pathname);
+        return;
+      }
+
+      let current = "/";
       [["#top", "top"], ["#gallery", "gallery"], ["#services", "services"]].forEach(([href, id]) => {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 160) current = href;
@@ -28,7 +36,7 @@ export function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -38,7 +46,7 @@ export function Navbar() {
   return <>
     <header className={`nav ${small ? "sm" : ""}`} id="nav">
       <div className="nav-in">
-        <a href="#top" className="logo" data-cur="hover"><b>QUIZZY</b><i>SOCIAL GALLERY</i></a>
+        <a href="/" className="logo" data-cur="hover"><b>QUIZZY</b><i>SOCIAL GALLERY</i></a>
         <nav className="nav-links" aria-label="Điều hướng chính">
           {links.map(([href, label]) => <a key={href} href={href} className={active === href ? "on" : ""} data-cur="hover">{label}</a>)}
         </nav>

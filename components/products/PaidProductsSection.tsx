@@ -1,6 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import ProductPaid1 from "@/assets/images/products/paid/1.png";
+import ProductPaid2 from "@/assets/images/products/paid/2.png";
+import ProductPaid3 from "@/assets/images/products/paid/3.png";
+import ProductPaid4 from "@/assets/images/products/paid/4.png";
+import ProductPaid5 from "@/assets/images/products/paid/5.png";
+import ProductPaid6 from "@/assets/images/products/paid/6.png";
+import Image from "next/image";
 
 type Product = {
   id: number;
@@ -11,7 +18,7 @@ type Product = {
   oldPrice?: string;
   category: string[];
   meta: string;
-  image: string;
+  image: any;
   accent?: "lime" | "cream";
 };
 
@@ -26,7 +33,7 @@ const products: Product[] = [
     oldPrice: "899.000đ",
     category: ["Content Marketing", "Social Media", "Brainstorm"],
     meta: "Social Media · Brainstorm · Ebook",
-    image: "/images/products/tiktok-ideas-hacking.png",
+    image: ProductPaid1,
     accent: "lime",
   },
 
@@ -40,7 +47,7 @@ const products: Product[] = [
     oldPrice: "1.299.000đ",
     category: ["Social Media", "Template"],
     meta: "Social Media · Template",
-    image: "/images/products/social-media-bundle.png",
+    image: ProductPaid2,
     accent: "cream",
   },
 
@@ -54,7 +61,7 @@ const products: Product[] = [
     oldPrice: "699.000đ",
     category: ["Social Media", "Template", "Career & Job"],
     meta: "Social Media · Template",
-    image: "/images/products/social-media-package-01.png",
+    image: ProductPaid3,
     accent: "cream",
   },
 
@@ -68,7 +75,7 @@ const products: Product[] = [
     oldPrice: "599.000đ",
     category: ["Social Media", "Template"],
     meta: "Social Media · Template",
-    image: "/images/products/social-media-package-02.png",
+    image: ProductPaid4,
     accent: "cream",
   },
 
@@ -82,7 +89,7 @@ const products: Product[] = [
     oldPrice: "599.000đ",
     category: ["Design", "Ebook"],
     meta: "Social Media · Ebook · Design",
-    image: "/images/products/canva-design-thinking.png",
+    image: ProductPaid5,
     accent: "cream",
   },
 
@@ -96,7 +103,7 @@ const products: Product[] = [
     oldPrice: "1.145.000đ",
     category: ["Social Media", "Ebook", "Career & Job"],
     meta: "Social Media · Ebook",
-    image: "/images/products/social-media-beginner.png",
+    image: ProductPaid6,
     accent: "cream",
   },
 ];
@@ -120,32 +127,22 @@ export function PaidProductsSection() {
     if (activeFilter === "Tất cả") return products;
 
     return products.filter((product) =>
-      product.category.includes(activeFilter),
+      product.category.includes(activeFilter)
     );
   }, [activeFilter]);
 
   return (
-    <section
-      className="products-paid"
-      id="products-library"
-    >
+    <section className="products-paid" id="products-library">
       <div className="wrap products-paid-wrap">
         {/* ================= HEADING ================= */}
 
         <div className="products-paid-head">
-          <div
-            className="products-paid-eyebrow"
-            data-rv="up"
-          >
+          <div className="products-paid-eyebrow" data-rv="up">
             <i />
             <span>01 / TÀI LIỆU CÓ PHÍ</span>
           </div>
 
-          <h2
-            className="products-paid-title"
-            data-rv="up"
-            data-dl="70"
-          >
+          <h2 className="products-paid-title" data-rv="up" data-dl="70">
             Tài liệu{" "}
             <span className="products-paid-highlight products-paid-highlight--sky">
               chuyên sâu
@@ -159,33 +156,23 @@ export function PaidProductsSection() {
             .
           </h2>
 
-          <p
-            className="products-paid-intro"
-            data-rv="up"
-            data-dl="130"
-          >
-            Nâng cấp kỹ năng, chuẩn hóa cách làm việc và tăng giá trị
-            chuyên môn Social Media. Từ strategy, planning đến portfolio,
-            proposal, audit và reporting đều có hướng dẫn, có framework,
-            có template để áp dụng ngay.
+          <p className="products-paid-intro" data-rv="up" data-dl="130">
+            Nâng cấp kỹ năng, chuẩn hóa cách làm việc và tăng giá trị chuyên môn
+            Social Media. Từ strategy, planning đến portfolio, proposal, audit
+            và reporting đều có hướng dẫn, có framework, có template để áp dụng
+            ngay.
           </p>
         </div>
 
         {/* ================= FEATURED ================= */}
 
-        <article
-          className="products-featured"
-          data-rv="up"
-          data-dl="180"
-        >
+        <article className="products-featured" data-rv="up" data-dl="180">
           <div className="products-featured-visual">
-            <div
+            <Image
+              src={ProductPaid6}
+              alt=""
               className="products-featured-image"
-              style={{
-                backgroundImage:
-                  "url('/images/products/social-media-beginner.png')",
-              }}
-            />
+            ></Image>
           </div>
 
           <div className="products-featured-content">
@@ -212,8 +199,8 @@ export function PaidProductsSection() {
             </h3>
 
             <p>
-              Tài liệu nền tảng giúp người mới hiểu Social Media và
-              biết mình cần học, làm gì để bắt đầu.
+              Tài liệu nền tảng giúp người mới hiểu Social Media và biết mình
+              cần học, làm gì để bắt đầu.
             </p>
 
             <div className="products-featured-price">
@@ -221,9 +208,7 @@ export function PaidProductsSection() {
 
               <del>1.145.000đ</del>
 
-              <span className="products-discount">
-                -56%
-              </span>
+              <span className="products-discount">-56%</span>
             </div>
 
             <div className="products-featured-divider" />
@@ -241,22 +226,16 @@ export function PaidProductsSection() {
 
         {/* ================= FILTER ================= */}
 
-        <div
-          className="products-filter"
-          data-rv="up"
-        >
-          <span className="products-filter-label">
-            FILTER BY
-          </span>
+        <div className="products-filter" data-rv="up">
+          <span className="products-filter-label">FILTER BY</span>
 
           <div className="products-filter-list">
             {filters.map((filter) => (
               <button
                 key={filter}
                 type="button"
-                className={`products-filter-button ${
-                  activeFilter === filter ? "is-active" : ""
-                }`}
+                className={`products-filter-button ${activeFilter === filter ? "is-active" : ""
+                  }`}
                 aria-pressed={activeFilter === filter}
                 onClick={() => setActiveFilter(filter)}
               >
@@ -275,17 +254,14 @@ export function PaidProductsSection() {
         <div className="products-paid-grid">
           {filteredProducts.map((product, index) => (
             <article
-              className={`products-paid-card products-paid-card--${
-                product.accent ?? "cream"
-              }`}
+              className={`products-paid-card products-paid-card--${product.accent ?? "cream"
+                }`}
               key={product.id}
               data-rv="up"
               data-dl={String((index % 4) * 70)}
             >
               <div className="products-paid-card-copy">
-                <span className="products-paid-tag">
-                  TRẢ PHÍ
-                </span>
+                <span className="products-paid-tag">TRẢ PHÍ</span>
 
                 <h3>{product.title}</h3>
 
@@ -294,30 +270,22 @@ export function PaidProductsSection() {
                 <div className="products-paid-price">
                   <strong>{product.price}</strong>
 
-                  {product.oldPrice && (
-                    <del>{product.oldPrice}</del>
-                  )}
+                  {product.oldPrice && <del>{product.oldPrice}</del>}
                 </div>
 
-                <span className="products-paid-meta">
-                  {product.meta}
-                </span>
+                <span className="products-paid-meta">{product.meta}</span>
               </div>
 
               <div className="products-paid-card-visual">
-                <div
-                  className="products-paid-card-image"
-                  style={{
-                    backgroundImage: `url("${product.image}")`,
-                  }}
-                />
+                <Image
+                  src={product.image}
+                  alt=""
+                  className="products-featured-image"
+                ></Image>
               </div>
 
               <div className="products-paid-card-footer">
-                <a
-                  href={`/products/${product.slug}`}
-                  data-cur="OPEN"
-                >
+                <a href={`/products/${product.slug}`} data-cur="OPEN">
                   <span>Xem chi tiết tài liệu</span>
                   <span>↗</span>
                 </a>

@@ -1,6 +1,28 @@
 "use client";
-
+import Image from "next/image";
 import { useMemo, useState } from "react";
+import ProductFree1 from "@/assets/images/products/free/1.png";
+import ProductFree2 from "@/assets/images/products/free/2.png";
+import ProductFree3 from "@/assets/images/products/free/3.png";
+import ProductFree4 from "@/assets/images/products/free/4.png";
+import ProductFree5 from "@/assets/images/products/free/5.png";
+import ProductFree6 from "@/assets/images/products/free/6.png";
+import ProductFree7 from "@/assets/images/products/free/7.png";
+import ProductFree8 from "@/assets/images/products/free/8.png";
+import ProductFree9 from "@/assets/images/products/free/9.png";
+import ProductFree10 from "@/assets/images/products/free/10.png";
+import ProductFree11 from "@/assets/images/products/free/11.png";
+import ProductFree12 from "@/assets/images/products/free/12.png";
+import ProductFree13 from "@/assets/images/products/free/13.png";
+import ProductFree14 from "@/assets/images/products/free/14.png";
+import ProductFree15 from "@/assets/images/products/free/15.png";
+import ProductFree16 from "@/assets/images/products/free/16.png";
+import ProductFree17 from "@/assets/images/products/free/17.png";
+import ProductFree18 from "@/assets/images/products/free/18.png";
+import ProductFree19 from "@/assets/images/products/free/19.png";
+import ProductFree20 from "@/assets/images/products/free/20.png";
+import ProductFree21 from "@/assets/images/products/free/21.png";
+import ProductFree22 from "@/assets/images/products/free/22.png";
 
 type FreeProduct = {
   id: number;
@@ -8,7 +30,7 @@ type FreeProduct = {
   description: string;
   category: string[];
   meta: string;
-  image: string;
+  image: any;
   downloadUrl?: string;
 };
 
@@ -20,7 +42,7 @@ const freeProducts: FreeProduct[] = [
       "Tổng hợp 25 Content Ideas giúp bạn không bao giờ bí ý tưởng.",
     category: ["Content Marketing", "Social Media", "Brainstorm"],
     meta: "Social Media · Content Marketing · Brainstorm",
-    image: "/images/products/free/25-content-ideas.png",
+    image: ProductFree1,
   },
   {
     id: 2,
@@ -29,7 +51,7 @@ const freeProducts: FreeProduct[] = [
       "25 ý tưởng content dành riêng cho ngành F&B.",
     category: ["Content Marketing", "Social Media", "Brainstorm"],
     meta: "Social Media · Content Marketing · Brainstorm",
-    image: "/images/products/free/25-fnb-content-ideas.png",
+    image: ProductFree2,
   },
   {
     id: 3,
@@ -38,7 +60,7 @@ const freeProducts: FreeProduct[] = [
       "50 ý tưởng series được chia sẵn theo từng ngành/ngách.",
     category: ["Content Marketing", "Social Media", "Brainstorm"],
     meta: "Social Media · Content Marketing · Brainstorm",
-    image: "/images/products/free/50-series.png",
+    image: ProductFree3,
   },
   {
     id: 4,
@@ -47,7 +69,7 @@ const freeProducts: FreeProduct[] = [
       "20 mẫu hook giúp giữ người xem ngay từ những giây đầu.",
     category: ["Content Marketing", "Social Media"],
     meta: "Social Media · Content Marketing · Brainstorm",
-    image: "/images/products/free/20-hooks.png",
+    image: ProductFree4,
   },
   {
     id: 5,
@@ -56,7 +78,7 @@ const freeProducts: FreeProduct[] = [
       "Mẫu kêu gọi hành động cho từng mục tiêu chiến dịch.",
     category: ["Content Marketing", "Template"],
     meta: "Social Media · Content Marketing · Template",
-    image: "/images/products/free/template-cta.png",
+    image: ProductFree5,
   },
   {
     id: 6,
@@ -65,7 +87,7 @@ const freeProducts: FreeProduct[] = [
       "Khung sản xuất nội dung từ ý tưởng tới bài đăng hoàn chỉnh.",
     category: ["Content Marketing", "Template"],
     meta: "Social Media · Content Marketing · Template",
-    image: "/images/products/free/content-creation.png",
+    image: ProductFree6,
   },
   {
     id: 7,
@@ -74,7 +96,7 @@ const freeProducts: FreeProduct[] = [
       "38+ website tìm ideas, tài nguyên và công cụ Marketing.",
     category: ["Content Marketing", "Career & Job"],
     meta: "Social Media · Content Marketing",
-    image: "/images/products/free/38-websites.png",
+    image: ProductFree7,
   },
   {
     id: 8,
@@ -83,7 +105,7 @@ const freeProducts: FreeProduct[] = [
       "100 từ viết tắt thường gặp trong Marketing.",
     category: ["Content Marketing", "Career & Job"],
     meta: "Social Media · Content Marketing",
-    image: "/images/products/free/100-marketing-terms.png",
+    image: ProductFree8,
   },
   {
     id: 9,
@@ -92,7 +114,7 @@ const freeProducts: FreeProduct[] = [
       "18 mẫu email trao đổi công việc và làm việc với client.",
     category: ["Career & Job", "Template"],
     meta: "Social Media · Content Marketing · Template",
-    image: "/images/products/free/18-emails.png",
+    image: ProductFree9,
   },
   {
     id: 10,
@@ -101,7 +123,7 @@ const freeProducts: FreeProduct[] = [
       "Danh sách từ ngữ dễ khiến bài bị hạn chế hiển thị.",
     category: ["Content Marketing", "Social Media"],
     meta: "Social Media · Content Marketing",
-    image: "/images/products/free/tu-cam.png",
+    image: ProductFree10,
   },
   {
     id: 11,
@@ -110,7 +132,7 @@ const freeProducts: FreeProduct[] = [
       "Mẹo thiết kế nhanh và gọn gàng hơn trên Canva.",
     category: ["Design"],
     meta: "Social Media · Content Marketing · Design",
-    image: "/images/products/free/canva-tips.png",
+    image: ProductFree11,
   },
   {
     id: 12,
@@ -119,7 +141,7 @@ const freeProducts: FreeProduct[] = [
       "Lộ trình tự học Marketing qua YouTube trong 30 ngày.",
     category: ["Ebook", "Career & Job"],
     meta: "Social Media · Content Marketing · Ebook",
-    image: "/images/products/free/youtube-marketing-book.png",
+    image: ProductFree12,
   },
   {
     id: 13,
@@ -128,7 +150,7 @@ const freeProducts: FreeProduct[] = [
       "Lịch nội dung theo tháng dùng chung cho cả team.",
     category: ["Content Marketing", "Template"],
     meta: "Social Media · Content Marketing · Template",
-    image: "/images/products/free/content-calendar.png",
+    image: ProductFree13,
   },
   {
     id: 14,
@@ -137,7 +159,7 @@ const freeProducts: FreeProduct[] = [
       "Hướng dẫn chi tiết từ người mới đến Social Media Manager.",
     category: ["Social Media", "Career & Job", "Ebook"],
     meta: "Social Media · Ebook",
-    image: "/images/products/free/social-media-roadmap.png",
+    image: ProductFree14,
   },
   {
     id: 15,
@@ -146,7 +168,7 @@ const freeProducts: FreeProduct[] = [
       "Tỉ lệ khung hình phù hợp cho từng nền tảng Social Media.",
     category: ["Social Media", "Design"],
     meta: "Social Media · Content Marketing · Design",
-    image: "/images/products/free/social-size-guide.png",
+    image: ProductFree15,
   },
   {
     id: 16,
@@ -155,7 +177,7 @@ const freeProducts: FreeProduct[] = [
       "Biến portfolio thành vũ khí chinh phục job lớn.",
     category: ["Career & Job", "Template"],
     meta: "Social Media · Template · Career&Job",
-    image: "/images/products/free/portfolio-template.png",
+    image: ProductFree16,
   },
   {
     id: 17,
@@ -164,7 +186,7 @@ const freeProducts: FreeProduct[] = [
       "Tổng hợp các website tìm job nhanh hơn, đúng ngành hơn.",
     category: ["Career & Job"],
     meta: "Social Media · Career&Job",
-    image: "/images/products/free/job-websites.png",
+    image: ProductFree17,
   },
   {
     id: 18,
@@ -173,7 +195,7 @@ const freeProducts: FreeProduct[] = [
       "Tài liệu tổng hợp các công cụ AI hỗ trợ ghi chép và transcript.",
     category: ["AI"],
     meta: "Social Media · AI",
-    image: "/images/products/free/ai-transcript.png",
+    image: ProductFree18,
   },
   {
     id: 19,
@@ -182,7 +204,7 @@ const freeProducts: FreeProduct[] = [
       "Template giúp bạn viết Cover Letter chuyên nghiệp.",
     category: ["Career & Job", "Template"],
     meta: "Social Media · Career&Job · Template",
-    image: "/images/products/free/cover-letter.png",
+    image: ProductFree19,
   },
   {
     id: 20,
@@ -191,7 +213,7 @@ const freeProducts: FreeProduct[] = [
       "Giúp lên kế hoạch quay Short Video rõ ràng, chuyên nghiệp.",
     category: ["Content Marketing", "Template"],
     meta: "Social Media · Content Marketing · Template",
-    image: "/images/products/free/short-video-callsheet.png",
+    image: ProductFree20,
   },
   {
     id: 21,
@@ -200,7 +222,7 @@ const freeProducts: FreeProduct[] = [
       "Tổng hợp câu hỏi phỏng vấn thường gặp kèm cách trả lời mẫu.",
     category: ["Career & Job"],
     meta: "Social Media · Career&Job",
-    image: "/images/products/free/interview-questions.png",
+    image: ProductFree21,
   },
   {
     id: 22,
@@ -209,7 +231,7 @@ const freeProducts: FreeProduct[] = [
       "Template báo cáo Social Media hàng tháng.",
     category: ["Social Media", "Template"],
     meta: "Social Media · Template",
-    image: "/images/products/free/monthly-report.png",
+    image: ProductFree22,
   },
 ];
 
@@ -315,11 +337,10 @@ export function FreeProductsSection() {
               <button
                 key={filter}
                 type="button"
-                className={`products-free-filter-button ${
-                  activeFilter === filter
+                className={`products-free-filter-button ${activeFilter === filter
                     ? "is-active"
                     : ""
-                }`}
+                  }`}
                 aria-pressed={
                   activeFilter === filter
                 }
@@ -376,12 +397,11 @@ export function FreeProductsSection() {
                 {/* IMAGE */}
 
                 <div className="products-free-card-visual">
-                  <div
+                  <Image
+                    src={product.image}
+                    alt=""
                     className="products-free-card-image"
-                    style={{
-                      backgroundImage: `url("${product.image}")`,
-                    }}
-                  />
+                  ></Image>
                 </div>
 
 
