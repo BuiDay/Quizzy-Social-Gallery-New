@@ -1,0 +1,935 @@
+/* ============================================================
+   AUTH MODAL — QUIZZY SOCIAL GALLERY
+   ============================================================ */
+
+   .authm-overlay {
+    --auth-lime: #d2fd4b;
+    --auth-purple: #a97fdd;
+    --auth-ink: #171419;
+    --auth-muted: #817b85;
+    --auth-ease: cubic-bezier(.16, 1, .3, 1);
+  
+    position: fixed;
+    inset: 0;
+  
+    z-index: 2147483647;
+  
+    display: grid;
+    place-items: center;
+  
+    padding: 24px;
+  
+    background: rgba(20, 15, 26, .54);
+  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  
+    /*
+      Fallback: cursor mặc định vẫn xuất hiện
+      trước khi local cursor nhận pointermove.
+    */
+    cursor: auto !important;
+  
+    isolation: isolate;
+  
+    animation: authmOverlayIn .25s ease both;
+  }
+  
+  /* ============================================================
+     DIALOG
+     ============================================================ */
+  
+  .authm-dialog {
+    position: relative;
+    z-index: 1;
+  
+    display: grid;
+  
+    grid-template-columns:
+      minmax(0, .85fr)
+      minmax(0, 1.15fr);
+  
+    width: min(920px, 100%);
+    max-height: min(700px, calc(100dvh - 48px));
+  
+    overflow: hidden;
+  
+    border: 1px solid rgba(255, 255, 255, .7);
+    border-radius: 28px;
+  
+    background: #fff;
+  
+    box-shadow:
+      0 30px 90px rgba(19, 13, 26, .22);
+  
+    animation:
+      authmDialogIn .5s var(--auth-ease) both;
+  }
+  
+  /* ============================================================
+     CLOSE
+     ============================================================ */
+  
+  .authm-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  
+    z-index: 5;
+  
+    display: grid;
+    place-items: center;
+  
+    width: 36px;
+    height: 36px;
+  
+    padding: 0;
+  
+    border: 1px solid #e9e2ec;
+    border-radius: 50%;
+  
+    background: #fff;
+    color: #29232d;
+  
+    font: inherit;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+  
+    cursor: pointer;
+  
+    transition:
+      transform .3s var(--auth-ease),
+      background-color .3s ease;
+  }
+  
+  .authm-close:hover {
+    transform: rotate(90deg);
+  
+    background: var(--auth-lime);
+  }
+  
+  .authm-close:disabled {
+    opacity: .45;
+  
+    cursor: not-allowed;
+  }
+  
+  /* ============================================================
+     LEFT — BRAND PANEL
+     ============================================================ */
+  
+  .authm-brand {
+    position: relative;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    min-height: 540px;
+  
+    padding: 34px;
+  
+    overflow: hidden;
+  
+    background:
+      radial-gradient(
+        circle at 85% 35%,
+        rgba(255, 255, 255, .4),
+        transparent 40%
+      ),
+      linear-gradient(
+        155deg,
+        #dbff78 0%,
+        #d2fd4b 50%,
+        #b4f42d 100%
+      );
+  
+    color: #111;
+  }
+  
+  .authm-brand::before {
+    content: "✱";
+  
+    position: absolute;
+  
+    top: 10%;
+    right: -43px;
+  
+    color: rgba(169, 127, 221, .2);
+  
+    font-size: 260px;
+    line-height: 1;
+  
+    transform: rotate(-16deg);
+  
+    pointer-events: none;
+  }
+  
+  /* BRAND LOGO */
+  
+  .authm-brand__logo {
+    position: relative;
+    z-index: 1;
+  
+    display: flex;
+    flex-direction: column;
+  
+    width: fit-content;
+  
+    color: #111;
+  
+    text-decoration: none;
+  }
+  
+  .authm-brand__logo strong,
+  .authm-mobile-logo strong {
+    font-size: 29px;
+    font-weight: 800;
+  
+    line-height: .9;
+  
+    letter-spacing: -.07em;
+  }
+  
+  .authm-brand__logo span,
+  .authm-mobile-logo span {
+    margin-top: 6px;
+  
+    font-size: 9px;
+    font-weight: 700;
+  
+    letter-spacing: .19em;
+  }
+  
+  /* BRAND CONTENT */
+  
+  .authm-brand__content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .authm-brand__star {
+    color: #8d58d8;
+  
+    font-size: 52px;
+    line-height: 1;
+  }
+  
+  .authm-brand__content h2 {
+    margin: 12px 0 0;
+  
+    font-size: clamp(55px, 6vw, 82px);
+    font-weight: 800;
+  
+    line-height: .94;
+  
+    letter-spacing: -.075em;
+  }
+  
+  .authm-brand__content h2 span {
+    color: #8b55d4;
+  }
+  
+  .authm-brand__content p {
+    max-width: 300px;
+  
+    margin: 23px 0 0;
+  
+    color: #393332;
+  
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  
+  /* BRAND BOTTOM */
+  
+  .authm-brand__bottom {
+    position: relative;
+    z-index: 1;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    font-size: 9px;
+    font-weight: 700;
+  
+    letter-spacing: .11em;
+  }
+  
+  .authm-brand__bottom span:last-child {
+    color: #8b55d4;
+  
+    font-size: 22px;
+  }
+  
+  /* ============================================================
+     RIGHT — FORM PANEL
+     ============================================================ */
+  
+  .authm-content {
+    min-width: 0;
+  
+    padding:
+      55px
+      clamp(26px, 4vw, 52px)
+      42px;
+  
+    overflow-y: auto;
+  
+    overscroll-behavior: contain;
+  
+    background: #fff;
+  
+    scrollbar-width: thin;
+  }
+  
+  .authm-mobile-logo {
+    display: none;
+  }
+  
+  /* ============================================================
+     LOGIN / REGISTER SWITCH
+     ============================================================ */
+  
+  .authm-switch {
+    display: grid;
+  
+    grid-template-columns: 1fr 1fr;
+  
+    width: min(270px, 100%);
+  
+    padding: 4px;
+  
+    border: 1px solid #eee8f1;
+    border-radius: 999px;
+  
+    background: #f8f5fa;
+  }
+  
+  .authm-switch button {
+    min-height: 36px;
+  
+    padding: 8px 16px;
+  
+    border: 0;
+    border-radius: 999px;
+  
+    background: transparent;
+    color: #8b8490;
+  
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    transition:
+      background-color .25s ease,
+      color .25s ease,
+      box-shadow .25s ease;
+  }
+  
+  .authm-switch button.is-active {
+    background: #171419;
+    color: #fff;
+  
+    box-shadow:
+      0 4px 11px rgba(23, 20, 25, .12);
+  }
+  
+  /* ============================================================
+     HEADING
+     ============================================================ */
+  
+  .authm-heading {
+    margin-top: 30px;
+  }
+  
+  .authm-eyebrow {
+    color: #9865d2;
+  
+    font-size: 10px;
+    font-weight: 800;
+  
+    letter-spacing: .13em;
+  }
+  
+  .authm-heading h2 {
+    margin: 9px 0 0;
+  
+    color: var(--auth-ink);
+  
+    font-size: clamp(28px, 3vw, 37px);
+    font-weight: 800;
+  
+    line-height: 1.1;
+  
+    letter-spacing: -.055em;
+  }
+  
+  .authm-heading p {
+    max-width: 375px;
+  
+    margin: 13px 0 0;
+  
+    color: var(--auth-muted);
+  
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  
+  /* ============================================================
+     FORM
+     ============================================================ */
+  
+  .authm-form {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 17px;
+  
+    margin-top: 29px;
+  }
+  
+  .authm-field {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 9px;
+  }
+  
+  .authm-field > span {
+    color: #302a33;
+  
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .authm-field > input,
+  .authm-password input {
+    width: 100%;
+    min-width: 0;
+  
+    height: 49px;
+  
+    padding: 0 16px;
+  
+    border: 1px solid #e5deea;
+    border-radius: 12px;
+  
+    outline: none;
+  
+    background: #fcfafd;
+    color: #171419;
+  
+    font: inherit;
+    font-size: 13px;
+  
+    transition:
+      border-color .25s ease,
+      background-color .25s ease,
+      box-shadow .25s ease;
+  }
+  
+  .authm-field input::placeholder {
+    color: #aaa3ae;
+  }
+  
+  .authm-field input:focus {
+    border-color: #ae81dc;
+  
+    background: #fff;
+  
+    box-shadow:
+      0 0 0 3px rgba(169, 127, 221, .12);
+  }
+  
+  .authm-field input:disabled {
+    opacity: .65;
+  }
+  
+  /* ============================================================
+     PASSWORD
+     ============================================================ */
+  
+  .authm-password {
+    position: relative;
+  }
+  
+  .authm-password input {
+    padding-right: 69px;
+  }
+  
+  .authm-password button {
+    position: absolute;
+  
+    top: 50%;
+    right: 13px;
+  
+    padding: 5px 6px;
+  
+    border: 0;
+  
+    background: transparent;
+    color: #9064c4;
+  
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+  
+    cursor: pointer;
+  
+    transform: translateY(-50%);
+  }
+  
+  /* ============================================================
+     FORGOT PASSWORD
+     ============================================================ */
+  
+  .authm-forgot {
+    align-self: flex-end;
+  
+    margin-top: -5px;
+    padding: 0;
+  
+    border: 0;
+  
+    background: transparent;
+    color: #9465ca;
+  
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+  
+    cursor: pointer;
+  }
+  
+  .authm-forgot:hover,
+  .authm-footer button:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  
+  /* ============================================================
+     FORM MESSAGE
+     ============================================================ */
+  
+  .authm-message {
+    margin: 0;
+  
+    padding: 11px 13px;
+  
+    border-radius: 10px;
+  
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  
+  .authm-message.is-error {
+    background: #fff0f0;
+    color: #a52f38;
+  }
+  
+  .authm-message.is-success {
+    background: #effbd9;
+    color: #42670b;
+  }
+  
+  /* ============================================================
+     SUBMIT
+     ============================================================ */
+  
+  .authm-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    gap: 18px;
+  
+    width: 100%;
+    min-height: 51px;
+  
+    margin-top: 3px;
+  
+    padding: 0 21px;
+  
+    border: 1px solid var(--auth-lime);
+    border-radius: 999px;
+  
+    background: var(--auth-lime);
+    color: #111;
+  
+    font: inherit;
+    font-size: 12px;
+    font-weight: 800;
+  
+    letter-spacing: .01em;
+  
+    cursor: pointer;
+  
+    transition:
+      transform .35s var(--auth-ease),
+      background-color .3s ease,
+      border-color .3s ease,
+      color .3s ease;
+  }
+  
+  .authm-submit span:last-child {
+    font-size: 19px;
+  
+    transition:
+      transform .3s var(--auth-ease);
+  }
+  
+  .authm-submit:hover:not(:disabled) {
+    transform: translateY(-3px);
+  
+    border-color: #171419;
+  
+    background: #171419;
+    color: #fff;
+  }
+  
+  .authm-submit:hover:not(:disabled) span:last-child {
+    transform: translate(3px, -3px);
+  }
+  
+  .authm-submit:disabled {
+    opacity: .65;
+  
+    cursor: wait;
+  }
+  
+  /* ============================================================
+     FORM FOOTER
+     ============================================================ */
+  
+  .authm-footer {
+    margin-top: 1px;
+  
+    color: #87808c;
+  
+    font-size: 11px;
+    line-height: 1.5;
+  
+    text-align: center;
+  }
+  
+  .authm-footer button {
+    padding: 0;
+  
+    border: 0;
+  
+    background: transparent;
+    color: #9561d0;
+  
+    font: inherit;
+    font-weight: 800;
+  
+    cursor: pointer;
+  }
+  
+  /* ============================================================
+     LOCAL MODAL CURSOR
+     ============================================================ */
+  
+  .authm-modal-cursor {
+    position: fixed;
+  
+    top: 0;
+    left: 0;
+  
+    z-index: 10;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 13px;
+    height: 13px;
+  
+    border-radius: 50%;
+  
+    background: #111;
+    color: #111;
+  
+    opacity: 0;
+  
+    transform: translate(-50%, -50%);
+  
+    pointer-events: none;
+  
+    transition:
+      width .28s var(--auth-ease),
+      height .28s var(--auth-ease),
+      background-color .25s ease,
+      opacity .12s ease;
+  
+    will-change: left, top;
+  }
+  
+  .authm-modal-cursor span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .04em;
+  
+    opacity: 0;
+  
+    transform: scale(.7);
+  
+    transition:
+      opacity .2s ease,
+      transform .25s ease;
+  }
+  
+  /* ============================================================
+     CURSOR HOVER
+     ============================================================ */
+  
+  .authm-modal-cursor.is-hover {
+    width: 65px;
+    height: 65px;
+  
+    background: var(--auth-lime);
+  
+    box-shadow:
+      0 5px 20px rgba(66, 52, 77, .12);
+  }
+  
+  .authm-modal-cursor.is-hover span {
+    opacity: 1;
+  
+    transform: scale(1);
+  }
+  
+  /* ============================================================
+     INPUT: USE NATIVE TEXT CURSOR
+     ============================================================ */
+  
+  .authm-modal-cursor.is-input {
+    opacity: 0 !important;
+  }
+  
+  /* ============================================================
+     POINTER BEHAVIOR
+     ============================================================ */
+  
+  @media (hover: hover) and (pointer: fine) {
+    /*
+      Chỉ ẩn con trỏ mặc định sau khi local cursor
+      nhận được vị trí chuột.
+    */
+  
+    .authm-overlay.authm-cursor-ready,
+    .authm-overlay.authm-cursor-ready button,
+    .authm-overlay.authm-cursor-ready a {
+      cursor: none !important;
+    }
+  
+    /*
+      Khi nhập liệu, dùng I-beam mặc định.
+    */
+  
+    .authm-overlay input,
+    .authm-overlay textarea,
+    .authm-overlay select {
+      cursor: text !important;
+    }
+  }
+  
+  /* ============================================================
+     TOUCH DEVICES
+     ============================================================ */
+  
+  @media (hover: none), (pointer: coarse) {
+    .authm-modal-cursor {
+      display: none !important;
+    }
+  
+    .authm-overlay,
+    .authm-overlay * {
+      cursor: auto !important;
+    }
+  
+    .authm-overlay input,
+    .authm-overlay textarea {
+      cursor: text !important;
+    }
+  }
+  
+  /* ============================================================
+     MOBILE MENU AUTH BUTTONS
+     ============================================================ */
+  
+  .mm-foot button.chip {
+    font: inherit;
+    cursor: pointer;
+  }
+  
+  /* ============================================================
+     ANIMATIONS
+     ============================================================ */
+  
+  @keyframes authmOverlayIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes authmDialogIn {
+    from {
+      opacity: 0;
+  
+      transform:
+        translateY(24px)
+        scale(.975);
+    }
+  
+    to {
+      opacity: 1;
+  
+      transform:
+        translateY(0)
+        scale(1);
+    }
+  }
+  
+  /* ============================================================
+     TABLET
+     ============================================================ */
+  
+  @media (max-width: 800px) {
+    .authm-dialog {
+      grid-template-columns: 1fr;
+  
+      width: min(480px, 100%);
+    }
+  
+    .authm-brand {
+      display: none;
+    }
+  
+    .authm-content {
+      padding: 45px 30px 35px;
+    }
+  
+    .authm-mobile-logo {
+      display: flex;
+      flex-direction: column;
+  
+      width: fit-content;
+  
+      margin-bottom: 28px;
+    }
+  
+    .authm-mobile-logo strong {
+      font-size: 25px;
+    }
+  
+    .authm-switch {
+      width: 100%;
+    }
+  }
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (max-width: 480px) {
+    .authm-overlay {
+      padding: 12px;
+    }
+  
+    .authm-dialog {
+      max-height:
+        calc(100dvh - 24px);
+  
+      border-radius: 21px;
+    }
+  
+    .authm-content {
+      padding: 42px 22px 28px;
+    }
+  
+    .authm-close {
+      top: 13px;
+      right: 13px;
+  
+      width: 33px;
+      height: 33px;
+    }
+  
+    .authm-mobile-logo {
+      margin-bottom: 25px;
+    }
+  
+    .authm-heading {
+      margin-top: 27px;
+    }
+  
+    .authm-heading h2 {
+      font-size: 27px;
+    }
+  
+    .authm-form {
+      gap: 15px;
+  
+      margin-top: 24px;
+    }
+  }
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .authm-overlay,
+    .authm-dialog {
+      animation: none;
+    }
+  
+    .authm-modal-cursor,
+    .authm-modal-cursor span,
+    .authm-close,
+    .authm-switch button,
+    .authm-field input,
+    .authm-submit,
+    .authm-submit span:last-child {
+      transition: none;
+    }
+  }
+
+  /* Tắt cursor riêng của modal ở bản fix trước */
+.authm-overlay .authm-modal-cursor {
+  display: none !important;
+}
+
+/* Hiện con trỏ mặc định bên trong modal */
+html.has-custom-cursor body .authm-overlay,
+html.has-custom-cursor body .authm-overlay *,
+.authm-overlay,
+.authm-overlay * {
+  cursor: default !important;
+}
+
+/* Nút và link */
+html.has-custom-cursor body .authm-overlay button,
+html.has-custom-cursor body .authm-overlay a,
+.authm-overlay button,
+.authm-overlay a {
+  cursor: pointer !important;
+}
+
+/* Ô nhập liệu */
+html.has-custom-cursor body .authm-overlay input,
+html.has-custom-cursor body .authm-overlay textarea,
+.authm-overlay input,
+.authm-overlay textarea {
+  cursor: text !important;
+}
