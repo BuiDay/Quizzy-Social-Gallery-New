@@ -1,6 +1,5 @@
 "use client";
 import type { KeyboardEvent } from "react";
-import { course } from "@/data/content";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { useModal } from "@/components/ui/ModalContext";

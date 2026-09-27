@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { FloatingCoursePromo } from "@/components/ui/FloatingCoursePromo";
 
 export const metadata: Metadata = {
   title: "QUIZZY SOCIAL GALLERY — Social Media Manager & Educator",
@@ -18,7 +19,16 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingCoursePromo
+          title="Claude AI Mastery - Tự động hóa công việc với Claude AI"
+          price="X.XXX.000đ"
+          oldPrice="X.XXX.000đ"
+          href="/courses/claude-ai-mastery"
+        />
+      </body>
     </html>
   );
 }
+//Xia Yuhe

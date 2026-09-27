@@ -8,14 +8,15 @@ import ProductPaid4 from "@/assets/images/products/paid/4.png";
 import ProductPaid5 from "@/assets/images/products/paid/5.png";
 import ProductPaid6 from "@/assets/images/products/paid/6.png";
 import Image from "next/image";
+import { PurchaseModal, PurchaseProduct } from "../ui/PurchaseModal";
 
 type Product = {
-  id: number;
+  id: string;
   slug: string;
   title: string;
   description: string;
-  price: string;
-  oldPrice?: string;
+  price: number;
+  oldPrice?: number;
   category: string[];
   meta: string;
   image: any;
@@ -24,13 +25,13 @@ type Product = {
 
 const products: Product[] = [
   {
-    id: 1,
+    id: "1",
     slug: "tiktok-ideas-hacking",
     title: "TIKTOK IDEAS HACKING",
     description:
       "Giúp bạn tìm, phân tích và phát triển content ideas thú vị phù hợp với brainstorm từ con số 0.",
-    price: "499.000đ",
-    oldPrice: "899.000đ",
+    price: 499000,
+    oldPrice: 899000,
     category: ["Content Marketing", "Social Media", "Brainstorm"],
     meta: "Social Media · Brainstorm · Ebook",
     image: ProductPaid1,
@@ -38,13 +39,13 @@ const products: Product[] = [
   },
 
   {
-    id: 2,
+    id: "2",
     slug: "social-media-bundle",
     title: "SOCIAL MEDIA BUNDLE",
     description:
       "Trọn bộ công cụ giúp bạn xây dựng và vận hành quy trình Social Media từ strategy đến report.",
-    price: "599.000đ",
-    oldPrice: "1.299.000đ",
+    price: 599000,
+    oldPrice: 1299000,
     category: ["Social Media", "Template"],
     meta: "Social Media · Template",
     image: ProductPaid2,
@@ -52,13 +53,13 @@ const products: Product[] = [
   },
 
   {
-    id: 3,
+    id: "3",
     slug: "social-media-package-01",
     title: "SOCIAL MEDIA PACKAGE 01",
     description:
       "Hệ thống hóa quy trình làm Social Media từ strategy, planning đến portfolio với template có sẵn.",
-    price: "379.000đ",
-    oldPrice: "699.000đ",
+    price: 37.000,
+    oldPrice: 699000,
     category: ["Social Media", "Template", "Career & Job"],
     meta: "Social Media · Template",
     image: ProductPaid3,
@@ -66,13 +67,13 @@ const products: Product[] = [
   },
 
   {
-    id: 4,
+    id: "4",
     slug: "social-media-package-02",
     title: "SOCIAL MEDIA PACKAGE 02",
     description:
       "Bộ template hỗ trợ bạn hoàn thiện quy trình làm việc từ client brief, audit, strategy và content report.",
-    price: "259.000đ",
-    oldPrice: "599.000đ",
+    price: 259000,
+    oldPrice: 599.000,
     category: ["Social Media", "Template"],
     meta: "Social Media · Template",
     image: ProductPaid4,
@@ -80,13 +81,13 @@ const products: Product[] = [
   },
 
   {
-    id: 5,
+    id: "5",
     slug: "design-thinking",
     title: "TƯ DUY THIẾT KẾ VỚI CANVA",
     description:
       "Giúp bạn hiểu cách tư duy layout, visual và bố cục để ứng dụng linh hoạt trên Canva.",
-    price: "339.000đ",
-    oldPrice: "599.000đ",
+    price: 339000,
+    oldPrice: 599000,
     category: ["Design", "Ebook"],
     meta: "Social Media · Ebook · Design",
     image: ProductPaid5,
@@ -94,13 +95,13 @@ const products: Product[] = [
   },
 
   {
-    id: 6,
+    id: "6",
     slug: "social-media-beginner-ebook",
     title: "SOCIAL MEDIA BEGINNER EBOOK",
     description:
       "Tài liệu nền tảng giúp người mới hiểu Social Media và biết mình cần học, làm gì để bắt đầu.",
-    price: "499.000đ",
-    oldPrice: "1.145.000đ",
+    price: 499000,
+    oldPrice: 1145000,
     category: ["Social Media", "Ebook", "Career & Job"],
     meta: "Social Media · Ebook",
     image: ProductPaid6,
@@ -122,6 +123,9 @@ const filters = [
 
 export function PaidProductsSection() {
   const [activeFilter, setActiveFilter] = useState("Tất cả");
+
+  const [selectedPurchaseProduct, setSelectedPurchaseProduct] =
+    useState<PurchaseProduct | null>(null);
 
   const filteredProducts = useMemo(() => {
     if (activeFilter === "Tất cả") return products;
@@ -234,8 +238,9 @@ export function PaidProductsSection() {
               <button
                 key={filter}
                 type="button"
-                className={`products-filter-button ${activeFilter === filter ? "is-active" : ""
-                  }`}
+                className={`products-filter-button ${
+                  activeFilter === filter ? "is-active" : ""
+                }`}
                 aria-pressed={activeFilter === filter}
                 onClick={() => setActiveFilter(filter)}
               >
@@ -254,8 +259,9 @@ export function PaidProductsSection() {
         <div className="products-paid-grid">
           {filteredProducts.map((product, index) => (
             <article
-              className={`products-paid-card products-paid-card--${product.accent ?? "cream"
-                }`}
+              className={`products-paid-card products-paid-card--${
+                product.accent ?? "cream"
+              }`}
               key={product.id}
               data-rv="up"
               data-dl={String((index % 4) * 70)}
@@ -285,11 +291,103 @@ export function PaidProductsSection() {
               </div>
 
               <div className="products-paid-card-footer">
-                <a href={`/products/${product.slug}`} data-cur="OPEN">
-                  <span>Xem chi tiết tài liệu</span>
-                  <span>↗</span>
-                </a>
+                <div className="products-paid-actions">
+                  <a
+                    href={product.slug}
+                    className="products-paid-action products-paid-action--detail"
+                    data-cur="OPEN"
+                  >
+                    <span>Xem chi tiết</span>
+                    <span>→</span>
+                  </a>
+
+                  <button
+                    type="button"
+                    className="products-paid-action products-paid-action--buy"
+                    data-cur="OPEN"
+                    onClick={() =>
+                      setSelectedPurchaseProduct({
+                        id: product.id,
+                        title: product.title,
+                        category: product.category,
+                        description: product.description,
+
+                        price: product.price,
+
+                        originalPrice: product.oldPrice,
+
+                        image: product.image,
+                      })
+                    }
+                  >
+                    <span>Mua ngay</span>
+                    <span>↗</span>
+                  </button>
+                </div>
               </div>
+              <PurchaseModal
+                open={Boolean(selectedPurchaseProduct)}
+                product={selectedPurchaseProduct}
+                onClose={() => setSelectedPurchaseProduct(null)}
+                coupons={[
+                  {
+                    code: "WELCOME10",
+                    type: "percent",
+                    value: 10,
+                    maxDiscount: 50000,
+                    label: "Đã giảm 10% cho đơn hàng.",
+                  },
+
+                  {
+                    code: "HOCVIENQCC",
+                    type: "percent",
+                    value: 50,
+                    label: "Đã áp dụng ưu đãi học viên.",
+                  },
+                ]}
+                paymentMethods={[
+                  {
+                    id: "bank",
+                    name: "Chuyển khoản ngân hàng",
+                    description: "Thanh toán qua QR / Internet Banking.",
+                  },
+
+                  {
+                    id: "online",
+                    name: "Thanh toán online",
+                    description: "Thanh toán qua cổng thanh toán.",
+                  },
+                ]}
+                onCheckout={async (order) => {
+                  console.log("CREATE ORDER:", order);
+
+                  /*
+      Sau này nối API tại đây.
+
+      Ví dụ:
+
+      const response = await fetch(
+        "/api/checkout",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type":
+              "application/json",
+          },
+          body: JSON.stringify(
+            order,
+          ),
+        },
+      );
+
+      const data =
+        await response.json();
+
+      window.location.href =
+        data.paymentUrl;
+    */
+                }}
+              />
             </article>
           ))}
         </div>

@@ -1232,7 +1232,7 @@
   .products-paid-card-footer {
     padding:
       14px
-      18px
+   10px
       16px;
   
     background: #fff;
@@ -1240,7 +1240,152 @@
     transition:
       background-color 0.35s var(--ease);
   }
+
+  .products-paid-actions {
+    display: grid;
   
+    grid-template-columns:
+      .9fr
+      1.1fr;
+  
+    gap: 8px;
+  }.products-paid-action {
+    width: 100%;
+  
+    min-height: 36px;
+  
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    gap: 6px;
+  
+    padding:
+      0
+      10px;
+  
+    border:
+      1px solid
+      var(--ink);
+  
+    border-radius:
+      var(--pill);
+  
+    font: inherit;
+  
+    font-size: 10px;
+  
+    font-weight: 600;
+  
+    cursor: pointer;
+  
+    transition:
+      transform .35s
+        var(--out),
+      background-color .3s
+        var(--ease),
+      color .3s
+        var(--ease),
+      border-color .3s
+        var(--ease);
+  }
+
+  .products-paid-action--detail {
+    background: #cdfc56;
+  
+    color:
+      var(--ink);
+  }
+  
+  
+  /* MUA NGAY */
+  
+  .products-paid-action--buy {
+    border-color:
+      #0b0b0b;
+  
+    background:
+      #0b0b0b;
+  
+    color: #fff;
+  }
+  
+  
+  /* ARROW */
+  
+  .products-paid-action
+  span:last-child {
+    transition:
+      transform .35s
+      var(--out);
+  }
+  
+  
+  /* HOVER */
+  
+  .products-paid-action:hover {
+    transform:
+      translateY(-2px);
+  }
+  
+  .products-paid-action--detail:hover {
+    background:
+      var(--ink);
+  
+    color: #fff;
+  }
+  
+  .products-paid-action--buy:hover {
+    border-color:
+      var(--lime);
+  
+    background:
+      var(--lime);
+  
+    color: #111;
+  }
+  
+  .products-paid-action:hover
+  span:last-child {
+    transform:
+      translateX(3px);
+  }
+  
+  
+  /* CARD HOVER */
+  
+  .products-paid-card:hover
+  .products-paid-action--detail {
+    background: #fff;
+  
+    color:
+      var(--ink);
+  }
+  
+  .products-paid-card:hover
+  .products-paid-action--buy {
+    background: #111;
+  
+    color: #fff;
+  }
+  
+  
+  /* MOBILE */
+  
+  @media (max-width: 580px) {
+    .products-paid-actions {
+      grid-template-columns:
+        1fr
+        1fr;
+    }
+  
+    .products-paid-action {
+      min-height: 42px;
+  
+      font-size: 11px;
+    }
+  }
   .products-paid-card-footer a {
     width: 100%;
   
@@ -1249,7 +1394,7 @@
     display: flex;
   
     align-items: center;
-  
+
     justify-content: center;
   
     gap: 6px;
@@ -1259,8 +1404,6 @@
       var(--ink);
   
     border-radius: var(--pill);
-  
-    background: #fff;
   
     color: var(--ink);
   

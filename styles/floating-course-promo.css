@@ -1,0 +1,608 @@
+/* ============================================================
+   FLOATING COURSE PROMO
+   ============================================================ */
+
+   .floating-course-promo {
+    --floating-lime: #cdfc56;
+    --floating-purple: #a97fdd;
+    --floating-ease: cubic-bezier(.16, 1, .3, 1);
+  
+    position: fixed;
+  
+    right:
+      clamp(
+        16px,
+        2vw,
+        30px
+      );
+  
+    bottom:
+      clamp(
+        16px,
+        2vw,
+        28px
+      );
+  
+    z-index: 1200;
+  
+    width:
+      min(
+        650px,
+        calc(100vw - 32px)
+      );
+  
+    display: grid;
+  
+    grid-template-columns:
+      112px
+      minmax(0, 1fr);
+  
+    gap: 18px;
+  
+    padding:
+      12px
+      14px
+      12px
+      12px;
+  
+    border:
+      1px solid
+      rgba(255,255,255,.08);
+  
+    border-radius: 22px;
+  
+    background:
+      #050505;
+  
+    color: #fff;
+  
+    box-shadow:
+      0 18px 55px
+      rgba(0,0,0,.24);
+  
+    opacity: 0;
+  
+    visibility: hidden;
+  
+    pointer-events: none;
+  
+    transform:
+      translateY(25px)
+      scale(.97);
+  
+    transition:
+      opacity .45s ease,
+      visibility .45s ease,
+      transform .65s
+        var(--floating-ease);
+  }
+  
+  
+  /* ============================================================
+     SHOW
+     ============================================================ */
+  
+  .floating-course-promo.is-visible {
+    opacity: 1;
+  
+    visibility: visible;
+  
+    pointer-events: auto;
+  
+    transform:
+      translateY(0)
+      scale(1);
+  }
+  
+  
+  /* ============================================================
+     IMAGE
+     ============================================================ */
+  
+  .floating-course-promo__image {
+    position: relative;
+  
+    width: 112px;
+    height: 112px;
+  
+    overflow: hidden;
+  
+    border-radius: 14px;
+  
+    background:
+      #c7efff;
+  }
+  
+  
+  .floating-course-promo__image img {
+    width: 100%;
+    height: 100%;
+  
+    display: block;
+  
+    object-fit: cover;
+  }
+  
+  
+  /* ============================================================
+     CSS THUMBNAIL
+     ============================================================ */
+  
+  .floating-course-promo__art {
+    position: absolute;
+  
+    inset: 0;
+  
+    overflow: hidden;
+  
+    background:
+      linear-gradient(
+        180deg,
+        #c5efff 0%,
+        #edfaff 68%,
+        #d7ef8c 69%,
+        #c6e979 100%
+      );
+  }
+  
+  
+  /* CLOUD */
+  
+  .floating-course-promo__cloud {
+    position: absolute;
+  
+    display: block;
+  
+    border-radius: 999px;
+  
+    background: #fff;
+  }
+  
+  
+  .floating-course-promo__cloud::before,
+  .floating-course-promo__cloud::after {
+    content: "";
+  
+    position: absolute;
+  
+    border-radius: 50%;
+  
+    background: #fff;
+  }
+  
+  
+  .floating-course-promo__cloud--1 {
+    width: 40px;
+    height: 13px;
+  
+    top: 22px;
+    left: 35px;
+  }
+  
+  
+  .floating-course-promo__cloud--1::before {
+    width: 18px;
+    height: 18px;
+  
+    left: 8px;
+    bottom: 2px;
+  }
+  
+  
+  .floating-course-promo__cloud--1::after {
+    width: 14px;
+    height: 14px;
+  
+    right: 5px;
+    bottom: 1px;
+  }
+  
+  
+  .floating-course-promo__cloud--2 {
+    width: 26px;
+    height: 9px;
+  
+    top: 31px;
+    left: 27px;
+  
+    opacity: .92;
+  }
+  
+  
+  /* HILLS */
+  
+  .floating-course-promo__hill {
+    position: absolute;
+  
+    left: -10%;
+  
+    width: 120%;
+  
+    border-radius:
+      50%
+      50%
+      0
+      0;
+  }
+  
+  
+  .floating-course-promo__hill--back {
+    bottom: -2px;
+  
+    height: 38px;
+  
+    background: #bad96a;
+  
+    transform:
+      rotate(3deg);
+  }
+  
+  
+  .floating-course-promo__hill--front {
+    right: -20px;
+    left: auto;
+  
+    bottom: -14px;
+  
+    width: 85%;
+    height: 42px;
+  
+    background: #83a900;
+  
+    transform:
+      rotate(-4deg);
+  }
+  
+  
+  /* ============================================================
+     CONTENT
+     ============================================================ */
+  
+  .floating-course-promo__content {
+    min-width: 0;
+  
+    display: flex;
+  
+    flex-direction: column;
+  
+    justify-content:
+      center;
+  }
+  
+  
+  /* ============================================================
+     TITLE
+     ============================================================ */
+  
+  .floating-course-promo__title {
+    max-width: 430px;
+  
+    margin: 0;
+  
+    color: #fff;
+  
+    font-size:
+      clamp(
+        13px,
+        1vw,
+        16px
+      );
+  
+    font-weight: 650;
+  
+    line-height: 1.25;
+  
+    letter-spacing:
+      -.025em;
+  
+    white-space: nowrap;
+  
+    overflow: hidden;
+  
+    text-overflow: ellipsis;
+  }
+  
+  
+  /* ============================================================
+     PRICE
+     ============================================================ */
+  
+  .floating-course-promo__price {
+    display: flex;
+  
+    align-items: baseline;
+  
+    flex-wrap: wrap;
+  
+    gap: 11px;
+  
+    margin-top: 8px;
+  }
+  
+  
+  .floating-course-promo__price
+  strong {
+    color:
+      var(--floating-lime);
+  
+    font-size:
+      clamp(
+        24px,
+        2.2vw,
+        34px
+      );
+  
+    font-weight: 650;
+  
+    line-height: 1;
+  
+    letter-spacing:
+      -.055em;
+  }
+  
+  
+  .floating-course-promo__price
+  del {
+    color:
+      rgba(255,255,255,.45);
+  
+    font-size: 12px;
+  }
+  
+  
+  /* ============================================================
+     ACTIONS
+     ============================================================ */
+  
+  .floating-course-promo__actions {
+    display: flex;
+  
+    align-items: center;
+  
+    flex-wrap: wrap;
+  
+    gap: 8px;
+  
+    margin-top: 11px;
+  }
+  
+  
+  /* ============================================================
+     OFFER
+     ============================================================ */
+  
+  .floating-course-promo__offer {
+    min-height: 28px;
+  
+    display: inline-flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    padding:
+      5px
+      13px;
+  
+    border-radius: 999px;
+  
+    background:
+      var(--floating-lime);
+  
+    color: #111;
+  
+    font-size: 8px;
+  
+    font-weight: 800;
+  
+    letter-spacing: .02em;
+  
+    white-space: nowrap;
+  }
+  
+  
+  /* ============================================================
+     DETAIL BUTTON
+     ============================================================ */
+  
+  .floating-course-promo__button {
+    min-height: 28px;
+  
+    display: inline-flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 6px;
+  
+    padding:
+      5px
+      12px;
+  
+    border:
+      1px solid
+      rgba(255,255,255,.28);
+  
+    border-radius: 999px;
+  
+    background:
+      transparent;
+  
+    color: #fff;
+  
+    font-size: 8px;
+  
+    font-weight: 700;
+  
+    white-space: nowrap;
+  
+    transition:
+      background-color .3s ease,
+      color .3s ease,
+      border-color .3s ease,
+      transform .35s
+        var(--floating-ease);
+  }
+  
+  
+  .floating-course-promo__button
+  span {
+    font-size: 11px;
+  
+    transition:
+      transform .35s
+      var(--floating-ease);
+  }
+  
+  
+  .floating-course-promo__button:hover {
+    transform:
+      translateY(-2px);
+  
+    border-color:
+      var(--floating-purple);
+  
+    background:
+      var(--floating-purple);
+  
+    color: #fff;
+  }
+  
+  
+  .floating-course-promo__button:hover
+  span {
+    transform:
+      translate(
+        2px,
+        -2px
+      );
+  }
+  
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (max-width: 600px) {
+  
+    .floating-course-promo {
+      right: 10px;
+      bottom: 10px;
+  
+      width:
+        calc(
+          100vw - 20px
+        );
+  
+      grid-template-columns:
+        76px
+        minmax(0, 1fr);
+  
+      gap: 11px;
+  
+      padding:
+        9px;
+  
+      border-radius: 17px;
+    }
+  
+  
+    .floating-course-promo__image {
+      width: 76px;
+      height: 76px;
+  
+      border-radius: 11px;
+    }
+  
+  
+    .floating-course-promo__title {
+      max-width: 100%;
+  
+      font-size: 11px;
+    }
+  
+  
+    .floating-course-promo__price {
+      margin-top: 6px;
+  
+      gap: 7px;
+    }
+  
+  
+    .floating-course-promo__price
+    strong {
+      font-size: 21px;
+    }
+  
+  
+    .floating-course-promo__price
+    del {
+      font-size: 9px;
+    }
+  
+  
+    .floating-course-promo__actions {
+      margin-top: 7px;
+  
+      gap: 5px;
+    }
+  
+  
+    .floating-course-promo__offer {
+      min-height: 24px;
+  
+      padding:
+        4px
+        8px;
+  
+      font-size: 6.5px;
+    }
+  
+  
+    .floating-course-promo__button {
+      min-height: 24px;
+  
+      padding:
+        4px
+        8px;
+  
+      font-size: 7px;
+    }
+  
+  }
+  
+  
+  /* ============================================================
+     VERY SMALL MOBILE
+     ============================================================ */
+  
+  @media (max-width: 390px) {
+  
+    .floating-course-promo__offer {
+      display: none;
+    }
+  
+  
+    .floating-course-promo__price
+    strong {
+      font-size: 19px;
+    }
+  
+  }
+  
+  
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  
+  @media (
+    prefers-reduced-motion:
+    reduce
+  ) {
+  
+    .floating-course-promo {
+      transition: none;
+    }
+  
+  }

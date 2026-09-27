@@ -31,7 +31,7 @@ export function Modal({ content, onClose }: { content: ModalContent | null; onCl
     <div className="bd open" role="dialog" aria-modal="true" aria-hidden="false" onMouseDown={(event: ReactMouseEvent<HTMLDivElement>) => event.target === event.currentTarget && onClose()}>
       <div className="modal" id="modal">
         <button className="mclose" onClick={onClose} aria-label="Đóng" ref={closeRef}>✕</button>
-        <div className="mhero"><Art variant={content.g} /></div>
+        {/* <div className="mhero"><Art variant={content.g} /></div> */}
         <div className="mbody">
           <div className="tags"><span className="tagp">{content.cat}</span><span className="tagp">{content.meta}</span></div>
           <h3>{content.t}</h3>
