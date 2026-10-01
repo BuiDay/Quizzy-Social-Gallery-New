@@ -10,27 +10,19 @@ import {
 
 
 import { createPortal } from "react-dom";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/redux/store";
+import {
+  useLoginMutation,
+  useRegisterMutation,
+  useForgotPasswordMutation,
+  useActivationMutation,
+} from "@/redux/features/auth/authApi";
+import toast from "react-hot-toast";
 
 export type AuthMode = "login" | "register" | "forgot";
 
-export type AuthHandlers = {
-  onLogin?: (data: {
-    email: string;
-    password: string;
-  }) => Promise<void> | void;
-
-  onRegister?: (data: {
-    name: string;
-    email: string;
-    password: string;
-  }) => Promise<void> | void;
-
-  onForgotPassword?: (data: {
-    email: string;
-  }) => Promise<void> | void;
-};
-
-type AuthModalProps = AuthHandlers & {
+type AuthModalProps = {
   mode: AuthMode;
   onModeChange: (mode: AuthMode) => void;
   onClose: () => void;
@@ -40,9 +32,6 @@ export function AuthModal({
   mode,
   onModeChange,
   onClose,
-  onLogin,
-  onRegister,
-  onForgotPassword,
 }: AuthModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -52,13 +41,20 @@ export function AuthModal({
 
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [verificationPending, setVerificationPending] = useState(false);
+  const [activationCode, setActivationCode] = useState("");
+  const token = useSelector((state: RootState) => state.auth.token);
+  const [login] = useLoginMutation();
+  const [register] = useRegisterMutation();
+  const [forgotPassword] = useForgotPasswordMutation();
+  const [activation] = useActivationMutation();
 
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
-  const isLogin = mode === "login";
-  const isRegister = mode === "register";
-  const isForgot = mode === "forgot";
+  const isLogin = mode === "login" && !verificationPending;
+  const isRegister = mode === "register" && !verificationPending;
+  const isForgot = mode === "forgot" && !verificationPending;
 
   /* ============================================================
      PORTAL
@@ -78,6 +74,8 @@ export function AuthModal({
 
   useEffect(() => {
     setShowPassword(false);
+    setVerificationPending(false);
+    setActivationCode("");
     setMessage("");
     setIsError(false);
 
@@ -200,6 +198,7 @@ export function AuthModal({
   const changeMode = (nextMode: AuthMode) => {
     if (isSubmitting) return;
 
+    setVerificationPending(false);
     onModeChange(nextMode);
   };
 
@@ -223,59 +222,47 @@ export function AuthModal({
     const email = String(formData.get("email") ?? "").trim();
     const password = String(formData.get("password") ?? "");
 
-    const hasHandler = isLogin
-      ? Boolean(onLogin)
-      : isRegister
-        ? Boolean(onRegister)
-        : Boolean(onForgotPassword);
-
-    if (!hasHandler) {
+    if (verificationPending && !/^\d{4}$/.test(activationCode)) {
       setIsError(true);
-      setMessage(
-        "Bạn cần kết nối API tài khoản để sử dụng chức năng này.",
-      );
+      setMessage("Vui lòng nhập mã xác minh gồm 4 chữ số.");
       return;
     }
 
     try {
       setIsSubmitting(true);
 
-      if (isLogin) {
-        await onLogin?.({
-          email,
-          password,
-        });
+      if (verificationPending) {
+        if (!token) throw new Error("Không tìm thấy phiên đăng ký. Vui lòng đăng ký lại.");
+        await activation({ activation_token: token, activation_code: activationCode }).unwrap();
+        toast.success("Bạn đã kích hoạt tài khoản thành công!");
+        setVerificationPending(false);
+        onModeChange("login");
+        return;
+      }
 
+      if (isLogin) {
+        await login({ email, password }).unwrap();
+        toast.success("Đăng nhập thành công");
         onClose();
         return;
       }
 
       if (isRegister) {
-        await onRegister?.({
-          name,
-          email,
-          password,
-        });
-
-        onClose();
+        await register({ name, email, password }).unwrap();
+        toast.success("Đăng ký thành công. Vui lòng nhập mã xác minh.");
+        setActivationCode("");
+        setVerificationPending(true);
         return;
       }
 
-      await onForgotPassword?.({ email });
-
+      await forgotPassword({ email }).unwrap();
       setIsError(false);
-
-      setMessage(
-        "Nếu email này có tài khoản, hướng dẫn đặt lại mật khẩu sẽ được gửi đến bạn.",
-      );
+      setMessage("Vui lòng kiểm tra email để đặt lại mật khẩu.");
     } catch (error) {
       setIsError(true);
 
-      setMessage(
-        error instanceof Error
-          ? error.message
-          : "Có lỗi xảy ra. Vui lòng thử lại.",
-      );
+      const apiError = error as { data?: { message?: string }; message?: string };
+      setMessage(apiError?.data?.message ?? apiError?.message ?? "Có lỗi xảy ra. Vui lòng thử lại.");
     } finally {
       setIsSubmitting(false);
     }
@@ -382,7 +369,7 @@ export function AuthModal({
 
           {/* LOGIN / REGISTER SWITCH */}
 
-          {!isForgot && (
+          {!isForgot && !verificationPending && (
             <div className="authm-switch">
               <button
                 type="button"
@@ -408,7 +395,9 @@ export function AuthModal({
 
           <div className="authm-heading">
             <span className="authm-eyebrow">
-              {isLogin
+              {verificationPending
+                ? "VERIFY ACCOUNT ✦"
+                : isLogin
                 ? "WELCOME BACK ✦"
                 : isRegister
                   ? "JOIN THE GALLERY ✦"
@@ -416,7 +405,9 @@ export function AuthModal({
             </span>
 
             <h2 id="authm-title">
-              {isLogin
+              {verificationPending
+                ? "Xác minh tài khoản"
+                : isLogin
                 ? "Chào mừng bạn trở lại!"
                 : isRegister
                   ? "Tạo tài khoản mới"
@@ -424,7 +415,9 @@ export function AuthModal({
             </h2>
 
             <p>
-              {isLogin
+              {verificationPending
+                ? "Nhập mã gồm 4 chữ số được gửi đến email của bạn."
+                : isLogin
                 ? "Đăng nhập để tiếp tục hành trình học tập cùng Quizzy."
                 : isRegister
                   ? "Tạo tài khoản để khám phá tài liệu và khóa học dành cho bạn."
@@ -461,7 +454,7 @@ export function AuthModal({
 
             {/* EMAIL */}
 
-            <label className="authm-field">
+            {!verificationPending && <label className="authm-field">
               <span>Email</span>
 
               <input
@@ -472,11 +465,29 @@ export function AuthModal({
                 required
                 disabled={isSubmitting}
               />
-            </label>
+            </label>}
+
+            {verificationPending && (
+              <label className="authm-field">
+                <span>Mã xác minh</span>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]{4}"
+                  maxLength={4}
+                  autoComplete="one-time-code"
+                  placeholder="Nhập mã 4 chữ số"
+                  value={activationCode}
+                  onChange={(event) => setActivationCode(event.target.value.replace(/\D/g, "").slice(0, 4))}
+                  required
+                  disabled={isSubmitting}
+                />
+              </label>
+            )}
 
             {/* PASSWORD */}
 
-            {!isForgot && (
+            {!isForgot && !verificationPending && (
               <label className="authm-field">
                 <span>Mật khẩu</span>
 
@@ -571,7 +582,9 @@ export function AuthModal({
               <span>
                 {isSubmitting
                   ? "Đang xử lý..."
-                  : isLogin
+                  : verificationPending
+                    ? "XÁC MINH OTP"
+                    : isLogin
                     ? "ĐĂNG NHẬP"
                     : isRegister
                       ? "TẠO TÀI KHOẢN"
@@ -584,7 +597,9 @@ export function AuthModal({
             {/* FOOTER */}
 
             <div className="authm-footer">
-              {isLogin ? (
+              {verificationPending ? (
+                <button type="button" onClick={() => changeMode("login")}>← Quay lại đăng nhập</button>
+              ) : isLogin ? (
                 <>
                   Chưa có tài khoản?{" "}
                   <button

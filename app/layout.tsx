@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { FloatingCoursePromo } from "@/components/ui/FloatingCoursePromo";
+import RootLayouts from "./RootLayouts";
+import { Toaster } from 'react-hot-toast'
 
 export const metadata: Metadata = {
   title: "QUIZZY SOCIAL GALLERY — Social Media Manager & Educator",
@@ -20,13 +22,17 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         />
       </head>
       <body>
-        {children}
-        <FloatingCoursePromo
-          title="Claude AI Mastery - Tự động hóa công việc với Claude AI"
-          price="X.XXX.000đ"
-          oldPrice="X.XXX.000đ"
-          href="/courses/claude-ai-mastery"
-        />
+        <RootLayouts>
+        <Toaster position="bottom-center" reverseOrder={false} />
+          {children}
+          <FloatingCoursePromo
+            title="Claude AI Mastery "
+            title1="Tự động hóa công việc với Claude AI"
+            price="X.XXX.000đ"
+            oldPrice="X.XXX.000đ"
+            href="/courses/claude-ai-mastery"
+          />
+        </RootLayouts>
       </body>
     </html>
   );

@@ -132,7 +132,7 @@ export function ClaudeAIMasteryHero({
                 lặp lại trong quy trình Social Media.
               </p>
 
-              <div className="claude-course-hero__rating">
+              {/* <div className="claude-course-hero__rating">
                 <div
                   className="claude-course-hero__people"
                   aria-hidden="true"
@@ -159,7 +159,7 @@ export function ClaudeAIMasteryHero({
                     500+ học viên đang áp dụng mỗi ngày
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* =========================================

@@ -7,6 +7,7 @@ import {
 
 type FloatingCoursePromoProps = {
   title?: string;
+  title1?: string;
   price?: string;
   oldPrice?: string;
   href?: string;
@@ -14,7 +15,8 @@ type FloatingCoursePromoProps = {
 };
 
 export function FloatingCoursePromo({
-  title = "Claude AI Mastery - Tự động hóa công việc với Claude AI",
+  title = "Claude AI Mastery ",
+  title1 = "Tự động hóa công việc với Claude AI",
   price = "X.XXX.000đ",
   oldPrice = "X.XXX.000đ",
   href = "/courses/claude-ai-mastery",
@@ -102,6 +104,9 @@ export function FloatingCoursePromo({
       <div className="floating-course-promo__content">
         <p className="floating-course-promo__title">
           {title}
+        </p>
+        <p className="floating-course-promo__title">
+          {title1}
         </p>
 
         <div className="floating-course-promo__price">

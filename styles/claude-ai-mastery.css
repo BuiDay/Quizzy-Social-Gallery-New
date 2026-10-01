@@ -22,12 +22,12 @@
      ============================================================ */
 
 .claude-course-hero__main {
-  min-height: calc(100vh - 120px);
+  /* min-height: calc(100vh - 70px); */
 
   display: flex;
   align-items: center;
 
-  padding: clamp(45px, 6vw, 85px) 0 clamp(45px, 6vw, 75px);
+  padding: clamp(45px, 10vw, 100px) 0 clamp(20px, 6vw, 40px);
 }
 
 .claude-course-hero__inner {
@@ -36,8 +36,7 @@
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(360px, 0.95fr);
+    minmax(0, 1.2fr) minmax(360px, 0.8fr);
 
   align-items: center;
 
@@ -76,7 +75,7 @@
 
   color: #4b454e;
 
-  font-size: clamp(7px, 0.62vw, 9px);
+  font-size: clamp(10px, 0.62vw, 9px);
 
   font-weight: 600;
 
@@ -119,7 +118,7 @@
 
   gap: clamp(7px, 0.9vw, 12px);
 
-  margin-top: clamp(31px, 3vw, 45px);
+  margin-top: clamp(24px, 3vw, 30px);
 }
 
 .claude-course-hero__title-row {
@@ -158,7 +157,7 @@
 
   min-height: clamp(59px, 5.7vw, 80px);
 
-  padding: 0.015em 0.18em 0.08em;
+  padding: 0.14em 0.5em 0.12em;
 
   border: 1.4px solid #111;
 
@@ -220,11 +219,11 @@
      ============================================================ */
 
 .claude-course-hero__info {
-  max-width: 600px;
+  max-width: 650px;
 
-  margin-top: clamp(34px, 4vw, 55px);
+  margin-top: clamp(24px, 4vw, 30px);
 
-  padding: clamp(23px, 2.6vw, 35px);
+  padding: clamp(10px, 2.6vw, 20px);
 
   border: 1px solid #e7e2e9;
 
@@ -235,12 +234,12 @@
   box-shadow: 0 9px 28px rgba(56, 39, 71, 0.035);
 }
 
-.claude-course-hero__info > p {
+.claude-course-hero__info>p {
   margin: 0;
 
   color: #78717c;
 
-  font-size: clamp(12px, 1vw, 15px);
+  font-size: clamp(14px, 1vw, 18px);
 
   line-height: 1.65;
 }
@@ -315,7 +314,7 @@
   min-width: 0;
 }
 
-.claude-course-hero__rating-copy > div {
+.claude-course-hero__rating-copy>div {
   display: flex;
   align-items: center;
 
@@ -386,7 +385,7 @@
   background: #211b28;
   color: #fff;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 600;
 
@@ -412,7 +411,7 @@
 
   color: #111;
 
-  font-size: clamp(11px, 0.9vw, 13px);
+  font-size: clamp(14px, 2vw, 16px);
 
   font-weight: 500;
 
@@ -467,14 +466,13 @@
 .claude-course-hero__visual-wrap {
   display: flex;
   justify-content: flex-end;
-
   min-width: 0;
 }
 
 .claude-course-hero__visual {
   position: relative;
 
-  width: min(100%, 505px);
+  width: min(100%, 450px);
 
   aspect-ratio: 0.82;
 
@@ -517,11 +515,9 @@
 
   gap: 8px;
 
-  background: radial-gradient(
-      circle at 80% 20%,
+  background: radial-gradient(circle at 80% 20%,
       rgba(169, 127, 221, 0.25),
-      transparent 32%
-    ),
+      transparent 32%),
     linear-gradient(145deg, #f6ecfb, #dceff5);
 
   text-align: center;
@@ -594,7 +590,7 @@
 .claude-course-hero__stat-value {
   color: #fff;
 
-  font-size: clamp(38px, 3.5vw, 52px);
+  font-size: clamp(32px, 3.5vw, 40px);
 
   font-weight: 700;
 
@@ -636,8 +632,7 @@
 
   transform: translateY(25px);
 
-  animation: claudeHeroEnter 0.9s var(--claude-ease) var(--claude-hero-delay)
-    forwards;
+  animation: claudeHeroEnter 0.9s var(--claude-ease) var(--claude-hero-delay) forwards;
 }
 
 @keyframes claudeHeroEnter {
@@ -764,7 +759,7 @@
     padding: 20px;
   }
 
-  .claude-course-hero__info > p {
+  .claude-course-hero__info>p {
     font-size: 12px;
   }
 
@@ -837,7 +832,7 @@
     font-size: 10vw;
   }
 
-  .claude-course-hero__rating-copy > div {
+  .claude-course-hero__rating-copy>div {
     flex-wrap: wrap;
 
     gap: 4px 8px;
@@ -893,7 +888,7 @@
 
   margin-inline: auto;
 
-  padding: clamp(35px, 4vw, 60px);
+  padding: clamp(35px, 4vw, 50px);
 
   border: 1.5px solid #dec2f6;
 
@@ -915,11 +910,11 @@
 
   color: #171419;
 
-  font-size: clamp(31px, 3.4vw, 52px);
+  font-size: clamp(32px, 3.4vw, 44px);
 
   font-weight: 700;
 
-  line-height: 1.2;
+  line-height: 1.5;
 
   letter-spacing: -0.045em;
 
@@ -937,7 +932,7 @@
 .claude-intro__outline {
   display: inline;
 
-  padding: 0.01em 0.14em 0.06em;
+  padding: 0.1em 0.4em 0.1em;
 
   border: 1.3px solid #111;
 
@@ -956,7 +951,7 @@
 .claude-intro__lime {
   display: inline;
 
-  padding: 0.01em 0.15em 0.06em;
+  padding: 0.01em 0.4em 0.06em;
 
   border-radius: 999px;
 
@@ -976,12 +971,11 @@
   display: grid;
 
   grid-template-columns:
-    minmax(280px, 0.78fr)
-    minmax(0, 1.22fr);
+    minmax(280px, 0.9fr) minmax(0, 1.1fr);
 
   align-items: center;
 
-  gap: clamp(45px, 7vw, 95px);
+  gap: clamp(20px, 7vw, 50px);
 
   margin-top: clamp(45px, 5vw, 70px);
 }
@@ -1005,9 +999,10 @@
 
   opacity: 0;
 
-  transform: translateX(-30px);
+  transform: rotate(-2.3deg) !important;
 
-  transition: transform 0.5s var(--claude-intro-ease), box-shadow 0.35s ease;
+
+  transition: transform 0.65s var(--claude-intro-ease) ease;
 }
 
 .claude-intro.is-visible .claude-intro-profile {
@@ -1015,7 +1010,7 @@
 }
 
 .claude-intro-profile:hover {
-  transform: translateY(-5px);
+  /* transform:rotate(0deg)  !important; */
 
   box-shadow: 0 17px 38px rgba(74, 49, 92, 0.09);
 }
@@ -1055,7 +1050,7 @@
   object-position: center;
 }
 
-.claude-intro-profile__avatar > span {
+.claude-intro-profile__avatar>span {
   position: absolute;
   inset: 0;
 
@@ -1089,7 +1084,7 @@
   letter-spacing: -0.04em;
 }
 
-.claude-intro-profile__identity > span {
+.claude-intro-profile__identity>span {
   display: inline-flex;
 
   margin-top: 13px;
@@ -1254,7 +1249,7 @@
 
 /* TEXT */
 
-.claude-intro-video__placeholder > strong {
+.claude-intro-video__placeholder>strong {
   position: absolute;
   z-index: 4;
 
@@ -1397,8 +1392,7 @@
     gap: 35px;
 
     grid-template-columns:
-      0.9fr
-      1.1fr;
+      0.9fr 1.1fr;
   }
 
   .claude-intro__inner {
@@ -1490,13 +1484,13 @@
     height: 67px;
   }
 
-  .claude-intro-profile__identity > span {
+  .claude-intro-profile__identity>span {
     white-space: normal;
 
     font-size: 7px;
   }
 
-  .claude-intro-video__placeholder > strong {
+  .claude-intro-video__placeholder>strong {
     font-size: 19px;
   }
 }
@@ -1506,6 +1500,7 @@
      ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
+
   .claude-intro__heading,
   .claude-intro-profile,
   .claude-intro-video-wrap {
@@ -1535,20 +1530,16 @@
 
   width: 100%;
 
-  padding: clamp(90px, 9vw, 135px) 0 clamp(95px, 10vw, 145px);
+  padding: clamp(50px, 9vw, 100px) 0 clamp(50px, 10vw, 100px);
 
   overflow: hidden;
 
-  background: radial-gradient(
-      circle at 8% 54%,
+  background: radial-gradient(circle at 8% 54%,
       rgba(106, 171, 255, 0.17),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 88% 25%,
+      transparent 24%),
+    radial-gradient(circle at 88% 25%,
       rgba(169, 127, 221, 0.18),
-      transparent 28%
-    ),
+      transparent 28%),
     #fff;
 
   color: #111;
@@ -1589,7 +1580,7 @@
 
   color: #111;
 
-  font-size: clamp(31px, 3.2vw, 49px);
+  font-size: clamp(32px, 3.2vw, 44px);
 
   font-weight: 700;
 
@@ -1632,8 +1623,8 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
   align-items: center;
-
-  gap: clamp(18px, 2.2vw, 30px);
+  /* 
+  gap: clamp(18px, 2.2vw, 30px); */
 
   width: min(930px, 100%);
 
@@ -1649,8 +1640,7 @@
 
   min-height: clamp(260px, 25vw, 320px);
 
-  padding: clamp(40px, 4vw, 55px) clamp(25px, 2.5vw, 35px)
-    clamp(28px, 3vw, 40px);
+  padding: clamp(40px, 4vw, 55px) clamp(25px, 2.5vw, 35px) clamp(28px, 3vw, 40px);
 
   border: 1px solid #e7e1e9;
 
@@ -1662,7 +1652,7 @@
 
   opacity: 0;
 
-  transform: translateY(55px) rotate(var(--claude-problem-rotate)) scale(0.95);
+  transform: translateY(50px) translateX(var(--claude-problem-translateX)) rotate(var(--claude-problem-rotate)) scale(0.95);
 
   transform-origin: 50% 0%;
 
@@ -1670,8 +1660,7 @@
 }
 
 .claude-problems.is-visible .claude-problem-card {
-  animation: claudeProblemCardEnter 0.9s var(--claude-problem-ease)
-    var(--claude-problem-delay) forwards;
+  animation: claudeProblemCardEnter 0.9s var(--claude-problem-ease) var(--claude-problem-delay) forwards;
 }
 
 /* SLIGHT VERTICAL VARIATION LIKE REF */
@@ -1686,13 +1675,12 @@
 
 .claude-problem-card:nth-child(3) {
   margin-top: 8px;
-}
+} 
 
 /* HOVER */
 
 .claude-problem-card:hover {
-  transform: translateY(-8px) rotate(calc(var(--claude-problem-rotate) * 0.45))
-    scale(1.015);
+  transform: translateY(-8px) translateX(calc(var(--claude-problem-translateX)) *1) rotate(calc(var(--claude-problem-rotate) * 0.45)) scale(1.2) ;
 
   box-shadow: 0 24px 48px rgba(83, 55, 105, 0.13);
 }
@@ -1849,13 +1837,13 @@
   0% {
     opacity: 0;
 
-    transform: translateY(55px) rotate(var(--claude-problem-rotate)) scale(0.95);
+    transform: translateY(55px) translateX(var(--claude-problem-translateX)) rotate(var(--claude-problem-rotate)) scale(0.95);
   }
 
   100% {
     opacity: 1;
 
-    transform: translateY(0) rotate(var(--claude-problem-rotate)) scale(1);
+    transform: translateY(0) translateX(var(--claude-problem-translateX)) rotate(var(--claude-problem-rotate)) scale(1);
   }
 }
 
@@ -1928,8 +1916,7 @@
 
     padding: 42px 25px 30px;
 
-    transform: translateY(45px)
-      rotate(calc(var(--claude-problem-rotate) * 0.55)) scale(0.96);
+    /* transform: translateY(45px) rotate(calc(var(--claude-problem-rotate) * 0.55)) scale(0.96); */
   }
 
   .claude-problems.is-visible .claude-problem-card {
@@ -1955,15 +1942,13 @@
   from {
     opacity: 0;
 
-    transform: translateY(45px)
-      rotate(calc(var(--claude-problem-rotate) * 0.55)) scale(0.96);
+    transform: translateY(45px) rotate(calc(var(--claude-problem-rotate) * 0.55)) scale(0.96);
   }
 
   to {
     opacity: 1;
 
-    transform: translateY(0) rotate(calc(var(--claude-problem-rotate) * 0.55))
-      scale(1);
+    transform: translateY(0) rotate(calc(var(--claude-problem-rotate) * 0.55)) scale(1);
   }
 }
 
@@ -1972,6 +1957,7 @@
      ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
+
   .claude-problems__heading,
   .claude-problem-card {
     opacity: 1;
@@ -2007,15 +1993,13 @@
 
   width: 100%;
 
-  padding: clamp(85px, 9vw, 135px) 0 clamp(95px, 10vw, 150px);
+  padding: clamp(85px, 9vw, 100px) 0 clamp(95px, 10vw, 100px);
 
   overflow: hidden;
 
-  background: radial-gradient(
-      circle at 78% 12%,
+  background: radial-gradient(circle at 78% 12%,
       rgba(169, 127, 221, 0.09),
-      transparent 25%
-    ),
+      transparent 25%),
     #fff;
 
   color: var(--claude-sol-ink);
@@ -2055,7 +2039,7 @@
 
   color: #111;
 
-  font-size: clamp(32px, 3.5vw, 52px);
+  font-size: clamp(32px, 3.5vw, 44px);
 
   font-weight: 700;
 
@@ -2068,13 +2052,13 @@
 
 /* CLAUDE AI LIME */
 
-.claude-solution__heading h2 > span {
+.claude-solution__heading h2>span {
   display: inline-flex;
 
   align-items: center;
   justify-content: center;
 
-  padding: 0.01em 0.18em 0.07em;
+  padding: 0.01em 0.4em 0.07em;
 
   border: 1.3px solid #111;
 
@@ -2130,7 +2114,7 @@
 /* PARAGRAPH */
 
 .claude-solution-insight p {
-  margin: clamp(27px, 3vw, 38px) 0 0;
+  margin: clamp(10px, 3vw, 20px) 0 0;
 
   color: #302a33;
 
@@ -2275,7 +2259,7 @@
 
   min-height: clamp(53px, 5vw, 72px);
 
-  padding: 0.015em 0.18em 0.08em;
+  padding: 0.1em 0.4em 0.08em;
 
   border: 1.3px solid #111;
 
@@ -2494,8 +2478,7 @@
 }
 
 .claude-solution.is-visible .claude-solution-orbit__item {
-  animation: claudeOrbitItemEnter 0.65s var(--claude-sol-ease)
-    var(--claude-orbit-delay) forwards;
+  animation: claudeOrbitItemEnter 0.65s var(--claude-sol-ease) var(--claude-orbit-delay) forwards;
 }
 
 /* CLAUDE */
@@ -2806,16 +2789,14 @@
 
   background: linear-gradient(90deg, #bab8bc, #f0f0f0, #aaa8ac);
 
-  clip-path: polygon(
-    35% 0,
-    65% 0,
-    75% 82%,
-    100% 90%,
-    100% 100%,
-    0 100%,
-    0 90%,
-    25% 82%
-  );
+  clip-path: polygon(35% 0,
+      65% 0,
+      75% 82%,
+      100% 90%,
+      100% 100%,
+      0 100%,
+      0 90%,
+      25% 82%);
 }
 
 /* ============================================================
@@ -2881,7 +2862,7 @@
   width: 39%;
 }
 
-.claude-solution-product__laptop > div {
+.claude-solution-product__laptop>div {
   aspect-ratio: 1.45 / 1;
 
   padding: 9px;
@@ -3001,22 +2982,19 @@
 .claude-solution.is-visible .claude-solution-orbit__item--claude,
 .claude-solution.is-visible .claude-solution-orbit__item--data,
 .claude-solution.is-visible .claude-solution-orbit__item--design {
-  animation: claudeOrbitItemEnter 0.65s var(--claude-sol-ease)
-      var(--claude-orbit-delay) forwards,
-    claudeOrbitFloatA 4.8s ease-in-out calc(var(--claude-orbit-delay) + 0.7s)
-      infinite;
+  animation: claudeOrbitItemEnter 0.65s var(--claude-sol-ease) var(--claude-orbit-delay) forwards,
+    claudeOrbitFloatA 4.8s ease-in-out calc(var(--claude-orbit-delay) + 0.7s) infinite;
 }
 
 .claude-solution.is-visible .claude-solution-orbit__item--content,
 .claude-solution.is-visible .claude-solution-orbit__item--workflow,
 .claude-solution.is-visible .claude-solution-orbit__item--code {
-  animation: claudeOrbitItemEnter 0.65s var(--claude-sol-ease)
-      var(--claude-orbit-delay) forwards,
-    claudeOrbitFloatB 5.2s ease-in-out calc(var(--claude-orbit-delay) + 0.7s)
-      infinite;
+  animation: claudeOrbitItemEnter 0.65s var(--claude-sol-ease) var(--claude-orbit-delay) forwards,
+    claudeOrbitFloatB 5.2s ease-in-out calc(var(--claude-orbit-delay) + 0.7s) infinite;
 }
 
 @keyframes claudeOrbitFloatA {
+
   0%,
   100% {
     translate: 0 0;
@@ -3028,6 +3006,7 @@
 }
 
 @keyframes claudeOrbitFloatB {
+
   0%,
   100% {
     translate: 0 0;
@@ -3206,7 +3185,7 @@
     font-size: 25px;
   }
 
-  .claude-solution__heading h2 > span {
+  .claude-solution__heading h2>span {
     padding-left: 0.12em;
     padding-right: 0.12em;
   }
@@ -3238,6 +3217,7 @@
      ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
+
   .claude-solution__heading,
   .claude-solution-insight,
   .claude-solution__down,
@@ -3301,39 +3281,31 @@
 
   overflow: hidden;
 
-  background: radial-gradient(
-      circle at 88% 15%,
+  background: radial-gradient(circle at 88% 15%,
       rgba(169, 127, 221, 0.05),
-      transparent 25%
-    ),
+      transparent 25%),
     #fff;
 }
 
 .claude-applications__inner {
-    width: min(1200px, 90vw);
-  
-    height: 100%;
-  
-    margin-inline: auto;
-  
-    padding:
-      clamp(14px, 2vh, 24px)
-      0
-      clamp(12px, 1.8vh, 20px);
-  
-    display: grid;
-  
-    grid-template-rows:
-      auto
-      auto
-      minmax(0, 1fr)
-      auto
-      auto;
-  
-    align-content: stretch;
-  
-    min-height: 0;
-  }
+  width: min(1200px, 90vw);
+
+  height: 100%;
+
+  margin-inline: auto;
+
+  padding:
+    clamp(14px, 2vh, 24px) 0 clamp(12px, 1.8vh, 20px);
+
+  display: grid;
+
+  grid-template-rows:
+    auto auto minmax(0, 1fr) auto auto;
+
+  align-content: stretch;
+
+  min-height: 0;
+}
 
 /* ============================================================
      INTRO
@@ -3627,7 +3599,7 @@
   opacity: 0.72;
 }
 
-.claude-applications-placeholder__label > span {
+.claude-applications-placeholder__label>span {
   width: 55px;
   height: 55px;
 
@@ -3832,7 +3804,7 @@
 
   transition: transform 0.4s var(--claude-app-ease), background-color 0.3s ease,
     color 0.3s ease;
- 
+
 }
 
 .claude-applications__cta span:last-child {
@@ -4024,6 +3996,7 @@
      ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
+
   .claude-application-tab,
   .claude-application-tab__icon,
   .claude-applications__image,
@@ -4040,5276 +4013,4627 @@
    CLAUDE AI MASTERY — CURRICULUM
    ============================================================ */
 
-   .claude-curriculum {
-    --claude-cur-purple: #a97fdd;
-    --claude-cur-purple-light: #c49aef;
-    --claude-cur-line: #eadcf6;
-    --claude-cur-bg: #fcf8ff;
-    --claude-cur-ease: cubic-bezier(.16, 1, .3, 1);
-  
-    position: relative;
-  
-    width: 100%;
-  
-    padding:
-      clamp(80px, 8vw, 120px)
-      0
-      clamp(95px, 10vw, 150px);
-  
-    overflow: hidden;
-  
-    background:
-      linear-gradient(
-        180deg,
-        #fff 0%,
-        #fefcff 100%
-      );
-  
-    color: #111;
-  }
-  
-  .claude-curriculum__inner {
-    width: min(1200px, 92vw);
-  
-    margin-inline: auto;
-  }
-  
-  /* ============================================================
+.claude-curriculum {
+  --claude-cur-purple: #a97fdd;
+  --claude-cur-purple-light: #c49aef;
+  --claude-cur-line: #eadcf6;
+  --claude-cur-bg: #fcf8ff;
+  --claude-cur-ease: cubic-bezier(.16, 1, .3, 1);
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(80px, 8vw, 120px) 0 clamp(95px, 10vw, 150px);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(180deg,
+      #fff 0%,
+      #fefcff 100%);
+
+  color: #111;
+}
+
+.claude-curriculum__inner {
+  width: min(1200px, 92vw);
+
+  margin-inline: auto;
+}
+
+/* ============================================================
      TOP KICKER
      ============================================================ */
-  
-  .claude-curriculum__kicker {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: 10px;
-  
-    min-height: 39px;
-  
-    padding:
-      7px
-      18px;
-  
-    border:
-      1px solid
-      #ddd8df;
-  
-    border-radius: 999px;
-  
-    background: #fff;
-  
-    color: #312d34;
-  
-    font-size:
-      clamp(
-        9px,
-        .76vw,
-        11px
-      );
-  
-    font-weight: 600;
-  
-    letter-spacing: .13em;
-  }
-  
-  .claude-curriculum__kicker i {
-    width: 7px;
-    height: 7px;
-  
-    flex: 0 0 7px;
-  
-    border-radius: 50%;
-  
-    background:
-      var(--claude-cur-purple);
-  }
-  
-  /* ============================================================
+
+.claude-curriculum__kicker {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 39px;
+
+  padding:
+    7px 18px;
+
+  border:
+    1px solid #ddd8df;
+
+  border-radius: 999px;
+
+  background: #fff;
+
+  color: #312d34;
+
+  font-size:
+    clamp(9px,
+      .76vw,
+      11px);
+
+  font-weight: 600;
+
+  letter-spacing: .13em;
+}
+
+.claude-curriculum__kicker i {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--claude-cur-purple);
+}
+
+/* ============================================================
      PHASE
      ============================================================ */
-  
-  .claude-curriculum-phase {
-    position: relative;
-  
-    margin-top:
-      clamp(
-        35px,
-        4vw,
-        55px
-      );
-  }
-  
-  .claude-curriculum-phase
-  + .claude-curriculum-phase {
-    margin-top:
-      clamp(
-        75px,
-        8vw,
-        120px
-      );
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-phase {
+  position: relative;
+
+  margin-top:
+    clamp(35px,
+      4vw,
+      55px);
+}
+
+.claude-curriculum-phase+.claude-curriculum-phase {
+  margin-top:
+    clamp(75px,
+      8vw,
+      120px);
+}
+
+/* ============================================================
      PHASE HEADER
      ============================================================ */
-  
-  .claude-curriculum-phase__header {
-    display: flex;
-  
-    align-items: center;
-    justify-content: space-between;
-  
-    gap: 30px;
-  
-    width: 100%;
-  
-    padding:
-      0
-      10px
-      clamp(
-        25px,
-        2.8vw,
-        38px
-      );
-  
-    border-bottom:
-      1px solid
-      #eee9f0;
-  }
-  
-  /* LEFT */
-  
-  .claude-curriculum-phase__title {
-    display: flex;
-  
-    align-items: center;
-  
-    gap:
-      clamp(
-        13px,
-        1.5vw,
-        20px
-      );
-  
-    min-width: 0;
-  }
-  
-  /* STAR */
-  
-  .claude-curriculum-phase__star {
-    color:
-      var(--claude-cur-purple);
-  
-    font-size:
-      clamp(
-        31px,
-        3vw,
-        43px
-      );
-  
-    font-weight: 400;
-  
-    line-height: .8;
-  }
-  
-  /* PHASE TITLE */
-  
-  .claude-curriculum-phase__title h2 {
-    margin: 0;
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        18px,
-        1.7vw,
-        25px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1.25;
-  
-    letter-spacing: -.02em;
-  }
-  
-  .claude-curriculum-phase__title h2
-  > span {
-    display: inline;
-  
-    padding:
-      .02em
-      .2em
-      .08em;
-  
-    border-radius: 999px;
-  
-    background:
-      #c897e9;
-  
-    color: #fff;
-  
-    box-decoration-break: clone;
-  
-    -webkit-box-decoration-break:
-      clone;
-  }
-  
-  /* COUNT */
-  
-  .claude-curriculum-phase__count {
-    flex: 0 0 auto;
-  
-    padding:
-      5px
-      9px;
-  
-    border-radius: 4px;
-  
-    background:
-      #e8cef9;
-  
-    color:
-      #a166cf;
-  
-    font-size:
-      clamp(
-        8px,
-        .7vw,
-        10px
-      );
-  
-    font-weight: 600;
-  
-    white-space: nowrap;
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-phase__header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  width: 100%;
+
+  padding:
+    0 10px clamp(25px,
+      2.8vw,
+      38px);
+
+  border-bottom:
+    1px solid #eee9f0;
+}
+
+/* LEFT */
+
+.claude-curriculum-phase__title {
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    clamp(13px,
+      1.5vw,
+      20px);
+
+  min-width: 0;
+}
+
+/* STAR */
+
+.claude-curriculum-phase__star {
+  color:
+    var(--claude-cur-purple);
+
+  font-size:
+    clamp(31px,
+      3vw,
+      43px);
+
+  font-weight: 400;
+
+  line-height: .8;
+}
+
+/* PHASE TITLE */
+
+.claude-curriculum-phase__title h2 {
+  margin: 0;
+
+  color: #111;
+
+  font-size:
+    clamp(18px,
+      1.7vw,
+      25px);
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  letter-spacing: -.02em;
+}
+
+.claude-curriculum-phase__title h2>span {
+  display: inline;
+
+  padding:
+    .02em .2em .08em;
+
+  border-radius: 999px;
+
+  background:
+    #c897e9;
+
+  color: #fff;
+
+  box-decoration-break: clone;
+
+  -webkit-box-decoration-break:
+    clone;
+}
+
+/* COUNT */
+
+.claude-curriculum-phase__count {
+  flex: 0 0 auto;
+
+  padding:
+    5px 9px;
+
+  border-radius: 4px;
+
+  background:
+    #e8cef9;
+
+  color:
+    #a166cf;
+
+  font-size:
+    clamp(8px,
+      .7vw,
+      10px);
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* ============================================================
      MODULE LIST
      ============================================================ */
-  
-  .claude-curriculum-phase__modules {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap:
-      clamp(
-        45px,
-        5vw,
-        70px
-      );
-  
-    margin-top:
-      clamp(
-        45px,
-        5vw,
-        70px
-      );
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-phase__modules {
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    clamp(45px,
+      5vw,
+      70px);
+
+  margin-top:
+    clamp(45px,
+      5vw,
+      70px);
+}
+
+/* ============================================================
      MODULE CARD
      ============================================================ */
-  
-  .claude-curriculum-card {
-    display: grid;
-  
-    grid-template-columns:
-      minmax(0, .9fr)
-      minmax(320px, 1.1fr);
-  
-    align-items: center;
-  
-    gap:
-      clamp(
-        50px,
-        7vw,
-        100px
-      );
-  
-    width: 100%;
-  
-    min-height:
-      clamp(
-        460px,
-        43vw,
-        570px
-      );
-  
-    padding:
-      clamp(
-        37px,
-        4vw,
-        58px
-      );
-  
-    border:
-      1px solid
-      #f0ebf2;
-  
-    border-radius:
-      clamp(
-        23px,
-        2.5vw,
-        32px
-      );
-  
-    background:
-      linear-gradient(
-        115deg,
-        #fcf7ff 0%,
-        #fff 75%
-      );
-  
-    box-shadow:
-      0
-      16px
-      37px
-      rgba(
-        60,
-        42,
-        72,
-        .07
-      );
-  
-    transition:
-      transform
-        .5s
-        var(--claude-cur-ease),
-  
-      box-shadow
-        .4s ease;
-  }
-  
-  /* HOVER */
-  
-  .claude-curriculum-card:hover {
-    transform:
-      translateY(-5px);
-  
-    box-shadow:
-      0
-      22px
-      45px
-      rgba(
-        78,
-        50,
-        98,
-        .1
-      );
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .9fr) minmax(320px, 1.1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(50px,
+      7vw,
+      100px);
+
+  width: 100%;
+
+  min-height:
+    clamp(460px,
+      43vw,
+      570px);
+
+  padding:
+    clamp(37px,
+      4vw,
+      58px);
+
+  border:
+    1px solid #f0ebf2;
+
+  border-radius:
+    clamp(23px,
+      2.5vw,
+      32px);
+
+  background:
+    linear-gradient(115deg,
+      #fcf7ff 0%,
+      #fff 75%);
+
+  box-shadow:
+    0 16px 37px rgba(60,
+      42,
+      72,
+      .07);
+
+  transition:
+    transform .5s var(--claude-cur-ease),
+
+    box-shadow .4s ease;
+}
+
+/* HOVER */
+
+.claude-curriculum-card:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 22px 45px rgba(78,
+      50,
+      98,
+      .1);
+}
+
+/* ============================================================
      LEFT CONTENT
      ============================================================ */
-  
-  .claude-curriculum-card__content {
-    min-width: 0;
-  }
-  
-  /* NUMBER */
-  
-  .claude-curriculum-card__number {
-    display: block;
-  
-    color:
-      var(--claude-cur-purple);
-  
-    font-size:
-      clamp(
-        70px,
-        7.4vw,
-        108px
-      );
-  
-    font-weight: 700;
-  
-    line-height: .78;
-  
-    letter-spacing: -.075em;
-  }
-  
-  /* TITLE */
-  
-  .claude-curriculum-card__content
-  h3 {
-    max-width: 500px;
-  
-    margin:
-      clamp(
-        37px,
-        4vw,
-        54px
-      )
-      0
-      0;
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        27px,
-        2.7vw,
-        41px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1.08;
-  
-    letter-spacing: -.05em;
-  
-    text-transform: uppercase;
-  }
-  
-  /* DESCRIPTION */
-  
-  .claude-curriculum-card__description {
-    max-width: 510px;
-  
-    margin:
-      clamp(
-        18px,
-        2vw,
-        26px
-      )
-      0
-      0;
-  
-    color: #817b84;
-  
-    font-size:
-      clamp(
-        11px,
-        .95vw,
-        14px
-      );
-  
-    line-height: 1.45;
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-card__content {
+  min-width: 0;
+}
+
+/* NUMBER */
+
+.claude-curriculum-card__number {
+  display: block;
+
+  color:
+    var(--claude-cur-purple);
+
+  font-size:
+    clamp(70px,
+      7.4vw,
+      108px);
+
+  font-weight: 700;
+
+  line-height: .78;
+
+  letter-spacing: -.075em;
+}
+
+/* TITLE */
+
+.claude-curriculum-card__content h3 {
+  max-width: 500px;
+
+  margin:
+    clamp(37px,
+      4vw,
+      54px) 0 0;
+
+  color: #111;
+
+  font-size:
+    clamp(27px,
+      2.7vw,
+      41px);
+
+  font-weight: 700;
+
+  line-height: 1.08;
+
+  letter-spacing: -.05em;
+
+  text-transform: uppercase;
+}
+
+/* DESCRIPTION */
+
+.claude-curriculum-card__description {
+  max-width: 510px;
+
+  margin:
+    clamp(18px,
+      2vw,
+      26px) 0 0;
+
+  color: #817b84;
+
+  font-size:
+    clamp(11px,
+      .95vw,
+      14px);
+
+  line-height: 1.45;
+}
+
+/* ============================================================
      CONTENT LABEL
      ============================================================ */
-  
-  .claude-curriculum-card__lesson-label {
-    margin-top:
-      clamp(
-        27px,
-        3vw,
-        39px
-      );
-  
-    padding-bottom: 9px;
-  
-    border-bottom:
-      1px solid
-      #ded9e1;
-  
-    color: #aaa5ac;
-  
-    font-size:
-      clamp(
-        7px,
-        .62vw,
-        9px
-      );
-  
-    font-weight: 500;
-  
-    letter-spacing: .02em;
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-card__lesson-label {
+  margin-top:
+    clamp(27px,
+      3vw,
+      39px);
+
+  padding-bottom: 9px;
+
+  border-bottom:
+    1px solid #ded9e1;
+
+  color: #aaa5ac;
+
+  font-size:
+    clamp(7px,
+      .62vw,
+      9px);
+
+  font-weight: 500;
+
+  letter-spacing: .02em;
+}
+
+/* ============================================================
      BULLETS
      ============================================================ */
-  
-  .claude-curriculum-card ul {
-    margin: 0;
-  
-    padding: 0;
-  
-    list-style: none;
-  }
-  
-  .claude-curriculum-card li {
-    display: grid;
-  
-    grid-template-columns:
-      8px
-      minmax(0, 1fr);
-  
-    align-items: start;
-  
-    gap: 12px;
-  
-    padding:
-      10px
-      0;
-  
-    border-bottom:
-      1px solid
-      #e5e0e7;
-  }
-  
-  .claude-curriculum-card li:last-child {
-    border-bottom: 0;
-  }
-  
-  /* BULLET */
-  
-  .claude-curriculum-card li i {
-    width: 6px;
-    height: 6px;
-  
-    margin-top: 5px;
-  
-    border-radius: 2px;
-  
-    background:
-      var(--claude-cur-purple);
-  }
-  
-  /* TEXT */
-  
-  .claude-curriculum-card li span {
-    color: #817b84;
-  
-    font-size:
-      clamp(
-        10px,
-        .84vw,
-        12px
-      );
-  
-    line-height: 1.4;
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-card ul {
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.claude-curriculum-card li {
+  display: grid;
+
+  grid-template-columns:
+    8px minmax(0, 1fr);
+
+  align-items: start;
+
+  gap: 12px;
+
+  padding:
+    10px 0;
+
+  border-bottom:
+    1px solid #e5e0e7;
+}
+
+.claude-curriculum-card li:last-child {
+  border-bottom: 0;
+}
+
+/* BULLET */
+
+.claude-curriculum-card li i {
+  width: 6px;
+  height: 6px;
+
+  margin-top: 5px;
+
+  border-radius: 2px;
+
+  background:
+    var(--claude-cur-purple);
+}
+
+/* TEXT */
+
+.claude-curriculum-card li span {
+  color: #817b84;
+
+  font-size:
+    clamp(10px,
+      .84vw,
+      12px);
+
+  line-height: 1.4;
+}
+
+/* ============================================================
      RIGHT VISUAL
      ============================================================ */
-  
-  .claude-curriculum-card__visual {
-    position: relative;
-  
-    width: 100%;
-  
-    height:
-      clamp(
-        350px,
-        34vw,
-        450px
-      );
-  
-    overflow: hidden;
-  
-    border:
-      1.4px solid
-      #dcbff2;
-  
-    border-radius:
-      clamp(
-        17px,
-        1.8vw,
-        22px
-      );
-  
-    background: #fff;
-  
-    transition:
-      transform
-        .55s
-        var(--claude-cur-ease),
-  
-      box-shadow
-        .4s ease;
-  }
-  
-  .claude-curriculum-card:hover
-  .claude-curriculum-card__visual {
-    transform:
-      scale(1.01);
-  
-    box-shadow:
-      0
-      15px
-      32px
-      rgba(
-        108,
-        75,
-        130,
-        .07
-      );
-  }
-  
-  /* IMAGE */
-  
-  .claude-curriculum-card__image {
-    object-fit: cover;
-  
-    object-position: center;
-  
-    transition:
-      transform
-        .75s
-        var(--claude-cur-ease);
-  }
-  
-  .claude-curriculum-card:hover
-  .claude-curriculum-card__image {
-    transform:
-      scale(1.025);
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-card__visual {
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(350px,
+      34vw,
+      450px);
+
+  overflow: hidden;
+
+  border:
+    1.4px solid #dcbff2;
+
+  border-radius:
+    clamp(17px,
+      1.8vw,
+      22px);
+
+  background: #fff;
+
+  transition:
+    transform .55s var(--claude-cur-ease),
+
+    box-shadow .4s ease;
+}
+
+.claude-curriculum-card:hover .claude-curriculum-card__visual {
+  transform:
+    scale(1.01);
+
+  box-shadow:
+    0 15px 32px rgba(108,
+      75,
+      130,
+      .07);
+}
+
+/* IMAGE */
+
+.claude-curriculum-card__image {
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform .75s var(--claude-cur-ease);
+}
+
+.claude-curriculum-card:hover .claude-curriculum-card__image {
+  transform:
+    scale(1.025);
+}
+
+/* ============================================================
      PLACEHOLDER
      ============================================================ */
-  
-  .claude-curriculum-card__placeholder {
-    position: absolute;
-  
-    inset: 0;
-  
-    display: flex;
-  
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
-    gap: 10px;
-  
-    background:
-      radial-gradient(
-        circle at 80% 16%,
-        rgba(
-          169,
-          127,
-          221,
-          .09
-        ),
-        transparent 32%
-      ),
-      #fff;
-  
-    color:
-      #b98adf;
-  }
-  
-  .claude-curriculum-card__placeholder
-  span {
-    font-size: 9px;
-  
-    font-weight: 700;
-  
-    letter-spacing: .1em;
-  }
-  
-  .claude-curriculum-card__placeholder
-  strong {
-    color:
-      #d9c0ed;
-  
-    font-size:
-      clamp(
-        25px,
-        3vw,
-        40px
-      );
-  
-    font-weight: 700;
-  }
-  
-  /* ============================================================
+
+.claude-curriculum-card__placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  background:
+    radial-gradient(circle at 80% 16%,
+      rgba(169,
+        127,
+        221,
+        .09),
+      transparent 32%),
+    #fff;
+
+  color:
+    #b98adf;
+}
+
+.claude-curriculum-card__placeholder span {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .1em;
+}
+
+.claude-curriculum-card__placeholder strong {
+  color:
+    #d9c0ed;
+
+  font-size:
+    clamp(25px,
+      3vw,
+      40px);
+
+  font-weight: 700;
+}
+
+/* ============================================================
      LOCAL SCROLL REVEAL
      ============================================================ */
-  
-  .claude-curriculum-reveal {
+
+.claude-curriculum-reveal {
+  opacity: 0;
+
+  transform:
+    translateY(34px);
+}
+
+.claude-curriculum-reveal.is-visible {
+  animation:
+    claudeCurriculumReveal .9s var(--claude-cur-ease) var(--curriculum-card-delay,
+      0s) forwards;
+}
+
+@keyframes claudeCurriculumReveal {
+  from {
     opacity: 0;
-  
+
     transform:
       translateY(34px);
   }
-  
-  .claude-curriculum-reveal.is-visible {
-    animation:
-      claudeCurriculumReveal
-      .9s
-      var(--claude-cur-ease)
-      var(
-        --curriculum-card-delay,
-        0s
-      )
-      forwards;
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
   }
-  
-  @keyframes claudeCurriculumReveal {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(34px);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0);
-    }
-  }
-  
-  /* ============================================================
+}
+
+/* ============================================================
      TABLET
      ============================================================ */
-  
-  @media (max-width: 900px) {
-    .claude-curriculum-card {
-      grid-template-columns:
-        minmax(0, .95fr)
-        minmax(280px, 1.05fr);
-  
-      gap: 35px;
-  
-      padding: 38px;
-    }
-  
-    .claude-curriculum-card__content
-    h3 {
-      font-size:
-        clamp(
-          25px,
-          3vw,
-          32px
-        );
-    }
-  
-    .claude-curriculum-card__visual {
-      height: 360px;
-    }
-  }
-  
-  /* ============================================================
-     MOBILE
-     ============================================================ */
-  
-  @media (max-width: 700px) {
-    .claude-curriculum {
-      padding:
-        65px
-        0
-        85px;
-    }
-  
-    .claude-curriculum__inner {
-      width:
-        calc(
-          100% - 30px
-        );
-    }
-  
-    /* KICKER */
-  
-    .claude-curriculum__kicker {
-      max-width: 100%;
-  
-      padding:
-        7px
-        13px;
-  
-      font-size: 8px;
-  
-      line-height: 1.35;
-    }
-  
-    /* PHASE HEADER */
-  
-    .claude-curriculum-phase {
-      margin-top: 30px;
-    }
-  
-    .claude-curriculum-phase
-    + .claude-curriculum-phase {
-      margin-top: 75px;
-    }
-  
-    .claude-curriculum-phase__header {
-      align-items: flex-start;
-  
-      gap: 15px;
-  
-      padding:
-        0
-        0
-        22px;
-    }
-  
-    .claude-curriculum-phase__title {
-      align-items: flex-start;
-  
-      gap: 9px;
-    }
-  
-    .claude-curriculum-phase__star {
-      margin-top: 2px;
-  
-      font-size: 28px;
-    }
-  
-    .claude-curriculum-phase__title
-    h2 {
-      font-size: 17px;
-  
-      line-height: 1.4;
-    }
-  
-    .claude-curriculum-phase__title
-    h2 > span {
-      white-space: normal;
-    }
-  
-    .claude-curriculum-phase__count {
-      margin-top: 3px;
-  
-      font-size: 7px;
-    }
-  
-    /* MODULE LIST */
-  
-    .claude-curriculum-phase__modules {
-      gap: 30px;
-  
-      margin-top: 35px;
-    }
-  
-    /* CARD */
-  
-    .claude-curriculum-card {
-      grid-template-columns: 1fr;
-  
-      min-height: auto;
-  
-      gap: 32px;
-  
-      padding:
-        28px
-        21px;
-  
-      border-radius: 22px;
-    }
-  
-    .claude-curriculum-card__number {
-      font-size:
-        clamp(
-          65px,
-          18vw,
-          82px
-        );
-    }
-  
-    .claude-curriculum-card__content
-    h3 {
-      margin-top: 29px;
-  
-      font-size:
-        clamp(
-          26px,
-          7vw,
-          34px
-        );
-    }
-  
-    .claude-curriculum-card__description {
-      font-size: 12px;
-    }
-  
-    .claude-curriculum-card__lesson-label {
-      margin-top: 25px;
-    }
-  
-    .claude-curriculum-card li {
-      padding:
-        10px
-        0;
-    }
-  
-    .claude-curriculum-card li span {
-      font-size: 11px;
-    }
-  
-    /* VISUAL */
-  
-    .claude-curriculum-card__visual {
-      height: auto;
-  
-      aspect-ratio: 1 / .85;
-  
-      border-radius: 17px;
-    }
-  }
-  
-  /* ============================================================
-     SMALL MOBILE
-     ============================================================ */
-  
-  @media (max-width: 420px) {
-    .claude-curriculum-phase__header {
-      flex-direction: column;
-  
-      gap: 12px;
-    }
-  
-    .claude-curriculum-phase__count {
-      margin-left: 37px;
-    }
-  
-    .claude-curriculum-card {
-      padding:
-        25px
-        17px;
-    }
-  
-    .claude-curriculum-card__content
-    h3 {
-      font-size: 26px;
-    }
-  }
-  
-  /* ============================================================
-     REDUCED MOTION
-     ============================================================ */
-  
-  @media (
-    prefers-reduced-motion:
-    reduce
-  ) {
-    .claude-curriculum-reveal {
-      opacity: 1;
-  
-      transform: none;
-  
-      animation: none !important;
-    }
-  
-    .claude-curriculum-card,
-    .claude-curriculum-card__visual,
-    .claude-curriculum-card__image {
-      transition: none;
-    }
+
+@media (max-width: 900px) {
+  .claude-curriculum-card {
+    grid-template-columns:
+      minmax(0, .95fr) minmax(280px, 1.05fr);
+
+    gap: 35px;
+
+    padding: 38px;
   }
 
-  
-  /* ============================================================
+  .claude-curriculum-card__content h3 {
+    font-size:
+      clamp(25px,
+        3vw,
+        32px);
+  }
+
+  .claude-curriculum-card__visual {
+    height: 360px;
+  }
+}
+
+/* ============================================================
+     MOBILE
+     ============================================================ */
+
+@media (max-width: 700px) {
+  .claude-curriculum {
+    padding:
+      65px 0 85px;
+  }
+
+  .claude-curriculum__inner {
+    width:
+      calc(100% - 30px);
+  }
+
+  /* KICKER */
+
+  .claude-curriculum__kicker {
+    max-width: 100%;
+
+    padding:
+      7px 13px;
+
+    font-size: 8px;
+
+    line-height: 1.35;
+  }
+
+  /* PHASE HEADER */
+
+  .claude-curriculum-phase {
+    margin-top: 30px;
+  }
+
+  .claude-curriculum-phase+.claude-curriculum-phase {
+    margin-top: 75px;
+  }
+
+  .claude-curriculum-phase__header {
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding:
+      0 0 22px;
+  }
+
+  .claude-curriculum-phase__title {
+    align-items: flex-start;
+
+    gap: 9px;
+  }
+
+  .claude-curriculum-phase__star {
+    margin-top: 2px;
+
+    font-size: 28px;
+  }
+
+  .claude-curriculum-phase__title h2 {
+    font-size: 17px;
+
+    line-height: 1.4;
+  }
+
+  .claude-curriculum-phase__title h2>span {
+    white-space: normal;
+  }
+
+  .claude-curriculum-phase__count {
+    margin-top: 3px;
+
+    font-size: 7px;
+  }
+
+  /* MODULE LIST */
+
+  .claude-curriculum-phase__modules {
+    gap: 30px;
+
+    margin-top: 35px;
+  }
+
+  /* CARD */
+
+  .claude-curriculum-card {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    gap: 32px;
+
+    padding:
+      28px 21px;
+
+    border-radius: 22px;
+  }
+
+  .claude-curriculum-card__number {
+    font-size:
+      clamp(65px,
+        18vw,
+        82px);
+  }
+
+  .claude-curriculum-card__content h3 {
+    margin-top: 29px;
+
+    font-size:
+      clamp(26px,
+        7vw,
+        34px);
+  }
+
+  .claude-curriculum-card__description {
+    font-size: 12px;
+  }
+
+  .claude-curriculum-card__lesson-label {
+    margin-top: 25px;
+  }
+
+  .claude-curriculum-card li {
+    padding:
+      10px 0;
+  }
+
+  .claude-curriculum-card li span {
+    font-size: 11px;
+  }
+
+  /* VISUAL */
+
+  .claude-curriculum-card__visual {
+    height: auto;
+
+    aspect-ratio: 1 / .85;
+
+    border-radius: 17px;
+  }
+}
+
+/* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+
+@media (max-width: 420px) {
+  .claude-curriculum-phase__header {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .claude-curriculum-phase__count {
+    margin-left: 37px;
+  }
+
+  .claude-curriculum-card {
+    padding:
+      25px 17px;
+  }
+
+  .claude-curriculum-card__content h3 {
+    font-size: 26px;
+  }
+}
+
+/* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .claude-curriculum-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none !important;
+  }
+
+  .claude-curriculum-card,
+  .claude-curriculum-card__visual,
+  .claude-curriculum-card__image {
+    transition: none;
+  }
+}
+
+
+/* ============================================================
    CLAUDE AI MASTERY — STUDENT BENEFITS
    FULL SECTION
    ============================================================ */
 
 .claude-benefits {
-    --claude-benefits-purple: #a97fdd;
-    --claude-benefits-purple-deep: #8753d5;
-  
-    --claude-benefits-lime: #cdfc56;
-    --claude-benefits-lime-2: #b9f500;
-  
-    --claude-benefits-ink: #171418;
-    --claude-benefits-muted: #918a95;
-  
-    --claude-benefits-ease: cubic-bezier(.16, 1, .3, 1);
-  
-    position: relative;
-  
-    width: 100%;
-  
-    padding:
-      clamp(80px, 8vw, 120px)
-      0
-      clamp(95px, 10vw, 145px);
-  
-    overflow: hidden;
-  
-    background:
-      radial-gradient(
-        circle at 80% 30%,
-        rgba(169, 127, 221, .055),
-        transparent 30%
-      ),
-      #fff;
-  
-    color: var(--claude-benefits-ink);
-  }
-  
-  
-  /* ============================================================
+  --claude-benefits-purple: #a97fdd;
+  --claude-benefits-purple-deep: #8753d5;
+
+  --claude-benefits-lime: #cdfc56;
+  --claude-benefits-lime-2: #b9f500;
+
+  --claude-benefits-ink: #171418;
+  --claude-benefits-muted: #918a95;
+
+  --claude-benefits-ease: cubic-bezier(.16, 1, .3, 1);
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(80px, 8vw, 120px) 0 clamp(95px, 10vw, 145px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 80% 30%,
+      rgba(169, 127, 221, .055),
+      transparent 30%),
+    #fff;
+
+  color: var(--claude-benefits-ink);
+}
+
+
+/* ============================================================
      INNER
      ============================================================ */
-  
-  .claude-benefits__inner {
-    width: min(1200px, 90vw);
-  
-    margin-inline: auto;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits__inner {
+  width: min(1200px, 90vw);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
      KICKER
      ============================================================ */
-  
-  .claude-benefits__kicker {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: 10px;
-  
-    min-height: 39px;
-  
-    padding:
-      7px
-      18px;
-  
-    border:
-      1px solid #ddd9e0;
-  
-    border-radius: 999px;
-  
-    background: #fff;
-  
-    color: #302b33;
-  
-    font-size:
-      clamp(
-        9px,
-        .76vw,
-        11px
-      );
-  
-    font-weight: 600;
-  
-    letter-spacing: .13em;
-  }
-  
-  
-  /* KICKER DOT */
-  
-  .claude-benefits__kicker i {
-    width: 7px;
-    height: 7px;
-  
-    flex: 0 0 7px;
-  
-    border-radius: 50%;
-  
-    background:
-      var(--claude-benefits-purple);
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits__kicker {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 39px;
+
+  padding:
+    7px 18px;
+
+  border:
+    1px solid #ddd9e0;
+
+  border-radius: 999px;
+
+  background: #fff;
+
+  color: #302b33;
+
+  font-size:
+    clamp(9px,
+      .76vw,
+      11px);
+
+  font-weight: 600;
+
+  letter-spacing: .13em;
+}
+
+
+/* KICKER DOT */
+
+.claude-benefits__kicker i {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--claude-benefits-purple);
+}
+
+
+/* ============================================================
      TOP HEADING
      ============================================================ */
-  
-  .claude-benefits__heading {
-    display: grid;
-  
-    grid-template-columns:
-      minmax(190px, .31fr)
-      minmax(0, .69fr);
-  
-    align-items: center;
-  
-    gap:
-      clamp(
-        50px,
-        6vw,
-        90px
-      );
-  
-    margin-top:
-      clamp(
-        42px,
-        5vw,
-        70px
-      );
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits__heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, .31fr) minmax(0, .69fr);
+
+  align-items: center;
+
+  gap:
+    clamp(50px,
+      6vw,
+      90px);
+
+  margin-top:
+    clamp(42px,
+      5vw,
+      70px);
+}
+
+
+/* ============================================================
      20+
      ============================================================ */
-  
-  .claude-benefits__big-number {
-    display: block;
-  
-    color:
-      #8856d1;
-  
-    font-size:
-      clamp(
-        110px,
-        11vw,
-        165px
-      );
-  
-    font-weight: 700;
-  
-    line-height: .75;
-  
-    letter-spacing: -.075em;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits__big-number {
+  display: block;
+
+  color:
+    #8856d1;
+
+  font-size:
+    clamp(110px,
+      11vw,
+      165px);
+
+  font-weight: 700;
+
+  line-height: .75;
+
+  letter-spacing: -.075em;
+}
+
+
+/* ============================================================
      HEADING TEXT
      ============================================================ */
-  
-  .claude-benefits__heading h2 {
-    margin: 0;
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        31px,
-        3vw,
-        45px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1.13;
-  
-    letter-spacing: -.045em;
-  }
-  
-  .claude-benefits__heading h2 span {
-    display: block;
-  
-    margin-top: 5px;
-  
-    font-weight: 400;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits__heading h2 {
+  margin: 0;
+
+  color: #111;
+
+  font-size:
+    clamp(31px,
+      3vw,
+      45px);
+
+  font-weight: 700;
+
+  line-height: 1.13;
+
+  letter-spacing: -.045em;
+}
+
+.claude-benefits__heading h2 span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-weight: 400;
+}
+
+
+/* ============================================================
      BODY
      ============================================================ */
-  
-  .claude-benefits__body {
-    display: grid;
-  
-    grid-template-columns:
-      minmax(430px, .98fr)
-      minmax(0, 1.02fr);
-  
-    align-items: center;
-  
-    gap:
-      clamp(
-        65px,
-        7vw,
-        105px
-      );
-  
-    margin-top:
-      clamp(
-        42px,
-        5vw,
-        68px
-      );
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits__body {
+  display: grid;
+
+  grid-template-columns:
+    minmax(430px, .98fr) minmax(0, 1.02fr);
+
+  align-items: center;
+
+  gap:
+    clamp(65px,
+      7vw,
+      105px);
+
+  margin-top:
+    clamp(42px,
+      5vw,
+      68px);
+}
+
+
+/* ============================================================
      LEFT RESOURCE VISUAL
      ============================================================ */
-  
-  .claude-benefits-resources {
-    position: relative;
-  
-    width:
-      min(
-        100%,
-        525px
-      );
-  
-    height: 430px;
-  
-    margin-inline: auto;
-  
-    overflow: visible;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits-resources {
+  position: relative;
+
+  width:
+    min(100%,
+      525px);
+
+  height: 430px;
+
+  margin-inline: auto;
+
+  overflow: visible;
+}
+
+
+/* ============================================================
      RESOURCE STACK
      ============================================================ */
-  
-  .claude-benefits-resources__list {
-    position: absolute;
-  
-    z-index: 7;
-  
-    top: 35px;
-    left: 50%;
-  
-    width: 440px;
-  
-    transform:
-      translateX(-50%);
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits-resources__list {
+  position: absolute;
+
+  z-index: 7;
+
+  top: 35px;
+  left: 50%;
+
+  width: 440px;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* ============================================================
      SINGLE RESOURCE PAPER
      ============================================================ */
-  
-  .claude-benefits-resource {
-    position: relative;
-  
-    width: 100%;
-    height: 46px;
-  
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    padding:
-      0
-      20px;
-  
-    border:
-      1px solid
-      #d8d1da;
-  
-    background: #fff;
-  
-    color: #514b55;
-  
-    font-size:
-      clamp(
-        13px,
-        1.02vw,
-        15px
-      );
-  
-    font-weight: 400;
-  
-    line-height: 1;
-  
-    text-align: center;
-  
-    box-shadow:
-      0
-      4px
-      10px
-      rgba(62, 45, 74, .025);
-  
-    transform-origin: center;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits-resource {
+  position: relative;
+
+  width: 100%;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    0 20px;
+
+  border:
+    1px solid #d8d1da;
+
+  background: #fff;
+
+  color: #514b55;
+
+  font-size:
+    clamp(13px,
+      1.02vw,
+      15px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  text-align: center;
+
+  box-shadow:
+    0 4px 10px rgba(62, 45, 74, .025);
+
+  transform-origin: center;
+}
+
+
+/* ============================================================
      RESOURCE PAPER POSITIONS
      ============================================================ */
-  
-  /* 01 */
-  
-  .claude-benefits-resource:nth-child(1) {
-    z-index: 4;
-  
-    width: 96%;
-  
-    margin-left: 0;
-  
-    transform:
-      translateX(-10px)
-      rotate(-1.3deg);
-  }
-  
-  
-  /* 02 */
-  
-  .claude-benefits-resource:nth-child(2) {
-    z-index: 5;
-  
-    width: 98%;
-  
-    margin-top: -8px;
-    margin-left: 7px;
-  
-    transform:
-      rotate(0deg);
-  }
-  
-  
-  /* 03 */
-  
-  .claude-benefits-resource:nth-child(3) {
-    z-index: 6;
-  
-    width: 100%;
-  
-    margin-top: -8px;
-    margin-left: 15px;
-  
-    transform:
-      rotate(.75deg);
-  }
-  
-  
-  /* 04 */
-  
-  .claude-benefits-resource:nth-child(4) {
-    z-index: 7;
-  
-    width: 98%;
-  
-    margin-top: -8px;
-    margin-left: 25px;
-  
-    transform:
-      rotate(1.8deg);
-  }
-  
-  
-  /* ============================================================
+
+/* 01 */
+
+.claude-benefits-resource:nth-child(1) {
+  z-index: 4;
+
+  width: 96%;
+
+  margin-left: 0;
+
+  transform:
+    translateX(-10px) rotate(-1.3deg);
+}
+
+
+/* 02 */
+
+.claude-benefits-resource:nth-child(2) {
+  z-index: 5;
+
+  width: 98%;
+
+  margin-top: -8px;
+  margin-left: 7px;
+
+  transform:
+    rotate(0deg);
+}
+
+
+/* 03 */
+
+.claude-benefits-resource:nth-child(3) {
+  z-index: 6;
+
+  width: 100%;
+
+  margin-top: -8px;
+  margin-left: 15px;
+
+  transform:
+    rotate(.75deg);
+}
+
+
+/* 04 */
+
+.claude-benefits-resource:nth-child(4) {
+  z-index: 7;
+
+  width: 98%;
+
+  margin-top: -8px;
+  margin-left: 25px;
+
+  transform:
+    rotate(1.8deg);
+}
+
+
+/* ============================================================
      GREEN EDIT HANDLES
      ============================================================ */
-  
-  .claude-benefits-resource i {
-    position: absolute;
-  
-    z-index: 9;
-  
-    width: 11px;
-    height: 11px;
-  
-    border:
-      1px solid
-      #397900;
-  
-    background:
-      var(--claude-benefits-lime-2);
-  }
-  
-  
-  /* LEFT HANDLE */
-  
-  .claude-benefits-resource i:first-child {
-    left: -6px;
-    bottom: -6px;
-  }
-  
-  
-  /* RIGHT HANDLE */
-  
-  .claude-benefits-resource i:last-child {
-    right: -6px;
-    bottom: -6px;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits-resource i {
+  position: absolute;
+
+  z-index: 9;
+
+  width: 11px;
+  height: 11px;
+
+  border:
+    1px solid #397900;
+
+  background:
+    var(--claude-benefits-lime-2);
+}
+
+
+/* LEFT HANDLE */
+
+.claude-benefits-resource i:first-child {
+  left: -6px;
+  bottom: -6px;
+}
+
+
+/* RIGHT HANDLE */
+
+.claude-benefits-resource i:last-child {
+  right: -6px;
+  bottom: -6px;
+}
+
+
+/* ============================================================
      BIG FOLDER
      ============================================================ */
-  
-  .claude-benefits-resources__folder {
-    position: absolute;
-  
-    z-index: 3;
-  
-    left: 50%;
-    bottom: 3px;
-  
-    width: 305px;
-    height: 205px;
-  
-    transform:
-      translateX(-50%);
-  
-    border-radius:
-      26px
-      26px
-      22px
-      22px;
-  
-    background:
-      linear-gradient(
-        180deg,
-        #e2ff55 0%,
-        #c2fa00 100%
-      );
-  
-    box-shadow:
-      0
-      22px
-      42px
-      rgba(129, 170, 0, .11);
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits-resources__folder {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 305px;
+  height: 205px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    26px 26px 22px 22px;
+
+  background:
+    linear-gradient(180deg,
+      #e2ff55 0%,
+      #c2fa00 100%);
+
+  box-shadow:
+    0 22px 42px rgba(129, 170, 0, .11);
+}
+
+
+/* ============================================================
      FOLDER TAB
      ============================================================ */
-  
-  .claude-benefits-resources__folder-tab {
-    position: absolute;
-  
-    top: -39px;
-    left: 0;
-  
-    width: 158px;
-    height: 58px;
-  
-    border-radius:
-      25px
-      25px
-      0
-      0;
-  
-    background:
-      #e1ff53;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits-resources__folder-tab {
+  position: absolute;
+
+  top: -39px;
+  left: 0;
+
+  width: 158px;
+  height: 58px;
+
+  border-radius:
+    25px 25px 0 0;
+
+  background:
+    #e1ff53;
+}
+
+
+/* ============================================================
      PURPLE BURST
      ============================================================ */
-  
-  .claude-benefits-resources__burst {
-    position: absolute;
-  
-    z-index: 1;
-  
-    left: 11px;
-    bottom: 38px;
-  
-    width: 120px;
-    height: 120px;
-  
-    background:
-      #8753f1;
-  
-    clip-path:
-      polygon(
-        50% 0%,
-        58% 31%,
-        75% 8%,
-        72% 37%,
-        100% 27%,
-        78% 49%,
-        100% 61%,
-        69% 63%,
-        79% 92%,
-        57% 70%,
-        49% 100%,
-        40% 70%,
-        18% 93%,
-        28% 62%,
-        0% 67%,
-        23% 48%,
-        0% 35%,
-        31% 36%
-      );
-  
-    transform:
-      rotate(-10deg);
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits-resources__burst {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 11px;
+  bottom: 38px;
+
+  width: 120px;
+  height: 120px;
+
+  background:
+    #8753f1;
+
+  clip-path:
+    polygon(50% 0%,
+      58% 31%,
+      75% 8%,
+      72% 37%,
+      100% 27%,
+      78% 49%,
+      100% 61%,
+      69% 63%,
+      79% 92%,
+      57% 70%,
+      49% 100%,
+      40% 70%,
+      18% 93%,
+      28% 62%,
+      0% 67%,
+      23% 48%,
+      0% 35%,
+      31% 36%);
+
+  transform:
+    rotate(-10deg);
+}
+
+
+/* ============================================================
      CURSOR
      ============================================================ */
-  
-  .claude-benefits-resources__cursor {
-    position: absolute;
-  
-    z-index: 10;
-  
-    right: 43px;
-    bottom: -10px;
-  
-    width: 52px;
-  
-    pointer-events: none;
-  
-    animation:
-      claudeBenefitCursor
-      2.5s
-      ease-in-out
-      infinite;
+
+.claude-benefits-resources__cursor {
+  position: absolute;
+
+  z-index: 10;
+
+  right: 43px;
+  bottom: -10px;
+
+  width: 52px;
+
+  pointer-events: none;
+
+  animation:
+    claudeBenefitCursor 2.5s ease-in-out infinite;
+}
+
+.claude-benefits-resources__cursor svg {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* CURSOR FLOAT */
+
+@keyframes claudeBenefitCursor {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0) rotate(-7deg);
   }
-  
-  .claude-benefits-resources__cursor svg {
-    display: block;
-  
-    width: 100%;
-    height: auto;
+
+  50% {
+    transform:
+      translate(-4px, -6px) rotate(-3deg);
   }
-  
-  
-  /* CURSOR FLOAT */
-  
-  @keyframes claudeBenefitCursor {
-    0%,
-    100% {
-      transform:
-        translate(0, 0)
-        rotate(-7deg);
-    }
-  
-    50% {
-      transform:
-        translate(-4px, -6px)
-        rotate(-3deg);
-    }
-  }
-  
-  
-  /* ============================================================
+}
+
+
+/* ============================================================
      RIGHT BENEFITS LIST
      ============================================================ */
-  
-  .claude-benefits__list {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap:
-      clamp(
-        12px,
-        1.4vw,
-        18px
-      );
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefits__list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    clamp(12px,
+      1.4vw,
+      18px);
+}
+
+
+/* ============================================================
      BENEFIT CARD
      ============================================================ */
-  
-  .claude-benefit-card {
-    display: grid;
-  
-    grid-template-columns:
-      auto
-      minmax(0, 1fr);
-  
-    align-items: center;
-  
-    gap:
-      clamp(
-        17px,
-        2vw,
-        27px
-      );
-  
-    min-height:
-      clamp(
-        105px,
-        10vw,
-        125px
-      );
-  
-    padding:
-      clamp(
-        18px,
-        2vw,
-        25px
-      );
-  
-    border:
-      1.4px solid
-      #e0c8f4;
-  
-    border-radius:
-      18px;
-  
-    background:
-      rgba(255, 255, 255, .97);
-  
-    box-shadow:
-      0
-      9px
-      24px
-      rgba(77, 53, 96, .045);
-  
-    transition:
-      transform
-        .45s
-        var(--claude-benefits-ease),
-  
-      border-color
-        .3s ease,
-  
-      box-shadow
-        .35s ease;
-  }
-  
-  
-  /* BENEFIT HOVER */
-  
-  .claude-benefit-card:hover {
-    transform:
-      translateX(7px);
-  
-    border-color:
-      #bd94e4;
-  
-    box-shadow:
-      0
-      14px
-      30px
-      rgba(81, 53, 102, .09);
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefit-card {
+  display: grid;
+
+  grid-template-columns:
+    auto minmax(0, 1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(17px,
+      2vw,
+      27px);
+
+  min-height:
+    clamp(105px,
+      10vw,
+      125px);
+
+  padding:
+    clamp(18px,
+      2vw,
+      25px);
+
+  border:
+    1.4px solid #e0c8f4;
+
+  border-radius:
+    18px;
+
+  background:
+    rgba(255, 255, 255, .97);
+
+  box-shadow:
+    0 9px 24px rgba(77, 53, 96, .045);
+
+  transition:
+    transform .45s var(--claude-benefits-ease),
+
+    border-color .3s ease,
+
+    box-shadow .35s ease;
+}
+
+
+/* BENEFIT HOVER */
+
+.claude-benefit-card:hover {
+  transform:
+    translateX(7px);
+
+  border-color:
+    #bd94e4;
+
+  box-shadow:
+    0 14px 30px rgba(81, 53, 102, .09);
+}
+
+
+/* ============================================================
      BENEFIT ICON
      ============================================================ */
-  
-  .claude-benefit-card__icon {
-    width:
-      clamp(
-        50px,
-        4.8vw,
-        63px
-      );
-  
-    height:
-      clamp(
-        50px,
-        4.8vw,
-        63px
-      );
-  
-    display: grid;
-  
-    place-items: center;
-  
-    flex: 0 0 auto;
-  
-    border-radius: 15px;
-  
-    background:
-      #fbf6ff;
-  
-    color:
-      #c174eb;
-  }
-  
-  .claude-benefit-card__icon svg {
-    width: 48%;
-    height: 48%;
-  
-    fill: none;
-  
-    stroke:
-      currentColor;
-  
-    stroke-width: 1.7;
-  
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  
-    transition:
-      transform
-      .45s
-      var(--claude-benefits-ease);
-  }
-  
-  
-  /* ICON HOVER */
-  
-  .claude-benefit-card:hover
-  .claude-benefit-card__icon svg {
-    transform:
-      scale(1.1)
-      rotate(-5deg);
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefit-card__icon {
+  width:
+    clamp(50px,
+      4.8vw,
+      63px);
+
+  height:
+    clamp(50px,
+      4.8vw,
+      63px);
+
+  display: grid;
+
+  place-items: center;
+
+  flex: 0 0 auto;
+
+  border-radius: 15px;
+
+  background:
+    #fbf6ff;
+
+  color:
+    #c174eb;
+}
+
+.claude-benefit-card__icon svg {
+  width: 48%;
+  height: 48%;
+
+  fill: none;
+
+  stroke:
+    currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition:
+    transform .45s var(--claude-benefits-ease);
+}
+
+
+/* ICON HOVER */
+
+.claude-benefit-card:hover .claude-benefit-card__icon svg {
+  transform:
+    scale(1.1) rotate(-5deg);
+}
+
+
+/* ============================================================
      BENEFIT CONTENT
      ============================================================ */
-  
-  .claude-benefit-card__content {
-    min-width: 0;
-  }
-  
-  .claude-benefit-card__content h3 {
-    margin: 0;
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        16px,
-        1.45vw,
-        21px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1.15;
-  
-    letter-spacing:
-      -.025em;
-  }
-  
-  .claude-benefit-card__content p {
-    margin:
-      10px
-      0
-      0;
-  
-    color:
-      #97909a;
-  
-    font-size:
-      clamp(
-        10px,
-        .85vw,
-        12px
-      );
-  
-    line-height: 1.45;
-  }
-  
-  
-  /* ============================================================
+
+.claude-benefit-card__content {
+  min-width: 0;
+}
+
+.claude-benefit-card__content h3 {
+  margin: 0;
+
+  color: #111;
+
+  font-size:
+    clamp(16px,
+      1.45vw,
+      21px);
+
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  letter-spacing:
+    -.025em;
+}
+
+.claude-benefit-card__content p {
+  margin:
+    10px 0 0;
+
+  color:
+    #97909a;
+
+  font-size:
+    clamp(10px,
+      .85vw,
+      12px);
+
+  line-height: 1.45;
+}
+
+
+/* ============================================================
      SCROLL REVEAL — GENERAL
      ============================================================ */
-  
-  .claude-benefits-reveal {
+
+.claude-benefits-reveal {
+  opacity: 0;
+
+  transform:
+    translateY(28px);
+}
+
+.claude-benefits-reveal.is-visible {
+  animation:
+    claudeBenefitsReveal .82s var(--claude-benefits-ease) var(--benefit-delay,
+      0s) forwards;
+}
+
+
+@keyframes claudeBenefitsReveal {
+  from {
     opacity: 0;
-  
+
     transform:
       translateY(28px);
   }
-  
-  .claude-benefits-reveal.is-visible {
-    animation:
-      claudeBenefitsReveal
-      .82s
-      var(--claude-benefits-ease)
-      var(
-        --benefit-delay,
-        0s
-      )
-      forwards;
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
   }
-  
-  
-  @keyframes claudeBenefitsReveal {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(28px);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0);
-    }
-  }
-  
-  
-  /* ============================================================
+}
+
+
+/* ============================================================
      LEFT VISUAL REVEAL
      ============================================================ */
-  
-  .claude-benefits-resources.claude-benefits-reveal {
+
+.claude-benefits-resources.claude-benefits-reveal {
+  opacity: 0;
+
+  transform:
+    translateX(-30px) scale(.97);
+}
+
+.claude-benefits-resources.claude-benefits-reveal.is-visible {
+  animation:
+    claudeBenefitsResourceEnter .95s var(--claude-benefits-ease) .12s forwards;
+}
+
+
+@keyframes claudeBenefitsResourceEnter {
+  from {
     opacity: 0;
-  
+
     transform:
-      translateX(-30px)
-      scale(.97);
-  }
-  
-  .claude-benefits-resources.claude-benefits-reveal.is-visible {
-    animation:
-      claudeBenefitsResourceEnter
-      .95s
-      var(--claude-benefits-ease)
-      .12s
-      forwards;
-  }
-  
-  
-  @keyframes claudeBenefitsResourceEnter {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateX(-30px)
-        scale(.97);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateX(0)
-        scale(1);
-    }
-  }
-  
-  
-  /* ============================================================
-     PAPER REVEAL
-     ============================================================ */
-  
-  .claude-benefits-resources.claude-benefits-reveal.is-visible
-  .claude-benefits-resource:nth-child(1) {
-    animation:
-      claudeResourcePaper01
-      .72s
-      var(--claude-benefits-ease)
-      .25s
-      both;
-  }
-  
-  .claude-benefits-resources.claude-benefits-reveal.is-visible
-  .claude-benefits-resource:nth-child(2) {
-    animation:
-      claudeResourcePaper02
-      .72s
-      var(--claude-benefits-ease)
-      .32s
-      both;
-  }
-  
-  .claude-benefits-resources.claude-benefits-reveal.is-visible
-  .claude-benefits-resource:nth-child(3) {
-    animation:
-      claudeResourcePaper03
-      .72s
-      var(--claude-benefits-ease)
-      .39s
-      both;
-  }
-  
-  .claude-benefits-resources.claude-benefits-reveal.is-visible
-  .claude-benefits-resource:nth-child(4) {
-    animation:
-      claudeResourcePaper04
-      .72s
-      var(--claude-benefits-ease)
-      .46s
-      both;
-  }
-  
-  
-  /* PAPER 01 */
-  
-  @keyframes claudeResourcePaper01 {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateX(-10px)
-        translateY(22px)
-        rotate(-1.3deg);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateX(-10px)
-        translateY(0)
-        rotate(-1.3deg);
-    }
-  }
-  
-  
-  /* PAPER 02 */
-  
-  @keyframes claudeResourcePaper02 {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(22px)
-        rotate(0deg);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0)
-        rotate(0deg);
-    }
-  }
-  
-  
-  /* PAPER 03 */
-  
-  @keyframes claudeResourcePaper03 {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(22px)
-        rotate(.75deg);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0)
-        rotate(.75deg);
-    }
-  }
-  
-  
-  /* PAPER 04 */
-  
-  @keyframes claudeResourcePaper04 {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(22px)
-        rotate(1.8deg);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0)
-        rotate(1.8deg);
-    }
-  }
-  
-  
-  /* ============================================================
-     LARGE DESKTOP
-     ============================================================ */
-  
-  @media (min-width: 1350px) {
-    .claude-benefits__body {
-      grid-template-columns:
-        minmax(450px, .98fr)
-        minmax(0, 1.02fr);
-    }
-  
-    .claude-benefits-resources {
-      width: 550px;
-      height: 450px;
-    }
-  
-    .claude-benefits-resources__list {
-      top: 35px;
-  
-      width: 465px;
-    }
-  
-    .claude-benefits-resource {
-      height: 48px;
-  
-      font-size: 15px;
-    }
-  
-    .claude-benefits-resources__folder {
-      width: 325px;
-      height: 220px;
-    }
-  
-    .claude-benefits-resources__folder-tab {
-      top: -41px;
-  
-      width: 170px;
-      height: 61px;
-    }
-  
-    .claude-benefits-resources__burst {
-      width: 128px;
-      height: 128px;
-    }
-  
-    .claude-benefits-resources__cursor {
-      width: 56px;
-    }
-  }
-  
-  
-  /* ============================================================
-     LAPTOP / SMALL DESKTOP
-     ============================================================ */
-  
-  @media (max-width: 1100px) {
-    .claude-benefits__body {
-      grid-template-columns:
-        minmax(370px, .92fr)
-        minmax(0, 1.08fr);
-  
-      gap: 45px;
-    }
-  
-    .claude-benefits-resources {
-      width: 430px;
-      height: 385px;
-    }
-  
-    .claude-benefits-resources__list {
-      top: 34px;
-  
-      width: 370px;
-    }
-  
-    .claude-benefits-resource {
-      height: 41px;
-  
-      font-size: 11px;
-    }
-  
-    .claude-benefits-resources__folder {
-      width: 260px;
-      height: 180px;
-    }
-  
-    .claude-benefits-resources__folder-tab {
-      top: -33px;
-  
-      width: 135px;
-      height: 49px;
-    }
-  
-    .claude-benefits-resources__burst {
-      left: 3px;
-  
-      width: 96px;
-      height: 96px;
-    }
-  
-    .claude-benefits-resources__cursor {
-      right: 33px;
-  
-      width: 45px;
-    }
-  }
-  
-  
-  /* ============================================================
-     TABLET
-     ============================================================ */
-  
-  @media (max-width: 850px) {
-    .claude-benefits__heading {
-      grid-template-columns:
-        .33fr
-        .67fr;
-  
-      gap: 30px;
-    }
-  
-    .claude-benefits__big-number {
-      font-size:
-        clamp(
-          90px,
-          14vw,
-          125px
-        );
-    }
-  
-    .claude-benefits__heading h2 {
-      font-size:
-        clamp(
-          26px,
-          4vw,
-          35px
-        );
-    }
-  
-    .claude-benefits__body {
-      grid-template-columns:
-        minmax(320px, .9fr)
-        minmax(0, 1.1fr);
-  
-      gap: 30px;
-    }
-  
-    .claude-benefits-resources {
-      width: 360px;
-      height: 340px;
-    }
-  
-    .claude-benefits-resources__list {
-      width: 315px;
-    }
-  
-    .claude-benefits-resource {
-      height: 37px;
-  
-      font-size: 10px;
-    }
-  
-    .claude-benefits-resources__folder {
-      width: 225px;
-      height: 158px;
-    }
-  
-    .claude-benefits-resources__folder-tab {
-      top: -29px;
-  
-      width: 118px;
-      height: 43px;
-    }
-  
-    .claude-benefits-resources__burst {
-      width: 82px;
-      height: 82px;
-    }
-  
-    .claude-benefits-resources__cursor {
-      width: 39px;
-    }
-  }
-  
-  
-  /* ============================================================
-     MOBILE
-     ============================================================ */
-  
-  @media (max-width: 700px) {
-    .claude-benefits {
-      padding:
-        65px
-        0
-        85px;
-    }
-  
-    .claude-benefits__inner {
-      width:
-        calc(
-          100% - 30px
-        );
-    }
-  
-    /* KICKER */
-  
-    .claude-benefits__kicker {
-      padding:
-        6px
-        14px;
-  
-      font-size: 8px;
-    }
-  
-    /* HEADING */
-  
-    .claude-benefits__heading {
-      grid-template-columns: 1fr;
-  
-      gap: 20px;
-  
-      margin-top: 35px;
-    }
-  
-    .claude-benefits__big-number {
-      font-size:
-        clamp(
-          90px,
-          25vw,
-          120px
-        );
-    }
-  
-    .claude-benefits__heading h2 {
-      font-size:
-        clamp(
-          27px,
-          7vw,
-          36px
-        );
-    }
-  
-    /* BODY */
-  
-    .claude-benefits__body {
-      grid-template-columns: 1fr;
-  
-      gap: 55px;
-  
-      margin-top: 40px;
-    }
-  
-    /* LEFT VISUAL */
-  
-    .claude-benefits-resources {
-      width:
-        min(
-          100%,
-          470px
-        );
-  
-      height: 400px;
-  
-      margin-inline: auto;
-    }
-  
-    .claude-benefits-resources__list {
-      top: 35px;
-  
-      width:
-        min(
-          400px,
-          calc(
-            100% - 45px
-          )
-        );
-    }
-  
-    .claude-benefits-resource {
-      height: 42px;
-  
-      font-size: 11px;
-    }
-  
-    .claude-benefits-resources__folder {
-      width: 275px;
-      height: 190px;
-    }
-  
-    .claude-benefits-resources__folder-tab {
-      top: -35px;
-  
-      width: 145px;
-      height: 52px;
-    }
-  
-    .claude-benefits-resources__burst {
-      left: 5px;
-      bottom: 40px;
-  
-      width: 105px;
-      height: 105px;
-    }
-  
-    .claude-benefits-resources__cursor {
-      right: 35px;
-  
-      width: 48px;
-    }
-  
-    /* BENEFIT CARDS */
-  
-    .claude-benefit-card {
-      min-height: 100px;
-  
-      padding: 18px;
-  
-      border-radius: 16px;
-    }
-  
-    .claude-benefit-card__content h3 {
-      font-size: 16px;
-    }
-  
-    .claude-benefit-card__content p {
-      font-size: 11px;
-    }
-  }
-  
-  
-  /* ============================================================
-     SMALL MOBILE
-     ============================================================ */
-  
-  @media (max-width: 430px) {
-    .claude-benefits-resources {
-      height: 335px;
-    }
-  
-    .claude-benefits-resources__list {
-      top: 27px;
-  
-      width:
-        calc(
-          100% - 34px
-        );
-    }
-  
-    .claude-benefits-resource {
-      height: 36px;
-  
-      padding:
-        0
-        8px;
-  
-      font-size: 9px;
-    }
-  
-    .claude-benefits-resource:nth-child(2),
-    .claude-benefits-resource:nth-child(3),
-    .claude-benefits-resource:nth-child(4) {
-      margin-top: -7px;
-    }
-  
-    .claude-benefits-resources__folder {
-      width: 220px;
-      height: 155px;
-    }
-  
-    .claude-benefits-resources__folder-tab {
-      top: -28px;
-  
-      width: 115px;
-      height: 42px;
-    }
-  
-    .claude-benefits-resources__burst {
-      left: 0;
-      bottom: 32px;
-  
-      width: 78px;
-      height: 78px;
-    }
-  
-    .claude-benefits-resources__cursor {
-      right: 24px;
-  
-      width: 38px;
-    }
-  
-    /* CARDS */
-  
-    .claude-benefit-card {
-      grid-template-columns:
-        45px
-        minmax(0, 1fr);
-  
-      gap: 13px;
-  
-      padding: 15px;
-    }
-  
-    .claude-benefit-card__icon {
-      width: 45px;
-      height: 45px;
-    }
-  
-    .claude-benefit-card__content h3 {
-      font-size: 14px;
-    }
-  
-    .claude-benefit-card__content p {
-      margin-top: 6px;
-  
-      font-size: 10px;
-    }
-  }
-  
-  
-  /* ============================================================
-     VERY SMALL MOBILE
-     ============================================================ */
-  
-  @media (max-width: 350px) {
-    .claude-benefits-resources {
-      height: 305px;
-    }
-  
-    .claude-benefits-resources__list {
-      width: 265px;
-    }
-  
-    .claude-benefits-resource {
-      height: 33px;
-  
-      font-size: 8px;
-    }
-  
-    .claude-benefits-resources__folder {
-      width: 190px;
-      height: 140px;
-    }
-  
-    .claude-benefits-resources__folder-tab {
-      width: 100px;
-      height: 38px;
-    }
-  
-    .claude-benefits-resources__burst {
-      width: 68px;
-      height: 68px;
-    }
-  
-    .claude-benefits-resources__cursor {
-      width: 33px;
-    }
-  }
-  
-  
-  /* ============================================================
-     REDUCED MOTION
-     ============================================================ */
-  
-  @media (prefers-reduced-motion: reduce) {
-    .claude-benefits-reveal,
-    .claude-benefits-resources.claude-benefits-reveal {
-      opacity: 1;
-  
-      transform: none;
-  
-      animation: none !important;
-    }
-  
-    .claude-benefits-resource {
-      opacity: 1;
-  
-      animation: none !important;
-    }
-  
-    .claude-benefits-resource:nth-child(1) {
-      transform:
-        translateX(-10px)
-        rotate(-1.3deg);
-    }
-  
-    .claude-benefits-resource:nth-child(2) {
-      transform:
-        rotate(0deg);
-    }
-  
-    .claude-benefits-resource:nth-child(3) {
-      transform:
-        rotate(.75deg);
-    }
-  
-    .claude-benefits-resource:nth-child(4) {
-      transform:
-        rotate(1.8deg);
-    }
-  
-    .claude-benefits-resources__cursor {
-      animation: none;
-    }
-  
-    .claude-benefit-card,
-    .claude-benefit-card__icon svg {
-      transition: none;
-    }
+      translateX(-30px) scale(.97);
   }
 
-  /* ============================================================
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0) scale(1);
+  }
+}
+
+
+/* ============================================================
+     PAPER REVEAL
+     ============================================================ */
+
+.claude-benefits-resources.claude-benefits-reveal.is-visible .claude-benefits-resource:nth-child(1) {
+  animation:
+    claudeResourcePaper01 .72s var(--claude-benefits-ease) .25s both;
+}
+
+.claude-benefits-resources.claude-benefits-reveal.is-visible .claude-benefits-resource:nth-child(2) {
+  animation:
+    claudeResourcePaper02 .72s var(--claude-benefits-ease) .32s both;
+}
+
+.claude-benefits-resources.claude-benefits-reveal.is-visible .claude-benefits-resource:nth-child(3) {
+  animation:
+    claudeResourcePaper03 .72s var(--claude-benefits-ease) .39s both;
+}
+
+.claude-benefits-resources.claude-benefits-reveal.is-visible .claude-benefits-resource:nth-child(4) {
+  animation:
+    claudeResourcePaper04 .72s var(--claude-benefits-ease) .46s both;
+}
+
+
+/* PAPER 01 */
+
+@keyframes claudeResourcePaper01 {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-10px) translateY(22px) rotate(-1.3deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(-10px) translateY(0) rotate(-1.3deg);
+  }
+}
+
+
+/* PAPER 02 */
+
+@keyframes claudeResourcePaper02 {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px) rotate(0deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) rotate(0deg);
+  }
+}
+
+
+/* PAPER 03 */
+
+@keyframes claudeResourcePaper03 {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px) rotate(.75deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) rotate(.75deg);
+  }
+}
+
+
+/* PAPER 04 */
+
+@keyframes claudeResourcePaper04 {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px) rotate(1.8deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) rotate(1.8deg);
+  }
+}
+
+
+/* ============================================================
+     LARGE DESKTOP
+     ============================================================ */
+
+@media (min-width: 1350px) {
+  .claude-benefits__body {
+    grid-template-columns:
+      minmax(450px, .98fr) minmax(0, 1.02fr);
+  }
+
+  .claude-benefits-resources {
+    width: 550px;
+    height: 450px;
+  }
+
+  .claude-benefits-resources__list {
+    top: 35px;
+
+    width: 465px;
+  }
+
+  .claude-benefits-resource {
+    height: 48px;
+
+    font-size: 15px;
+  }
+
+  .claude-benefits-resources__folder {
+    width: 325px;
+    height: 220px;
+  }
+
+  .claude-benefits-resources__folder-tab {
+    top: -41px;
+
+    width: 170px;
+    height: 61px;
+  }
+
+  .claude-benefits-resources__burst {
+    width: 128px;
+    height: 128px;
+  }
+
+  .claude-benefits-resources__cursor {
+    width: 56px;
+  }
+}
+
+
+/* ============================================================
+     LAPTOP / SMALL DESKTOP
+     ============================================================ */
+
+@media (max-width: 1100px) {
+  .claude-benefits__body {
+    grid-template-columns:
+      minmax(370px, .92fr) minmax(0, 1.08fr);
+
+    gap: 45px;
+  }
+
+  .claude-benefits-resources {
+    width: 430px;
+    height: 385px;
+  }
+
+  .claude-benefits-resources__list {
+    top: 34px;
+
+    width: 370px;
+  }
+
+  .claude-benefits-resource {
+    height: 41px;
+
+    font-size: 11px;
+  }
+
+  .claude-benefits-resources__folder {
+    width: 260px;
+    height: 180px;
+  }
+
+  .claude-benefits-resources__folder-tab {
+    top: -33px;
+
+    width: 135px;
+    height: 49px;
+  }
+
+  .claude-benefits-resources__burst {
+    left: 3px;
+
+    width: 96px;
+    height: 96px;
+  }
+
+  .claude-benefits-resources__cursor {
+    right: 33px;
+
+    width: 45px;
+  }
+}
+
+
+/* ============================================================
+     TABLET
+     ============================================================ */
+
+@media (max-width: 850px) {
+  .claude-benefits__heading {
+    grid-template-columns:
+      .33fr .67fr;
+
+    gap: 30px;
+  }
+
+  .claude-benefits__big-number {
+    font-size:
+      clamp(90px,
+        14vw,
+        125px);
+  }
+
+  .claude-benefits__heading h2 {
+    font-size:
+      clamp(26px,
+        4vw,
+        35px);
+  }
+
+  .claude-benefits__body {
+    grid-template-columns:
+      minmax(320px, .9fr) minmax(0, 1.1fr);
+
+    gap: 30px;
+  }
+
+  .claude-benefits-resources {
+    width: 360px;
+    height: 340px;
+  }
+
+  .claude-benefits-resources__list {
+    width: 315px;
+  }
+
+  .claude-benefits-resource {
+    height: 37px;
+
+    font-size: 10px;
+  }
+
+  .claude-benefits-resources__folder {
+    width: 225px;
+    height: 158px;
+  }
+
+  .claude-benefits-resources__folder-tab {
+    top: -29px;
+
+    width: 118px;
+    height: 43px;
+  }
+
+  .claude-benefits-resources__burst {
+    width: 82px;
+    height: 82px;
+  }
+
+  .claude-benefits-resources__cursor {
+    width: 39px;
+  }
+}
+
+
+/* ============================================================
+     MOBILE
+     ============================================================ */
+
+@media (max-width: 700px) {
+  .claude-benefits {
+    padding:
+      65px 0 85px;
+  }
+
+  .claude-benefits__inner {
+    width:
+      calc(100% - 30px);
+  }
+
+  /* KICKER */
+
+  .claude-benefits__kicker {
+    padding:
+      6px 14px;
+
+    font-size: 8px;
+  }
+
+  /* HEADING */
+
+  .claude-benefits__heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    margin-top: 35px;
+  }
+
+  .claude-benefits__big-number {
+    font-size:
+      clamp(90px,
+        25vw,
+        120px);
+  }
+
+  .claude-benefits__heading h2 {
+    font-size:
+      clamp(27px,
+        7vw,
+        36px);
+  }
+
+  /* BODY */
+
+  .claude-benefits__body {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    margin-top: 40px;
+  }
+
+  /* LEFT VISUAL */
+
+  .claude-benefits-resources {
+    width:
+      min(100%,
+        470px);
+
+    height: 400px;
+
+    margin-inline: auto;
+  }
+
+  .claude-benefits-resources__list {
+    top: 35px;
+
+    width:
+      min(400px,
+        calc(100% - 45px));
+  }
+
+  .claude-benefits-resource {
+    height: 42px;
+
+    font-size: 11px;
+  }
+
+  .claude-benefits-resources__folder {
+    width: 275px;
+    height: 190px;
+  }
+
+  .claude-benefits-resources__folder-tab {
+    top: -35px;
+
+    width: 145px;
+    height: 52px;
+  }
+
+  .claude-benefits-resources__burst {
+    left: 5px;
+    bottom: 40px;
+
+    width: 105px;
+    height: 105px;
+  }
+
+  .claude-benefits-resources__cursor {
+    right: 35px;
+
+    width: 48px;
+  }
+
+  /* BENEFIT CARDS */
+
+  .claude-benefit-card {
+    min-height: 100px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .claude-benefit-card__content h3 {
+    font-size: 16px;
+  }
+
+  .claude-benefit-card__content p {
+    font-size: 11px;
+  }
+}
+
+
+/* ============================================================
+     SMALL MOBILE
+     ============================================================ */
+
+@media (max-width: 430px) {
+  .claude-benefits-resources {
+    height: 335px;
+  }
+
+  .claude-benefits-resources__list {
+    top: 27px;
+
+    width:
+      calc(100% - 34px);
+  }
+
+  .claude-benefits-resource {
+    height: 36px;
+
+    padding:
+      0 8px;
+
+    font-size: 9px;
+  }
+
+  .claude-benefits-resource:nth-child(2),
+  .claude-benefits-resource:nth-child(3),
+  .claude-benefits-resource:nth-child(4) {
+    margin-top: -7px;
+  }
+
+  .claude-benefits-resources__folder {
+    width: 220px;
+    height: 155px;
+  }
+
+  .claude-benefits-resources__folder-tab {
+    top: -28px;
+
+    width: 115px;
+    height: 42px;
+  }
+
+  .claude-benefits-resources__burst {
+    left: 0;
+    bottom: 32px;
+
+    width: 78px;
+    height: 78px;
+  }
+
+  .claude-benefits-resources__cursor {
+    right: 24px;
+
+    width: 38px;
+  }
+
+  /* CARDS */
+
+  .claude-benefit-card {
+    grid-template-columns:
+      45px minmax(0, 1fr);
+
+    gap: 13px;
+
+    padding: 15px;
+  }
+
+  .claude-benefit-card__icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .claude-benefit-card__content h3 {
+    font-size: 14px;
+  }
+
+  .claude-benefit-card__content p {
+    margin-top: 6px;
+
+    font-size: 10px;
+  }
+}
+
+
+/* ============================================================
+     VERY SMALL MOBILE
+     ============================================================ */
+
+@media (max-width: 350px) {
+  .claude-benefits-resources {
+    height: 305px;
+  }
+
+  .claude-benefits-resources__list {
+    width: 265px;
+  }
+
+  .claude-benefits-resource {
+    height: 33px;
+
+    font-size: 8px;
+  }
+
+  .claude-benefits-resources__folder {
+    width: 190px;
+    height: 140px;
+  }
+
+  .claude-benefits-resources__folder-tab {
+    width: 100px;
+    height: 38px;
+  }
+
+  .claude-benefits-resources__burst {
+    width: 68px;
+    height: 68px;
+  }
+
+  .claude-benefits-resources__cursor {
+    width: 33px;
+  }
+}
+
+
+/* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .claude-benefits-reveal,
+  .claude-benefits-resources.claude-benefits-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none !important;
+  }
+
+  .claude-benefits-resource {
+    opacity: 1;
+
+    animation: none !important;
+  }
+
+  .claude-benefits-resource:nth-child(1) {
+    transform:
+      translateX(-10px) rotate(-1.3deg);
+  }
+
+  .claude-benefits-resource:nth-child(2) {
+    transform:
+      rotate(0deg);
+  }
+
+  .claude-benefits-resource:nth-child(3) {
+    transform:
+      rotate(.75deg);
+  }
+
+  .claude-benefits-resource:nth-child(4) {
+    transform:
+      rotate(1.8deg);
+  }
+
+  .claude-benefits-resources__cursor {
+    animation: none;
+  }
+
+  .claude-benefit-card,
+  .claude-benefit-card__icon svg {
+    transition: none;
+  }
+}
+
+/* ============================================================
    CLAUDE AI MASTERY — PRICING
    ============================================================ */
 
 .claude-pricing {
-    --claude-pricing-purple: #a97fdd;
-    --claude-pricing-lime: #cdfc56;
-    --claude-pricing-ease: cubic-bezier(.16, 1, .3, 1);
-  
-    position: relative;
-  
-    width: 100%;
-  
-    padding:
-      clamp(80px, 8vw, 120px)
-      0
-      clamp(95px, 10vw, 145px);
-  
-    overflow: hidden;
-  
-    background:
-      radial-gradient(
-        circle at 80% 30%,
-        rgba(169, 127, 221, .06),
-        transparent 30%
-      ),
-      #fff;
-  
-    color: #111;
-  }
-  
-  .claude-pricing__inner {
-    width: min(1100px, 90vw);
-  
-    margin-inline: auto;
-  }
-  
-  
-  /* ============================================================
+  --claude-pricing-purple: #a97fdd;
+  --claude-pricing-lime: #cdfc56;
+  --claude-pricing-ease: cubic-bezier(.16, 1, .3, 1);
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(80px, 8vw, 120px) 0 clamp(95px, 10vw, 145px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 80% 30%,
+      rgba(169, 127, 221, .06),
+      transparent 30%),
+    #fff;
+
+  color: #111;
+}
+
+.claude-pricing__inner {
+  width: min(1100px, 90vw);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
      KICKER
      ============================================================ */
-  
-  .claude-pricing__kicker {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: 10px;
-  
-    min-height: 39px;
-  
-    padding:
-      7px
-      18px;
-  
-    border:
-      1px solid #ddd9e0;
-  
-    border-radius: 999px;
-  
-    background: #fff;
-  
-    color: #302b33;
-  
-    font-size:
-      clamp(
-        9px,
-        .76vw,
-        11px
-      );
-  
-    font-weight: 600;
-  
-    letter-spacing: .13em;
-  }
-  
-  .claude-pricing__kicker i {
-    width: 7px;
-    height: 7px;
-  
-    flex: 0 0 7px;
-  
-    border-radius: 50%;
-  
-    background:
-      var(--claude-pricing-purple);
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing__kicker {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 39px;
+
+  padding:
+    7px 18px;
+
+  border:
+    1px solid #ddd9e0;
+
+  border-radius: 999px;
+
+  background: #fff;
+
+  color: #302b33;
+
+  font-size:
+    clamp(9px,
+      .76vw,
+      11px);
+
+  font-weight: 600;
+
+  letter-spacing: .13em;
+}
+
+.claude-pricing__kicker i {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--claude-pricing-purple);
+}
+
+
+/* ============================================================
      GRID
      ============================================================ */
-  
-  .claude-pricing__grid {
-    display: grid;
-  
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  
-    align-items: stretch;
-  
-    gap:
-      clamp(
-        20px,
-        2.2vw,
-        30px
-      );
-  
-    margin-top:
-      clamp(
-        28px,
-        3vw,
-        42px
-      );
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  align-items: stretch;
+
+  gap:
+    clamp(20px,
+      2.2vw,
+      30px);
+
+  margin-top:
+    clamp(28px,
+      3vw,
+      42px);
+}
+
+
+/* ============================================================
      LEFT CARD
      ============================================================ */
-  
-  .claude-pricing-value {
-    display: flex;
-  
-    flex-direction: column;
-  
-    min-height:
-      clamp(
-        410px,
-        38vw,
-        500px
-      );
-  
-    padding:
-      clamp(
-        26px,
-        3vw,
-        38px
-      );
-  
-    border:
-      1.5px solid
-      #d8b9f1;
-  
-    border-radius:
-      clamp(
-        18px,
-        2vw,
-        25px
-      );
-  
-    background:
-      linear-gradient(
-        145deg,
-        #fff 0%,
-        #fbf7ff 100%
-      );
-  
-    box-shadow:
-      0
-      12px
-      30px
-      rgba(70, 45, 90, .045);
-  }
-  
-  
-  /* TOP */
-  
-  .claude-pricing-value__top {
-    display: flex;
-  
-    align-items: center;
-    justify-content: space-between;
-  
-    gap: 20px;
-  }
-  
-  .claude-pricing-value__top
-  > span {
-    color: #aaa4ad;
-  
-    font-size:
-      clamp(
-        14px,
-        1.35vw,
-        20px
-      );
-  
-    font-weight: 700;
-  }
-  
-  .claude-pricing-value__top
-  strong {
-    color: #aaa4ad;
-  
-    font-size:
-      clamp(
-        15px,
-        1.4vw,
-        20px
-      );
-  
-    font-weight: 700;
-  
-    text-decoration: line-through;
-  
-    white-space: nowrap;
-  }
-  
-  
-  /* LINE */
-  
-  .claude-pricing-value__line {
-    width: 100%;
-    height: 1px;
-  
-    margin:
-      16px
-      0
-      19px;
-  
-    background:
-      #ece7ee;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-value {
+  display: flex;
+
+  flex-direction: column;
+
+  min-height:
+    clamp(410px,
+      38vw,
+      500px);
+
+  padding:
+    clamp(26px,
+      3vw,
+      38px);
+
+  border:
+    1.5px solid #d8b9f1;
+
+  border-radius:
+    clamp(18px,
+      2vw,
+      25px);
+
+  background:
+    linear-gradient(145deg,
+      #fff 0%,
+      #fbf7ff 100%);
+
+  box-shadow:
+    0 12px 30px rgba(70, 45, 90, .045);
+}
+
+
+/* TOP */
+
+.claude-pricing-value__top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.claude-pricing-value__top>span {
+  color: #aaa4ad;
+
+  font-size:
+    clamp(14px,
+      1.35vw,
+      20px);
+
+  font-weight: 700;
+}
+
+.claude-pricing-value__top strong {
+  color: #aaa4ad;
+
+  font-size:
+    clamp(15px,
+      1.4vw,
+      20px);
+
+  font-weight: 700;
+
+  text-decoration: line-through;
+
+  white-space: nowrap;
+}
+
+
+/* LINE */
+
+.claude-pricing-value__line {
+  width: 100%;
+  height: 1px;
+
+  margin:
+    16px 0 19px;
+
+  background:
+    #ece7ee;
+}
+
+
+/* ============================================================
      BONUS PILL
      ============================================================ */
-  
-  .claude-pricing-value__bonus {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: 5px;
-  
-    width: fit-content;
-  
-    padding:
-      5px
-      9px;
-  
-    border-radius: 999px;
-  
-    background:
-      #f1e4ff;
-  
-    color:
-      #ad73e2;
-  
-    font-size:
-      clamp(
-        9px,
-        .78vw,
-        11px
-      );
-  
-    font-weight: 600;
-  }
-  
-  .claude-pricing-value__bonus i {
-    font-style: normal;
-  
-    font-size: 13px;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-value__bonus {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  width: fit-content;
+
+  padding:
+    5px 9px;
+
+  border-radius: 999px;
+
+  background:
+    #f1e4ff;
+
+  color:
+    #ad73e2;
+
+  font-size:
+    clamp(9px,
+      .78vw,
+      11px);
+
+  font-weight: 600;
+}
+
+.claude-pricing-value__bonus i {
+  font-style: normal;
+
+  font-size: 13px;
+}
+
+
+/* ============================================================
      BENEFIT LIST
      ============================================================ */
-  
-  .claude-pricing-value ul {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap:
-      clamp(
-        17px,
-        1.8vw,
-        23px
-      );
-  
-    margin:
-      clamp(
-        20px,
-        2.4vw,
-        30px
-      )
-      0
-      0;
-  
-    padding: 0;
-  
-    list-style: none;
-  }
-  
-  .claude-pricing-value li {
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 12px;
-  
-    color: #3e3941;
-  
-    font-size:
-      clamp(
-        12px,
-        1vw,
-        15px
-      );
-  
-    line-height: 1.35;
-  }
-  
-  
-  /* CHECK */
-  
-  .claude-pricing-value__check {
-    width: 20px;
-    height: 20px;
-  
-    display: grid;
-  
-    place-items: center;
-  
-    flex: 0 0 20px;
-  
-    border:
-      1.5px solid
-      #b97cea;
-  
-    border-radius: 50%;
-  
-    color:
-      #b97cea;
-  
-    font-size: 10px;
-  
-    font-weight: 700;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-value ul {
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    clamp(17px,
+      1.8vw,
+      23px);
+
+  margin:
+    clamp(20px,
+      2.4vw,
+      30px) 0 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.claude-pricing-value li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #3e3941;
+
+  font-size:
+    clamp(12px,
+      1vw,
+      15px);
+
+  line-height: 1.35;
+}
+
+
+/* CHECK */
+
+.claude-pricing-value__check {
+  width: 20px;
+  height: 20px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex: 0 0 20px;
+
+  border:
+    1.5px solid #b97cea;
+
+  border-radius: 50%;
+
+  color:
+    #b97cea;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
      BOTTOM TOTAL
      ============================================================ */
-  
-  .claude-pricing-value__bottom {
-    display: flex;
-  
-    align-items: center;
-    justify-content: space-between;
-  
-    gap: 20px;
-  
-    margin-top: auto;
-  
-    padding-top:
-      clamp(
-        22px,
-        2.5vw,
-        32px
-      );
-  
-    border-top:
-      1px solid
-      #ece7ee;
-  }
-  
-  .claude-pricing-value__bottom
-  span {
-    color:
-      #a36bd8;
-  
-    font-size:
-      clamp(
-        10px,
-        .9vw,
-        13px
-      );
-  
-    font-weight: 500;
-  }
-  
-  .claude-pricing-value__bottom
-  strong {
-    color:
-      #9f65d5;
-  
-    font-size:
-      clamp(
-        15px,
-        1.4vw,
-        20px
-      );
-  
-    font-weight: 700;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-value__bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: auto;
+
+  padding-top:
+    clamp(22px,
+      2.5vw,
+      32px);
+
+  border-top:
+    1px solid #ece7ee;
+}
+
+.claude-pricing-value__bottom span {
+  color:
+    #a36bd8;
+
+  font-size:
+    clamp(10px,
+      .9vw,
+      13px);
+
+  font-weight: 500;
+}
+
+.claude-pricing-value__bottom strong {
+  color:
+    #9f65d5;
+
+  font-size:
+    clamp(15px,
+      1.4vw,
+      20px);
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
      RIGHT OFFER CARD
      ============================================================ */
-  
-  .claude-pricing-offer {
-    position: relative;
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-    min-height:
-      clamp(
-        410px,
-        38vw,
-        500px
-      );
-  
-    padding:
-      clamp(
-        27px,
-        3vw,
-        39px
-      );
-  
-    overflow: hidden;
-  
-    border:
-      1.5px solid
-      #9c69ca;
-  
-    border-radius:
-      clamp(
-        18px,
-        2vw,
-        25px
-      );
-  
-    background:
-      #050505;
-  
-    color: #fff;
-  
-    box-shadow:
-      0
-      18px
-      38px
-      rgba(69, 45, 88, .14);
-  }
-  
-  
-  /* SUBTLE GLOW */
-  
-  .claude-pricing-offer::before {
-    content: "";
-  
-    position: absolute;
-  
-    top: -90px;
-    right: -70px;
-  
-    width: 240px;
-    height: 240px;
-  
-    border-radius: 50%;
-  
-    background:
-      rgba(169, 127, 221, .11);
-  
-    filter: blur(60px);
-  
-    pointer-events: none;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-offer {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height:
+    clamp(410px,
+      38vw,
+      500px);
+
+  padding:
+    clamp(27px,
+      3vw,
+      39px);
+
+  overflow: hidden;
+
+  border:
+    1.5px solid #9c69ca;
+
+  border-radius:
+    clamp(18px,
+      2vw,
+      25px);
+
+  background:
+    #050505;
+
+  color: #fff;
+
+  box-shadow:
+    0 18px 38px rgba(69, 45, 88, .14);
+}
+
+
+/* SUBTLE GLOW */
+
+.claude-pricing-offer::before {
+  content: "";
+
+  position: absolute;
+
+  top: -90px;
+  right: -70px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(169, 127, 221, .11);
+
+  filter: blur(60px);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
      SALE BADGE
      ============================================================ */
-  
-  .claude-pricing-offer__badge {
-    position: relative;
-    z-index: 2;
-  
-    display: inline-flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    width: fit-content;
-  
-    min-height: 42px;
-  
-    padding:
-      7px
-      17px;
-  
-    border-radius: 999px;
-  
-    background:
-      var(--claude-pricing-lime);
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        13px,
-        1.15vw,
-        17px
-      );
-  
-    font-weight: 700;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-offer__badge {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  min-height: 42px;
+
+  padding:
+    7px 17px;
+
+  border-radius: 999px;
+
+  background:
+    var(--claude-pricing-lime);
+
+  color: #111;
+
+  font-size:
+    clamp(13px,
+      1.15vw,
+      17px);
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
      LABEL
      ============================================================ */
-  
-  .claude-pricing-offer__label {
-    position: relative;
-    z-index: 2;
-  
-    margin-top:
-      clamp(
-        25px,
-        2.8vw,
-        35px
-      );
-  
-    color:
-      rgba(255, 255, 255, .6);
-  
-    font-size:
-      clamp(
-        9px,
-        .78vw,
-        11px
-      );
-  
-    font-weight: 500;
-  }
-  
-  
-  /* LINE */
-  
-  .claude-pricing-offer__line {
-    position: relative;
-    z-index: 2;
-  
-    width: 100%;
-    height: 1px;
-  
-    margin-top: 9px;
-  
-    background:
-      rgba(255, 255, 255, .2);
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-offer__label {
+  position: relative;
+  z-index: 2;
+
+  margin-top:
+    clamp(25px,
+      2.8vw,
+      35px);
+
+  color:
+    rgba(255, 255, 255, .6);
+
+  font-size:
+    clamp(9px,
+      .78vw,
+      11px);
+
+  font-weight: 500;
+}
+
+
+/* LINE */
+
+.claude-pricing-offer__line {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 1px;
+
+  margin-top: 9px;
+
+  background:
+    rgba(255, 255, 255, .2);
+}
+
+
+/* ============================================================
      PRICE
      ============================================================ */
-  
-  .claude-pricing-offer__price {
-    position: relative;
-    z-index: 2;
-  
-    display: block;
-  
-    margin-top:
-      clamp(
-        20px,
-        2.4vw,
-        30px
-      );
-  
-    color:
-      var(--claude-pricing-lime);
-  
-    font-size:
-      clamp(
-        42px,
-        5vw,
-        70px
-      );
-  
-    font-weight: 700;
-  
-    line-height: .95;
-  
-    letter-spacing:
-      -.06em;
-  
-    white-space: nowrap;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-offer__price {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  margin-top:
+    clamp(20px,
+      2.4vw,
+      30px);
+
+  color:
+    var(--claude-pricing-lime);
+
+  font-size:
+    clamp(42px,
+      5vw,
+      70px);
+
+  font-weight: 700;
+
+  line-height: .95;
+
+  letter-spacing:
+    -.06em;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
      NOTES
      ============================================================ */
-  
-  .claude-pricing-offer__note {
-    position: relative;
-    z-index: 2;
-  
-    margin:
-      clamp(
-        18px,
-        2vw,
-        25px
-      )
-      0
-      0;
-  
-    color: #fff;
-  
-    font-size:
-      clamp(
-        10px,
-        .88vw,
-        13px
-      );
-  
-    font-weight: 600;
-  
-    line-height: 1.45;
-  }
-  
-  .claude-pricing-offer__update {
-    position: relative;
-    z-index: 2;
-  
-    margin:
-      clamp(
-        18px,
-        2vw,
-        25px
-      )
-      0
-      0;
-  
-    color:
-      rgba(255, 255, 255, .88);
-  
-    font-size:
-      clamp(
-        10px,
-        .88vw,
-        13px
-      );
-  
-    line-height: 1.5;
-  }
-  
-  .claude-pricing-offer__update b {
-    color: #fff;
-  
-    font-weight: 700;
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-offer__note {
+  position: relative;
+  z-index: 2;
+
+  margin:
+    clamp(18px,
+      2vw,
+      25px) 0 0;
+
+  color: #fff;
+
+  font-size:
+    clamp(10px,
+      .88vw,
+      13px);
+
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+.claude-pricing-offer__update {
+  position: relative;
+  z-index: 2;
+
+  margin:
+    clamp(18px,
+      2vw,
+      25px) 0 0;
+
+  color:
+    rgba(255, 255, 255, .88);
+
+  font-size:
+    clamp(10px,
+      .88vw,
+      13px);
+
+  line-height: 1.5;
+}
+
+.claude-pricing-offer__update b {
+  color: #fff;
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
      CTA
      ============================================================ */
-  
-  .claude-pricing-offer__button {
-    position: relative;
-    z-index: 2;
-  
-    display: flex;
-  
-    align-items: center;
-    justify-content: space-between;
-  
-    gap: 20px;
-  
-    width: 100%;
-  
-    min-height:
-      clamp(
-        52px,
-        5vw,
-        62px
-      );
-  
-    margin-top: auto;
-  
-    padding:
-      0
-      clamp(
-        22px,
-        2.5vw,
-        32px
-      );
-  
-    border-radius: 999px;
-  
-    background:
-      var(--claude-pricing-lime);
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        12px,
-        1vw,
-        15px
-      );
-  
-    font-weight: 500;
-  
-    text-decoration: none;
-  
-    transition:
-      transform
-        .4s
-        var(--claude-pricing-ease),
-  
-      background-color
-        .3s ease,
-  
-      color
-        .3s ease;
-  }
-  
-  .claude-pricing-offer__button
-  span:last-child {
-    font-size:
-      clamp(
-        20px,
-        2vw,
-        27px
-      );
-  
-    line-height: 1;
-  
-    transition:
-      transform
-      .4s
-      var(--claude-pricing-ease);
-  }
-  
-  
-  /* CTA HOVER */
-  
-  .claude-pricing-offer__button:hover {
-    transform:
-      translateY(-4px);
-  
-    background: #fff;
-  }
-  
-  .claude-pricing-offer__button:hover
-  span:last-child {
-    transform:
-      translateX(7px);
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-offer__button {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  width: 100%;
+
+  min-height:
+    clamp(52px,
+      5vw,
+      62px);
+
+  margin-top: auto;
+
+  padding:
+    0 clamp(22px,
+      2.5vw,
+      32px);
+
+  border-radius: 999px;
+
+  background:
+    var(--claude-pricing-lime);
+
+  color: #111;
+
+  font-size:
+    clamp(12px,
+      1vw,
+      15px);
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    transform .4s var(--claude-pricing-ease),
+
+    background-color .3s ease,
+
+    color .3s ease;
+}
+
+.claude-pricing-offer__button span:last-child {
+  font-size:
+    clamp(20px,
+      2vw,
+      27px);
+
+  line-height: 1;
+
+  transition:
+    transform .4s var(--claude-pricing-ease);
+}
+
+
+/* CTA HOVER */
+
+.claude-pricing-offer__button:hover {
+  transform:
+    translateY(-4px);
+
+  background: #fff;
+}
+
+.claude-pricing-offer__button:hover span:last-child {
+  transform:
+    translateX(7px);
+}
+
+
+/* ============================================================
      SCROLL REVEAL
      ============================================================ */
-  
-  .claude-pricing-reveal {
+
+.claude-pricing-reveal {
+  opacity: 0;
+
+  transform:
+    translateY(30px);
+}
+
+.claude-pricing-reveal.is-visible {
+  animation:
+    claudePricingReveal .85s var(--claude-pricing-ease) var(--pricing-delay,
+      0s) forwards;
+}
+
+
+@keyframes claudePricingReveal {
+  from {
     opacity: 0;
-  
+
     transform:
       translateY(30px);
   }
-  
-  .claude-pricing-reveal.is-visible {
-    animation:
-      claudePricingReveal
-      .85s
-      var(--claude-pricing-ease)
-      var(
-        --pricing-delay,
-        0s
-      )
-      forwards;
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
   }
-  
-  
-  @keyframes claudePricingReveal {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(30px);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0);
-    }
-  }
-  
-  
-  /* ============================================================
+}
+
+
+/* ============================================================
      CARD HOVER
      ============================================================ */
-  
-  .claude-pricing-value,
-  .claude-pricing-offer {
-    transition:
-      transform
-        .45s
-        var(--claude-pricing-ease),
-  
-      box-shadow
-        .35s ease;
-  }
-  
-  .claude-pricing-value:hover {
-    transform:
-      translateY(-5px);
-  
-    box-shadow:
-      0
-      18px
-      38px
-      rgba(75, 48, 94, .08);
-  }
-  
-  .claude-pricing-offer:hover {
-    transform:
-      translateY(-5px);
-  
-    box-shadow:
-      0
-      24px
-      48px
-      rgba(69, 45, 88, .18);
-  }
-  
-  
-  /* ============================================================
+
+.claude-pricing-value,
+.claude-pricing-offer {
+  transition:
+    transform .45s var(--claude-pricing-ease),
+
+    box-shadow .35s ease;
+}
+
+.claude-pricing-value:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 18px 38px rgba(75, 48, 94, .08);
+}
+
+.claude-pricing-offer:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 24px 48px rgba(69, 45, 88, .18);
+}
+
+
+/* ============================================================
      TABLET
      ============================================================ */
-  
-  @media (max-width: 850px) {
-    .claude-pricing__inner {
-      width:
-        min(
-          100% - 40px,
-          760px
-        );
-    }
-  
-    .claude-pricing__grid {
-      gap: 16px;
-    }
-  
-    .claude-pricing-value,
-    .claude-pricing-offer {
-      padding: 24px;
-  
-      min-height: 420px;
-    }
-  
-    .claude-pricing-offer__price {
-      font-size:
-        clamp(
-          36px,
-          5vw,
-          48px
-        );
-    }
+
+@media (max-width: 850px) {
+  .claude-pricing__inner {
+    width:
+      min(100% - 40px,
+        760px);
   }
-  
-  
-  /* ============================================================
+
+  .claude-pricing__grid {
+    gap: 16px;
+  }
+
+  .claude-pricing-value,
+  .claude-pricing-offer {
+    padding: 24px;
+
+    min-height: 420px;
+  }
+
+  .claude-pricing-offer__price {
+    font-size:
+      clamp(36px,
+        5vw,
+        48px);
+  }
+}
+
+
+/* ============================================================
      MOBILE
      ============================================================ */
-  
-  @media (max-width: 700px) {
-    .claude-pricing {
-      padding:
-        65px
-        0
-        85px;
-    }
-  
-    .claude-pricing__inner {
-      width:
-        calc(
-          100% - 30px
-        );
-    }
-  
-    .claude-pricing__grid {
-      grid-template-columns: 1fr;
-  
-      gap: 18px;
-  
-      margin-top: 30px;
-    }
-  
-    .claude-pricing-value,
-    .claude-pricing-offer {
-      min-height: auto;
-  
-      padding:
-        25px
-        21px;
-  
-      border-radius: 20px;
-    }
-  
-    /* LEFT */
-  
-    .claude-pricing-value ul {
-      gap: 16px;
-    }
-  
-    .claude-pricing-value__bottom {
-      margin-top: 30px;
-    }
-  
-    /* RIGHT */
-  
-    .claude-pricing-offer__price {
-      margin-top: 22px;
-  
-      font-size:
-        clamp(
-          40px,
-          11vw,
-          55px
-        );
-  
-      white-space: normal;
-    }
-  
-    .claude-pricing-offer__button {
-      min-height: 54px;
-  
-      margin-top: 30px;
-    }
+
+@media (max-width: 700px) {
+  .claude-pricing {
+    padding:
+      65px 0 85px;
   }
-  
-  
-  /* ============================================================
+
+  .claude-pricing__inner {
+    width:
+      calc(100% - 30px);
+  }
+
+  .claude-pricing__grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-top: 30px;
+  }
+
+  .claude-pricing-value,
+  .claude-pricing-offer {
+    min-height: auto;
+
+    padding:
+      25px 21px;
+
+    border-radius: 20px;
+  }
+
+  /* LEFT */
+
+  .claude-pricing-value ul {
+    gap: 16px;
+  }
+
+  .claude-pricing-value__bottom {
+    margin-top: 30px;
+  }
+
+  /* RIGHT */
+
+  .claude-pricing-offer__price {
+    margin-top: 22px;
+
+    font-size:
+      clamp(40px,
+        11vw,
+        55px);
+
+    white-space: normal;
+  }
+
+  .claude-pricing-offer__button {
+    min-height: 54px;
+
+    margin-top: 30px;
+  }
+}
+
+
+/* ============================================================
      SMALL MOBILE
      ============================================================ */
-  
-  @media (max-width: 420px) {
-    .claude-pricing__kicker {
-      padding:
-        6px
-        13px;
-  
-      font-size: 8px;
-    }
-  
-    .claude-pricing-value__top {
-      align-items: flex-start;
-    }
-  
-    .claude-pricing-value__top
-    > span {
-      font-size: 13px;
-    }
-  
-    .claude-pricing-value__top
-    strong {
-      font-size: 13px;
-    }
-  
-    .claude-pricing-value li {
-      gap: 10px;
-  
-      font-size: 11px;
-    }
-  
-    .claude-pricing-value__check {
-      width: 18px;
-      height: 18px;
-  
-      flex-basis: 18px;
-    }
-  
-    .claude-pricing-offer__badge {
-      min-height: 36px;
-  
-      padding:
-        6px
-        13px;
-  
-      font-size: 12px;
-    }
-  
-    .claude-pricing-offer__price {
-      font-size: 37px;
-    }
-  
-    .claude-pricing-offer__note,
-    .claude-pricing-offer__update {
-      font-size: 10px;
-    }
+
+@media (max-width: 420px) {
+  .claude-pricing__kicker {
+    padding:
+      6px 13px;
+
+    font-size: 8px;
   }
-  
-  
-  /* ============================================================
+
+  .claude-pricing-value__top {
+    align-items: flex-start;
+  }
+
+  .claude-pricing-value__top>span {
+    font-size: 13px;
+  }
+
+  .claude-pricing-value__top strong {
+    font-size: 13px;
+  }
+
+  .claude-pricing-value li {
+    gap: 10px;
+
+    font-size: 11px;
+  }
+
+  .claude-pricing-value__check {
+    width: 18px;
+    height: 18px;
+
+    flex-basis: 18px;
+  }
+
+  .claude-pricing-offer__badge {
+    min-height: 36px;
+
+    padding:
+      6px 13px;
+
+    font-size: 12px;
+  }
+
+  .claude-pricing-offer__price {
+    font-size: 37px;
+  }
+
+  .claude-pricing-offer__note,
+  .claude-pricing-offer__update {
+    font-size: 10px;
+  }
+}
+
+
+/* ============================================================
      REDUCED MOTION
      ============================================================ */
-  
-  @media (prefers-reduced-motion: reduce) {
-    .claude-pricing-reveal {
-      opacity: 1;
-  
-      transform: none;
-  
-      animation: none !important;
-    }
-  
-    .claude-pricing-value,
-    .claude-pricing-offer,
-    .claude-pricing-offer__button,
-    .claude-pricing-offer__button
-    span:last-child {
-      transition: none;
-    }
+
+@media (prefers-reduced-motion: reduce) {
+  .claude-pricing-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none !important;
   }
 
+  .claude-pricing-value,
+  .claude-pricing-offer,
+  .claude-pricing-offer__button,
+  .claude-pricing-offer__button span:last-child {
+    transition: none;
+  }
+}
 
-  /* ============================================================
+
+/* ============================================================
    CLAUDE AI MASTERY — FEEDBACK
    ============================================================ */
 
 .claude-feedback {
-    --claude-feedback-purple: #a97fdd;
-    --claude-feedback-purple-light: #c89af0;
-    --claude-feedback-ink: #141115;
-    --claude-feedback-ease:
-      cubic-bezier(.16, 1, .3, 1);
-  
-    position: relative;
-  
-    width: 100%;
-  
-    padding:
-      clamp(80px, 8vw, 120px)
-      0
-      clamp(95px, 10vw, 145px);
-  
-    overflow: hidden;
-  
-    background:
-      linear-gradient(
-        180deg,
-        #fff 0%,
-        #fdfaff 100%
-      );
-  
-    color:
-      var(--claude-feedback-ink);
-  }
-  
-  
-  /* ============================================================
+  --claude-feedback-purple: #a97fdd;
+  --claude-feedback-purple-light: #c89af0;
+  --claude-feedback-ink: #141115;
+  --claude-feedback-ease:
+    cubic-bezier(.16, 1, .3, 1);
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(80px, 8vw, 120px) 0 clamp(95px, 10vw, 145px);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(180deg,
+      #fff 0%,
+      #fdfaff 100%);
+
+  color:
+    var(--claude-feedback-ink);
+}
+
+
+/* ============================================================
      INNER
      ============================================================ */
-  
-  .claude-feedback__inner {
-    width:
-      min(
-        1200px,
-        90vw
-      );
-  
-    margin-inline: auto;
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback__inner {
+  width:
+    min(1200px,
+      90vw);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
      KICKER
      ============================================================ */
-  
-  .claude-feedback__kicker {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: 10px;
-  
-    min-height: 39px;
-  
-    padding:
-      7px
-      18px;
-  
-    border:
-      1px solid
-      #ddd9e0;
-  
-    border-radius: 999px;
-  
-    background: #fff;
-  
-    color: #302b33;
-  
-    font-size:
-      clamp(
-        9px,
-        .76vw,
-        11px
-      );
-  
-    font-weight: 600;
-  
-    letter-spacing: .13em;
-  }
-  
-  .claude-feedback__kicker i {
-    width: 7px;
-    height: 7px;
-  
-    flex: 0 0 7px;
-  
-    border-radius: 50%;
-  
-    background:
-      var(--claude-feedback-purple);
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback__kicker {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 39px;
+
+  padding:
+    7px 18px;
+
+  border:
+    1px solid #ddd9e0;
+
+  border-radius: 999px;
+
+  background: #fff;
+
+  color: #302b33;
+
+  font-size:
+    clamp(9px,
+      .76vw,
+      11px);
+
+  font-weight: 600;
+
+  letter-spacing: .13em;
+}
+
+.claude-feedback__kicker i {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--claude-feedback-purple);
+}
+
+
+/* ============================================================
      HEADER
      ============================================================ */
-  
-  .claude-feedback__header {
-    display: flex;
-  
-    align-items: flex-end;
-    justify-content: space-between;
-  
-    gap:
-      clamp(
-        30px,
-        5vw,
-        70px
-      );
-  
-    margin-top:
-      clamp(
-        42px,
-        5vw,
-        68px
-      );
-  }
-  
-  
-  /* TITLE */
-  
-  .claude-feedback__header h2 {
-    margin: 0;
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        30px,
-        3vw,
-        46px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1.16;
-  
-    letter-spacing: -.045em;
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback__header {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap:
+    clamp(30px,
+      5vw,
+      70px);
+
+  margin-top:
+    clamp(42px,
+      5vw,
+      68px);
+}
+
+
+/* TITLE */
+
+.claude-feedback__header h2 {
+  margin: 0;
+
+  color: #111;
+
+  font-size:
+    clamp(30px,
+      3vw,
+      46px);
+
+  font-weight: 700;
+
+  line-height: 1.16;
+
+  letter-spacing: -.045em;
+}
+
+
+/* ============================================================
      CONTROLS
      ============================================================ */
-  
-  .claude-feedback__controls {
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 11px;
-  
-    flex: 0 0 auto;
-  }
-  
-  .claude-feedback__controls button {
-    width: 39px;
-    height: 39px;
-  
-    display: grid;
-  
-    place-items: center;
-  
-    padding: 0;
-  
-    border: 0;
-  
-    border-radius: 50%;
-  
-    background: #111;
-  
-    color: #fff;
-  
-    font: inherit;
-  
-    font-size: 17px;
-  
-    cursor: pointer;
-  
-    transition:
-      transform
-        .4s
-        var(--claude-feedback-ease),
-  
-      background-color
-        .3s ease,
-  
-      color
-        .3s ease;
-  }
-  
-  .claude-feedback__controls button:hover {
-    transform:
-      scale(1.08);
-  
-    background:
-      var(--claude-feedback-purple);
-  
-    color: #111;
-  }
-  
-  .claude-feedback__controls
-  button:first-child:hover {
-    transform:
-      translateX(-3px)
-      scale(1.08);
-  }
-  
-  .claude-feedback__controls
-  button:last-child:hover {
-    transform:
-      translateX(3px)
-      scale(1.08);
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback__controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  flex: 0 0 auto;
+}
+
+.claude-feedback__controls button {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #111;
+
+  color: #fff;
+
+  font: inherit;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition:
+    transform .4s var(--claude-feedback-ease),
+
+    background-color .3s ease,
+
+    color .3s ease;
+}
+
+.claude-feedback__controls button:hover {
+  transform:
+    scale(1.08);
+
+  background:
+    var(--claude-feedback-purple);
+
+  color: #111;
+}
+
+.claude-feedback__controls button:first-child:hover {
+  transform:
+    translateX(-3px) scale(1.08);
+}
+
+.claude-feedback__controls button:last-child:hover {
+  transform:
+    translateX(3px) scale(1.08);
+}
+
+
+/* ============================================================
      RAIL
      ============================================================ */
-  
-  .claude-feedback__rail {
-    display: flex;
-  
-    gap:
-      clamp(
-        20px,
-        2.3vw,
-        30px
-      );
-  
-    width:
-      calc(
-        100% + 12vw
-      );
-  
-    margin-top:
-      clamp(
-        32px,
-        4vw,
-        52px
-      );
-  
-    padding:
-      4px
-      12vw
-      18px
-      0;
-  
-    overflow-x: auto;
-    overflow-y: visible;
-  
-    scroll-snap-type:
-      x mandatory;
-  
-    scroll-behavior:
-      smooth;
-  
-    scrollbar-width:
-      none;
-  
-    overscroll-behavior-inline:
-      contain;
-  }
-  
-  .claude-feedback__rail::-webkit-scrollbar {
-    display: none;
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback__rail {
+  display: flex;
+
+  gap:
+    clamp(20px,
+      2.3vw,
+      30px);
+
+  width:
+    calc(100% + 12vw);
+
+  margin-top:
+    clamp(32px,
+      4vw,
+      52px);
+
+  padding:
+    4px 12vw 18px 0;
+
+  overflow-x: auto;
+  overflow-y: visible;
+
+  scroll-snap-type:
+    x mandatory;
+
+  scroll-behavior:
+    smooth;
+
+  scrollbar-width:
+    none;
+
+  overscroll-behavior-inline:
+    contain;
+}
+
+.claude-feedback__rail::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ============================================================
      CARD
      ============================================================ */
-  
-  .claude-feedback-card {
-    flex:
-      0
-      0
-      clamp(
-        315px,
-        31vw,
-        410px
-      );
-  
-    min-height:
-      clamp(
-        235px,
-        22vw,
-        290px
-      );
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-    scroll-snap-align:
-      start;
-  
-    padding:
-      clamp(
-        22px,
-        2.4vw,
-        30px
-      );
-  
-    border:
-      1px solid
-      #ded9e0;
-  
-    border-radius:
-      clamp(
-        18px,
-        2vw,
-        24px
-      );
-  
-    background:
-      rgba(255, 255, 255, .98);
-  
-    box-shadow:
-      0
-      12px
-      28px
-      rgba(65, 45, 80, .06);
-  
-    transition:
-      transform
-        .45s
-        var(--claude-feedback-ease),
-  
-      box-shadow
-        .35s ease,
-  
-      border-color
-        .3s ease;
-  }
-  
-  
-  /* HOVER */
-  
-  .claude-feedback-card:hover {
-    transform:
-      translateY(-6px);
-  
-    border-color:
-      #ceb0e8;
-  
-    box-shadow:
-      0
-      18px
-      38px
-      rgba(75, 49, 94, .10);
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback-card {
+  flex:
+    0 0 clamp(315px,
+      31vw,
+      410px);
+
+  min-height:
+    clamp(235px,
+      22vw,
+      290px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  scroll-snap-align:
+    start;
+
+  padding:
+    clamp(22px,
+      2.4vw,
+      30px);
+
+  border:
+    1px solid #ded9e0;
+
+  border-radius:
+    clamp(18px,
+      2vw,
+      24px);
+
+  background:
+    rgba(255, 255, 255, .98);
+
+  box-shadow:
+    0 12px 28px rgba(65, 45, 80, .06);
+
+  transition:
+    transform .45s var(--claude-feedback-ease),
+
+    box-shadow .35s ease,
+
+    border-color .3s ease;
+}
+
+
+/* HOVER */
+
+.claude-feedback-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    #ceb0e8;
+
+  box-shadow:
+    0 18px 38px rgba(75, 49, 94, .10);
+}
+
+
+/* ============================================================
      STARS
      ============================================================ */
-  
-  .claude-feedback-card__stars {
-    color:
-      #a66fdb;
-  
-    font-size:
-      clamp(
-        8px,
-        .72vw,
-        10px
-      );
-  
-    line-height: 1;
-  
-    letter-spacing:
-      3px;
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback-card__stars {
+  color:
+    #a66fdb;
+
+  font-size:
+    clamp(8px,
+      .72vw,
+      10px);
+
+  line-height: 1;
+
+  letter-spacing:
+    3px;
+}
+
+
+/* ============================================================
      FEEDBACK TEXT
      ============================================================ */
-  
-  .claude-feedback-card__text {
-    display:
-      -webkit-box;
-  
-    overflow: hidden;
-  
-    margin:
-      clamp(
-        13px,
-        1.5vw,
-        20px
-      )
-      0
-      0;
-  
-    color:
-      #77717c;
-  
-    font-size:
-      clamp(
-        10px,
-        .87vw,
-        13px
-      );
-  
-    line-height: 1.52;
-  
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback-card__text {
+  display:
+    -webkit-box;
+
+  overflow: hidden;
+
+  margin:
+    clamp(13px,
+      1.5vw,
+      20px) 0 0;
+
+  color:
+    #77717c;
+
+  font-size:
+    clamp(10px,
+      .87vw,
+      13px);
+
+  line-height: 1.52;
+
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+
+/* ============================================================
      AUTHOR
      ============================================================ */
-  
-  .claude-feedback-card__author {
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 12px;
-  
-    margin-top: auto;
-  
-    padding-top:
-      clamp(
-        18px,
-        2vw,
-        26px
-      );
-  
-    border-top:
-      1px solid
-      #eee9f0;
-  }
-  
-  
-  /* AVATAR */
-  
-  .claude-feedback-card__avatar {
-    position: relative;
-  
-    width: 40px;
-    height: 40px;
-  
-    display: grid;
-  
-    place-items: center;
-  
-    flex: 0 0 40px;
-  
-    overflow: hidden;
-  
-    border-radius: 50%;
-  
-    background:
-      linear-gradient(
-        145deg,
-        #d8f5fb 0%,
-        #cdfc56 100%
-      );
-  
-    color: #443c49;
-  
-    font-size: 9px;
-  
-    font-weight: 700;
-  }
-  
-  .claude-feedback-card__avatar img {
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-  
-    object-position: center;
-  }
-  
-  
-  /* NAME */
-  
-  .claude-feedback-card__author strong {
-    display: block;
-  
-    margin: 0;
-  
-    color: #262127;
-  
-    font-size:
-      clamp(
-        11px,
-        .95vw,
-        14px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1.2;
-  }
-  
-  
-  /* ROLE */
-  
-  .claude-feedback-card__author small {
-    display: block;
-  
-    margin-top: 4px;
-  
-    color: #aaa4ad;
-  
-    font-size:
-      clamp(
-        7px,
-        .62vw,
-        9px
-      );
-  
-    line-height: 1.3;
-  }
-  
-  
-  /* ============================================================
+
+.claude-feedback-card__author {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: auto;
+
+  padding-top:
+    clamp(18px,
+      2vw,
+      26px);
+
+  border-top:
+    1px solid #eee9f0;
+}
+
+
+/* AVATAR */
+
+.claude-feedback-card__avatar {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex: 0 0 40px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(145deg,
+      #d8f5fb 0%,
+      #cdfc56 100%);
+
+  color: #443c49;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.claude-feedback-card__avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+
+/* NAME */
+
+.claude-feedback-card__author strong {
+  display: block;
+
+  margin: 0;
+
+  color: #262127;
+
+  font-size:
+    clamp(11px,
+      .95vw,
+      14px);
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* ROLE */
+
+.claude-feedback-card__author small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #aaa4ad;
+
+  font-size:
+    clamp(7px,
+      .62vw,
+      9px);
+
+  line-height: 1.3;
+}
+
+
+/* ============================================================
      LOCAL REVEAL
      ============================================================ */
-  
-  .claude-feedback-reveal {
+
+.claude-feedback-reveal {
+  opacity: 0;
+
+  transform:
+    translateY(28px);
+}
+
+.claude-feedback-reveal.is-visible {
+  animation:
+    claudeFeedbackReveal .85s var(--claude-feedback-ease) forwards;
+}
+
+
+@keyframes claudeFeedbackReveal {
+  from {
     opacity: 0;
-  
+
     transform:
       translateY(28px);
   }
-  
-  .claude-feedback-reveal.is-visible {
-    animation:
-      claudeFeedbackReveal
-      .85s
-      var(--claude-feedback-ease)
-      forwards;
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
   }
-  
-  
-  @keyframes claudeFeedbackReveal {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(28px);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0);
-    }
-  }
-  
-  
-  /* ============================================================
+}
+
+
+/* ============================================================
      CARD STAGGER ON FIRST REVEAL
      ============================================================ */
-  
-  .claude-feedback__rail.is-visible
-  .claude-feedback-card {
-    animation:
-      claudeFeedbackCardEnter
-      .75s
-      var(--claude-feedback-ease)
-      var(--feedback-delay)
-      both;
+
+.claude-feedback__rail.is-visible .claude-feedback-card {
+  animation:
+    claudeFeedbackCardEnter .75s var(--claude-feedback-ease) var(--feedback-delay) both;
+}
+
+
+@keyframes claudeFeedbackCardEnter {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px) scale(.985);
   }
-  
-  
-  @keyframes claudeFeedbackCardEnter {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(20px)
-        scale(.985);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0)
-        scale(1);
-    }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) scale(1);
   }
-  
-  
-  /* ============================================================
+}
+
+
+/* ============================================================
      TABLET
      ============================================================ */
-  
-  @media (max-width: 900px) {
-    .claude-feedback__header h2 {
-      font-size:
-        clamp(
-          28px,
-          4vw,
-          38px
-        );
-    }
-  
-    .claude-feedback-card {
-      flex-basis:
-        clamp(
-          300px,
-          42vw,
-          370px
-        );
-    }
+
+@media (max-width: 900px) {
+  .claude-feedback__header h2 {
+    font-size:
+      clamp(28px,
+        4vw,
+        38px);
   }
-  
-  
-  /* ============================================================
+
+  .claude-feedback-card {
+    flex-basis:
+      clamp(300px,
+        42vw,
+        370px);
+  }
+}
+
+
+/* ============================================================
      MOBILE
      ============================================================ */
-  
-  @media (max-width: 700px) {
-    .claude-feedback {
-      padding:
-        65px
-        0
-        85px;
-    }
-  
-    .claude-feedback__inner {
-      width:
-        calc(
-          100% - 30px
-        );
-    }
-  
-    /* HEADER */
-  
-    .claude-feedback__header {
-      align-items: flex-end;
-  
-      gap: 15px;
-  
-      margin-top: 34px;
-    }
-  
-    .claude-feedback__header h2 {
-      font-size:
-        clamp(
-          25px,
-          7vw,
-          34px
-        );
-    }
-  
-    .claude-feedback__header h2 br {
-      display: none;
-    }
-  
-    /* BUTTON */
-  
-    .claude-feedback__controls {
-      gap: 7px;
-    }
-  
-    .claude-feedback__controls
-    button {
-      width: 34px;
-      height: 34px;
-  
-      font-size: 14px;
-    }
-  
-    /* RAIL */
-  
-    .claude-feedback__rail {
-      width:
-        calc(
-          100% + 15px
-        );
-  
-      gap: 14px;
-  
-      margin-top: 27px;
-  
-      padding-right: 15px;
-    }
-  
-    /* CARD */
-  
-    .claude-feedback-card {
-      flex:
-        0
-        0
-        min(
-          84vw,
-          345px
-        );
-  
-      min-height: 245px;
-  
-      padding: 21px;
-  
-      border-radius: 18px;
-    }
-  
-    .claude-feedback-card__text {
-      font-size: 11px;
-  
-      -webkit-line-clamp: 8;
-    }
+
+@media (max-width: 700px) {
+  .claude-feedback {
+    padding:
+      65px 0 85px;
   }
-  
-  
-  /* ============================================================
+
+  .claude-feedback__inner {
+    width:
+      calc(100% - 30px);
+  }
+
+  /* HEADER */
+
+  .claude-feedback__header {
+    align-items: flex-end;
+
+    gap: 15px;
+
+    margin-top: 34px;
+  }
+
+  .claude-feedback__header h2 {
+    font-size:
+      clamp(25px,
+        7vw,
+        34px);
+  }
+
+  .claude-feedback__header h2 br {
+    display: none;
+  }
+
+  /* BUTTON */
+
+  .claude-feedback__controls {
+    gap: 7px;
+  }
+
+  .claude-feedback__controls button {
+    width: 34px;
+    height: 34px;
+
+    font-size: 14px;
+  }
+
+  /* RAIL */
+
+  .claude-feedback__rail {
+    width:
+      calc(100% + 15px);
+
+    gap: 14px;
+
+    margin-top: 27px;
+
+    padding-right: 15px;
+  }
+
+  /* CARD */
+
+  .claude-feedback-card {
+    flex:
+      0 0 min(84vw,
+        345px);
+
+    min-height: 245px;
+
+    padding: 21px;
+
+    border-radius: 18px;
+  }
+
+  .claude-feedback-card__text {
+    font-size: 11px;
+
+    -webkit-line-clamp: 8;
+  }
+}
+
+
+/* ============================================================
      SMALL MOBILE
      ============================================================ */
-  
-  @media (max-width: 420px) {
-    .claude-feedback__kicker {
-      padding:
-        6px
-        13px;
-  
-      font-size: 8px;
-    }
-  
-    .claude-feedback__header {
-      align-items: flex-end;
-    }
-  
-    .claude-feedback__header h2 {
-      font-size: 24px;
-    }
-  
-    .claude-feedback__controls
-    button {
-      width: 31px;
-      height: 31px;
-  
-      font-size: 13px;
-    }
-  
-    .claude-feedback-card {
-      flex-basis: 85vw;
-  
-      min-height: 235px;
-    }
+
+@media (max-width: 420px) {
+  .claude-feedback__kicker {
+    padding:
+      6px 13px;
+
+    font-size: 8px;
   }
-  
-  
-  /* ============================================================
+
+  .claude-feedback__header {
+    align-items: flex-end;
+  }
+
+  .claude-feedback__header h2 {
+    font-size: 24px;
+  }
+
+  .claude-feedback__controls button {
+    width: 31px;
+    height: 31px;
+
+    font-size: 13px;
+  }
+
+  .claude-feedback-card {
+    flex-basis: 85vw;
+
+    min-height: 235px;
+  }
+}
+
+
+/* ============================================================
      REDUCED MOTION
      ============================================================ */
-  
-  @media (prefers-reduced-motion: reduce) {
-    .claude-feedback-reveal,
-    .claude-feedback-card {
-      opacity: 1;
-  
-      transform: none;
-  
-      animation: none !important;
-    }
-  
-    .claude-feedback-card,
-    .claude-feedback__controls button {
-      transition: none;
-    }
+
+@media (prefers-reduced-motion: reduce) {
+
+  .claude-feedback-reveal,
+  .claude-feedback-card {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none !important;
   }
+
+  .claude-feedback-card,
+  .claude-feedback__controls button {
+    transition: none;
+  }
+}
 
 /* ============================================================
    CLAUDE AI MASTERY — FAQ
    ============================================================ */
 
-   .claude-faq {
-    --claude-faq-purple: #a97fdd;
-    --claude-faq-purple-deep: #9560cf;
-    --claude-faq-bg: #f5ebff;
-    --claude-faq-ink: #111;
-    --claude-faq-muted: #928a96;
-  
-    --claude-faq-ease:
-      cubic-bezier(.16, 1, .3, 1);
-  
-    position: relative;
-  
-    width: 100%;
-  
-    padding:
-      clamp(85px, 8vw, 125px)
-      0
-      clamp(90px, 9vw, 135px);
-  
-    overflow: hidden;
-  
-    background:
-      linear-gradient(
-        115deg,
-        #f7efff 0%,
-        #f2e7ff 100%
-      );
-  
-    color:
-      var(--claude-faq-ink);
-  }
-  
-  
-  /* ============================================================
+.claude-faq {
+  --claude-faq-purple: #a97fdd;
+  --claude-faq-purple-deep: #9560cf;
+  --claude-faq-bg: #f5ebff;
+  --claude-faq-ink: #111;
+  --claude-faq-muted: #928a96;
+
+  --claude-faq-ease:
+    cubic-bezier(.16, 1, .3, 1);
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    clamp(85px, 8vw, 125px) 0 clamp(90px, 9vw, 135px);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(115deg,
+      #f7efff 0%,
+      #f2e7ff 100%);
+
+  color:
+    var(--claude-faq-ink);
+}
+
+
+/* ============================================================
      INNER
      ============================================================ */
-  
-  .claude-faq__inner {
-    width:
-      min(
-        1200px,
-        90vw
-      );
-  
-    display: grid;
-  
-    grid-template-columns:
-      minmax(300px, .78fr)
-      minmax(0, 1.22fr);
-  
-    align-items: start;
-  
-    gap:
-      clamp(
-        75px,
-        9vw,
-        150px
-      );
-  
-    margin-inline: auto;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq__inner {
+  width:
+    min(1200px,
+      90vw);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, .78fr) minmax(0, 1.22fr);
+
+  align-items: start;
+
+  gap:
+    clamp(75px,
+      9vw,
+      150px);
+
+  margin-inline: auto;
+}
+
+
+/* ============================================================
      LEFT INTRO
      ============================================================ */
-  
-  .claude-faq__intro {
-    min-width: 0;
-  
-    opacity: 0;
-  
-    transform:
-      translateY(28px);
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq__intro {
+  min-width: 0;
+
+  opacity: 0;
+
+  transform:
+    translateY(28px);
+}
+
+
+/* ============================================================
      TITLE
      ============================================================ */
-  
-  .claude-faq__intro h2 {
-    display: flex;
-  
-    flex-direction: column;
-  
-    align-items: flex-start;
-  
-    gap:
-      clamp(
-        8px,
-        .8vw,
-        12px
-      );
-  
-    margin: 0;
-  
-    color: #111;
-  
-    font-size:
-      clamp(
-        58px,
-        6vw,
-        88px
-      );
-  
-    font-weight: 700;
-  
-    line-height: .9;
-  
-    letter-spacing:
-      -.065em;
-  }
-  
-  
-  /* CÂU HỎI */
-  
-  .claude-faq__intro h2 > span {
-    display: block;
-  
-    white-space: nowrap;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq__intro h2 {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap:
+    clamp(8px,
+      .8vw,
+      12px);
+
+  margin: 0;
+
+  color: #111;
+
+  font-size:
+    clamp(58px,
+      6vw,
+      88px);
+
+  font-weight: 700;
+
+  line-height: .9;
+
+  letter-spacing:
+    -.065em;
+}
+
+
+/* CÂU HỎI */
+
+.claude-faq__intro h2>span {
+  display: block;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
      THƯỜNG GẶP PILL
      ============================================================ */
-  
-  .claude-faq__intro h2 > strong {
-    display: inline-flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    padding:
-      .015em
-      .16em
-      .07em;
-  
-    border-radius: 999px;
-  
-    background:
-      var(--claude-faq-purple);
-  
-    color: #fff;
-  
-    font-weight: 700;
-  
-    line-height: .92;
-  
-    white-space: nowrap;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq__intro h2>strong {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    .015em .16em .07em;
+
+  border-radius: 999px;
+
+  background:
+    var(--claude-faq-purple);
+
+  color: #fff;
+
+  font-weight: 700;
+
+  line-height: .92;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
      DESCRIPTION
      ============================================================ */
-  
-  .claude-faq__intro p {
-    max-width: 390px;
-  
-    margin:
-      clamp(
-        35px,
-        4vw,
-        55px
-      )
-      0
-      0;
-  
-    color:
-      var(--claude-faq-muted);
-  
-    font-size:
-      clamp(
-        14px,
-        1.15vw,
-        17px
-      );
-  
-    line-height: 1.7;
-  
-    letter-spacing:
-      -.01em;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq__intro p {
+  max-width: 390px;
+
+  margin:
+    clamp(35px,
+      4vw,
+      55px) 0 0;
+
+  color:
+    var(--claude-faq-muted);
+
+  font-size:
+    clamp(14px,
+      1.15vw,
+      17px);
+
+  line-height: 1.7;
+
+  letter-spacing:
+    -.01em;
+}
+
+
+/* ============================================================
      FAQ LIST
      ============================================================ */
-  
-  .claude-faq__list {
-    width: 100%;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq__list {
+  width: 100%;
+}
+
+
+/* ============================================================
      FAQ ITEM
      ============================================================ */
-  
-  .claude-faq-item {
-    position: relative;
-  
-    width: 100%;
-  
-    border-bottom:
-      1px solid
-      rgba(65, 47, 76, .08);
-  
-    opacity: 0;
-  
-    transform:
-      translateY(24px);
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item {
+  position: relative;
+
+  width: 100%;
+
+  border-bottom:
+    1px solid rgba(65, 47, 76, .08);
+
+  opacity: 0;
+
+  transform:
+    translateY(24px);
+}
+
+
+/* ============================================================
      BUTTON
      ============================================================ */
-  
-  .claude-faq-item__button {
-    width: 100%;
-  
-    display: grid;
-  
-    grid-template-columns:
-      48px
-      minmax(0, 1fr)
-      50px;
-  
-    align-items: center;
-  
-    gap:
-      clamp(
-        18px,
-        2vw,
-        30px
-      );
-  
-    min-height:
-      clamp(
-        92px,
-        8vw,
-        112px
-      );
-  
-    padding:
-      12px
-      0;
-  
-    border: 0;
-  
-    background: transparent;
-  
-    color: #111;
-  
-    font: inherit;
-  
-    text-align: left;
-  
-    cursor: pointer;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item__button {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    48px minmax(0, 1fr) 50px;
+
+  align-items: center;
+
+  gap:
+    clamp(18px,
+      2vw,
+      30px);
+
+  min-height:
+    clamp(92px,
+      8vw,
+      112px);
+
+  padding:
+    12px 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #111;
+
+  font: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+/* ============================================================
      NUMBER
      ============================================================ */
-  
-  .claude-faq-item__number {
-    color:
-      var(--claude-faq-purple);
-  
-    font-size:
-      clamp(
-        13px,
-        1.05vw,
-        16px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item__number {
+  color:
+    var(--claude-faq-purple);
+
+  font-size:
+    clamp(13px,
+      1.05vw,
+      16px);
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* ============================================================
      QUESTION
      ============================================================ */
-  
-  .claude-faq-item__question {
-    max-width: 520px;
-  
-    color: #141116;
-  
-    font-size:
-      clamp(
-        15px,
-        1.4vw,
-        20px
-      );
-  
-    font-weight: 700;
-  
-    line-height: 1.25;
-  
-    letter-spacing:
-      -.025em;
-  
-    transition:
-      color
-      .3s ease;
-  }
-  
-  
-  /* QUESTION HOVER / OPEN */
-  
-  .claude-faq-item:hover
-  .claude-faq-item__question,
-  .claude-faq-item.is-open
-  .claude-faq-item__question {
-    color:
-      var(--claude-faq-purple-deep);
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item__question {
+  max-width: 520px;
+
+  color: #141116;
+
+  font-size:
+    clamp(15px,
+      1.4vw,
+      20px);
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  letter-spacing:
+    -.025em;
+
+  transition:
+    color .3s ease;
+}
+
+
+/* QUESTION HOVER / OPEN */
+
+.claude-faq-item:hover .claude-faq-item__question,
+.claude-faq-item.is-open .claude-faq-item__question {
+  color:
+    var(--claude-faq-purple-deep);
+}
+
+
+/* ============================================================
      PLUS
      ============================================================ */
-  
-  .claude-faq-item__plus {
-    position: relative;
-  
-    width:
-      clamp(
-        42px,
-        4vw,
-        50px
-      );
-  
-    height:
-      clamp(
-        42px,
-        4vw,
-        50px
-      );
-  
-    display: grid;
-  
-    place-items: center;
-  
-    justify-self: end;
-  
-    border:
-      1px solid
-      rgba(17, 17, 17, .14);
-  
-    border-radius: 50%;
-  
-    background:
-      rgba(255, 255, 255, .26);
-  
-    transition:
-      transform
-        .45s
-        var(--claude-faq-ease),
-  
-      background-color
-        .3s ease,
-  
-      border-color
-        .3s ease;
-  }
-  
-  
-  /* PLUS LINES */
-  
-  .claude-faq-item__plus i {
-    position: absolute;
-  
-    top: 50%;
-    left: 50%;
-  
-    display: block;
-  
-    width: 10px;
-    height: 1px;
-  
-    background: #111;
-  
-    transform:
-      translate(-50%, -50%);
-  
-    transition:
-      transform
-        .45s
-        var(--claude-faq-ease),
-  
-      background-color
-        .3s ease;
-  }
-  
-  
-  /* VERTICAL LINE */
-  
-  .claude-faq-item__plus i:nth-child(2) {
-    transform:
-      translate(-50%, -50%)
-      rotate(90deg);
-  }
-  
-  
-  /* PLUS HOVER */
-  
-  .claude-faq-item__button:hover
-  .claude-faq-item__plus {
-    transform:
-      scale(1.07);
-  
-    border-color:
-      var(--claude-faq-purple);
-  
-    background: #fff;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item__plus {
+  position: relative;
+
+  width:
+    clamp(42px,
+      4vw,
+      50px);
+
+  height:
+    clamp(42px,
+      4vw,
+      50px);
+
+  display: grid;
+
+  place-items: center;
+
+  justify-self: end;
+
+  border:
+    1px solid rgba(17, 17, 17, .14);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, .26);
+
+  transition:
+    transform .45s var(--claude-faq-ease),
+
+    background-color .3s ease,
+
+    border-color .3s ease;
+}
+
+
+/* PLUS LINES */
+
+.claude-faq-item__plus i {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: block;
+
+  width: 10px;
+  height: 1px;
+
+  background: #111;
+
+  transform:
+    translate(-50%, -50%);
+
+  transition:
+    transform .45s var(--claude-faq-ease),
+
+    background-color .3s ease;
+}
+
+
+/* VERTICAL LINE */
+
+.claude-faq-item__plus i:nth-child(2) {
+  transform:
+    translate(-50%, -50%) rotate(90deg);
+}
+
+
+/* PLUS HOVER */
+
+.claude-faq-item__button:hover .claude-faq-item__plus {
+  transform:
+    scale(1.07);
+
+  border-color:
+    var(--claude-faq-purple);
+
+  background: #fff;
+}
+
+
+/* ============================================================
      OPEN PLUS
      ============================================================ */
-  
-  .claude-faq-item.is-open
-  .claude-faq-item__plus {
-    transform:
-      rotate(45deg);
-  
-    border-color:
-      var(--claude-faq-purple);
-  
-    background:
-      var(--claude-faq-purple);
-  }
-  
-  
-  /* KEEP HOVER ROTATION WHEN OPEN */
-  
-  .claude-faq-item.is-open
-  .claude-faq-item__button:hover
-  .claude-faq-item__plus {
-    transform:
-      rotate(45deg)
-      scale(1.07);
-  }
-  
-  
-  .claude-faq-item.is-open
-  .claude-faq-item__plus i {
-    background: #fff;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item.is-open .claude-faq-item__plus {
+  transform:
+    rotate(45deg);
+
+  border-color:
+    var(--claude-faq-purple);
+
+  background:
+    var(--claude-faq-purple);
+}
+
+
+/* KEEP HOVER ROTATION WHEN OPEN */
+
+.claude-faq-item.is-open .claude-faq-item__button:hover .claude-faq-item__plus {
+  transform:
+    rotate(45deg) scale(1.07);
+}
+
+
+.claude-faq-item.is-open .claude-faq-item__plus i {
+  background: #fff;
+}
+
+
+/* ============================================================
      ANSWER WRAPPER
      ============================================================ */
-  
-  .claude-faq-item__answer-wrap {
-    display: grid;
-  
-    grid-template-rows: 0fr;
-  
-    opacity: 0;
-  
-    transition:
-      grid-template-rows
-        .55s
-        var(--claude-faq-ease),
-  
-      opacity
-        .32s ease;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item__answer-wrap {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+
+  transition:
+    grid-template-rows .55s var(--claude-faq-ease),
+
+    opacity .32s ease;
+}
+
+
+/* ============================================================
      ANSWER INNER
      ============================================================ */
-  
-  .claude-faq-item__answer {
-    min-height: 0;
-  
-    overflow: hidden;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item__answer {
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
      ANSWER TEXT
      ============================================================ */
-  
-  .claude-faq-item__answer p {
-    max-width: 560px;
-  
-    margin:
-      0
-      58px
-      0
-      66px;
-  
-    padding-bottom: 0;
-  
-    color:
-      #756e79;
-  
-    font-size:
-      clamp(
-        12px,
-        1vw,
-        14px
-      );
-  
-    line-height: 1.65;
-  
-    letter-spacing:
-      -.005em;
-  
-    transform:
-      translateY(-8px);
-  
-    transition:
-      transform
-        .5s
-        var(--claude-faq-ease),
-  
-      padding
-        .5s
-        var(--claude-faq-ease);
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item__answer p {
+  max-width: 560px;
+
+  margin:
+    0 58px 0 66px;
+
+  padding-bottom: 0;
+
+  color:
+    #756e79;
+
+  font-size:
+    clamp(12px,
+      1vw,
+      14px);
+
+  line-height: 1.65;
+
+  letter-spacing:
+    -.005em;
+
+  transform:
+    translateY(-8px);
+
+  transition:
+    transform .5s var(--claude-faq-ease),
+
+    padding .5s var(--claude-faq-ease);
+}
+
+
+/* ============================================================
      ANSWER OPEN
      ============================================================ */
-  
-  .claude-faq-item.is-open
-  .claude-faq-item__answer-wrap {
-    grid-template-rows: 1fr;
-  
-    opacity: 1;
-  }
-  
-  
-  .claude-faq-item.is-open
-  .claude-faq-item__answer p {
-    padding-bottom:
-      clamp(
-        25px,
-        2.5vw,
-        36px
-      );
-  
-    transform:
-      translateY(0);
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq-item.is-open .claude-faq-item__answer-wrap {
+  grid-template-rows: 1fr;
+
+  opacity: 1;
+}
+
+
+.claude-faq-item.is-open .claude-faq-item__answer p {
+  padding-bottom:
+    clamp(25px,
+      2.5vw,
+      36px);
+
+  transform:
+    translateY(0);
+}
+
+
+/* ============================================================
      SECTION REVEAL
      IMPORTANT:
      parent .is-visible comes from React state
      ============================================================ */
-  
-  .claude-faq.is-visible
-  .claude-faq__intro {
-    animation:
-      claudeFAQIntroEnter
-      .9s
-      var(--claude-faq-ease)
-      forwards;
-  }
-  
-  
-  .claude-faq.is-visible
-  .claude-faq-item {
-    animation:
-      claudeFAQItemEnter
-      .78s
-      var(--claude-faq-ease)
-      var(
-        --faq-delay,
-        0s
-      )
-      forwards;
-  }
-  
-  
-  /* ============================================================
+
+.claude-faq.is-visible .claude-faq__intro {
+  animation:
+    claudeFAQIntroEnter .9s var(--claude-faq-ease) forwards;
+}
+
+
+.claude-faq.is-visible .claude-faq-item {
+  animation:
+    claudeFAQItemEnter .78s var(--claude-faq-ease) var(--faq-delay,
+      0s) forwards;
+}
+
+
+/* ============================================================
      INTRO REVEAL
      ============================================================ */
-  
-  @keyframes claudeFAQIntroEnter {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(28px);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0);
-    }
+
+@keyframes claudeFAQIntroEnter {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(28px);
   }
-  
-  
-  /* ============================================================
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* ============================================================
      ITEM REVEAL
      ============================================================ */
-  
-  @keyframes claudeFAQItemEnter {
-    from {
-      opacity: 0;
-  
-      transform:
-        translateY(24px);
-    }
-  
-    to {
-      opacity: 1;
-  
-      transform:
-        translateY(0);
-    }
+
+@keyframes claudeFAQItemEnter {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(24px);
   }
-  
-  
-  /* ============================================================
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* ============================================================
      DESKTOP HOVER LINE
      ============================================================ */
-  
-  @media (hover: hover) {
-    .claude-faq-item::after {
-      content: "";
-  
-      position: absolute;
-  
-      right: 0;
-      bottom: -1px;
-      left: 0;
-  
-      height: 1px;
-  
-      background:
-        var(--claude-faq-purple);
-  
-      transform:
-        scaleX(0);
-  
-      transform-origin:
-        left center;
-  
-      transition:
-        transform
-        .55s
-        var(--claude-faq-ease);
-    }
-  
-  
-    .claude-faq-item:hover::after {
-      transform:
-        scaleX(1);
-    }
+
+@media (hover: hover) {
+  .claude-faq-item::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: -1px;
+    left: 0;
+
+    height: 1px;
+
+    background:
+      var(--claude-faq-purple);
+
+    transform:
+      scaleX(0);
+
+    transform-origin:
+      left center;
+
+    transition:
+      transform .55s var(--claude-faq-ease);
   }
-  
-  
-  /* ============================================================
+
+
+  .claude-faq-item:hover::after {
+    transform:
+      scaleX(1);
+  }
+}
+
+
+/* ============================================================
      LAPTOP
      ============================================================ */
-  
-  @media (max-width: 1050px) {
-    .claude-faq__inner {
-      grid-template-columns:
-        minmax(260px, .72fr)
-        minmax(0, 1.28fr);
-  
-      gap:
-        clamp(
-          50px,
-          6vw,
-          80px
-        );
-    }
-  
-  
-    .claude-faq__intro h2 {
-      font-size:
-        clamp(
-          50px,
-          5.6vw,
-          70px
-        );
-    }
-  
-  
-    .claude-faq-item__button {
-      grid-template-columns:
-        40px
-        minmax(0, 1fr)
-        44px;
-    }
-  
-  
-    .claude-faq-item__answer p {
-      margin-left: 58px;
-      margin-right: 50px;
-    }
+
+@media (max-width: 1050px) {
+  .claude-faq__inner {
+    grid-template-columns:
+      minmax(260px, .72fr) minmax(0, 1.28fr);
+
+    gap:
+      clamp(50px,
+        6vw,
+        80px);
   }
-  
-  
-  /* ============================================================
+
+
+  .claude-faq__intro h2 {
+    font-size:
+      clamp(50px,
+        5.6vw,
+        70px);
+  }
+
+
+  .claude-faq-item__button {
+    grid-template-columns:
+      40px minmax(0, 1fr) 44px;
+  }
+
+
+  .claude-faq-item__answer p {
+    margin-left: 58px;
+    margin-right: 50px;
+  }
+}
+
+
+/* ============================================================
      TABLET
      ============================================================ */
-  
-  @media (max-width: 820px) {
-    .claude-faq__inner {
-      grid-template-columns:
-        minmax(220px, .65fr)
-        minmax(0, 1.35fr);
-  
-      gap: 40px;
-    }
-  
-  
-    .claude-faq__intro h2 {
-      font-size:
-        clamp(
-          42px,
-          6vw,
-          56px
-        );
-    }
-  
-  
-    .claude-faq__intro p {
-      font-size: 13px;
-    }
-  
-  
-    .claude-faq-item__button {
-      grid-template-columns:
-        34px
-        minmax(0, 1fr)
-        40px;
-  
-      gap: 13px;
-    }
-  
-  
-    .claude-faq-item__question {
-      font-size:
-        clamp(
-          14px,
-          1.8vw,
-          17px
-        );
-    }
-  
-  
-    .claude-faq-item__answer p {
-      margin:
-        0
-        45px
-        0
-        47px;
-    }
+
+@media (max-width: 820px) {
+  .claude-faq__inner {
+    grid-template-columns:
+      minmax(220px, .65fr) minmax(0, 1.35fr);
+
+    gap: 40px;
   }
-  
-  
-  /* ============================================================
+
+
+  .claude-faq__intro h2 {
+    font-size:
+      clamp(42px,
+        6vw,
+        56px);
+  }
+
+
+  .claude-faq__intro p {
+    font-size: 13px;
+  }
+
+
+  .claude-faq-item__button {
+    grid-template-columns:
+      34px minmax(0, 1fr) 40px;
+
+    gap: 13px;
+  }
+
+
+  .claude-faq-item__question {
+    font-size:
+      clamp(14px,
+        1.8vw,
+        17px);
+  }
+
+
+  .claude-faq-item__answer p {
+    margin:
+      0 45px 0 47px;
+  }
+}
+
+
+/* ============================================================
      MOBILE
      ============================================================ */
-  
-  @media (max-width: 700px) {
-    .claude-faq {
-      padding:
-        68px
-        0
-        82px;
-    }
-  
-  
-    .claude-faq__inner {
-      width:
-        calc(
-          100% - 30px
-        );
-  
-      grid-template-columns: 1fr;
-  
-      gap: 48px;
-    }
-  
-  
-    /* ========================================================
+
+@media (max-width: 700px) {
+  .claude-faq {
+    padding:
+      68px 0 82px;
+  }
+
+
+  .claude-faq__inner {
+    width:
+      calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+  }
+
+
+  /* ========================================================
        LEFT
        ======================================================== */
-  
-    .claude-faq__intro h2 {
-      font-size:
-        clamp(
-          48px,
-          14vw,
-          67px
-        );
-  
-      line-height: .92;
-    }
-  
-  
-    .claude-faq__intro p {
-      max-width: 480px;
-  
-      margin-top: 27px;
-  
-      font-size: 12px;
-  
-      line-height: 1.6;
-    }
-  
-  
-    /* ========================================================
+
+  .claude-faq__intro h2 {
+    font-size:
+      clamp(48px,
+        14vw,
+        67px);
+
+    line-height: .92;
+  }
+
+
+  .claude-faq__intro p {
+    max-width: 480px;
+
+    margin-top: 27px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+
+  /* ========================================================
        ITEM
        ======================================================== */
-  
-    .claude-faq-item__button {
-      grid-template-columns:
-        30px
-        minmax(0, 1fr)
-        38px;
-  
-      gap: 11px;
-  
-      min-height: 83px;
-    }
-  
-  
-    .claude-faq-item__number {
-      font-size: 11px;
-    }
-  
-  
-    .claude-faq-item__question {
-      max-width: none;
-  
-      font-size:
-        clamp(
-          14px,
-          4vw,
-          17px
-        );
-  
-      line-height: 1.3;
-    }
-  
-  
-    .claude-faq-item__plus {
-      width: 36px;
-      height: 36px;
-    }
-  
-  
-    /* ========================================================
+
+  .claude-faq-item__button {
+    grid-template-columns:
+      30px minmax(0, 1fr) 38px;
+
+    gap: 11px;
+
+    min-height: 83px;
+  }
+
+
+  .claude-faq-item__number {
+    font-size: 11px;
+  }
+
+
+  .claude-faq-item__question {
+    max-width: none;
+
+    font-size:
+      clamp(14px,
+        4vw,
+        17px);
+
+    line-height: 1.3;
+  }
+
+
+  .claude-faq-item__plus {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  /* ========================================================
        ANSWER
        ======================================================== */
-  
-    .claude-faq-item__answer p {
-      max-width: none;
-  
-      margin:
-        0
-        45px
-        0
-        41px;
-  
-      font-size: 11px;
-  
-      line-height: 1.6;
-    }
+
+  .claude-faq-item__answer p {
+    max-width: none;
+
+    margin:
+      0 45px 0 41px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
   }
-  
-  
-  /* ============================================================
+}
+
+
+/* ============================================================
      SMALL MOBILE
      ============================================================ */
-  
-  @media (max-width: 430px) {
-    .claude-faq__intro h2 {
-      font-size:
-        clamp(
-          43px,
-          13vw,
-          55px
-        );
-    }
-  
-  
-    .claude-faq__intro h2 > strong {
-      padding-left: .13em;
-      padding-right: .13em;
-    }
-  
-  
-    .claude-faq-item__button {
-      grid-template-columns:
-        26px
-        minmax(0, 1fr)
-        34px;
-  
-      gap: 9px;
-  
-      min-height: 79px;
-    }
-  
-  
-    .claude-faq-item__number {
-      font-size: 10px;
-    }
-  
-  
-    .claude-faq-item__question {
-      font-size: 14px;
-    }
-  
-  
-    .claude-faq-item__plus {
-      width: 32px;
-      height: 32px;
-    }
-  
-  
-    .claude-faq-item__answer p {
-      margin:
-        0
-        38px
-        0
-        35px;
-  
-      font-size: 10.5px;
-    }
+
+@media (max-width: 430px) {
+  .claude-faq__intro h2 {
+    font-size:
+      clamp(43px,
+        13vw,
+        55px);
   }
-  
-  
-  /* ============================================================
+
+
+  .claude-faq__intro h2>strong {
+    padding-left: .13em;
+    padding-right: .13em;
+  }
+
+
+  .claude-faq-item__button {
+    grid-template-columns:
+      26px minmax(0, 1fr) 34px;
+
+    gap: 9px;
+
+    min-height: 79px;
+  }
+
+
+  .claude-faq-item__number {
+    font-size: 10px;
+  }
+
+
+  .claude-faq-item__question {
+    font-size: 14px;
+  }
+
+
+  .claude-faq-item__plus {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .claude-faq-item__answer p {
+    margin:
+      0 38px 0 35px;
+
+    font-size: 10.5px;
+  }
+}
+
+
+/* ============================================================
      VERY SMALL MOBILE
      ============================================================ */
-  
-  @media (max-width: 350px) {
-    .claude-faq__intro h2 {
-      font-size: 39px;
-    }
-  
-  
-    .claude-faq-item__question {
-      font-size: 13px;
-    }
-  
-  
-    .claude-faq-item__answer p {
-      margin-left: 33px;
-      margin-right: 35px;
-    }
+
+@media (max-width: 350px) {
+  .claude-faq__intro h2 {
+    font-size: 39px;
   }
-  
-  
-  /* ============================================================
+
+
+  .claude-faq-item__question {
+    font-size: 13px;
+  }
+
+
+  .claude-faq-item__answer p {
+    margin-left: 33px;
+    margin-right: 35px;
+  }
+}
+
+
+/* ============================================================
      REDUCED MOTION
      ============================================================ */
-  
-  @media (
-    prefers-reduced-motion:
-    reduce
-  ) {
-    .claude-faq__intro,
-    .claude-faq-item {
-      opacity: 1;
-  
-      transform: none;
-  
-      animation: none !important;
-    }
-  
-  
-    .claude-faq-item__answer-wrap,
-    .claude-faq-item__answer p,
-    .claude-faq-item__plus,
-    .claude-faq-item__plus i,
-    .claude-faq-item__question {
-      transition: none;
-    }
+
+@media (prefers-reduced-motion: reduce) {
+
+  .claude-faq__intro,
+  .claude-faq-item {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none !important;
   }
+
+
+  .claude-faq-item__answer-wrap,
+  .claude-faq-item__answer p,
+  .claude-faq-item__plus,
+  .claude-faq-item__plus i,
+  .claude-faq-item__question {
+    transition: none;
+  }
+}

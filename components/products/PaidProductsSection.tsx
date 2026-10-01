@@ -1,14 +1,26 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import ProductPaid1 from "@/assets/images/products/paid/1.png";
-import ProductPaid2 from "@/assets/images/products/paid/2.png";
-import ProductPaid3 from "@/assets/images/products/paid/3.png";
-import ProductPaid4 from "@/assets/images/products/paid/4.png";
-import ProductPaid5 from "@/assets/images/products/paid/5.png";
-import ProductPaid6 from "@/assets/images/products/paid/6.png";
+import { useEffect, useMemo, useRef, useState } from "react";
+import UserAuth from "@/hook/userAuth";
+import UseProtectProduct from "@/hook/useProtectProduct";
+
 import Image from "next/image";
-import { PurchaseModal, PurchaseProduct } from "../ui/PurchaseModal";
+import { PurchaseModal, type PurchaseProduct } from "../ui/PurchaseModal";
+import ModalNeedLogin from "../ui/ModalNeedLogin";
+
+export type PaidProduct = {
+  _id: string;
+  name: string;
+  description?: string;
+  thumnail?: string;
+  price: number;
+  discount?: { discountPrice?: number } | null;
+  category?: string;
+  descriptionLink?: string;
+  url?: string;
+  charge?: boolean;
+  isShow?: boolean;
+};
 
 type Product = {
   id: string;
@@ -19,95 +31,16 @@ type Product = {
   oldPrice?: number;
   category: string[];
   meta: string;
-  image: any;
+  image?: string;
   accent?: "lime" | "cream";
 };
 
-const products: Product[] = [
-  {
-    id: "1",
-    slug: "tiktok-ideas-hacking",
-    title: "TIKTOK IDEAS HACKING",
-    description:
-      "Giúp bạn tìm, phân tích và phát triển content ideas thú vị phù hợp với brainstorm từ con số 0.",
-    price: 499000,
-    oldPrice: 899000,
-    category: ["Content Marketing", "Social Media", "Brainstorm"],
-    meta: "Social Media · Brainstorm · Ebook",
-    image: ProductPaid1,
-    accent: "lime",
-  },
+const money = (price: number) => `${new Intl.NumberFormat("vi-VN").format(price)}đ`;
 
-  {
-    id: "2",
-    slug: "social-media-bundle",
-    title: "SOCIAL MEDIA BUNDLE",
-    description:
-      "Trọn bộ công cụ giúp bạn xây dựng và vận hành quy trình Social Media từ strategy đến report.",
-    price: 599000,
-    oldPrice: 1299000,
-    category: ["Social Media", "Template"],
-    meta: "Social Media · Template",
-    image: ProductPaid2,
-    accent: "cream",
-  },
-
-  {
-    id: "3",
-    slug: "social-media-package-01",
-    title: "SOCIAL MEDIA PACKAGE 01",
-    description:
-      "Hệ thống hóa quy trình làm Social Media từ strategy, planning đến portfolio với template có sẵn.",
-    price: 37.000,
-    oldPrice: 699000,
-    category: ["Social Media", "Template", "Career & Job"],
-    meta: "Social Media · Template",
-    image: ProductPaid3,
-    accent: "cream",
-  },
-
-  {
-    id: "4",
-    slug: "social-media-package-02",
-    title: "SOCIAL MEDIA PACKAGE 02",
-    description:
-      "Bộ template hỗ trợ bạn hoàn thiện quy trình làm việc từ client brief, audit, strategy và content report.",
-    price: 259000,
-    oldPrice: 599.000,
-    category: ["Social Media", "Template"],
-    meta: "Social Media · Template",
-    image: ProductPaid4,
-    accent: "cream",
-  },
-
-  {
-    id: "5",
-    slug: "design-thinking",
-    title: "TƯ DUY THIẾT KẾ VỚI CANVA",
-    description:
-      "Giúp bạn hiểu cách tư duy layout, visual và bố cục để ứng dụng linh hoạt trên Canva.",
-    price: 339000,
-    oldPrice: 599000,
-    category: ["Design", "Ebook"],
-    meta: "Social Media · Ebook · Design",
-    image: ProductPaid5,
-    accent: "cream",
-  },
-
-  {
-    id: "6",
-    slug: "social-media-beginner-ebook",
-    title: "SOCIAL MEDIA BEGINNER EBOOK",
-    description:
-      "Tài liệu nền tảng giúp người mới hiểu Social Media và biết mình cần học, làm gì để bắt đầu.",
-    price: 499000,
-    oldPrice: 1145000,
-    category: ["Social Media", "Ebook", "Career & Job"],
-    meta: "Social Media · Ebook",
-    image: ProductPaid6,
-    accent: "cream",
-  },
-];
+const detailHref = (product: PaidProduct) => {
+  const href = product.descriptionLink || product.url;
+  return href ? (href.startsWith("/") ? href : `/${href}`) : `/products/${product._id}`;
+};
 
 const filters = [
   "Tất cả",
@@ -121,11 +54,72 @@ const filters = [
   "Design",
 ];
 
-export function PaidProductsSection() {
+type PaidProductsSectionProps = {
+  products: PaidProduct[];
+  isLoading?: boolean;
+  isError?: boolean;
+};
+
+function PaidProductAction({ product, onBuy }: { product: Product; onBuy: (product: Product) => void }) {
+  const isOwned = UseProtectProduct({ productId: product.id });
+
+  return isOwned ? (
+    <a href="/collections" className="products-paid-action products-paid-action--buy" data-cur="OPEN">
+      <span>Đã sở hữu</span><span>↗</span>
+    </a>
+  ) : (
+    <button
+      type="button"
+      className="products-paid-action products-paid-action--buy"
+      data-cur="OPEN"
+      onClick={() => onBuy(product)}
+    >
+      <span>Mua ngay</span><span>↗</span>
+    </button>
+  );
+}
+
+export function PaidProductsSection({ products: apiProducts, isLoading = false, isError = false }: PaidProductsSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
   const [activeFilter, setActiveFilter] = useState("Tất cả");
 
   const [selectedPurchaseProduct, setSelectedPurchaseProduct] =
     useState<PurchaseProduct | null>(null);
+  const [needLogin, setNeedLogin] = useState(false);
+  const isAuthenticated = UserAuth();
+
+  const products = useMemo<Product[]>(() => apiProducts
+    .filter((product) => product.charge && product.isShow)
+    .map((product, index) => ({
+      id: product._id,
+      slug: detailHref(product),
+      title: product.name,
+      description: product.description ?? "",
+      price: product.discount?.discountPrice ?? product.price,
+      oldPrice: product.discount?.discountPrice != null && product.discount.discountPrice < product.price ? product.price : undefined,
+      category: [product.category ?? "Tài liệu"],
+      meta: product.category ?? "Tài liệu số",
+      image: product.thumnail,
+      accent: index === 0 ? "lime" : "cream",
+    })), [apiProducts]);
+
+  const featured = products.find((product) => /social media beginner/i.test(product.title)) ?? products[0];
+
+  const handleBuy = (product: Product) => {
+    if (!isAuthenticated) {
+      setNeedLogin(true);
+      return;
+    }
+    setSelectedPurchaseProduct({
+      id: product.id,
+      title: product.title,
+      category: product.category,
+      description: product.description,
+      price: product.price,
+      originalPrice: product.oldPrice,
+      image: product.image,
+    });
+  };
 
   const filteredProducts = useMemo(() => {
     if (activeFilter === "Tất cả") return products;
@@ -133,10 +127,36 @@ export function PaidProductsSection() {
     return products.filter((product) =>
       product.category.includes(activeFilter)
     );
-  }, [activeFilter]);
+  }, [activeFilter, products]);
+
+  // API products arrive after SiteEffects has observed the initial DOM.
+  // Observe newly rendered cards so the existing reveal CSS can show them.
+  useEffect(() => {
+    const elements = sectionRef.current?.querySelectorAll<HTMLElement>(
+      ".products-featured[data-rv], .products-paid-card[data-rv]"
+    );
+    if (!elements?.length) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      elements.forEach((element) => element.classList.add("in"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px 80px 0px", threshold: 0.05 });
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [filteredProducts, featured]);
 
   return (
-    <section className="products-paid" id="products-library">
+    <section ref={sectionRef} className="products-paid" id="products-library">
       <div className="wrap products-paid-wrap">
         {/* ================= HEADING ================= */}
 
@@ -170,63 +190,31 @@ export function PaidProductsSection() {
 
         {/* ================= FEATURED ================= */}
 
-        <article className="products-featured" data-rv="up" data-dl="180">
+        {featured && <article className="products-featured" data-rv="up" data-dl="180">
           <div className="products-featured-visual">
-            <Image
-              src={ProductPaid6}
-              alt=""
-              className="products-featured-image"
-            ></Image>
+            {featured.image && <Image src={featured.image} alt={featured.title} width={600} height={600} unoptimized className="products-featured-image" />}
           </div>
-
           <div className="products-featured-content">
-            <div className="products-featured-badge">
-              <span>★</span>
-              KHÓA HỌC ĐƯỢC YÊU THÍCH NHẤT
-            </div>
-
+            <div className="products-featured-badge"><span>★</span> TÀI LIỆU NỔI BẬT</div>
             <div className="products-buyers">
-              <div className="products-buyers-avatars">
-                <i />
-                <i />
-                <i />
-                <i />
-              </div>
-
-              <span>80+ người đã mua</span>
+              <div className="products-buyers-avatars"><i /><i /><i /><i /></div>
+              <span>Khám phá tài liệu</span>
             </div>
-
-            <h3>
-              Social Media
-              <br />
-              Beginner Ebook
-            </h3>
-
-            <p>
-              Tài liệu nền tảng giúp người mới hiểu Social Media và biết mình
-              cần học, làm gì để bắt đầu.
-            </p>
-
+            <h3>{featured.title}</h3>
+            <p>{featured.description}</p>
             <div className="products-featured-price">
-              <strong>499.000đ</strong>
-
-              <del>1.145.000đ</del>
-
-              <span className="products-discount">-56%</span>
+              <strong>{money(featured.price)}</strong>
+              {featured.oldPrice && featured.oldPrice > featured.price && <>
+                <del>{money(featured.oldPrice)}</del>
+                <span className="products-discount">-{Math.round((1 - featured.price / featured.oldPrice) * 100)}%</span>
+              </>}
             </div>
-
             <div className="products-featured-divider" />
-
-            <a
-              href="/products/social-media-beginner-ebook"
-              className="products-featured-button"
-              data-cur="OPEN"
-            >
-              <span>Xem chi tiết tài liệu</span>
-              <span>↗</span>
+            <a href={featured.slug} className="products-featured-button" data-cur="OPEN">
+              <span>Xem chi tiết tài liệu</span><span>↗</span>
             </a>
           </div>
-        </article>
+        </article>}
 
         {/* ================= FILTER ================= */}
 
@@ -256,6 +244,10 @@ export function PaidProductsSection() {
 
         {/* ================= GRID ================= */}
 
+        {isLoading && <p role="status">Đang tải sản phẩm...</p>}
+        {isError && <p role="alert">Không tải được sản phẩm. Vui lòng thử lại.</p>}
+        {!isLoading && !isError && filteredProducts.length === 0 && <p>Chưa có sản phẩm có phí.</p>}
+
         <div className="products-paid-grid">
           {filteredProducts.map((product, index) => (
             <article
@@ -274,20 +266,16 @@ export function PaidProductsSection() {
                 <p>{product.description}</p>
 
                 <div className="products-paid-price">
-                  <strong>{product.price}</strong>
+                  <strong>{money(product.price)}</strong>
 
-                  {product.oldPrice && <del>{product.oldPrice}</del>}
+                  {product.oldPrice && <del>{money(product.oldPrice)}</del>}
                 </div>
 
                 <span className="products-paid-meta">{product.meta}</span>
               </div>
 
               <div className="products-paid-card-visual">
-                <Image
-                  src={product.image}
-                  alt=""
-                  className="products-featured-image"
-                ></Image>
+                {product.image && <Image src={product.image} alt={product.title} width={400} height={400} unoptimized className="products-featured-image" />}
               </div>
 
               <div className="products-paid-card-footer">
@@ -301,97 +289,19 @@ export function PaidProductsSection() {
                     <span>→</span>
                   </a>
 
-                  <button
-                    type="button"
-                    className="products-paid-action products-paid-action--buy"
-                    data-cur="OPEN"
-                    onClick={() =>
-                      setSelectedPurchaseProduct({
-                        id: product.id,
-                        title: product.title,
-                        category: product.category,
-                        description: product.description,
-
-                        price: product.price,
-
-                        originalPrice: product.oldPrice,
-
-                        image: product.image,
-                      })
-                    }
-                  >
-                    <span>Mua ngay</span>
-                    <span>↗</span>
-                  </button>
+                  <PaidProductAction product={product} onBuy={handleBuy} />
                 </div>
               </div>
-              <PurchaseModal
-                open={Boolean(selectedPurchaseProduct)}
-                product={selectedPurchaseProduct}
-                onClose={() => setSelectedPurchaseProduct(null)}
-                coupons={[
-                  {
-                    code: "WELCOME10",
-                    type: "percent",
-                    value: 10,
-                    maxDiscount: 50000,
-                    label: "Đã giảm 10% cho đơn hàng.",
-                  },
-
-                  {
-                    code: "HOCVIENQCC",
-                    type: "percent",
-                    value: 50,
-                    label: "Đã áp dụng ưu đãi học viên.",
-                  },
-                ]}
-                paymentMethods={[
-                  {
-                    id: "bank",
-                    name: "Chuyển khoản ngân hàng",
-                    description: "Thanh toán qua QR / Internet Banking.",
-                  },
-
-                  {
-                    id: "online",
-                    name: "Thanh toán online",
-                    description: "Thanh toán qua cổng thanh toán.",
-                  },
-                ]}
-                onCheckout={async (order) => {
-                  console.log("CREATE ORDER:", order);
-
-                  /*
-      Sau này nối API tại đây.
-
-      Ví dụ:
-
-      const response = await fetch(
-        "/api/checkout",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type":
-              "application/json",
-          },
-          body: JSON.stringify(
-            order,
-          ),
-        },
-      );
-
-      const data =
-        await response.json();
-
-      window.location.href =
-        data.paymentUrl;
-    */
-                }}
-              />
             </article>
           ))}
         </div>
       </div>
+      {needLogin && <ModalNeedLogin open={needLogin} setOpen={setNeedLogin} />}
+      <PurchaseModal
+        open={Boolean(selectedPurchaseProduct)}
+        product={selectedPurchaseProduct}
+        onClose={() => setSelectedPurchaseProduct(null)}
+      />
     </section>
   );
 }

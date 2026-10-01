@@ -14,6 +14,7 @@ const problems = [
     description:
       "Mỗi video chỉ cho một tính năng hoặc một task riêng lẻ, nhưng không chỉ cách kết nối chúng thành một workflow hoàn chỉnh.",
     rotate: "-4deg",
+    translateX:"0",
   },
   {
     number: "02",
@@ -21,6 +22,7 @@ const problems = [
     description:
       "Demo thường dùng dữ liệu mẫu và tình huống đơn giản. Đến khi áp dụng vào client, data và bài toán thực tế, kết quả lại không giống như kỳ vọng.",
     rotate: "3deg",
+    translateX:"15px",
   },
   {
     number: "03",
@@ -28,6 +30,7 @@ const problems = [
     description:
       "Có nhiều Prompt, biết nhiều tính năng, nhưng mỗi lần làm việc vẫn phải giải thích lại context, chỉnh output và kiểm tra từng bước.",
     rotate: "-3deg",
+    translateX:"0",
   },
 ];
 
@@ -107,6 +110,7 @@ export function ClaudeAIMasteryProblemsSection() {
               className="claude-problem-card"
               style={
                 {
+                  "--claude-problem-translateX":item.translateX,
                   "--claude-problem-rotate": item.rotate,
                   "--claude-problem-delay": `${
                     0.15 + index * 0.12

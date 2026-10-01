@@ -27,7 +27,7 @@
   
     width:
       min(
-        650px,
+        450px,
         calc(100vw - 32px)
       );
   
@@ -327,9 +327,9 @@
   
     font-size:
       clamp(
-        24px,
+        20px,
         2.2vw,
-        34px
+        28px
       );
   
     font-weight: 650;

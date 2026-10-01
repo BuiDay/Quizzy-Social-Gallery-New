@@ -1,239 +1,51 @@
 "use client";
 import Image from "next/image";
-import { useMemo, useState } from "react";
-import ProductFree1 from "@/assets/images/products/free/1.png";
-import ProductFree2 from "@/assets/images/products/free/2.png";
-import ProductFree3 from "@/assets/images/products/free/3.png";
-import ProductFree4 from "@/assets/images/products/free/4.png";
-import ProductFree5 from "@/assets/images/products/free/5.png";
-import ProductFree6 from "@/assets/images/products/free/6.png";
-import ProductFree7 from "@/assets/images/products/free/7.png";
-import ProductFree8 from "@/assets/images/products/free/8.png";
-import ProductFree9 from "@/assets/images/products/free/9.png";
-import ProductFree10 from "@/assets/images/products/free/10.png";
-import ProductFree11 from "@/assets/images/products/free/11.png";
-import ProductFree12 from "@/assets/images/products/free/12.png";
-import ProductFree13 from "@/assets/images/products/free/13.png";
-import ProductFree14 from "@/assets/images/products/free/14.png";
-import ProductFree15 from "@/assets/images/products/free/15.png";
-import ProductFree16 from "@/assets/images/products/free/16.png";
-import ProductFree17 from "@/assets/images/products/free/17.png";
-import ProductFree18 from "@/assets/images/products/free/18.png";
-import ProductFree19 from "@/assets/images/products/free/19.png";
-import ProductFree20 from "@/assets/images/products/free/20.png";
-import ProductFree21 from "@/assets/images/products/free/21.png";
-import ProductFree22 from "@/assets/images/products/free/22.png";
+import { useEffect, useMemo, useRef, useState } from "react";
+import UserAuth from "@/hook/userAuth";
+import UseProtectProduct from "@/hook/useProtectProduct";
+import ModalNeedLogin from "../ui/ModalNeedLogin";
+import type { PaidProduct } from "./PaidProductsSection";
+import { PurchaseModal, type PurchaseProduct } from "../ui/PurchaseModal";
 
 type FreeProduct = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   category: string[];
   meta: string;
-  image: any;
-  downloadUrl?: string;
+  image?: string;
 };
 
-const freeProducts: FreeProduct[] = [
-  {
-    id: 1,
-    title: "25 CONTENT IDEAS",
-    description:
-      "Tổng hợp 25 Content Ideas giúp bạn không bao giờ bí ý tưởng.",
-    category: ["Content Marketing", "Social Media", "Brainstorm"],
-    meta: "Social Media · Content Marketing · Brainstorm",
-    image: ProductFree1,
-  },
-  {
-    id: 2,
-    title: "25 F&B CONTENT IDEAS",
-    description:
-      "25 ý tưởng content dành riêng cho ngành F&B.",
-    category: ["Content Marketing", "Social Media", "Brainstorm"],
-    meta: "Social Media · Content Marketing · Brainstorm",
-    image: ProductFree2,
-  },
-  {
-    id: 3,
-    title: "50 SERIES TỪNG NGÁCH",
-    description:
-      "50 ý tưởng series được chia sẵn theo từng ngành/ngách.",
-    category: ["Content Marketing", "Social Media", "Brainstorm"],
-    meta: "Social Media · Content Marketing · Brainstorm",
-    image: ProductFree3,
-  },
-  {
-    id: 4,
-    title: "20 MẪU CÂU HOOKS",
-    description:
-      "20 mẫu hook giúp giữ người xem ngay từ những giây đầu.",
-    category: ["Content Marketing", "Social Media"],
-    meta: "Social Media · Content Marketing · Brainstorm",
-    image: ProductFree4,
-  },
-  {
-    id: 5,
-    title: "TEMPLATE MẪU CTA",
-    description:
-      "Mẫu kêu gọi hành động cho từng mục tiêu chiến dịch.",
-    category: ["Content Marketing", "Template"],
-    meta: "Social Media · Content Marketing · Template",
-    image: ProductFree5,
-  },
-  {
-    id: 6,
-    title: "TEMPLATE CONTENT CREATION",
-    description:
-      "Khung sản xuất nội dung từ ý tưởng tới bài đăng hoàn chỉnh.",
-    category: ["Content Marketing", "Template"],
-    meta: "Social Media · Content Marketing · Template",
-    image: ProductFree6,
-  },
-  {
-    id: 7,
-    title: "38+ WEBSITE CHO DÂN MARKETING",
-    description:
-      "38+ website tìm ideas, tài nguyên và công cụ Marketing.",
-    category: ["Content Marketing", "Career & Job"],
-    meta: "Social Media · Content Marketing",
-    image: ProductFree7,
-  },
-  {
-    id: 8,
-    title: "CHEAT SHEET 100 TỪ VIẾT TẮT",
-    description:
-      "100 từ viết tắt thường gặp trong Marketing.",
-    category: ["Content Marketing", "Career & Job"],
-    meta: "Social Media · Content Marketing",
-    image: ProductFree8,
-  },
-  {
-    id: 9,
-    title: "TỔNG HỢP 18 EMAILS",
-    description:
-      "18 mẫu email trao đổi công việc và làm việc với client.",
-    category: ["Career & Job", "Template"],
-    meta: "Social Media · Content Marketing · Template",
-    image: ProductFree9,
-  },
-  {
-    id: 10,
-    title: "LIST NHỮNG TỪ CẤM",
-    description:
-      "Danh sách từ ngữ dễ khiến bài bị hạn chế hiển thị.",
-    category: ["Content Marketing", "Social Media"],
-    meta: "Social Media · Content Marketing",
-    image: ProductFree10,
-  },
-  {
-    id: 11,
-    title: "TIPS THIẾT KẾ TRÊN CANVA",
-    description:
-      "Mẹo thiết kế nhanh và gọn gàng hơn trên Canva.",
-    category: ["Design"],
-    meta: "Social Media · Content Marketing · Design",
-    image: ProductFree11,
-  },
-  {
-    id: 12,
-    title: "MINI BOOK – TỰ HỌC MARKETING QUA YOUTUBE",
-    description:
-      "Lộ trình tự học Marketing qua YouTube trong 30 ngày.",
-    category: ["Ebook", "Career & Job"],
-    meta: "Social Media · Content Marketing · Ebook",
-    image: ProductFree12,
-  },
-  {
-    id: 13,
-    title: "TEMPLATE CONTENT CALENDAR",
-    description:
-      "Lịch nội dung theo tháng dùng chung cho cả team.",
-    category: ["Content Marketing", "Template"],
-    meta: "Social Media · Content Marketing · Template",
-    image: ProductFree13,
-  },
-  {
-    id: 14,
-    title: "LỘ TRÌNH SOCIAL MEDIA MANAGER TỪ CON SỐ 0",
-    description:
-      "Hướng dẫn chi tiết từ người mới đến Social Media Manager.",
-    category: ["Social Media", "Career & Job", "Ebook"],
-    meta: "Social Media · Ebook",
-    image: ProductFree14,
-  },
-  {
-    id: 15,
-    title: "TỔNG HỢP TỈ LỆ KHUNG HÌNH CÁC NỀN TẢNG",
-    description:
-      "Tỉ lệ khung hình phù hợp cho từng nền tảng Social Media.",
-    category: ["Social Media", "Design"],
-    meta: "Social Media · Content Marketing · Design",
-    image: ProductFree15,
-  },
-  {
-    id: 16,
-    title: "TEMPLATE PORT THẮNG JOB LỚN",
-    description:
-      "Biến portfolio thành vũ khí chinh phục job lớn.",
-    category: ["Career & Job", "Template"],
-    meta: "Social Media · Template · Career&Job",
-    image: ProductFree16,
-  },
-  {
-    id: 17,
-    title: "WEBSITE TÌM JOB",
-    description:
-      "Tổng hợp các website tìm job nhanh hơn, đúng ngành hơn.",
-    category: ["Career & Job"],
-    meta: "Social Media · Career&Job",
-    image: ProductFree17,
-  },
-  {
-    id: 18,
-    title: "TOP 4 TRỢ LÝ AI GHI CHÉP & TRANSCRIPT TỐT NHẤT",
-    description:
-      "Tài liệu tổng hợp các công cụ AI hỗ trợ ghi chép và transcript.",
-    category: ["AI"],
-    meta: "Social Media · AI",
-    image: ProductFree18,
-  },
-  {
-    id: 19,
-    title: "TEMPLATE COVER LETTER",
-    description:
-      "Template giúp bạn viết Cover Letter chuyên nghiệp.",
-    category: ["Career & Job", "Template"],
-    meta: "Social Media · Career&Job · Template",
-    image: ProductFree19,
-  },
-  {
-    id: 20,
-    title: "SHORT VIDEO CALLSHEET",
-    description:
-      "Giúp lên kế hoạch quay Short Video rõ ràng, chuyên nghiệp.",
-    category: ["Content Marketing", "Template"],
-    meta: "Social Media · Content Marketing · Template",
-    image: ProductFree20,
-  },
-  {
-    id: 21,
-    title: "30 CÂU HỎI PHỎNG VẤN & TRẢ LỜI MẪU",
-    description:
-      "Tổng hợp câu hỏi phỏng vấn thường gặp kèm cách trả lời mẫu.",
-    category: ["Career & Job"],
-    meta: "Social Media · Career&Job",
-    image: ProductFree21,
-  },
-  {
-    id: 22,
-    title: "TEMPLATE MONTHLY REPORT",
-    description:
-      "Template báo cáo Social Media hàng tháng.",
-    category: ["Social Media", "Template"],
-    meta: "Social Media · Template",
-    image: ProductFree22,
-  },
-];
+type FreeProductsSectionProps = {
+  products: PaidProduct[];
+  isLoading?: boolean;
+  isError?: boolean;
+};
+
+function FreeProductAction({ product, onAcquire }: { product: FreeProduct; onAcquire: (product: FreeProduct) => void }) {
+  const isOwned = UseProtectProduct({ productId: product.id });
+
+  return (
+    <a
+      href="/collections"
+      data-cur="OPEN"
+      onClick={(event) => {
+        if (!isOwned) {
+          event.preventDefault();
+          onAcquire(product);
+        }
+      }}
+    >
+      <span>{isOwned ? "Đã sở hữu" : "Tải tài liệu"}</span>
+      {isOwned ? <span aria-hidden="true">↗</span> : (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"
+          strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" />
+        </svg>
+      )}
+    </a>
+  );
+}
 
 const freeFilters = [
   "Tất cả",
@@ -247,8 +59,39 @@ const freeFilters = [
   "Design",
 ];
 
-export function FreeProductsSection() {
+export function FreeProductsSection({ products: apiProducts, isLoading = false, isError = false }: FreeProductsSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
   const [activeFilter, setActiveFilter] = useState("Tất cả");
+  const [needLogin, setNeedLogin] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<PurchaseProduct | null>(null);
+  const isAuthenticated = UserAuth();
+
+  const handleAcquire = (product: FreeProduct) => {
+    if (!isAuthenticated) {
+      setNeedLogin(true);
+      return;
+    }
+    setSelectedProduct({
+      id: product.id,
+      title: product.title,
+      description: product.description,
+      category: product.category,
+      image: product.image,
+      price: 0,
+      charge: false,
+    });
+  };
+
+  const freeProducts = useMemo<FreeProduct[]>(() => apiProducts
+    .filter((product) => !product.charge)
+    .map((product) => ({
+      id: product._id,
+      title: product.name,
+      description: product.description ?? "",
+      category: product.category ? [product.category] : [],
+      meta: product.category ?? "Tài liệu miễn phí",
+      image: product.thumnail,
+    })), [apiProducts]);
 
   const filteredProducts = useMemo(() => {
     if (activeFilter === "Tất cả") {
@@ -258,10 +101,30 @@ export function FreeProductsSection() {
     return freeProducts.filter((product) =>
       product.category.includes(activeFilter),
     );
-  }, [activeFilter]);
+  }, [activeFilter, freeProducts]);
+
+  useEffect(() => {
+    const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".products-free-card[data-rv]");
+    if (!cards?.length) return;
+    if (typeof IntersectionObserver === "undefined") {
+      cards.forEach((card) => card.classList.add("in"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px 80px 0px", threshold: 0.05 });
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, [filteredProducts]);
 
   return (
     <section
+      ref={sectionRef}
       className="products-free"
       id="free-products"
     >
@@ -361,6 +224,10 @@ export function FreeProductsSection() {
 
         {/* ================= PRODUCT GRID ================= */}
 
+        {isLoading && <p role="status">Đang tải tài liệu...</p>}
+        {isError && <p role="alert">Không tải được tài liệu. Vui lòng thử lại.</p>}
+        {!isLoading && !isError && filteredProducts.length === 0 && <p>Chưa có tài liệu miễn phí.</p>}
+
         <div className="products-free-grid">
           {filteredProducts.map(
             (product, index) => (
@@ -397,44 +264,21 @@ export function FreeProductsSection() {
                 {/* IMAGE */}
 
                 <div className="products-free-card-visual">
-                  <Image
+                  {product.image && <Image
                     src={product.image}
-                    alt=""
+                    alt={product.title}
+                    width={400}
+                    height={400}
+                    unoptimized
                     className="products-free-card-image"
-                  ></Image>
+                  />}
                 </div>
 
 
                 {/* CTA */}
 
                 <div className="products-free-card-footer">
-                  <a
-                    href={
-                      product.downloadUrl ??
-                      "#"
-                    }
-                    data-cur="OPEN"
-                  >
-                    <span>
-                      Tải tài liệu
-                    </span>
-
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 3v12" />
-
-                      <path d="m7 10 5 5 5-5" />
-
-                      <path d="M5 21h14" />
-                    </svg>
-                  </a>
+                  <FreeProductAction product={product} onAcquire={handleAcquire} />
                 </div>
 
               </article>
@@ -443,6 +287,8 @@ export function FreeProductsSection() {
         </div>
 
       </div>
+      {needLogin && <ModalNeedLogin open={needLogin} setOpen={setNeedLogin} />}
+      <PurchaseModal open={Boolean(selectedProduct)} product={selectedProduct} onClose={() => setSelectedProduct(null)} />
     </section>
   );
 }

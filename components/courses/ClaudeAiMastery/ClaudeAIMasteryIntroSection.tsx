@@ -112,7 +112,7 @@ export function ClaudeAIMasteryIntroSection({
 
             <div className="claude-intro-profile__statement">
               <strong>
-                1SCALE UP 15+ CLIENT / THÁNG
+                SCALE UP 15+ CLIENT / THÁNG
               </strong>{" "}
               CHỈ BẰNG CÁCH ĐỔI TƯ DUY LÀM VIỆC VỚI CLAUDE
             </div>
