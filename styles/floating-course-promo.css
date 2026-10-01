@@ -27,14 +27,14 @@
   
     width:
       min(
-        450px,
+        550px,
         calc(100vw - 32px)
       );
   
     display: grid;
   
     grid-template-columns:
-      112px
+      200px
       minmax(0, 1fr);
   
     gap: 18px;
@@ -102,7 +102,7 @@
   .floating-course-promo__image {
     position: relative;
   
-    width: 112px;
+    width: 200px;
     height: 112px;
   
     overflow: hidden;

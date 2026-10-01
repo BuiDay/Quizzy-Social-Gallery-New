@@ -7,6 +7,12 @@ import {
   useState,
   type CSSProperties,
 } from "react";
+import ClaudeImage from "@/assets/images/claude ai/icon/4.png"
+import ContentImage from "@/assets/images/claude ai/icon/5.png"
+import DataImage from "@/assets/images/claude ai/icon/6.png"
+import WorkflowImage from "@/assets/images/claude ai/icon/7.png"
+import DesignImage from "@/assets/images/claude ai/icon/8.png"
+import CodeImage from "@/assets/images/claude ai/icon/9.png"
 
 type ClaudeAIMasterySolutionSectionProps = {
   productImage?: string | StaticImageData;
@@ -17,32 +23,32 @@ const orbitItems = [
   {
     label: "Claude",
     className: "claude-solution-orbit__item--claude",
-    icon: "",
+    icon: ClaudeImage,
   },
   {
     label: "Content",
     className: "claude-solution-orbit__item--content",
-    icon: "",
+    icon: ContentImage,
   },
   {
     label: "Data",
     className: "claude-solution-orbit__item--data",
-    icon: "",
+    icon: DataImage,
   },
   {
     label: "Workflow",
     className: "claude-solution-orbit__item--workflow",
-    icon: "",
+    icon: WorkflowImage,
   },
   {
     label: "Design",
     className: "claude-solution-orbit__item--design",
-    icon: "",
+    icon: DesignImage,
   },
   {
     label: "Code",
     className: "claude-solution-orbit__item--code",
-    icon: "",
+    icon: CodeImage,
   },
 ];
 
@@ -84,9 +90,8 @@ export function ClaudeAIMasterySolutionSection({
   return (
     <section
       ref={sectionRef}
-      className={`claude-solution ${
-        isVisible ? "is-visible" : ""
-      }`}
+      className={`claude-solution ${isVisible ? "is-visible" : ""
+        }`}
       id="claude-solution"
     >
       <div className="claude-solution__inner">
@@ -223,7 +228,7 @@ export function ClaudeAIMasterySolutionSection({
                 }
               >
                 <span className="claude-solution-orbit__icon">
-                  {item.icon}
+                  <Image src={item.icon} alt={item.label} className="claude-solution-orbit__icon__image"></Image>
                 </span>
 
                 <small>
@@ -236,35 +241,36 @@ export function ClaudeAIMasterySolutionSection({
           {/* CENTER PRODUCT */}
 
           <div className="claude-solution-product">
-            {productImage ? (
-              <Image
-                src={productImage}
-                alt="Claude AI Mastery"
-                fill
-                sizes="(max-width: 700px) 80vw, 600px"
-                className="claude-solution-product__image"
-              />
-            ) : (
-              <div className="claude-solution-product__fallback">
-                {/* BACK PAPERS */}
 
-                <div className="claude-solution-product__paper claude-solution-product__paper--left">
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </div>
+            <div className="claude-solution-product__fallback">
+              {/* BACK PAPERS */}
 
-                <div className="claude-solution-product__paper claude-solution-product__paper--right">
-                  <span />
-                  <span />
-                  <span />
-                </div>
+              <div className="claude-solution-product__paper claude-solution-product__paper--left">
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
 
-                {/* MONITOR */}
+              <div className="claude-solution-product__paper claude-solution-product__paper--right">
+                <span />
+                <span />
+                <span />
+              </div>
 
-                <div className="claude-solution-product__monitor">
-                  <div className="claude-solution-product__monitor-screen">
+              {/* MONITOR */}
+
+              <div className="claude-solution-product__monitor">
+                <div className="claude-solution-product__monitor-screen">
+                  {productImage ? (
+                    <Image
+                      src={productImage}
+                      alt="Claude AI Mastery"
+                      fill
+                      sizes="(max-width: 600px) 70vw, 500px"
+                      className="claude-solution-product__image"
+                    />
+                  ) : <div>
                     <small>
                       QUIZZY SOCIAL
                     </small>
@@ -279,32 +285,36 @@ export function ClaudeAIMasterySolutionSection({
                       SOCIAL MEDIA WORKFLOW
                     </span>
                   </div>
+                  }
 
-                  <div className="claude-solution-product__monitor-stand" />
+
                 </div>
 
-                {/* PHONE */}
-
-                <div className="claude-solution-product__phone">
-                  <div />
-                  <span />
-                  <span />
-                  <span />
-                </div>
-
-                {/* LAPTOP */}
-
-                <div className="claude-solution-product__laptop">
-                  <div>
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-
-                  <i />
-                </div>
+                <div className="claude-solution-product__monitor-stand" />
               </div>
-            )}
+
+              {/* PHONE */}
+
+              <div className="claude-solution-product__phone">
+                <div />
+                <span />
+                <span />
+                <span />
+              </div>
+
+              {/* LAPTOP */}
+
+              <div className="claude-solution-product__laptop">
+                <div>
+                  <span />
+                  <span />
+                  <span />
+                </div>
+
+                <i />
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

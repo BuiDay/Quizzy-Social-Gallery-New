@@ -5,13 +5,16 @@ import {
   useState,
 } from "react";
 
+import productImage from "@/assets/images/claude ai/intro.png"
+import Image from "next/image";
+
 type FloatingCoursePromoProps = {
   title?: string;
   title1?: string;
   price?: string;
   oldPrice?: string;
   href?: string;
-  image?: string;
+  image?: any;
 };
 
 export function FloatingCoursePromo({
@@ -20,7 +23,7 @@ export function FloatingCoursePromo({
   price = "X.XXX.000đ",
   oldPrice = "X.XXX.000đ",
   href = "/courses/claude-ai-mastery",
-  image,
+  image = productImage,
 }: FloatingCoursePromoProps) {
   const [visible, setVisible] =
     useState(false);
@@ -81,7 +84,7 @@ export function FloatingCoursePromo({
     >
       <div className="floating-course-promo__image">
         {image ? (
-          <img
+          <Image
             src={image}
             alt=""
           />

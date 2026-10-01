@@ -478,8 +478,8 @@
 
   overflow: hidden;
 
-  border-radius: 5px;
-
+  border-radius: 20px;
+  border: 1px black solid;
   background: linear-gradient(145deg, #f2e8fa, #dceff4);
 
   box-shadow: 0 18px 43px rgba(56, 40, 67, 0.07);
@@ -1042,11 +1042,13 @@
 
   border-radius: 14px;
 
-  background: linear-gradient(145deg, #f2a0c2, #f5d1df);
+  /* background: linear-gradient(145deg, #f2a0c2, #f5d1df); */
 }
 
 .claude-intro-profile__avatar-image {
-  object-fit: cover;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
   object-position: center;
 }
 
@@ -1109,7 +1111,7 @@
      ============================================================ */
 
 .claude-intro-profile__statement {
-  margin-top: clamp(24px, 2.7vw, 37px);
+  margin-top: clamp(10px, 2.7vw, 15px);
 
   color: #191519;
 
@@ -2269,7 +2271,7 @@
 
   color: #070707;
 
-  font-size: clamp(39px, 4.5vw, 64px);
+  font-size: clamp(32px, 4.5vw, 54px);
 
   font-weight: 700;
 
@@ -2542,28 +2544,33 @@
 
   place-items: center;
 
-  width: clamp(58px, 6vw, 82px);
+  width: clamp(58px, 8vw, 120px);
 
-  height: clamp(58px, 6vw, 82px);
+  height: clamp(58px, 8vw, 120px);
 
   border: 3px solid rgba(255, 255, 255, 0.85);
 
   border-radius: clamp(13px, 1.5vw, 20px);
-
-  background: linear-gradient(145deg, #f6a4e7, #7134e0);
+/* 
+  background: linear-gradient(145deg, #f6a4e7, #7134e0); */
 
   color: #fff;
 
   font-size: clamp(18px, 2vw, 28px);
 
   font-weight: 700;
-
-  box-shadow: 0 9px 22px rgba(132, 67, 187, 0.18);
+/* 
+  box-shadow: 0 9px 22px rgba(132, 67, 187, 0.18); */
 }
 
+.claude-solution-orbit__icon__image{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
 /* ALTERNATE COLORS */
 
-.claude-solution-orbit__item--claude .claude-solution-orbit__icon {
+/* .claude-solution-orbit__item--claude .claude-solution-orbit__icon {
   background: linear-gradient(145deg, #f38795, #ff714c);
 }
 
@@ -2585,12 +2592,12 @@
 
 .claude-solution-orbit__item--code .claude-solution-orbit__icon {
   background: linear-gradient(145deg, #49347d, #7b55cf);
-}
+} */
 
 /* LABEL */
 
 .claude-solution-orbit__item small {
-  padding: 3px 8px;
+  padding: 3px 15px;
 
   border-radius: 999px;
 
@@ -2598,9 +2605,9 @@
 
   color: #574e5f;
 
-  font-size: clamp(7px, 0.65vw, 9px);
+  font-size: clamp(7px, 1vw, 19px);
 
-  font-weight: 700;
+  font-weight: 500;
 
   box-shadow: 0 4px 10px rgba(81, 55, 104, 0.07);
 }
@@ -2626,19 +2633,11 @@
 
 /* REAL IMAGE */
 
-.claude-solution-product__image {
-  object-fit: contain;
 
-  object-position: center;
-
-  filter: drop-shadow(0 18px 25px rgba(75, 45, 92, 0.12));
-
-  transition: transform 0.75s var(--claude-sol-ease);
-}
-
+/* 
 .claude-solution-product:hover .claude-solution-product__image {
   transform: scale(1.025);
-}
+} */
 
 /* ============================================================
      PRODUCT FALLBACK
@@ -2728,8 +2727,7 @@
 }
 
 .claude-solution-product__monitor-screen {
-  aspect-ratio: 1.55 / 1;
-
+  aspect-ratio: 1.8 / 1;
   display: flex;
 
   flex-direction: column;
@@ -2741,10 +2739,21 @@
   border: clamp(6px, 0.6vw, 9px) solid #242127;
 
   border-radius: 7px;
-
-  background: linear-gradient(145deg, #fff, #f5e9ff);
+/* 
+  background: linear-gradient(145deg, #fff, #f5e9ff); */
 
   text-align: center;
+
+}
+
+.claude-solution-product__image {
+  object-fit: contain;
+  z-index: -1;
+  object-position: center;
+/* 
+  filter: drop-shadow(0 18px 25px rgba(75, 45, 92, 0.12)); */
+
+  transition: transform 0.75s var(--claude-sol-ease);
 }
 
 .claude-solution-product__monitor-screen small {
@@ -3796,7 +3805,7 @@
 
   color: #111;
 
-  font-size: clamp(16px, 1.55vw, 22px);
+  font-size: clamp(16px, 1.8vw, 32px);
 
   font-weight: 700;
 
@@ -4025,7 +4034,7 @@
   width: 100%;
 
   padding:
-    clamp(80px, 8vw, 120px) 0 clamp(95px, 10vw, 150px);
+    clamp(80px, 8vw, 100px) 0 clamp(80px, 10vw, 100px);
 
   overflow: hidden;
 
@@ -4070,8 +4079,8 @@
 
   font-size:
     clamp(9px,
-      .76vw,
-      11px);
+      1vw,
+      16px);
 
   font-weight: 600;
 
@@ -4187,7 +4196,7 @@
   display: inline;
 
   padding:
-    .02em .2em .08em;
+    .02em .6em .08em;
 
   border-radius: 999px;
 
@@ -4219,9 +4228,9 @@
     #a166cf;
 
   font-size:
-    clamp(8px,
-      .7vw,
-      10px);
+    clamp(10px,
+      1vw,
+      16px);
 
   font-weight: 600;
 
@@ -4256,7 +4265,7 @@
   display: grid;
 
   grid-template-columns:
-    minmax(0, .9fr) minmax(320px, 1.1fr);
+    minmax(0, 1fr) minmax(320px, 1fr);
 
   align-items: center;
 
@@ -4265,7 +4274,8 @@
       7vw,
       100px);
 
-  width: 100%;
+  width: 90%;
+  margin: auto;
 
   min-height:
     clamp(460px,
@@ -4349,9 +4359,9 @@
   max-width: 500px;
 
   margin:
-    clamp(37px,
+    clamp(10px,
       4vw,
-      54px) 0 0;
+      20px) 0 0;
 
   color: #111;
 
@@ -4375,16 +4385,16 @@
   max-width: 510px;
 
   margin:
-    clamp(18px,
+    clamp(5px,
       2vw,
-      26px) 0 0;
+      10px) 0 0;
 
   color: #817b84;
 
   font-size:
-    clamp(11px,
-      .95vw,
-      14px);
+    clamp(12px,
+      1vw,
+      18px);
 
   line-height: 1.45;
 }
@@ -4395,9 +4405,9 @@
 
 .claude-curriculum-card__lesson-label {
   margin-top:
-    clamp(27px,
+    clamp(10px,
       3vw,
-      39px);
+      20px);
 
   padding-bottom: 9px;
 
@@ -4408,8 +4418,8 @@
 
   font-size:
     clamp(7px,
-      .62vw,
-      9px);
+      .8vw,
+      14px);
 
   font-weight: 500;
 
@@ -4443,6 +4453,8 @@
 
   border-bottom:
     1px solid #e5e0e7;
+  
+    
 }
 
 .claude-curriculum-card li:last-child {
@@ -4471,7 +4483,7 @@
   font-size:
     clamp(10px,
       .84vw,
-      12px);
+      14px);
 
   line-height: 1.4;
 }
@@ -4483,12 +4495,12 @@
 .claude-curriculum-card__visual {
   position: relative;
 
-  width: 100%;
+  height: 100%;
 
-  height:
-    clamp(350px,
+  width:
+    clamp(300px,
       34vw,
-      450px);
+      400px);
 
   overflow: hidden;
 
@@ -4525,7 +4537,8 @@
   object-fit: cover;
 
   object-position: center;
-
+  width: 100%;
+  height: 100%;
   transition:
     transform .75s var(--claude-cur-ease);
 }
@@ -5015,19 +5028,25 @@
   display: grid;
 
   grid-template-columns:
-    minmax(430px, .98fr) minmax(0, 1.02fr);
+    minmax(430px, 1fr) minmax(0, 1fr);
 
   align-items: center;
 
   gap:
-    clamp(65px,
+    clamp(30px,
       7vw,
-      105px);
+      50px);
 
   margin-top:
     clamp(42px,
       5vw,
       68px);
+}
+
+.claude-benefits-resources_image{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 

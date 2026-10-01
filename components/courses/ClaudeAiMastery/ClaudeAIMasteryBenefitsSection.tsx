@@ -7,6 +7,9 @@ import {
   type ReactNode,
 } from "react";
 
+import Image from "next/image";
+import Image1 from "@/assets/images/claude ai/123.png"
+
 type Benefit = {
   title: string;
   description: string;
@@ -166,15 +169,19 @@ export function ClaudeAIMasteryBenefitsSection() {
 
           <div className="claude-benefits-resources claude-benefits-reveal">
 
-            <div
+ 
+              <Image src={Image1} alt="anh tai lieu" className="claude-benefits-resources_image"></Image>
+           
+
+            {/* <div
               className="claude-benefits-resources__burst"
               aria-hidden="true"
-            />
+            /> */}
 
-            <div className="claude-benefits-resources__folder">
+            {/* <div className="claude-benefits-resources__folder">
               <div className="claude-benefits-resources__folder-tab" />
-            </div>
-
+            </div> */}
+{/* 
             <div className="claude-benefits-resources__list">
               {resources.map(
                 (resource, index) => (
@@ -194,9 +201,9 @@ export function ClaudeAIMasteryBenefitsSection() {
                   </div>
                 ),
               )}
-            </div>
+            </div> */}
 
-            <div
+            {/* <div
               className="claude-benefits-resources__cursor"
               aria-hidden="true"
             >
@@ -212,7 +219,7 @@ export function ClaudeAIMasteryBenefitsSection() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT BENEFITS */}

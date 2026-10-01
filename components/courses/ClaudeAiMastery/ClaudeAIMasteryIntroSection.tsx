@@ -112,7 +112,7 @@ export function ClaudeAIMasteryIntroSection({
 
             <div className="claude-intro-profile__statement">
               <strong>
-                SCALE UP 15+ CLIENT / THÁNG
+              TĂNG QUY MÔ QUẢN LÝ KHÁCH HÀNG LÊN ĐẾN 20 CLIENT/THÁNG
               </strong>{" "}
               CHỈ BẰNG CÁCH ĐỔI TƯ DUY LÀM VIỆC VỚI CLAUDE
             </div>
