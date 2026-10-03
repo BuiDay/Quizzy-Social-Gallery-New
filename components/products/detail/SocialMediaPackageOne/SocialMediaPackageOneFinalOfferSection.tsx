@@ -1,17 +1,21 @@
-
 "use client";
 
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
   productImageSrc?: any;
   purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any;
 };
 
 export function SocialMediaPackageOneFinalOfferSection({
   productImageSrc,
   purchaseUrl = "#smpkg1-buy",
+  product,
+  handleBuy,
 }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -46,27 +50,19 @@ export function SocialMediaPackageOneFinalOfferSection({
   return (
     <section
       ref={sectionRef}
-      className={`smpkg1-final ${
-        isVisible ? "is-visible" : ""
-      }`}
+      className={`smpkg1-final ${isVisible ? "is-visible" : ""}`}
       id="smpkg1-final-offer"
     >
       <div className="smpkg1-final-inner">
         {/* HEADING */}
 
         <div className="smpkg1-final-heading">
-          <span
-            className="smpkg1-final-down"
-            aria-hidden="true"
-          >
+          <span className="smpkg1-final-down" aria-hidden="true">
             ↓
           </span>
 
           <div className="smpkg1-final-heading-row">
-            <span
-              className="smpkg1-final-star"
-              aria-hidden="true"
-            >
+            <span className="smpkg1-final-star" aria-hidden="true">
               ✳
             </span>
 
@@ -78,8 +74,8 @@ export function SocialMediaPackageOneFinalOfferSection({
           </div>
 
           <p>
-            Tài liệu đã được set up sẵn, bạn chỉ cần tự tin
-            sử dụng để làm việc và
+            Tài liệu đã được set up sẵn, bạn chỉ cần tự tin sử dụng để làm việc
+            và
             <br className="smpkg1-final-desktop-break" />
             chinh phục thêm nhiều khách hàng khác nhau nha!
           </p>
@@ -126,30 +122,13 @@ export function SocialMediaPackageOneFinalOfferSection({
             </p>
 
             <p className="smpkg1-final-update">
-              * Update thường xuyên: Template hiện tại sẽ được
-              mình tiếp tục cập nhật và bổ sung.
+              * Update thường xuyên: Template hiện tại sẽ được mình tiếp tục cập
+              nhật và bổ sung.
             </p>
 
-            <a
-              href={purchaseUrl}
-              className="smpkg1-final-button"
-              data-cur="OPEN"
-            >
-              <span>Bấm vào để mua ngay</span>
-
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M5 12h14" />
-                <path d="m15 8 4 4-4 4" />
-              </svg>
-            </a>
+            {product && (
+              <PaidProductAction product={product} onBuy={handleBuy} />
+            )}
           </div>
         </div>
       </div>

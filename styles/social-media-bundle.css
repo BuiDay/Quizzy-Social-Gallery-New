@@ -167,7 +167,7 @@
 
   color: #020202;
 
-  font-size: clamp(60px, 6.2vw, 90px);
+  font-size: clamp(40px, 6.2vw, 72px);
 
   font-weight: 600;
 
@@ -272,7 +272,7 @@
 
   width: 100%;
 
-  min-height: clamp(310px, 30vw, 380px);
+  min-height: clamp(310px, 30vw, 350px);
 }
 
 /* ============================================================
@@ -609,7 +609,7 @@
   }
 
   .smbundle-title-pill {
-    font-size: clamp(52px, 5.8vw, 78px);
+    font-size: clamp(52px, 5.8vw, 84px);
   }
 
   .smbundle-star {
@@ -3338,7 +3338,7 @@ padding-left: 150px;
 
   color: #090909;
 
-  font-size: clamp(34px, 4vw, 58px);
+  font-size: clamp(34px, 4vw, 44px);
   font-weight: 600;
   line-height: 1.13;
   letter-spacing: -0.055em;
@@ -3351,7 +3351,7 @@ padding-left: 150px;
 
   margin-top: 4px;
 
-  padding: 0.035em 0.34em 0.105em;
+  padding: 0.1em 0.5em 0.105em;
 
   border-radius: 999px;
 

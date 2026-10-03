@@ -186,7 +186,7 @@ export function FreeProductsSection({ products: apiProducts, isLoading = false, 
 
         {/* ================= FILTER ================= */}
 
-        <div
+        {/* <div
           className="products-free-filter"
           data-rv="up"
           data-dl="150"
@@ -219,7 +219,7 @@ export function FreeProductsSection({ products: apiProducts, isLoading = false, 
           <span className="products-free-filter-count">
             {filteredProducts.length} tài liệu
           </span>
-        </div>
+        </div> */}
 
 
         {/* ================= PRODUCT GRID ================= */}

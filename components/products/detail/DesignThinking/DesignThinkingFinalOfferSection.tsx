@@ -1,16 +1,21 @@
 "use client";
 
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type DesignThinkingFinalOfferSectionProps = {
   productImageSrc?: any;
   purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any
 };
 
 export function DesignThinkingFinalOfferSection({
   productImageSrc,
   purchaseUrl,
+  product,
+  handleBuy
 }: DesignThinkingFinalOfferSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -46,9 +51,8 @@ export function DesignThinkingFinalOfferSection({
   return (
     <section
       ref={sectionRef}
-      className={`dth-final ${
-        isVisible ? "is-visible" : ""
-      }`}
+      className={`dth-final ${isVisible ? "is-visible" : ""
+        }`}
       id="design-thinking-final-offer"
     >
       <div className="dth-final-inner">
@@ -132,37 +136,11 @@ export function DesignThinkingFinalOfferSection({
               tiếp tục cập nhật và bổ sung.
             </p>
 
-            {purchaseUrl ? (
-              <a
-                href={purchaseUrl}
-                className="dth-final-button"
-                data-cur="OPEN"
-              >
-                <span>Bấm vào để mua ngay</span>
+            {
 
-                <span
-                  className="dth-final-button__arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </a>
-            ) : (
-              <button
-                type="button"
-                className="dth-final-button"
-                disabled
-              >
-                <span>Bấm vào để mua ngay</span>
+              product && <PaidProductAction product={product} onBuy={handleBuy} />
+            }
 
-                <span
-                  className="dth-final-button__arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </button>
-            )}
           </div>
         </div>
       </div>

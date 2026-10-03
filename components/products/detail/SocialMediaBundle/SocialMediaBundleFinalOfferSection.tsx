@@ -1,17 +1,22 @@
 
 "use client";
 
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type SocialMediaBundleFinalOfferProps = {
     productImageSrc?: any;
     purchaseUrl?: string;
+    product?: any;
+    handleBuy?: any
 };
 
 export function SocialMediaBundleFinalOfferSection({
     productImageSrc,
     purchaseUrl,
+    product,
+    handleBuy
 }: SocialMediaBundleFinalOfferProps) {
     const sectionRef = useRef<HTMLElement>(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -118,25 +123,9 @@ export function SocialMediaBundleFinalOfferSection({
                         </p>
 
 
-                        <a
-                            data-cur="OPEN"
-                            className="smbundle-final-offer-button"
-                        >
-                            <span>Bấm vào để mua ngay</span>
-
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.8"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                aria-hidden="true"
-                            >
-                                <path d="M5 12h14" />
-                                <path d="m15 8 4 4-4 4" />
-                            </svg>
-                        </a>
+                        {
+                            product && <PaidProductAction product={product} onBuy={handleBuy} />
+                        }
 
                     </div>
                 </div>

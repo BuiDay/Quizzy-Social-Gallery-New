@@ -1,17 +1,22 @@
 
 "use client";
 
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
   productImageSrc?: any;
   purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any;
 };
 
 export function SocialMediaPackageTwoFinalOfferSection({
   productImageSrc,
   purchaseUrl,
+  product,
+  handleBuy,
 }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -127,38 +132,9 @@ export function SocialMediaPackageTwoFinalOfferSection({
               được mình tiếp tục cập nhật và bổ sung.
             </p>
 
-            {purchaseUrl ? (
-              <a
-                href={purchaseUrl}
-                className="smpkg2-final-button"
-                data-cur="OPEN"
-              >
-                <span>Bấm vào để mua ngay</span>
-
-                <span
-                  className="smpkg2-final-button-arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </a>
-            ) : (
-              <button
-                type="button"
-                className="smpkg2-final-button"
-                disabled
-                title="Chưa có liên kết thanh toán"
-              >
-                <span>Bấm vào để mua ngay</span>
-
-                <span
-                  className="smpkg2-final-button-arrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </button>
-            )}
+            {
+              product && <PaidProductAction product={product} onBuy={handleBuy} />
+            }
           </div>
         </div>
       </div>

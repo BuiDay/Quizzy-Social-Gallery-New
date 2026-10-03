@@ -125,7 +125,6 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
         await loadUserById({});
         setSubmitMessage("Đã mở khóa tài liệu thành công.");
         onClose();
-        router.push("/collections");
       } else {
         const response = await createPaymentLink(order).unwrap();
         const result = response as { checkoutUrl?: string; data?: { checkoutUrl?: string } };

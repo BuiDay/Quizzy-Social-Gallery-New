@@ -32,6 +32,7 @@ type Product = {
   category: string[];
   meta: string;
   image?: string;
+  thumnail?:string;
   accent?: "lime" | "cream";
 };
 
@@ -64,7 +65,7 @@ function PaidProductAction({ product, onBuy }: { product: Product; onBuy: (produ
   const isOwned = UseProtectProduct({ productId: product.id });
 
   return isOwned ? (
-    <a href="/collections" className="products-paid-action products-paid-action--buy" data-cur="OPEN">
+    <a  href="/collections" className="products-paid-action products-paid-action--paid" data-cur="OPEN">
       <span>Đã sở hữu</span><span>↗</span>
     </a>
   ) : (
@@ -213,12 +214,13 @@ export function PaidProductsSection({ products: apiProducts, isLoading = false, 
             <a href={featured.slug} className="products-featured-button" data-cur="OPEN">
               <span>Xem chi tiết tài liệu</span><span>↗</span>
             </a>
+            
           </div>
         </article>}
 
         {/* ================= FILTER ================= */}
 
-        <div className="products-filter" data-rv="up">
+        {/* <div className="products-filter" data-rv="up">
           <span className="products-filter-label">FILTER BY</span>
 
           <div className="products-filter-list">
@@ -240,7 +242,7 @@ export function PaidProductsSection({ products: apiProducts, isLoading = false, 
           <span className="products-filter-count">
             {filteredProducts.length} tài liệu
           </span>
-        </div>
+        </div> */}
 
         {/* ================= GRID ================= */}
 

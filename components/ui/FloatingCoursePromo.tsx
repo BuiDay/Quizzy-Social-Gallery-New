@@ -123,10 +123,10 @@ export function FloatingCoursePromo({
         </div>
 
         <div className="floating-course-promo__actions">
-          <span className="floating-course-promo__offer">
+          {/* <span className="floating-course-promo__offer">
             ĐĂNG KÝ NGAY · ƯU ĐÃI
             ĐẾN 30%
-          </span>
+          </span> */}
 
           <a
             href={href}

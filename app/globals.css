@@ -5948,5 +5948,69 @@
   }
   
   
+  .products-paid-action__single {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 13px;
+    min-height: 49px;
+  
+    margin-top: 19px;
+    padding: 0 24px;
+  
+    border: 0;
+    border-radius: 999px;
+  
+    background: var(--lime);
+    color: #111;
+  
+    font: inherit;
+    font-size: clamp(11px, 1.2vw, 18px);
+    font-weight: 500;
+  
+    text-decoration: none;
+  
+    cursor: pointer;
+  
+    transition:
+      transform .4s var(--dth-ease),
+      background-color .3s ease,
+      color .3s ease;
+  }
+.products-paid-action__dth-buy-arrow{
+  font-size: 23px;
+    line-height: 1;
+  
+    transition:
+      transform .4s var(--dth-ease);
+}
+    .products-paid-action__single
+  span:last-child {
+    transition:
+      transform .35s
+      var(--out);
+  }
   
   
+ .products-paid-action__single:hover:not(:disabled) {
+    transform: translateY(-3px);
+  
+    background: #111;
+    color: #fff;
+  }
+  
+ .products-paid-action__single:hover:not(:disabled)
+ .products-paid-action__dth-buy-arrow{
+    transform: translateX(5px);
+  }
+  
+  .products-paid-action__single:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+  }
+  
+  .products-paid-action__dth-buy-arrow:focus-visible,
+ .products-paid-action__single:focus-visible {
+    outline: 2px solid var(--dth-purple);
+    outline-offset: 4px;}

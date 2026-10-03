@@ -22,8 +22,6 @@ export default function ProductsPage() {
     void getAll({ charge: "", keywords: "" });
   }, [getAll]);
 
-  console.log(products)
-
   return <ModalProvider>
     <SiteEffects />
     <Navbar />

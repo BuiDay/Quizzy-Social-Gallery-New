@@ -1,7 +1,18 @@
 import Image from "next/image";
 import ThumailImage from "@/assets/images/TikTok Ideas Hacking/1.png";
-
-export function TiktokFinalOfferSection() {
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
+type TiktokIdeasProps = {
+  productImageSrc?: any;
+  purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any;
+};
+export function TiktokFinalOfferSection({
+  productImageSrc,
+  purchaseUrl,
+  product,
+  handleBuy,
+}: TiktokIdeasProps) {
   return (
     <section
       className="tiktok-final-offer"
@@ -160,25 +171,9 @@ export function TiktokFinalOfferSection() {
               *Áp dụng giảm 30% cho 100 bạn đăng ký nhanh nhất
             </p>
 
-            <a
-              href="#"
-              className="tiktok-final-buy-button"
-              data-cur="OPEN"
-            >
-              <span>Bấm vào để mua ngay</span>
-
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="m15 8 4 4-4 4" />
-              </svg>
-            </a>
+            {product && (
+              <PaidProductAction product={product} onBuy={handleBuy} />
+            )}
           </div>
         </article>
       </div>

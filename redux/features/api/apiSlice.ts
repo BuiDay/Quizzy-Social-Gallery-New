@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { userLoggedIn } from '../auth/authSlice'
 
-const baseQuery = fetchBaseQuery({ baseUrl: `https://quizzysocialgallery.com/api/v1` });
+const baseQuery = fetchBaseQuery({ baseUrl: `http://localhost:8888/api/v1` });
 
 const baseQueryWithReauth = async (args:any, api:any, extraOptions:any) => {
   let result = await baseQuery(args, api, extraOptions);

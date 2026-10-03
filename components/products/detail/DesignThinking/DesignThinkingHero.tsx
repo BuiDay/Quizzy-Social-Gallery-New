@@ -1,10 +1,13 @@
 
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 
 type DesignThinkingHeroProps = {
   productImageSrc?: any;
   purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any
 };
 
 const enterStyle = (delay: number): CSSProperties =>
@@ -15,6 +18,8 @@ const enterStyle = (delay: number): CSSProperties =>
 export function DesignThinkingHero({
   productImageSrc,
   purchaseUrl,
+  product,
+  handleBuy
 }: DesignThinkingHeroProps) {
   return (
     <section
@@ -176,22 +181,11 @@ export function DesignThinkingHero({
                 <del>399.000đ</del>
               </div>
 
-      
-                <a
-                  href={purchaseUrl}
-                  className="dth-buy-button"
-                  data-cur="OPEN"
-                >
-                  <span>MUA NGAY</span>
+              {
 
-                  <span
-                    className="dth-buy-arrow"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                </a>
-              
+                product && <PaidProductAction product={product} onBuy={handleBuy} />
+              }
+
             </div>
           </div>
         </div>

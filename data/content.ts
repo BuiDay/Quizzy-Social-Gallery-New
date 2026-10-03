@@ -1,6 +1,8 @@
 import type { GalleryItem, ModalContent, ProjectItem } from "@/types/content";
 import Thumnail1 from "@/assets/images/TikTok Ideas Hacking/1.png"
 import Thumnail2 from "@/assets/images/Social Media Package 1/1.png"
+import Thumnail3 from "@/assets/images/Social Media Bundle/1.png"
+import Thumnail4 from "@/assets/images/Tu duy Thiet Ke/tu duy thiet ke.png"
 
 import Pandora from "@/assets/images/service/Pandora-Logo.png"
 import Benri from "@/assets/images/service/benri.png"
@@ -35,25 +37,25 @@ export const galleryItems: GalleryItem[] = [
     b: ["Team content 2–5 người", "Người quản lý nhiều kênh cùng lúc"],
   },
   { 
-    slug:"tiktok-ideas-hacking",
-    thumnail:Thumnail1,
-    t: "25 CONTENT IDEAS",
+    slug:"social-media-bundle",
+    thumnail:Thumnail3,
+    t: "SOCIAL MEDIA BUNDLE",
     cat: "MIỄN PHÍ",
     g: "g2",
     cls: "s4",
-    meta: "Tổng hợp 25 Content Ideas giúp bạn không bao giờ bí ý tưởng.",
+    meta: "Bộ tài liệu + template dành cho người làm Social Media Marketing",
     d: "Bộ checklist audit kênh mình dùng khi tiếp nhận một tài khoản mới: hồ sơ, nhận diện, cấu trúc nội dung, hiệu suất từng định dạng — kèm cách đọc số để biết nên sửa gì trước.",
     a: ["Checklist audit 60 điểm", "Bảng chấm điểm kênh", "Mẫu báo cáo audit gửi khách"],
     b: ["Freelancer cần quy trình nhận kênh", "Marketer muốn đánh giá lại kênh cũ"],
   },
   {
-    slug:"tiktok-ideas-hacking",
-    thumnail:Thumnail1,
-    t: "AI for Social Media",
+    slug:"design-thinking",
+    thumnail:Thumnail4,
+    t: "TÀI LIỆU TƯ DUY THIẾT KẾ",
     cat: "AI",
     g: "g5",
     cls: "s8",
-    meta: "90+ prompt thực chiến",
+    meta: "Bộ tài liệu về Thiết kế dành riêng cho người làm Social Media Marketing",
     d: "Cách dùng AI như một trợ lý thật trong quy trình social: nghiên cứu insight, phác ý tưởng, viết nháp và kiểm tra chất lượng — kèm nguyên tắc giữ giọng thương hiệu để nội dung không bị nhạt.",
     a: ["90+ prompt theo từng đầu việc", "Quy trình AI + người 5 bước", "Bộ tiêu chí kiểm tra chất lượng"],
     b: ["Marketer muốn tăng tốc sản xuất", "Team nhỏ, khối lượng bài lớn"],

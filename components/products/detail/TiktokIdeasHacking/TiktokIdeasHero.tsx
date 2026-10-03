@@ -1,19 +1,26 @@
 import Image from "next/image";
 import ThumailImage from "@/assets/images/TikTok Ideas Hacking/1.png";
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
+type TiktokIdeasProps = {
+  productImageSrc?: any;
+  purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any;
+};
 
-export function TiktokIdeasHero() {
+export function TiktokIdeasHero({
+  productImageSrc,
+  purchaseUrl,
+  product,
+  handleBuy,
+}: TiktokIdeasProps) {
   return (
     <section className="tiktok-detail-hero">
       <div className="wrap tiktok-detail-inner">
-        <div
-          className="tiktok-detail-breadcrumb"
-          data-rv="up"
-        >
+        <div className="tiktok-detail-breadcrumb" data-rv="up">
           <span className="tiktok-detail-dot" />
 
-          <span>
-            TÀI LIỆU SỐ \ TIKTOK IDEAS HACKING
-          </span>
+          <span>TÀI LIỆU SỐ \ TIKTOK IDEAS HACKING</span>
         </div>
 
         <div className="tiktok-detail-grid">
@@ -21,17 +28,10 @@ export function TiktokIdeasHero() {
 
           <div className="tiktok-detail-left">
             <div className="tiktok-detail-title-block">
-              <div
-                className="tiktok-detail-title-row"
-                data-rv="up"
-              >
-                <span className="tiktok-detail-star">
-                  ✱
-                </span>
+              <div className="tiktok-detail-title-row" data-rv="up">
+                <span className="tiktok-detail-star">✱</span>
 
-                <span className="tiktok-detail-pill">
-                  TIKTOK
-                </span>
+                <span className="tiktok-detail-pill">TIKTOK</span>
               </div>
 
               <div
@@ -39,9 +39,7 @@ export function TiktokIdeasHero() {
                 data-rv="up"
                 data-dl="70"
               >
-                <span className="tiktok-detail-pill">
-                  IDEAS
-                </span>
+                <span className="tiktok-detail-pill">IDEAS</span>
 
                 <a
                   href="#buy-now"
@@ -77,10 +75,7 @@ export function TiktokIdeasHero() {
 
           {/* ================= RIGHT ================= */}
 
-          <div
-            className="tiktok-detail-right"
-            data-rv="scale"
-          >
+          <div className="tiktok-detail-right" data-rv="scale">
             <div className="tiktok-product-visual">
               <Image
                 src={ThumailImage}
@@ -111,10 +106,7 @@ export function TiktokIdeasHero() {
               </span>
             </div>
 
-            <div
-              className="tiktok-detail-purchase"
-              id="buy-now"
-            >
+            <div className="tiktok-detail-purchase" id="buy-now">
               <span className="tiktok-detail-price-label">
                 SỞ HỮU TÀI LIỆU CHỈ VỚI
               </span>
@@ -125,25 +117,9 @@ export function TiktokIdeasHero() {
                 <del>999.000đ</del>
               </div>
 
-              <a
-                href="#"
-                className="tiktok-detail-buy-btn"
-                data-cur="OPEN"
-              >
-                <span>MUA NGAY</span>
-
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m15 8 4 4-4 4" />
-                </svg>
-              </a>
+              {product && (
+                <PaidProductAction product={product} onBuy={handleBuy} />
+              )}
             </div>
           </div>
         </div>

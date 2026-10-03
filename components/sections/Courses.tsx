@@ -3,11 +3,12 @@ import type { KeyboardEvent } from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { useModal } from "@/components/ui/ModalContext";
-import ClaudeAIMastery from "@/assets/images/1.png"
+import ClaudeAIMastery from "@/assets/images/claude ai/thumnail.png"
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 export function Courses() {
     const { openModal } = useModal();
+      const router = useRouter()
     return (
         <section className="courses sec" id="courses">
             <div className="wrap">
@@ -89,7 +90,7 @@ export function Courses() {
                             <span>8 module</span>
                             <span>+20 tài liệu truy cập vĩnh viễn</span>
                         </div>
-                        <div>
+                        <div onClick={() => router.push(`/courses/claude-ai-mastery`)}>
                             <span className="btn solid mag" data-cur="OPEN">
                                 <span>
                                     Xem chi tiết khóa học <ArrowRightIcon />

@@ -1,10 +1,12 @@
-
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 
 type SocialMediaPackageTwoHeroProps = {
   productImageSrc?: any;
   purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any;
 };
 
 const packageItems = [
@@ -21,24 +23,18 @@ const entrance = (delay: number): CSSProperties =>
 export function SocialMediaPackageTwoHero({
   productImageSrc,
   purchaseUrl,
+  product,
+  handleBuy,
 }: SocialMediaPackageTwoHeroProps) {
   return (
-    <section
-      className="smpkg2-hero"
-      id="social-media-package-2"
-    >
+    <section className="smpkg2-hero" id="social-media-package-2">
       <div className="smpkg2-hero-inner">
         {/* BREADCRUMB */}
 
-        <div
-          className="smpkg2-breadcrumb smpkg2-enter"
-          style={entrance(0.05)}
-        >
+        <div className="smpkg2-breadcrumb smpkg2-enter" style={entrance(0.05)}>
           <span className="smpkg2-breadcrumb-dot" />
 
-          <span>
-            TÀI LIỆU SỐ \ SOCIAL MEDIA PACKAGE 2
-          </span>
+          <span>TÀI LIỆU SỐ \ SOCIAL MEDIA PACKAGE 2</span>
         </div>
 
         {/* MAIN CONTENT */}
@@ -52,25 +48,18 @@ export function SocialMediaPackageTwoHero({
                 className="smpkg2-title-row smpkg2-title-row--social smpkg2-enter"
                 style={entrance(0.12)}
               >
-                <span
-                  className="smpkg2-star"
-                  aria-hidden="true"
-                >
+                <span className="smpkg2-star" aria-hidden="true">
                   ✱
                 </span>
 
-                <span className="smpkg2-title-pill">
-                  SOCIAL
-                </span>
+                <span className="smpkg2-title-pill">SOCIAL</span>
               </span>
 
               <span
                 className="smpkg2-title-row smpkg2-enter"
                 style={entrance(0.22)}
               >
-                <span className="smpkg2-title-pill">
-                  MEDIA
-                </span>
+                <span className="smpkg2-title-pill">MEDIA</span>
 
                 <a
                   href="#smpkg2-buy"
@@ -121,10 +110,7 @@ export function SocialMediaPackageTwoHero({
           {/* RIGHT — PRODUCT & PRICE */}
 
           <div className="smpkg2-hero-right">
-            <div
-              className="smpkg2-visual smpkg2-enter"
-              style={entrance(0.22)}
-            >
+            <div className="smpkg2-visual smpkg2-enter" style={entrance(0.22)}>
               {productImageSrc ? (
                 <Image
                   src={productImageSrc}
@@ -151,17 +137,11 @@ export function SocialMediaPackageTwoHero({
                 1. SOCIAL MEDIA PROPOSAL
               </span>
 
-              <span
-                className="smpkg2-tag smpkg2-tag--audit ftag"
-                data-d="19"
-              >
+              <span className="smpkg2-tag smpkg2-tag--audit ftag" data-d="19">
                 2. SOCIAL MEDIA AUDIT
               </span>
 
-              <span
-                className="smpkg2-tag smpkg2-tag--report ftag"
-                data-d="23"
-              >
+              <span className="smpkg2-tag smpkg2-tag--report ftag" data-d="23">
                 3. SOCIAL MEDIA MONTHLY REPORT
               </span>
             </div>
@@ -173,30 +153,14 @@ export function SocialMediaPackageTwoHero({
               id="smpkg2-buy"
               style={entrance(0.43)}
             >
-              <p className="smpkg2-price-label">
-                SỞ HỮU TÀI LIỆU CHỈ VỚI
-              </p>
-
+              <p className="smpkg2-price-label">SỞ HỮU TÀI LIỆU CHỈ VỚI</p>
               <div className="smpkg2-price-row">
                 <strong>259.000đ</strong>
                 <del>599.000đ</del>
               </div>
-
-              .
-                <button
-                  type="button"
-                  className="smpkg2-buy-button"
-                  title=""
-                >
-                  <span>MUA NGAY</span>
-                  <span
-                    className="smpkg2-buy-arrow"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                </button>
-              
+              {product && (
+                <PaidProductAction product={product} onBuy={handleBuy} />
+              )}
             </div>
           </div>
         </div>
@@ -211,20 +175,11 @@ export function SocialMediaPackageTwoHero({
       >
         <div className="smpkg2-marquee-track" aria-hidden="true">
           {Array.from({ length: 2 }, (_, group) => (
-            <div
-              className="smpkg2-marquee-group"
-              key={group}
-            >
+            <div className="smpkg2-marquee-group" key={group}>
               {Array.from({ length: 4 }, (_, index) => (
-                <span
-                  className="smpkg2-marquee-item"
-                  key={index}
-                >
+                <span className="smpkg2-marquee-item" key={index}>
                   SOCIAL MEDIA PACKAGE 2
-                  <span
-                    className="smpkg2-marquee-star"
-                    aria-hidden="true"
-                  >
+                  <span className="smpkg2-marquee-star" aria-hidden="true">
                     ✦
                   </span>
                 </span>

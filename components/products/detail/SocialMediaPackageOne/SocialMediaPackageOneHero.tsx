@@ -1,9 +1,12 @@
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 
 type SocialMediaPackageOneHeroProps = {
     productImageSrc?: any;
-    purchaseUrl?: string;
+    purchaseUrl?: string; 
+    product?: any;
+    handleBuy?: any
 };
 
 const packageItems = [
@@ -20,6 +23,8 @@ const entrance = (delay: number): CSSProperties =>
 export function SocialMediaPackageOneHero({
     productImageSrc,
     purchaseUrl,
+    product,
+    handleBuy
 }: SocialMediaPackageOneHeroProps) {
     return (
         <section className="smpkg1-hero" id="social-media-package-one">
@@ -163,16 +168,9 @@ export function SocialMediaPackageOneHero({
                                 <del>899.000đ</del>
                             </div>
 
-                            <a
-                                href={purchaseUrl}
-                                className="smpkg1-buy-button"
-                                data-cur="OPEN"
-                            >
-                                <span>MUA NGAY</span>
-                                <span className="smpkg1-buy-arrow" aria-hidden="true">
-                                    →
-                                </span>
-                            </a>
+                            {
+                                product && <PaidProductAction product={product} onBuy={handleBuy} />
+                            }
                         </div>
                     </div>
                 </div>
