@@ -3,10 +3,17 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+import Image2 from "@/assets/images/Tu duy Thiet Ke/2.png"
+import Image3 from "@/assets/images/Tu duy Thiet Ke/3.png"
+import Image4 from "@/assets/images/Tu duy Thiet Ke/4.png"
+import Image5 from "@/assets/images/Tu duy Thiet Ke/5.png"
+import Image6 from "@/assets/images/Tu duy Thiet Ke/6.png"
+import Image7 from "@/assets/images/Tu duy Thiet Ke/7.png"
+
 type VisualTile =
   | {
       type: "image";
-      src?: string;
+      src?: any;
       alt: string;
     }
   | {
@@ -30,6 +37,7 @@ const rowOne: VisualTile[] = [
   },
   {
     type: "image",
+    src:Image2,
     alt: "Social Media visual example 01",
   },
   {
@@ -39,6 +47,7 @@ const rowOne: VisualTile[] = [
   },
   {
     type: "image",
+    src:Image3,
     alt: "Social Media visual example 02",
   },
   {
@@ -48,6 +57,7 @@ const rowOne: VisualTile[] = [
   },
   {
     type: "image",
+    src:Image4,
     alt: "Social Media visual example 03",
   },
 ];
@@ -55,6 +65,7 @@ const rowOne: VisualTile[] = [
 const rowTwo: VisualTile[] = [
   {
     type: "image",
+    src:Image5,
     alt: "Social Media visual example 04",
   },
   {
@@ -64,6 +75,7 @@ const rowTwo: VisualTile[] = [
   },
   {
     type: "image",
+    src:Image6,
     alt: "Social Media visual example 05",
   },
   {
@@ -73,6 +85,7 @@ const rowTwo: VisualTile[] = [
   },
   {
     type: "image",
+    src:Image7,
     alt: "Social Media visual example 06",
   },
   {

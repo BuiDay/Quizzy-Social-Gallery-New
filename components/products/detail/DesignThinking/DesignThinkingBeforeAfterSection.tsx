@@ -7,6 +7,9 @@ import {
   useState,
   type CSSProperties,
 } from "react";
+import Image from "next/image";
+import BadImage from "@/assets/images/Tu duy Thiet Ke/THIẾT KẾ KHÔNG TỐT.png"
+import GoodImage from "@/assets/images/Tu duy Thiet Ke/THIẾT KẾ TỐT.png"
 
 export function DesignThinkingBeforeAfterSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -75,7 +78,7 @@ export function DesignThinkingBeforeAfterSection() {
           </span>{" "}
           sẽ
           <br className="dth-before-after-desktop-break" />
-          giúp content dễ được chú ý hơn.
+          giúp content dễ được chú ý hơn
         </h2>
 
         {/* ==================================================
@@ -90,28 +93,8 @@ export function DesignThinkingBeforeAfterSection() {
 
           <div className="dth-before-after-panel dth-before-after-panel--good">
             <div className="dth-before-after-good-art">
-
-              <div className="dth-before-after-good-heading">
-                SUMMER SALE
-              </div>
-
-              <div className="dth-before-after-good-offer">
-                <strong>30%</strong>
-                <span>toàn bộ</span>
-              </div>
-
-              <span className="dth-before-after-good-cta">
-                Mua ngay →
-              </span>
-
-              <div
-                className="dth-before-after-good-swatches"
-                aria-hidden="true"
-              >
-                <i />
-                <i />
-                <i />
-              </div>
+              <Image src={GoodImage} alt="" />
+            
             </div>
           </div>
 
@@ -119,29 +102,7 @@ export function DesignThinkingBeforeAfterSection() {
 
           <div className="dth-before-after-panel dth-before-after-panel--bad">
             <div className="dth-before-after-bad-art">
-              <strong className="dth-before-after-bad-title">
-                SUMMER SALE SIÊU KHỦNG
-              </strong>
-
-              <span className="dth-before-after-bad-discount">
-                giảm giá 30% 40% 50%!!!
-              </span>
-
-              <span className="dth-before-after-bad-small">
-                mua ngay hôm nay kẻo lỡ
-              </span>
-
-              <span className="dth-before-after-bad-promo">
-                FREESHIP · QUÀ TẶNG · DEAL SỐC
-              </span>
-
-              <strong className="dth-before-after-bad-click">
-                ★★★ CLICK LIỀN TAY ★★★
-              </strong>
-
-              <small>
-                nhanh lên còn kịp nha mọi người ơi
-              </small>
+            <Image src={BadImage} alt="" />
             </div>
           </div>
 

@@ -1,4 +1,6 @@
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import QuizzyImage2 from "@/assets/images/quizzy-2.jpg"
+import Image from "next/image";
 
 export function About() {
   return (
@@ -46,15 +48,11 @@ export function About() {
         {/* GIỮ NGUYÊN UI / EFFECT CŨ */}
         <div className="pw about-portrait-wrap" data-rv="scale">
           <div className="portrait">
-            <div className="in-fig">
-              <div className="body" />
-              <div className="head" />
-              <div className="hair" />
-            </div>
+            <Image src={QuizzyImage2} className="portrait_image" alt="" />
           </div>
 
           <span className="ftag f1 glass" data-d="18">
-          Social Media Marketing
+            Social Media Marketing
           </span>
 
           {/* <span className="ftag f2 glass" data-d="13">
@@ -62,7 +60,7 @@ export function About() {
           </span> */}
 
           <span className="ftag f3 glass" data-d="22">
-          Personal Branding
+            Personal Branding
           </span>
         </div>
       </div>

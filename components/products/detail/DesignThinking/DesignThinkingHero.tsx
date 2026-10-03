@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 
 type DesignThinkingHeroProps = {
-  productImageSrc?: string;
+  productImageSrc?: any;
   purchaseUrl?: string;
 };
 
@@ -176,7 +176,7 @@ export function DesignThinkingHero({
                 <del>399.000đ</del>
               </div>
 
-              {purchaseUrl ? (
+      
                 <a
                   href={purchaseUrl}
                   className="dth-buy-button"
@@ -191,23 +191,7 @@ export function DesignThinkingHero({
                     →
                   </span>
                 </a>
-              ) : (
-                <button
-                  type="button"
-                  className="dth-buy-button"
-                  disabled
-                  title="Chưa có liên kết thanh toán"
-                >
-                  <span>MUA NGAY</span>
-
-                  <span
-                    className="dth-buy-arrow"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                </button>
-              )}
+              
             </div>
           </div>
         </div>

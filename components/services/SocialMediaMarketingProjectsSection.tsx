@@ -8,6 +8,8 @@ import {
   type CSSProperties,
 } from "react";
 
+
+
 type ProjectImage = string | StaticImageData;
 
 type Project = {
@@ -17,7 +19,7 @@ type Project = {
   location: string;
   year: string;
   group: "partnership" | "personal";
-  tone: "pink" | "blue" | "lime" | "cream" | "purple";
+  tone: "pink" | "blue" | "lime" | "cream" | "purple" |"white";
   image?: ProjectImage;
 
   description: string;
@@ -46,7 +48,6 @@ const projectBase: Omit<Project, "image">[] = [
     year: "2025–2026",
     group: "partnership",
     tone: "pink",
-
     description:
       "Đồng hành cùng thương hiệu trong các hoạt động Social Media, phát triển nội dung phù hợp với định hướng hình ảnh và mục tiêu truyền thông.",
     role:
@@ -134,7 +135,7 @@ const projectBase: Omit<Project, "image">[] = [
     location: "USA",
     year: "2025–2026",
     group: "personal",
-    tone: "pink",
+    tone: "white",
 
     description:
       "Xây dựng định hướng Personal Branding giúp chuyên gia thể hiện rõ chuyên môn, dịch vụ và dấu ấn cá nhân trên Social Media.",
@@ -151,7 +152,7 @@ const projectBase: Omit<Project, "image">[] = [
     location: "Vietnam",
     year: "2025–2026",
     group: "personal",
-    tone: "blue",
+    tone: "white",
 
     description:
       "Định hướng nội dung Personal Branding dựa trên chuyên môn, kinh nghiệm và hệ thống chủ đề phù hợp với nhóm khán giả mục tiêu.",
@@ -168,7 +169,7 @@ const projectBase: Omit<Project, "image">[] = [
     location: "Canada",
     year: "2026",
     group: "personal",
-    tone: "lime",
+    tone: "white",
 
     description:
       "Phát triển nội dung Personal Branding xoay quanh fitness, dinh dưỡng, kiến thức thực chiến và hành trình của coach.",
@@ -185,7 +186,7 @@ const projectBase: Omit<Project, "image">[] = [
     location: "USA",
     year: "2026",
     group: "personal",
-    tone: "pink",
+    tone: "white",
 
     description:
       "Xây dựng hệ thống nội dung giúp cá nhân định vị chuyên môn và gia tăng độ tin cậy trong lĩnh vực beauty.",
@@ -195,22 +196,22 @@ const projectBase: Omit<Project, "image">[] = [
       "Facebook · Instagram",
   },
 
-  {
-    id: "jenni-jkb",
-    name: "Jenni Jkb",
-    category: "Financial",
-    location: "USA",
-    year: "2026",
-    group: "personal",
-    tone: "cream",
+  // {
+  //   id: "jenni-jkb",
+  //   name: "Jenni Jkb",
+  //   category: "Financial",
+  //   location: "USA",
+  //   year: "2026",
+  //   group: "personal",
+  //   tone: "cream",
 
-    description:
-      "Định hướng Personal Branding trong lĩnh vực tài chính theo hướng gần gũi, dễ hiểu nhưng vẫn giữ được chuyên môn.",
-    role:
-      "Personal Branding Strategy",
-    platforms:
-      "Facebook · Instagram",
-  },
+  //   description:
+  //     "Định hướng Personal Branding trong lĩnh vực tài chính theo hướng gần gũi, dễ hiểu nhưng vẫn giữ được chuyên môn.",
+  //   role:
+  //     "Personal Branding Strategy",
+  //   platforms:
+  //     "Facebook · Instagram",
+  // },
 
   {
     id: "tiffany-nghi-la",
@@ -219,7 +220,7 @@ const projectBase: Omit<Project, "image">[] = [
     location: "USA",
     year: "2026",
     group: "personal",
-    tone: "blue",
+    tone: "white",
 
     description:
       "Xây dựng nội dung và định vị Personal Brand dựa trên chuyên môn Marketing và trải nghiệm làm nghề.",
@@ -236,7 +237,7 @@ const projectBase: Omit<Project, "image">[] = [
     location: "Vietnam",
     year: "2026",
     group: "personal",
-    tone: "pink",
+    tone: "white",
 
     description:
       "Phát triển Personal Branding và hệ thống social video nhằm tăng khả năng tiếp cận khách hàng và củng cố vị thế chuyên gia.",
@@ -253,7 +254,7 @@ const projectBase: Omit<Project, "image">[] = [
     location: "Australia",
     year: "2026",
     group: "personal",
-    tone: "blue",
+    tone: "white",
 
     description:
       "Xây dựng nội dung Personal Branding xoay quanh trải nghiệm du học, kiến thức thực tế và câu chuyện cá nhân.",
@@ -437,14 +438,14 @@ export function SocialMediaMarketingProjectsSection({
           PROJECT MODAL
           ========================================= */}
 
-      {activeProject && (
+      {/* {activeProject && (
         <ProjectModal
           project={activeProject}
           onClose={() =>
             setActiveProject(null)
           }
         />
-      )}
+      )} */}
     </>
   );
 }
@@ -527,9 +528,6 @@ function ProjectCard({
     <button
       type="button"
       className="smm-project-card"
-      onClick={() =>
-        onOpen(project)
-      }
       data-cur="VIEW"
       style={
         {
@@ -602,123 +600,123 @@ function ProjectCard({
    MODAL
    ============================================================ */
 
-function ProjectModal({
-  project,
-  onClose,
-}: {
-  project: Project;
-  onClose: () => void;
-}) {
-  const closeButtonRef =
-    useRef<HTMLButtonElement>(null);
+// function ProjectModal({
+//   project,
+//   onClose,
+// }: {
+//   project: Project;
+//   onClose: () => void;
+// }) {
+//   const closeButtonRef =
+//     useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    closeButtonRef.current?.focus();
-  }, []);
+//   useEffect(() => {
+//     closeButtonRef.current?.focus();
+//   }, []);
 
-  return (
-    <div
-      className="smm-project-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="smm-project-modal-title"
-    >
-      <button
-        type="button"
-        className="smm-project-modal__backdrop"
-        onClick={onClose}
-        aria-label="Đóng project"
-      />
+//   return (
+//     <div
+//       className="smm-project-modal"
+//       role="dialog"
+//       aria-modal="true"
+//       aria-labelledby="smm-project-modal-title"
+//     >
+//       <button
+//         type="button"
+//         className="smm-project-modal__backdrop"
+//         onClick={onClose}
+//         aria-label="Đóng project"
+//       />
 
-      <div className="smm-project-modal__panel">
-        <button
-          ref={closeButtonRef}
-          type="button"
-          className="smm-project-modal__close"
-          onClick={onClose}
-          data-cur="CLOSE"
-        >
-          ĐÓNG ✕
-        </button>
+//       <div className="smm-project-modal__panel">
+//         <button
+//           ref={closeButtonRef}
+//           type="button"
+//           className="smm-project-modal__close"
+//           onClick={onClose}
+//           data-cur="CLOSE"
+//         >
+//           ĐÓNG ✕
+//         </button>
 
-        {/* VISUAL */}
+//         {/* VISUAL */}
 
-        <div
-          className={`smm-project-modal__visual smm-project-card__visual--${project.tone}`}
-        >
-          {project.image ? (
-            <Image
-              src={project.image}
-              alt={project.name}
-              fill
-              sizes="(max-width: 700px) 90vw, 65vw"
-              className="smm-project-modal__image"
-            />
-          ) : (
-            <div className="smm-project-card__placeholder">
-              <strong>
-                {project.name}
-              </strong>
-            </div>
-          )}
-        </div>
+//         <div
+//           className={`smm-project-modal__visual smm-project-card__visual--${project.tone}`}
+//         >
+//           {project.image ? (
+//             <Image
+//               src={project.image}
+//               alt={project.name}
+//               fill
+//               sizes="(max-width: 700px) 90vw, 65vw"
+//               className="smm-project-modal__image"
+//             />
+//           ) : (
+//             <div className="smm-project-card__placeholder">
+//               <strong>
+//                 {project.name}
+//               </strong>
+//             </div>
+//           )}
+//         </div>
 
-        {/* CONTENT */}
+//         {/* CONTENT */}
 
-        <div className="smm-project-modal__content">
-          <span className="smm-project-modal__eyebrow">
-            {project.group ===
-            "personal"
-              ? "PERSONAL BRANDING"
-              : "SOCIAL MEDIA PARTNERSHIP"}
-          </span>
+//         <div className="smm-project-modal__content">
+//           <span className="smm-project-modal__eyebrow">
+//             {project.group ===
+//             "personal"
+//               ? "PERSONAL BRANDING"
+//               : "SOCIAL MEDIA PARTNERSHIP"}
+//           </span>
 
-          <h2 id="smm-project-modal-title">
-            {project.name}
-          </h2>
+//           <h2 id="smm-project-modal-title">
+//             {project.name}
+//           </h2>
 
-          <p>
-            {project.description}
-          </p>
+//           <p>
+//             {project.description}
+//           </p>
 
-          <div className="smm-project-modal__details">
-            <div>
-              <span>NGÀNH HÀNG</span>
-              <strong>
-                {project.category}
-              </strong>
-            </div>
+//           <div className="smm-project-modal__details">
+//             <div>
+//               <span>NGÀNH HÀNG</span>
+//               <strong>
+//                 {project.category}
+//               </strong>
+//             </div>
 
-            <div>
-              <span>THỊ TRƯỜNG</span>
-              <strong>
-                {project.location}
-              </strong>
-            </div>
+//             <div>
+//               <span>THỊ TRƯỜNG</span>
+//               <strong>
+//                 {project.location}
+//               </strong>
+//             </div>
 
-            <div>
-              <span>VAI TRÒ</span>
-              <strong>
-                {project.role}
-              </strong>
-            </div>
+//             <div>
+//               <span>VAI TRÒ</span>
+//               <strong>
+//                 {project.role}
+//               </strong>
+//             </div>
 
-            <div>
-              <span>NỀN TẢNG</span>
-              <strong>
-                {project.platforms}
-              </strong>
-            </div>
+//             <div>
+//               <span>NỀN TẢNG</span>
+//               <strong>
+//                 {project.platforms}
+//               </strong>
+//             </div>
 
-            <div>
-              <span>THỜI GIAN</span>
-              <strong>
-                {project.year}
-              </strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+//             <div>
+//               <span>THỜI GIAN</span>
+//               <strong>
+//                 {project.year}
+//               </strong>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

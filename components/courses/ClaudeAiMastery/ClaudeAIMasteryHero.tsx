@@ -84,14 +84,14 @@ export function ClaudeAIMasteryHero({
                 </span>
 
                 <span
-                  className="claude-course-hero__pill claude-course-hero-enter"
+                  className="claude-course-hero__pill organe claude-course-hero-enter"
                   style={enterStyle(0.16)}
                 >
                   CLAUDE
                 </span>
 
                 <span
-                  className="claude-course-hero__pill claude-course-hero-enter"
+                  className="claude-course-hero__pill organe claude-course-hero-enter"
                   style={enterStyle(0.22)}
                 >
                   AI

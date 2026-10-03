@@ -16,8 +16,7 @@
     display: flex;
     align-items: center;
   
-    padding-bottom: 118px;
-  
+
     overflow: hidden;
   
     background:
@@ -41,16 +40,16 @@
     display: grid;
   
     grid-template-columns:
-      minmax(0, 0.95fr)
-      minmax(0, 1.05fr);
+      minmax(0, 1.2fr)
+      minmax(0, 0.8fr);
   
     align-items: center;
   
     gap:
       clamp(
-        60px,
+        30px,
         8vw,
-        125px
+        50px
       );
   
     margin-inline: auto;
@@ -80,7 +79,7 @@
         9px
       );
   
-    width: fit-content;
+    width: 100%;
     max-width: 100%;
   
     margin: 0;
@@ -108,12 +107,11 @@
   .smm-service-hero__row {
     display: flex;
     align-items: center;
-  
     gap:
       clamp(
         8px,
         1vw,
-        14px
+        10px
       );
   
     width: fit-content;
@@ -149,9 +147,9 @@
     justify-content: center;
   
     padding:
-      0.015em
-      0.25em
-      0.085em;
+      0.02em
+      0.5em
+      0.02em;
   
     border-radius: 999px;
   
@@ -212,9 +210,9 @@
     justify-content: center;
   
     padding:
-      0.015em
-      0.24em
-      0.08em;
+      0.1em
+      0.5em
+      0.1em;
   
     border: 1.4px solid #111;
     border-radius: 999px;
@@ -230,13 +228,13 @@
      ============================================================ */
   
   .smm-service-hero__description {
-    max-width: 500px;
+    max-width: 550px;
   
     margin:
       clamp(
-        28px,
+        10px,
         3vw,
-        42px
+        20px
       )
       0
       0;
@@ -276,9 +274,9 @@
   
     margin-top:
       clamp(
-        24px,
+        10px,
         2.7vw,
-        37px
+        20px
       );
   
     padding:
@@ -361,7 +359,7 @@
   
   .smm-service-hero__visual-wrap {
     display: flex;
-    justify-content: flex-end;
+    justify-content:center;
   
     min-width: 0;
   }
@@ -372,7 +370,7 @@
     width:
       min(
         100%,
-        510px
+        440px
       );
   
     aspect-ratio: 0.82;
@@ -779,15 +777,15 @@
   
   .smm-service-hero__stat {
     min-width: 0;
-    min-height: 118px;
+    min-height: 90px;
   
     display: flex;
     flex-direction: column;
     justify-content: center;
   
     padding:
-      18px
-      clamp(18px, 2vw, 30px);
+      10px
+      clamp(5px, 2vw, 10px);
   
     border-left:
       1px solid
@@ -811,9 +809,9 @@
   
     font-size:
       clamp(
-        31px,
+        28px,
         3vw,
-        45px
+        34px
       );
   
     font-weight: 700;
@@ -835,7 +833,7 @@
     max-width: 210px;
   
     margin:
-      12px
+      5px
       0
       0;
   
@@ -846,7 +844,7 @@
       clamp(
         8px,
         0.7vw,
-        10px
+        12px
       );
   
     font-weight: 500;
@@ -869,9 +867,9 @@
     width: 100%;
   
     padding:
-      clamp(75px, 8vw, 115px)
+      clamp(75px, 8vw, 100px)
       0
-      clamp(85px, 9vw, 130px);
+      clamp(85px, 9vw, 100px);
   
     overflow: hidden;
   
@@ -947,8 +945,8 @@
     font-size:
       clamp(
         9px,
-        .78vw,
-        11px
+        1vw,
+        16px
       );
   
     font-weight: 600;
@@ -984,8 +982,8 @@
     font-size:
       clamp(
         33px,
-        3.3vw,
-        50px
+        3.8vw,
+        54px
       );
   
     font-weight: 700;
@@ -1017,7 +1015,7 @@
     min-width:
       min(
         100%,
-        470px
+        500px
       );
   
     overflow: hidden;
@@ -1077,9 +1075,9 @@
   .smm-expertise-tab strong {
     font-size:
       clamp(
-        8px,
-        .7vw,
-        10px
+        10px,
+        1.5vw,
+        16px
       );
   
     font-weight: 700;
@@ -1091,8 +1089,8 @@
     font-size:
       clamp(
         7px,
-        .58vw,
-        9px
+        1vw,
+        14px
       );
   
     font-weight: 500;
@@ -1132,8 +1130,8 @@
     display: grid;
   
     grid-template-columns:
-      minmax(0, .95fr)
-      minmax(0, 1.05fr);
+      minmax(0, 1.2fr)
+      minmax(0, 0.8fr);
   
     align-items: center;
   
@@ -1150,14 +1148,14 @@
       clamp(
         470px,
         46vw,
-        590px
+        500px
       );
   
     padding:
       clamp(
         30px,
         4vw,
-        58px
+        50px
       );
   
     border:
@@ -1249,9 +1247,9 @@
   
     margin:
       clamp(
-        35px,
+        20px,
         4vw,
-        52px
+        30px
       )
       0
       0;
@@ -1398,16 +1396,15 @@
   .smm-expertise-visual {
     position: relative;
   
-    width: 100%;
-  
     height:
       clamp(
         350px,
         35vw,
-        460px
+        400px
       );
   
     overflow: hidden;
+
   
     border-radius:
       clamp(
@@ -1427,7 +1424,7 @@
   }
   
   .smm-expertise-image {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   
     animation:
@@ -1841,9 +1838,9 @@
     width: 100%;
   
     padding:
-      clamp(75px, 8vw, 115px)
+      clamp(75px, 8vw, 100px)
       0
-      clamp(90px, 9vw, 135px);
+      clamp(90px, 9vw, 100px);
   
     overflow: hidden;
   
@@ -1881,9 +1878,9 @@
   
     font-size:
       clamp(
-        9px,
-        .78vw,
-        11px
+        12px,
+        1vw,
+        16px
       );
   
     font-weight: 600;
@@ -1958,9 +1955,9 @@
     min-width: 0;
     min-height:
       clamp(
-        510px,
+        500px,
         48vw,
-        630px
+        550px
       );
   
     overflow: hidden;
@@ -2026,8 +2023,8 @@
     gap: 15px;
   
     padding:
-      clamp(23px, 2.4vw, 32px)
-      clamp(23px, 2.4vw, 32px)
+      clamp(14px, 2.4vw, 20px)
+      clamp(14px, 2.4vw, 20px)
       0;
   }
   
@@ -2051,8 +2048,8 @@
     font-size:
       clamp(
         8px,
-        .7vw,
-        10px
+        1.5vw,
+        20px
       );
   
     font-weight: 600;
@@ -2101,7 +2098,7 @@
   
   .smm-service-card__content {
     padding:
-      clamp(28px, 3vw, 43px)
+      clamp(10px, 3vw, 10px)
       clamp(23px, 2.4vw, 32px)
       clamp(26px, 2.8vw, 38px);
   }
@@ -2113,9 +2110,9 @@
   
     font-size:
       clamp(
-        24px,
+        18px,
         2.4vw,
-        34px
+        28px
       );
   
     font-weight: 700;
@@ -2131,7 +2128,7 @@
     max-width: 330px;
   
     margin:
-      clamp(18px, 1.8vw, 24px)
+      clamp(14px, 1.8vw, 18px)
       0
       0;
   
@@ -2155,7 +2152,7 @@
     flex: 1;
   
     padding:
-      clamp(24px, 2.5vw, 34px);
+      clamp(20px, 2.5vw, 28px);
   
     border-radius:
       23px
@@ -2207,9 +2204,9 @@
   
     gap:
       clamp(
-        14px,
+        10px,
         1.6vw,
-        21px
+        14px
       );
   
     margin: 0;
@@ -2250,7 +2247,7 @@
       clamp(
         10px,
         .88vw,
-        13px
+        14px
       );
   
     font-weight: 500;
@@ -2297,8 +2294,8 @@
     font-size:
       clamp(
         9px,
-        .78vw,
-        11px
+        1vw,
+        14px
       );
   
     font-weight: 500;
@@ -2598,9 +2595,9 @@
     width: 100%;
   
     padding:
-      clamp(75px, 8vw, 120px)
+      clamp(75px, 8vw, 100px)
       0
-      clamp(95px, 10vw, 150px);
+      clamp(80px, 10vw, 100px);
   
     overflow: hidden;
   
@@ -2651,8 +2648,8 @@
     font-size:
       clamp(
         9px,
-        .77vw,
-        11px
+        1vw,
+        16px
       );
   
     font-weight: 600;
@@ -2691,7 +2688,7 @@
      ============================================================ */
   
   .smm-projects-intro {
-    max-width: 1100px;
+    max-width: 1200px;
   
     margin:
       clamp(28px, 3vw, 42px)
@@ -2703,8 +2700,8 @@
     font-size:
       clamp(
         12px,
-        1vw,
-        15px
+        1.4vw,
+        16px
       );
   
     line-height: 1.55;
@@ -2733,12 +2730,12 @@
     position: relative;
   
     margin-top:
-      clamp(42px, 5vw, 72px);
+      clamp(38px, 5vw, 50px);
   }
   
   .smm-project-group--personal {
     margin-top:
-      clamp(75px, 8vw, 115px);
+      clamp(65px, 8vw, 80px);
   }
   
   /* TITLE */
@@ -2788,7 +2785,7 @@
   
     padding:
       .015em
-      .15em
+      .4em
       .075em;
   
     border-radius: 999px;
@@ -2955,6 +2952,10 @@
         #eee0fb
       );
   }
+
+  .smm-project-card__visual--white {
+    background:white;
+  }
   
   /* CATEGORY PILL */
   
@@ -2984,7 +2985,7 @@
   
     color: #37313b;
   
-    font-size: 8px;
+    font-size: 12px;
   
     font-weight: 600;
   
@@ -2997,14 +2998,14 @@
   /* IMAGE */
   
   .smm-project-card__image {
-    object-fit: cover;
-  
+    object-fit: contain;
+    width:100%;
     object-position: center;
-  
     transition:
       transform
       .75s
       var(--smm-pj-ease);
+      position: absolute;
   }
   
   .smm-project-card:hover
@@ -3069,8 +3070,8 @@
     font-size:
       clamp(
         16px,
-        1.5vw,
-        22px
+        1.8vw,
+        24px
       );
   
     font-weight: 700;
@@ -3098,7 +3099,7 @@
       clamp(
         8px,
         .72vw,
-        10px
+        12px
       );
   
     line-height: 1.3;
@@ -3135,8 +3136,8 @@
     font-size:
       clamp(
         9px,
-        .77vw,
-        11px
+        .9vw,
+        14px
       );
   
     font-weight: 500;
@@ -3668,19 +3669,21 @@
   justify-content: center;
 
   padding:
-    clamp(90px, 10vw, 150px)
+    clamp(90px, 10vw, 100px)
     0
-    clamp(95px, 10vw, 155px);
+    clamp(95px, 10vw, 100px);
 
   overflow: hidden;
 
-  background:
+  /* background:
     radial-gradient(
       circle at 50% 25%,
       rgba(169, 127, 221, .07),
       transparent 45%
     ),
-    #fbf7ff;
+    #fbf7ff; */
+
+  background:#fff;
 
   color: #111;
 }
@@ -3729,7 +3732,7 @@
     clamp(
       31px,
       3.6vw,
-      55px
+      48px
     );
 
   font-weight: 700;
@@ -3773,9 +3776,9 @@
   justify-content: center;
 
   padding:
-    .01em
-    .14em
-    .06em;
+    .1em
+    .4em
+    .1em;
 
   border:
     1.4px solid
@@ -3783,9 +3786,7 @@
 
   border-radius:
     999px;
-
-  background: #fff;
-
+ 
   color: #111;
 
   white-space: nowrap;
@@ -3801,9 +3802,9 @@
   justify-content: center;
 
   padding:
-    .01em
-    .18em
-    .07em;
+    .1em
+    .4em
+    .1em;
 
   border:
     1.3px solid
@@ -3841,7 +3842,7 @@
   font-size:
     clamp(
       12px,
-      1vw,
+      1.3vw,
       15px
     );
 
@@ -3910,8 +3911,8 @@
   font-size:
     clamp(
       11px,
-      .9vw,
-      14px
+      1.2vw,
+      16px
     );
 
   font-weight: 500;

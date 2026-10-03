@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type DesignThinkingFinalOfferSectionProps = {
-  productImageSrc?: string;
+  productImageSrc?: any;
   purchaseUrl?: string;
 };
 

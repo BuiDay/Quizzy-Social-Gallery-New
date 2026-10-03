@@ -19,7 +19,7 @@ const faqItems: FAQItem[] = [
     question:
       "Mình chưa từng dùng Claude thì có học được không?",
     answer:
-      "Có. Khóa học được thiết kế theo lộ trình từ nền tảng đến ứng dụng thực tế, nên bạn không cần có kinh nghiệm sử dụng Claude trước đó.",
+      "Có. Khóa học bắt đầu từ những kiến thức nền tảng về Claude trước khi đi vào các ứng dụng nâng cao.",
   },
 
   {
@@ -27,7 +27,7 @@ const faqItems: FAQItem[] = [
     question:
       "Mình không biết Code thì có học được không?",
     answer:
-      "Có. Phần Vibe Coding tập trung vào cách sử dụng Claude để tạo những công cụ đơn giản phục vụ công việc, không yêu cầu bạn phải có nền tảng lập trình chuyên sâu.",
+      "Có. Các phần Vibe Coding được hướng dẫn theo hướng thực hành và không yêu cầu bạn phải có nền tảng lập trình chuyên sâu.",
   },
 
   {
@@ -35,7 +35,7 @@ const faqItems: FAQItem[] = [
     question:
       "Khóa học có chỉ dành cho người làm Social Media không?",
     answer:
-      "Nội dung được xây dựng dựa trên workflow Social Media thực tế, nhưng nhiều phần như Research, Content, Data, Automation và Claude Skills vẫn có thể áp dụng cho nhiều công việc Marketing khác.",
+      "Social Media là bối cảnh chính để mình minh họa, nhưng những workflow và tư duy trong khóa học có thể ứng dụng cho nhiều công việc khác.",
   },
 
   {
@@ -43,7 +43,7 @@ const faqItems: FAQItem[] = [
     question:
       "Học xong mình có được xem lại bài không?",
     answer:
-      "Có. Bạn có thể chủ động học theo tốc độ của mình và xem lại Record khóa học trong thời hạn được cung cấp.",
+      "Có. Học viên được truy cập và xem lại Record trong vòng 6 tháng.",
   },
 
   {
@@ -51,7 +51,7 @@ const faqItems: FAQItem[] = [
     question:
       "Học xong có thể áp dụng ngay vào công việc không?",
     answer:
-      "Có. Khóa học tập trung vào các workflow thực hành để bạn có thể thiết lập và đưa Claude vào những đầu việc thực tế ngay trong quá trình học.",
+      "Có. Khóa học tập trung vào Demo và thực hành, với các output có thể tiếp tục sử dụng và cá nhân hóa sau khi học.",
   },
 ];
 

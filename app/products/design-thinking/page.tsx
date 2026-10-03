@@ -11,19 +11,19 @@ import { SiteEffects } from "@/components/SiteEffects";
 import { ModalProvider } from "@/components/ui/ModalContext";
 import { NewsletterCTA } from "@/components/ui/NewsletterCTA";
 import "@/styles/design-thinking.css";
-
+import productImage from "@/assets/images/Tu duy Thiet Ke/tu duy thiet ke.png"
 export default function DesignThinkingPage() {
   return (
     <ModalProvider>
       <SiteEffects />
       <Navbar />
       <main>
-        <DesignThinkingHero />
+        <DesignThinkingHero productImageSrc={productImage}/>
         <DesignThinkingVisualEraSection />
         <DesignThinkingBeforeAfterSection />
         <DesignThinkingMindsetSection />
         <DesignThinkingDocumentInsideSection />
-        <DesignThinkingFinalOfferSection />
+        <DesignThinkingFinalOfferSection productImageSrc={productImage}/>
         <NewsletterCTA />
       </main>
       <Footer />

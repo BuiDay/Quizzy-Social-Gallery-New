@@ -1,9 +1,12 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-
+import { useCreateContactUsMutation } from "@/redux/features/contactUs/contactUsApi";
+import { FormEvent, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+const emailRegex = new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/, "gm");
 export function NewsletterCTA() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("")
+  const [createContactUs, { isSuccess, isError, isLoading, error }] = useCreateContactUsMutation();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -11,6 +14,37 @@ export function NewsletterCTA() {
     // TODO: connect Mailchimp / Brevo / API của bạn
     console.log("Newsletter:", email);
   };
+
+  const handleRegisterEmail = () => {
+    const checkMail = email.length === 0
+    if (checkMail) {
+      toast.error('Vui lòng điền email!')
+      return
+    }
+    const checkInvalidEmail = email.match(emailRegex)
+    if (!checkInvalidEmail) {
+      toast.error('Email không hợp lệ!')
+      return
+    }
+    createContactUs({ email })
+  }
+
+  useEffect(() => {
+    if (isLoading) {
+      toast.loading('Đang chạy')
+    }
+    if (isSuccess) {
+      toast.success('Bạn đã đăng kí thành công !')
+      toast.dismiss()
+    }
+
+    if (isError) {
+      const { data } = error as any
+      toast.dismiss()
+      toast.error(data.message ? data.message : 'Đã có lỗi! Vui lòng thử lại.')
+    }
+  }, [isLoading, isSuccess, isError])
+
 
   return (
     <section className="products-newsletter">
@@ -92,16 +126,16 @@ export function NewsletterCTA() {
               <input
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(event) => setEmail(event.target.value)}
                 placeholder="Email của bạn"
                 aria-label="Email của bạn"
                 required
               />
 
               <button
-                type="submit"
                 className="products-newsletter-submit"
-                data-cur="OPEN"
+                data-cur="Send"
+                onClick={handleRegisterEmail}
               >
                 Đăng ký
               </button>

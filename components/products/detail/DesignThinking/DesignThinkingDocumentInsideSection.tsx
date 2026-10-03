@@ -8,12 +8,19 @@ import {
   type CSSProperties,
 } from "react";
 
+import Image1 from "@/assets/images/Tu duy Thiet Ke/10.png"
+import Image2 from "@/assets/images/Tu duy Thiet Ke/11.png"
+import Image3 from "@/assets/images/Tu duy Thiet Ke/12.png"
+import Image4 from "@/assets/images/Tu duy Thiet Ke/13.png"
+import Image5 from "@/assets/images/Tu duy Thiet Ke/14.png"
+import Image6 from "@/assets/images/Tu duy Thiet Ke/15.png"
+
 type Chapter = {
   number: string;
   title: string;
   description: string;
   bullets: string[];
-  image?: string;
+  image?: any;
 };
 
 const chapters: Chapter[] = [
@@ -28,6 +35,7 @@ const chapters: Chapter[] = [
       "Quan sát thực tế để cải thiện tư duy thị giác.",
       "Đánh giá ấn phẩm qua tính hiệu quả.",
     ],
+    image:Image1,
   },
   {
     number: "02",
@@ -40,6 +48,7 @@ const chapters: Chapter[] = [
       "Tạo bảng Moodboard để định hình màu sắc, font.",
       "Thực hành trực tiếp Canva.",
     ],
+    image:Image2,
   },
   {
     number: "03",
@@ -52,6 +61,7 @@ const chapters: Chapter[] = [
       "Phối màu chuẩn xác bằng bánh xe màu sắc.",
       "Phân cấp chữ rõ ràng và sửa lỗi hiển thị.",
     ],
+    image:Image3,
   },
   {
     number: "04",
@@ -64,6 +74,7 @@ const chapters: Chapter[] = [
       "Thiết kế bài Giáo dục.",
       "Thiết kế Social Post trên nền tảng Instagram và TikTok.",
     ],
+    image:Image4,
   },
   {
     number: "05",
@@ -76,6 +87,7 @@ const chapters: Chapter[] = [
       "Khám phá nguồn cảm hứng phong cách Trung Hoa.",
       "Tìm kiếm và ứng dụng bộ font Việt hóa.",
     ],
+    image:Image5,
   },
   {
     number: "06",
@@ -88,6 +100,7 @@ const chapters: Chapter[] = [
       "Quản lý tải lên font chữ và tra cứu font.",
       "Tìm kiếm thành phần thiết kế qua từ khóa.",
     ],
+    image:Image6,
   },
 ];
 

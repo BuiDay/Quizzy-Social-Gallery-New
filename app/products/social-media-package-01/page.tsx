@@ -10,6 +10,7 @@ import { SiteEffects } from "@/components/SiteEffects";
 import { ModalProvider } from "@/components/ui/ModalContext";
 import { NewsletterCTA } from "@/components/ui/NewsletterCTA";
 import "@/styles/social-media-package-one.css";
+import productImageSrc from "@/assets/images/Social Media Package 1/1.png"
 
 export default function SocialMediaPackageOnePage() {
   return (
@@ -17,12 +18,12 @@ export default function SocialMediaPackageOnePage() {
       <SiteEffects />
       <Navbar />
       <main>
-        <SocialMediaPackageOneHero />
+        <SocialMediaPackageOneHero productImageSrc={productImageSrc}/>
         <SocialMediaPackageOneIntroSection />
         <SocialMediaPackageOneWhoSection />
         <SocialMediaPackageOneFeedbackSection />
         <SocialMediaPackageOneExploreSection />
-        <SocialMediaPackageOneFinalOfferSection />
+        <SocialMediaPackageOneFinalOfferSection productImageSrc={productImageSrc}/>
         <NewsletterCTA />
       </main>
       <Footer />

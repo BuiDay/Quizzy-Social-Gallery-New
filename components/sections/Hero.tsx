@@ -11,6 +11,9 @@ import {
   TrendIcon,
 } from "@/components/ui/Icons";
 
+import QuizzyImage1 from "@/assets/images/quizzy-1.jpg"
+import Image from "next/image";
+
 export function Hero() {
   const [go, setGo] = useState(false);
   useEffect(() => {
@@ -20,12 +23,12 @@ export function Hero() {
   }, []);
   return (
     <section className={`hero ${go ? "go" : ""}`} id="top">
-      <div className="wrap" style={{ width: "min(1300px,94vw)" }}>
+      <div className="wrap" style={{ width: "min(1200px,94vw)" }}>
         <div className="hero-frame">
           <div className="visual">
-            <span className="mesh m1" />
+            {/* <span className="mesh m1" />
             <span className="mesh m2" />
-            <span className="mesh m3" />
+            <span className="mesh m3" /> */}
 
             {/* SOCIAL ICONS — TOP RIGHT */}
             <div className="hero-social-row" aria-label="Social media">
@@ -63,13 +66,8 @@ export function Hero() {
             </div>
 
             {/* IMAGE / PORTRAIT */}
-            <div className="photo" data-d="7">
-              <div className="fig">
-                <div className="body">
-                  <div className="head" />
-                  <div className="hair" />
-                </div>
-              </div>
+            <div className="hero-social_image" data-d="7">
+              <Image src={QuizzyImage1} alt="" className="hero-social__image"></Image>
             </div>
 
            
@@ -146,7 +144,7 @@ export function Hero() {
               </a>
           
             </div>
-            <div className="social-proof">
+            {/* <div className="social-proof">
               <span className="avatars">
                 <i />
                 <i />
@@ -155,7 +153,7 @@ export function Hero() {
               <p className="small">
                 500+ học viên đang áp dụng mỗi ngày
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

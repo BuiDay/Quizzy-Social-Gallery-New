@@ -22,7 +22,7 @@
      ============================================================ */
 
 .claude-course-hero__main {
-  /* min-height: calc(100vh - 70px); */
+  min-height: calc(100vh - 100px);
 
   display: flex;
   align-items: center;
@@ -182,6 +182,11 @@
 
 .claude-course-hero__pill:hover {
   transform: translateY(-3px);
+}
+
+.claude-course-hero__pill.organe {
+  background:#f96d42;
+  color:#fff;
 }
 
 /* TITLE ARROW */
@@ -553,7 +558,6 @@
 
 .claude-course-hero__stats {
   width: 100%;
-
   background: #111;
   color: #fff;
 }
@@ -570,13 +574,13 @@
 
 .claude-course-hero__stat {
   min-width: 0;
-  min-height: 120px;
+  min-height: 100px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  padding: 19px clamp(20px, 2vw, 31px);
+  padding: 15px clamp(20px, 2vw, 25px);
 
   border-left: 1px solid rgba(255, 255, 255, 0.17);
 }
@@ -590,7 +594,7 @@
 .claude-course-hero__stat-value {
   color: #fff;
 
-  font-size: clamp(32px, 3.5vw, 40px);
+  font-size: clamp(24px, 3.5vw, 38px);
 
   font-weight: 700;
 
@@ -610,11 +614,11 @@
 .claude-course-hero__stat p {
   max-width: 210px;
 
-  margin: 13px 0 0;
+  margin: 10px 0 0;
 
   color: rgba(255, 255, 255, 0.82);
 
-  font-size: clamp(8px, 0.7vw, 10px);
+  font-size: clamp(8px, 0.8vw, 14px);
 
   font-weight: 500;
 
@@ -3277,12 +3281,12 @@
 
 .claude-applications__sticky {
   position: sticky;
-  top: 0;
+  top: 10px;
 
   width: 100%;
 
   height: 100vh;
-  height: 100dvh;
+  height: 98dvh;
 
   min-height: 620px;
 
@@ -3345,9 +3349,9 @@
 
   grid-template-columns: repeat(5, minmax(0, 1fr));
 
-  gap: clamp(16px, 2vw, 30px);
+  gap: clamp(16px, 2vw, 40px);
 
-  width: min(960px, 100%);
+  width: min(800px, 100%);
 
   margin-inline: auto;
 }
@@ -3359,7 +3363,7 @@
 .claude-application-tab {
   min-width: 0;
 
-  min-height: clamp(125px, 13vw, 165px);
+  min-height: clamp(100px, 13vw, 130px);
 
   display: flex;
 
@@ -3367,9 +3371,9 @@
   align-items: center;
   justify-content: center;
 
-  gap: 5px;
+  gap: 2px;
 
-  padding: 15px 10px;
+  padding: 10px 10px;
 
   border: 1.5px solid #e1cdf4;
 
@@ -3396,9 +3400,9 @@
      ============================================================ */
 
 .claude-application-tab__icon {
-  width: clamp(43px, 4.8vw, 62px);
+  width: clamp(32px, 4.8vw, 44px);
 
-  height: clamp(43px, 4.8vw, 62px);
+  height: clamp(32px, 4.8vw, 44px);
 
   display: grid;
 
@@ -3504,9 +3508,9 @@
 .claude-applications__visual-shell {
   position: relative;
 
-  width: min(900px, 100%);
+  width: min(800px, 100%);
 
-  aspect-ratio: 2.05 / 1;
+  aspect-ratio: 1.77 / 1;
 
   margin: clamp(28px, 3.2vw, 46px) auto 0;
 
@@ -3530,7 +3534,7 @@
 }
 
 .claude-applications__image {
-  object-fit: cover;
+  object-fit: contain;
 
   object-position: center;
 
@@ -3817,7 +3821,7 @@
 }
 
 .claude-applications__cta span:last-child {
-  font-size: 23px;
+  font-size: 38px;
 
   transition: transform 0.4s var(--claude-app-ease);
 }
@@ -3841,8 +3845,8 @@
 @media (min-width: 761px) and (max-height: 820px) {
   .claude-applications__intro {
     margin-bottom: 20px;
-
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 16px;
   }
 
   .claude-application-tab {
@@ -3850,15 +3854,15 @@
   }
 
   .claude-applications__visual-shell {
-    width: min(880px, 100%);
+    width: min(750px, 100%);
 
-    margin-top: 22px;
+    margin-top: 20px;
   }
 
   .claude-applications__cta {
     min-height: 48px;
 
-    margin-top: 15px;
+    /* margin-top: 15px; */
 
     font-size: 15px;
   }
@@ -5541,7 +5545,7 @@
   font-size:
     clamp(10px,
       .85vw,
-      12px);
+      14px);
 
   line-height: 1.45;
 }
@@ -7871,9 +7875,9 @@
   color: #111;
 
   font-size:
-    clamp(58px,
+    clamp(42px,
       6vw,
-      88px);
+      64px);
 
   font-weight: 700;
 
@@ -7904,7 +7908,7 @@
   justify-content: center;
 
   padding:
-    .015em .16em .07em;
+    .2em .5em .2em;
 
   border-radius: 999px;
 
@@ -7931,7 +7935,7 @@
   margin:
     clamp(35px,
       4vw,
-      55px) 0 0;
+      40px) 0 0;
 
   color:
     var(--claude-faq-muted);
@@ -8027,8 +8031,8 @@
 
   font-size:
     clamp(13px,
-      1.05vw,
-      16px);
+      1.35vw,
+      20px);
 
   font-weight: 700;
 
@@ -8048,7 +8052,7 @@
   font-size:
     clamp(15px,
       1.4vw,
-      20px);
+      23px);
 
   font-weight: 700;
 

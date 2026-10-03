@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import type { CSSProperties } from "react";
 
+
 type SocialMediaMarketingServiceHeroProps = {
     imageSrc?: string | StaticImageData;
     contactUrl?: string;
@@ -184,7 +185,7 @@ export function SocialMediaMarketingServiceHero({
                 </div>
             </div>
             <div className="smm-service-hero__stats">
-                <div className="smm-service-hero__stats-inner">
+                <div className="smm-service-hero__stats-inner"> 
                     {heroStats.map((stat, index) => (
                         <div
                             className="smm-service-hero__stat smm-service-enter"

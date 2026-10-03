@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 
 type SocialMediaPackageTwoHeroProps = {
-  productImageSrc?: string;
+  productImageSrc?: any;
   purchaseUrl?: string;
 };
 

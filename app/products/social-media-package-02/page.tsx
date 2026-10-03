@@ -12,20 +12,22 @@ import { ModalProvider } from "@/components/ui/ModalContext";
 import { NewsletterCTA } from "@/components/ui/NewsletterCTA";
 import "@/styles/social-media-package-two.css";
 
+import productImage from "@/assets/images/Social Media Package 2/1.png"
+
 export default function SocialMediaPackageOnePage() {
   return (
     <ModalProvider>
       <SiteEffects />
       <Navbar />
       <main>
-        <SocialMediaPackageTwoHero />
+        <SocialMediaPackageTwoHero productImageSrc={productImage}/>
         <SocialMediaPackageTwoExperienceSection />
         <SocialMediaPackageTwoWhoSection />
         <SocialMediaPackageTwoProposalSection />
         <SocialMediaPackageTwoAuditSection />
         <SocialMediaPackageTwoMonthlyReportSection />
         <SocialMediaPackageTwoFinalOfferSection
-          productImageSrc="/images/products/social-media-package-2/mockup.png"
+    productImageSrc={productImage}
           purchaseUrl="LINK_THANH_TOAN_PACKAGE_02"
         />
         <NewsletterCTA />
