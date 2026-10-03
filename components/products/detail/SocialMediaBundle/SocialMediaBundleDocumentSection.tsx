@@ -4,12 +4,19 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+import Portfolio from "@/assets/images/Social Media Bundle/01/3.png"
+import Proposal from "@/assets/images/Social Media Bundle/02/5.png"
+import Audit from "@/assets/images/Social Media Bundle/03/7.png"
+import Strategy from "@/assets/images/Social Media Bundle/04/9.png"
+import Report from "@/assets/images/Social Media Bundle/05/13.png"
+import Plan from "@/assets/images/Social Media Package 1/Social Media Plan/14.png"
+
 type BundleDocument = {
   number: string;
   title: string;
   description: string;
   contents: string[];
-  image: string | null;
+  image: string | any;
 };
 
 const documents: BundleDocument[] = [
@@ -24,7 +31,7 @@ const documents: BundleDocument[] = [
       "Dễ dàng sáng tạo Portfolio theo cá nhân.",
       "Tạo năng lực cạnh tranh và tiếp cận khách hàng mới.",
     ],
-    image: null,
+    image: Portfolio,
   },
   {
     number: "02",
@@ -37,7 +44,7 @@ const documents: BundleDocument[] = [
       "Tăng cơ hội biến những lead tiềm năng thành hợp đồng.",
       "Dễ dàng customize Proposal cho từng client.",
     ],
-    image: null,
+    image: Proposal,
   },
   {
     number: "03",
@@ -50,7 +57,7 @@ const documents: BundleDocument[] = [
       "Phân tích điểm mạnh & điểm yếu.",
       "Tạo thêm giá trị ngay từ trước khi bắt đầu dự án.",
     ],
-    image: null,
+    image: Audit,
   },
   {
     number: "04",
@@ -63,7 +70,7 @@ const documents: BundleDocument[] = [
       "Template Social Media Plan & Content Calendar.",
       "Làm việc có hệ thống và sẵn sàng nhận nhiều client hơn.",
     ],
-    image: null,
+    image: Strategy,
   },
   {
     number: "05",
@@ -76,7 +83,7 @@ const documents: BundleDocument[] = [
       "Biết cách trình bày và diễn giải số liệu.",
       "Tạo cơ sở để đề xuất hướng đi tiếp theo và mở rộng scope với client.",
     ],
-    image: null,
+    image: Report,
   },
 ];
 

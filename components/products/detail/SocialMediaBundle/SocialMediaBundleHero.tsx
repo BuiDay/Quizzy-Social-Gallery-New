@@ -1,11 +1,12 @@
 import React from "react";
-
+import Image from "next/image"
+import Thumnail from "@/assets/images/Social Media Bundle/1.png"
 export function SocialMediaBundleHero() {
   return (
     <section
       className="smbundle-hero"
       id="social-media-bundle-top"
-    >
+    > 
       <div className="wrap smbundle-hero-inner">
 
         {/* =====================================================
@@ -152,35 +153,15 @@ export function SocialMediaBundleHero() {
                 } as React.CSSProperties
               }
             >
-
-              {/*
-                SAU KHI CÓ ẢNH:
-
-                import Image from "next/image";
-                import BundleImage from "@/assets/images/Social Media Bundle/1.png";
-
+     
                 <Image
-                  src={BundleImage}
+                  src={Thumnail}
                   alt="Social Media Bundle"
                   fill
                   priority
                   className="smbundle-product-image"
                 />
-              */}
-
-
-              {/* TEMP PLACEHOLDER */}
-
-              <div className="smbundle-product-placeholder">
-                <span>
-                  SOCIAL MEDIA
-                </span>
-
-                <strong>
-                  BUNDLES
-                </strong>
-              </div>
-
+       
 
               {/* FLOATING TAGS */}
 

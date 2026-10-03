@@ -238,36 +238,6 @@ export function SocialMediaPackageTwoWhoSection() {
           <h2 className="smpkg2-who__title">
             PACKAGE NÀY PHÙ HỢP VỚI AI?
           </h2>
-
-          <div
-            className="smpkg2-who__steps"
-            aria-hidden="true"
-          >
-            {[
-              "01",
-              "02",
-              "03",
-              "END",
-            ].map(
-              (step, index) => (
-                <span
-                  key={step}
-                  ref={(el) => {
-                    stepRefs.current[
-                      index
-                    ] = el;
-                  }}
-                  className={`smpkg2-who__step ${
-                    index === 0
-                      ? "is-active"
-                      : ""
-                  }`}
-                >
-                  {step}
-                </span>
-              ),
-            )}
-          </div>
         </div>
 
         {/* ===================================
@@ -333,9 +303,9 @@ export function SocialMediaPackageTwoWhoSection() {
               ================================= */}
 
           <article className="smpkg2-who__card smpkg2-who__card--end">
-            <div className="smpkg2-who__end-star">
+            {/* <div className="smpkg2-who__end-star">
               ✳
-            </div>
+            </div> */}
 
             <p className="smpkg2-who__end-text">
               Nếu bạn đang ở một

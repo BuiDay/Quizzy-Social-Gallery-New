@@ -20,14 +20,14 @@ export default function SocialMediaPackageOnePage() {
       <SiteEffects />
       <Navbar />
       <main>
-        <SocialMediaPackageTwoHero productImageSrc={productImage}/>
+        <SocialMediaPackageTwoHero productImageSrc={productImage} />
         <SocialMediaPackageTwoExperienceSection />
         <SocialMediaPackageTwoWhoSection />
         <SocialMediaPackageTwoProposalSection />
         <SocialMediaPackageTwoAuditSection />
         <SocialMediaPackageTwoMonthlyReportSection />
         <SocialMediaPackageTwoFinalOfferSection
-    productImageSrc={productImage}
+          productImageSrc={productImage}
           purchaseUrl="LINK_THANH_TOAN_PACKAGE_02"
         />
         <NewsletterCTA />

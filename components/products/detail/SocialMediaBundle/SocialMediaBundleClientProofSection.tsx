@@ -7,75 +7,68 @@ import {
   useState,
 } from "react";
 
+
+import Portfolio from "@/assets/images/Social Media Bundle/01/3.png"
+import Proposal from "@/assets/images/Social Media Bundle/02/5.png"
+import Audit from "@/assets/images/Social Media Bundle/03/7.png"
+import Strategy from "@/assets/images/Social Media Bundle/04/9.png"
+import Report from "@/assets/images/Social Media Bundle/05/13.png"
+import Plan from "@/assets/images/Social Media Package 1/Social Media Plan/14.png"
+
 type WorkItem = {
   title: string;
-  meta: string;
-  src: string | null;
+  src: string | any;
 };
 
 const rowOne: WorkItem[] = [
   {
     title: "Proposal",
-    meta: "Client · F&B",
-    src: null,
+    src: Proposal,
   },
   {
     title: "Audit",
-    meta: "Beauty Brand",
-    src: null,
+    src: Audit,
   },
   {
     title: "Strategy",
-    meta: "Startup",
-    src: null,
+    src: Strategy,
   },
   {
-    title: "Content Plan",
-    meta: "Agency",
-    src: null,
+    title: "Plan",
+    src: Plan,
   },
   {
     title: "Monthly Report",
-    meta: "E-commerce",
-    src: null,
+    src: Report,
   },
   {
     title: "Portfolio",
-    meta: "Personal Brand",
-    src: null,
+    src: Portfolio,
   },
 ];
 
 const rowTwo: WorkItem[] = [
   {
-    title: "Content Calendar",
-    meta: "Cafe Chain",
-    src: null,
+    title: "Plan",
+    src: Plan,
   },
   {
     title: "Audit",
-    meta: "Fashion",
-    src: null,
+    src: Audit,
   },
   {
     title: "Proposal",
-    meta: "Education",
-    src: null,
+    src: Proposal,
   },
   {
     title: "Report",
-    meta: "Local Business",
-    src: null,
+
+    src: Report,
   },
   {
     title: "Strategy",
-    meta: "SaaS",
-    src: null,
-  },
-  {
-    title: "Làm việc với Client",
-    meta: "Workshop",
-    src: null,
+
+    src: Strategy,
   },
 ];
 
@@ -128,10 +121,6 @@ function WorkCard({
 
       <figcaption>
         {item.title}
-
-        <small>
-          {item.meta}
-        </small>
       </figcaption>
     </figure>
   );

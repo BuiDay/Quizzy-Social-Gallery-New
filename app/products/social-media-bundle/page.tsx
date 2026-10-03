@@ -11,7 +11,7 @@ import { SiteEffects } from "@/components/SiteEffects";
 import { ModalProvider } from "@/components/ui/ModalContext";
 import { NewsletterCTA } from "@/components/ui/NewsletterCTA";
 import "@/styles/social-media-bundle.css";
-
+import Thumnail from "@/assets/images/Social Media Bundle/1.png"
 
 export default function SocialMediaBundlePage() {
   return (
@@ -24,7 +24,7 @@ export default function SocialMediaBundlePage() {
         <SocialMediaBundleClientProofSection />
         <SocialMediaBundleDocumentSection/>
         <SocialMediaBundleTemplateValueSection/>
-        <SocialMediaBundleFinalOfferSection/>
+        <SocialMediaBundleFinalOfferSection productImageSrc={Thumnail}/>
         <SocialMediaBundleNewsletter />
       </main>
 

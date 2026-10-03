@@ -182,26 +182,11 @@ export function SocialMediaPackageTwoHero({
                 <del>599.000đ</del>
               </div>
 
-              {purchaseUrl ? (
-                <a
-                  href={purchaseUrl}
-                  className="smpkg2-buy-button"
-                  data-cur="OPEN"
-                >
-                  <span>MUA NGAY</span>
-                  <span
-                    className="smpkg2-buy-arrow"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                </a>
-              ) : (
+              .
                 <button
                   type="button"
                   className="smpkg2-buy-button"
-                  disabled
-                  title="Chưa có liên kết thanh toán"
+                  title=""
                 >
                   <span>MUA NGAY</span>
                   <span
@@ -211,7 +196,7 @@ export function SocialMediaPackageTwoHero({
                     →
                   </span>
                 </button>
-              )}
+              
             </div>
           </div>
         </div>

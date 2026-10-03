@@ -2,7 +2,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
+import Image from "next/image";
+import Proposal from "@/assets/images/Social Media Package 2/5. Proposal.png"
+import Audit from "@/assets/images/Social Media Package 2/6. Audit.png"
+import Report from "@/assets/images/Social Media Package 2/7. Report.png"
 /* ============================================================
    DOCUMENT WALL DATA
    ============================================================ */
@@ -414,7 +417,7 @@ export function SocialMediaPackageTwoExperienceSection() {
                     <div className="smpkg2-exp-pride__copy">
                         <p>
                             Những điều mình tự hào hơn cả con số
-                            <br className="smpkg2-exp-desktop-break" />
+                            {/* <br className="smpkg2-exp-desktop-break" /> */}
                             {" "}50+ clients là:
                         </p>
 
@@ -504,14 +507,8 @@ export function SocialMediaPackageTwoExperienceSection() {
                                 role="img"
                                 aria-label="Ảnh minh họa cho Social Media Proposal"
                             >
-                                <div className="smpkg2-exp-trio__cloud">
-                                    <span />
-                                    <span />
-                                    <span />
-                                </div>
 
-                                <div className="smpkg2-exp-trio__hill smpkg2-exp-trio__hill--back" />
-                                <div className="smpkg2-exp-trio__hill smpkg2-exp-trio__hill--front" />
+                                <Image src={Proposal} alt="Proposal" />
                             </div>
                         </div>
 
@@ -523,15 +520,9 @@ export function SocialMediaPackageTwoExperienceSection() {
                                 role="img"
                                 aria-label="Ảnh minh họa cho Social Media Audit"
                             >
-                                <div className="smpkg2-exp-trio__cloud">
-                                    <span />
-                                    <span />
-                                    <span />
-                                </div>
-
-                                <div className="smpkg2-exp-trio__hill smpkg2-exp-trio__hill--back" />
-                                <div className="smpkg2-exp-trio__hill smpkg2-exp-trio__hill--front" />
+                                <Image src={Audit} alt="Audit" />
                             </div>
+
 
                             <span className="smpkg2-exp-trio__label">
                                 Audit có cơ sở
@@ -550,14 +541,9 @@ export function SocialMediaPackageTwoExperienceSection() {
                                 role="img"
                                 aria-label="Ảnh minh họa cho Social Media Monthly Report"
                             >
-                                <div className="smpkg2-exp-trio__cloud">
-                                    <span />
-                                    <span />
-                                    <span />
-                                </div>
+                               <Image src={Report} alt="Report" />
 
-                                <div className="smpkg2-exp-trio__hill smpkg2-exp-trio__hill--back" />
-                                <div className="smpkg2-exp-trio__hill smpkg2-exp-trio__hill--front" />
+                    
                             </div>
                         </div>
                     </div>

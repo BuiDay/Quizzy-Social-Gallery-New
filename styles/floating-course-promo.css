@@ -27,7 +27,7 @@
   
     width:
       min(
-        550px,
+        510px,
         calc(100vw - 32px)
       );
   

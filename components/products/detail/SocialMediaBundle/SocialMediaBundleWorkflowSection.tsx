@@ -299,7 +299,7 @@ export function SocialMediaBundleWorkflowSection() {
                             {/* ===============================================
                   LEFT
                   =============================================== */}
-
+                            <div className="smbundle-workflow-left__copy">
                             <div className="smbundle-workflow-copy">
 
                                 <div className="smbundle-workflow-eyebrow">
@@ -386,7 +386,7 @@ export function SocialMediaBundleWorkflowSection() {
 
                             </div>
 
-
+                            </div>
                             {/* ===============================================
                   RIGHT CIRCULAR MAP
                   =============================================== */}
