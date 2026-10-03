@@ -199,11 +199,11 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
             )}
 
             <div className="purchase-modal-product-copy">
-              {product.category && (
+              {/* {product.category && (
                 <span className="purchase-modal-category">
                   {product.category.join(" · ")}
                 </span>
-              )}
+              )} */}
 
               <h2
                 id="purchase-modal-title"
@@ -211,13 +211,6 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
                 {product.title}
               </h2>
 
-              {product.description && (
-                <p>
-                  {
-                    product.description
-                  }
-                </p>
-              )}
 
               <div className="purchase-modal-product-price">
                 <strong>
@@ -259,14 +252,7 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
           {/* COUPON */}
 
           {product.charge !== false && <div className="purchase-modal-block">
-            <div className="purchase-modal-block-head">
-              <span>01</span>
-
-              <h3>
-                Mã giảm giá
-              </h3>
-            </div>
-
+        
             <div className="purchase-modal-coupon">
               <input
                 type="text"
@@ -368,11 +354,6 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
 
             <span>→</span>
           </button>
-
-          <p className="purchase-modal-secure">
-            🔒 Thông tin đơn hàng được bảo
-            mật.
-          </p>
         </form>
       </div>
     </div>,
