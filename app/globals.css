@@ -5,7 +5,7 @@
    :root {
     --ink: #1b1425; /* plum-black, mềm hơn #000 */
     --ink-2: #4a4257;
-    --ink-3: #7d7689;
+    --ink-3: #7d7689; 
     --white: #fff;
     --plum: #2c2040; /* dùng thay cho đen ở footer */
     --lilac: #c6a0eb;
@@ -1706,6 +1706,15 @@
   }
   .shead h2 {
     margin-top: 18px;
+  }
+
+  @media (max-width: 560px) {
+    .shead {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
   }
   
   /* ---------- about ---------- */

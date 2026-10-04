@@ -40,40 +40,41 @@ import {
 
 
 const navigation = [
-  {
-    href: "/collections",
-    label: "Tổng quan",
-    icon: FiGrid,
-    exact: true,
-  },
+  // {
+  //   href: "/collections",
+  //   label: "Tổng quan",
+  //   icon: FiGrid,
+  //   exact: true,
+  // },
 
   {
     href:
       "/collections/documents",
     label: "Tài liệu của tôi",
     icon: FiFileText,
+    exact: true,
   },
 
-  {
-    href:
-      "/collections/courses",
-    label: "Khóa học của tôi",
-    icon: FiBookOpen,
-  },
+  // {
+  //   href:
+  //     "/collections/courses",
+  //   label: "Khóa học của tôi",
+  //   icon: FiBookOpen,
+  // },
 
-  {
-    href:
-      "/collections/transactions",
-    label: "Giao dịch",
-    icon: FiCreditCard,
-  },
+  // {
+  //   href:
+  //     "/collections/transactions",
+  //   label: "Giao dịch",
+  //   icon: FiCreditCard,
+  // },
 
-  {
-    href:
-      "/collections/account",
-    label: "Tài khoản",
-    icon: FiUser,
-  },
+  // {
+  //   href:
+  //     "/collections/account",
+  //   label: "Tài khoản",
+  //   icon: FiUser,
+  // },
 ];
 
 
@@ -475,58 +476,6 @@ export function UserDashboardShell({
           ====================================================== */}
 
       <main className="ud-main">
-
-        <header className="ud-topbar">
-
-          <div className="ud-topbar__left">
-            <button
-              type="button"
-              className="ud-mobile-menu"
-              aria-label="Mở menu"
-              onClick={() =>
-                setMobileOpen(true)
-              }
-            >
-              <FiMenu />
-            </button>
-
-            <div>
-              <small>
-                QUIZZY SOCIAL
-                GALLERY
-              </small>
-
-              <strong>
-                {pageTitle(
-                  pathname,
-                )}
-              </strong>
-            </div>
-          </div>
-
-
-          <Link
-            href="/collections/account"
-            className="ud-topbar__account"
-            data-cur="hover"
-          >
-            <span className="ud-topbar__avatar">
-              {avatar ? (
-                <img
-                  src={avatar}
-                  alt=""
-                />
-              ) : (
-                initial
-              )}
-            </span>
-
-            <span className="ud-topbar__name">
-              {displayName}
-            </span>
-          </Link>
-        </header>
-
 
         <div className="ud-content">
           {children}

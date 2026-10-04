@@ -129,6 +129,7 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
         const response = await createPaymentLink(order).unwrap();
         const result = response as { checkoutUrl?: string; data?: { checkoutUrl?: string } };
         const url = result?.checkoutUrl ?? result?.data?.checkoutUrl ?? paymentLink?.checkoutUrl;
+        console.log(url)
         if (!url) throw new Error("Chưa nhận được liên kết thanh toán. Vui lòng thử lại.");
         window.location.assign(url);
       }

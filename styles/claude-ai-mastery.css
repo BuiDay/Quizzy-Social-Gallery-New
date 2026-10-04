@@ -724,6 +724,7 @@
 
   .claude-course-hero__kicker {
     max-width: 100%;
+    display:none;
   }
 
   .claude-course-hero__kicker span {
@@ -734,6 +735,9 @@
 
   .claude-course-hero__title {
     margin-top: 27px;
+    display: flex;
+  flex-direction: column;
+    align-items:center;
   }
 
   .claude-course-hero__title-row {
@@ -743,7 +747,7 @@
   .claude-course-hero__pill {
     min-height: 0;
 
-    font-size: clamp(31px, 10.5vw, 46px);
+    font-size: clamp(31px, 10.5vw, 50px);
   }
 
   .claude-course-hero__star {
@@ -801,7 +805,7 @@
   }
 
   .claude-course-hero__visual {
-    width: 100%;
+    width: 70%;
   }
 
   /* STATS */
@@ -2284,7 +2288,7 @@
 
   color: #fff;
 
-  font-size: clamp(13px, 1.1vw, 16px);
+  font-size: clamp(16px, 1.1vw, 16px);
 
   font-weight: 700;
 
@@ -3187,7 +3191,7 @@
   .claude-solution-course__pill {
     min-height: 0;
 
-    font-size: clamp(28px, 8vw, 40px);
+    font-size: clamp(28px, 10vw, 48px);
   }
 
   .claude-solution-course__arrow {
@@ -3287,7 +3291,7 @@
   }
 
   .claude-solution-course__pill {
-    font-size: clamp(24px, 7.7vw, 32px);
+    font-size: clamp(24px, 10vw, 38px);
   }
 
   .claude-solution-course__star {
@@ -3996,8 +4000,9 @@
   /* TABS */
 
   .claude-applications__tabs {
-    display: flex;
-
+    display: grid;
+    grid-template-columns:
+    minmax(100px, 1fr) minmax(0, 1fr) minmax(0, 1fr) ;
     justify-content: flex-start;
 
     gap: 10px;
@@ -4020,9 +4025,9 @@
   }
 
   .claude-application-tab {
-    flex: 0 0 125px;
+    flex: 0 0 80px;
 
-    min-height: 125px;
+    min-height: 80px;
 
     scroll-snap-align: start;
   }
@@ -4062,16 +4067,14 @@
 
 @media (max-width: 420px) {
   .claude-application-tab {
-    flex-basis: 112px;
-
-    min-height: 115px;
-
+    flex-basis: 50px;
+    min-height: 50px;
     border-radius: 15px;
   }
 
   .claude-application-tab__icon {
-    width: 42px;
-    height: 42px;
+    width: 30px;
+    height: 30px;
   }
 
   .claude-applications__visual-shell {
@@ -4783,12 +4786,9 @@
   }
 
   .claude-curriculum-phase__header {
-    align-items: flex-start;
-
+    align-items: flex-center;
+    flex-direction: column;
     gap: 15px;
-
-    padding:
-      0 0 22px;
   }
 
   .claude-curriculum-phase__title {
@@ -4816,7 +4816,7 @@
   .claude-curriculum-phase__count {
     margin-top: 3px;
 
-    font-size: 7px;
+    font-size: 10px;
   }
 
   /* MODULE LIST */
@@ -6291,898 +6291,1274 @@
    CLAUDE AI MASTERY — PRICING
    ============================================================ */
 
-.claude-pricing {
-  --claude-pricing-purple: #a97fdd;
-  --claude-pricing-lime: #cdfc56;
-  --claude-pricing-ease: cubic-bezier(.16, 1, .3, 1);
-
-  position: relative;
-
-  width: 100%;
-
-  padding:
-    clamp(80px, 8vw, 120px) 0 clamp(95px, 10vw, 145px);
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(circle at 80% 30%,
-      rgba(169, 127, 221, .06),
-      transparent 30%),
-    #fff;
-
-  color: #111;
-}
-
-.claude-pricing__inner {
-  width: min(1100px, 90vw);
-
-  margin-inline: auto;
-}
-
-
-/* ============================================================
-     KICKER
+   .claude-pricing {
+    --claude-lime: #cdfc56;
+    --claude-purple: #a97fdd;
+    --claude-purple-soft: #f2eafd;
+  
+    --claude-black: #080808;
+    --claude-ink: #171419;
+  
+    --claude-muted: #7f7784;
+  
+    --claude-bg: #f8f6fa;
+  
+    --claude-line:
+      rgba(23, 20, 25, .1);
+  
+    --claude-ease:
+      cubic-bezier(.16, 1, .3, 1);
+  
+    width: 100%;
+  
+    padding:
+      clamp(
+        90px,
+        9vw,
+        145px
+      )
+      0;
+  
+    background:
+      var(--claude-bg);
+  
+    color:
+      var(--claude-ink);
+  }
+  
+  
+  /* ============================================================
+     INNER
      ============================================================ */
-
-.claude-pricing__kicker {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  min-height: 39px;
-
-  padding:
-    7px 18px;
-
-  border:
-    1px solid #ddd9e0;
-
-  border-radius: 999px;
-
-  background: #fff;
-
-  color: #302b33;
-
-  font-size:
-    clamp(9px,
-      .76vw,
-      11px);
-
-  font-weight: 600;
-
-  letter-spacing: .13em;
-}
-
-.claude-pricing__kicker i {
-  width: 7px;
-  height: 7px;
-
-  flex: 0 0 7px;
-
-  border-radius: 50%;
-
-  background:
-    var(--claude-pricing-purple);
-}
-
-
-/* ============================================================
-     GRID
+  
+  .claude-pricing__inner {
+    width:
+      min(
+        1180px,
+        90vw
+      );
+  
+    margin-inline:
+      auto;
+  }
+  
+  
+  /* ============================================================
+     HEAD
      ============================================================ */
-
-.claude-pricing__grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  align-items: stretch;
-
-  gap:
-    clamp(20px,
-      2.2vw,
-      30px);
-
-  margin-top:
-    clamp(28px,
-      3vw,
-      42px);
-}
-
-
-/* ============================================================
-     LEFT CARD
+  
+  .claude-pricing-head {
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: center;
+  
+    text-align: center;
+  }
+  
+  
+  /* KICKER */
+  
+  .claude-pricing__kicker {
+    display:
+      inline-flex;
+  
+    align-items: center;
+  
+    gap: 8px;
+  
+    min-height: 31px;
+  
+    padding:
+      5px
+      13px;
+  
+    border:
+      1px solid
+      var(--claude-line);
+  
+    border-radius: 999px;
+  
+    background: #fff;
+  
+    box-shadow:
+      0 5px 18px
+      rgba(
+        28,
+        18,
+        38,
+        .04
+      );
+  
+    font-size: 14px;
+  
+    font-weight: 750;
+  
+    letter-spacing:
+      .13em;
+  }
+  
+  
+  .claude-pricing__kicker
+  i {
+    width: 6px;
+    height: 6px;
+  
+    border-radius:
+      50%;
+  
+    background:
+      var(--claude-purple);
+  }
+  
+  
+  /* ============================================================
+     TITLE
      ============================================================ */
-
-.claude-pricing-value {
-  display: flex;
-
-  flex-direction: column;
-
-  min-height:
-    clamp(410px,
-      38vw,
-      500px);
-
-  padding:
-    clamp(26px,
-      3vw,
-      38px);
-
-  border:
-    1.5px solid #d8b9f1;
-
-  border-radius:
-    clamp(18px,
-      2vw,
-      25px);
-
-  background:
-    linear-gradient(145deg,
-      #fff 0%,
-      #fbf7ff 100%);
-
-  box-shadow:
-    0 12px 30px rgba(70, 45, 90, .045);
-}
-
-
-/* TOP */
-
-.claude-pricing-value__top {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-}
-
-.claude-pricing-value__top>span {
-  color: #aaa4ad;
-
-  font-size:
-    clamp(14px,
-      1.35vw,
-      20px);
-
-  font-weight: 700;
-}
-
-.claude-pricing-value__top strong {
-  color: #aaa4ad;
-
-  font-size:
-    clamp(15px,
-      1.4vw,
-      20px);
-
-  font-weight: 700;
-
-  text-decoration: line-through;
-
-  white-space: nowrap;
-}
-
-
-/* LINE */
-
-.claude-pricing-value__line {
-  width: 100%;
-  height: 1px;
-
-  margin:
-    16px 0 19px;
-
-  background:
-    #ece7ee;
-}
-
-
-/* ============================================================
-     BONUS PILL
+  
+  .claude-pricing-head__title {
+    margin:
+      22px
+      0
+      0;
+  
+    font-size:
+      clamp(
+        32px,
+        5vw,
+        48px
+      );
+  
+    font-weight: 650;
+  
+    line-height: .95;
+  
+    letter-spacing:
+      -.058em;
+  }
+  
+  
+  .claude-pricing-head__outline {
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    padding:
+      .04em
+      .23em
+      .1em;
+  
+    border:
+      1.5px solid
+      var(--claude-ink);
+  
+    border-radius:
+      999px;
+  
+    background:
+      #fff;
+  }
+  
+  
+  .claude-pricing-head__lime {
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    padding:
+      .04em
+      .23em
+      .1em;
+  
+    border:
+      1.5px solid
+      var(--claude-ink);
+  
+    border-radius:
+      999px;
+  
+    background:
+      var(--claude-lime);
+  }
+  
+  
+  /* DESCRIPTION */
+  
+  .claude-pricing-head__description {
+    max-width:
+      560px;
+  
+    margin:
+      19px
+      auto
+      0;
+  
+    color:
+      var(--claude-muted);
+  
+    font-size: 14px;
+  
+    line-height: 1.6;
+  }
+  
+  
+  /* ============================================================
+     MAIN GRID
      ============================================================ */
-
-.claude-pricing-value__bonus {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 5px;
-
-  width: fit-content;
-
-  padding:
-    5px 9px;
-
-  border-radius: 999px;
-
-  background:
-    #f1e4ff;
-
-  color:
-    #ad73e2;
-
-  font-size:
-    clamp(9px,
-      .78vw,
-      11px);
-
-  font-weight: 600;
-}
-
-.claude-pricing-value__bonus i {
-  font-style: normal;
-
-  font-size: 13px;
-}
-
-
-/* ============================================================
-     BENEFIT LIST
+  
+  .claude-pricing-main {
+    display: grid;
+  
+    grid-template-columns:
+      .96fr
+      1.04fr;
+  
+    gap:
+      16px;
+  
+    margin-top:
+      clamp(
+        45px,
+        5vw,
+        68px
+      );
+  }
+  
+  
+  /* ============================================================
+     BENEFITS
      ============================================================ */
-
-.claude-pricing-value ul {
-  display: flex;
-
-  flex-direction: column;
-
-  gap:
-    clamp(17px,
-      1.8vw,
-      23px);
-
-  margin:
-    clamp(20px,
-      2.4vw,
-      30px) 0 0;
-
-  padding: 0;
-
-  list-style: none;
-}
-
-.claude-pricing-value li {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  color: #3e3941;
-
-  font-size:
-    clamp(12px,
-      1vw,
-      15px);
-
-  line-height: 1.35;
-}
-
-
-/* CHECK */
-
-.claude-pricing-value__check {
-  width: 20px;
-  height: 20px;
-
-  display: grid;
-
-  place-items: center;
-
-  flex: 0 0 20px;
-
-  border:
-    1.5px solid #b97cea;
-
-  border-radius: 50%;
-
-  color:
-    #b97cea;
-
-  font-size: 10px;
-
-  font-weight: 700;
-}
-
-
-/* ============================================================
-     BOTTOM TOTAL
+  
+  .claude-pricing-benefits {
+    min-height:
+      480px;
+  
+    padding:
+      clamp(
+        27px,
+        3vw,
+        39px
+      );
+  
+    border:
+      1px solid
+      var(--claude-line);
+  
+    border-radius:
+      27px;
+  
+    background:
+      #fff;
+  }
+  
+  
+  .claude-pricing-benefits__head
+  > span {
+    color:
+      var(--claude-purple);
+  
+    font-size: 14px;
+  
+    font-weight: 800;
+  
+    letter-spacing:
+      .13em;
+  }
+  
+  
+  .claude-pricing-benefits__head
+  h3 {
+    margin:
+      8px
+      0
+      0;
+  
+    font-size:
+      clamp(
+        23px,
+        2.5vw,
+        34px
+      );
+  
+    font-weight: 650;
+  
+    line-height:
+      1.02;
+  
+    letter-spacing:
+      -.045em;
+  }
+  
+  
+  /* ============================================================
+     BENEFIT ITEMS
      ============================================================ */
-
-.claude-pricing-value__bottom {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  margin-top: auto;
-
-  padding-top:
-    clamp(22px,
-      2.5vw,
-      32px);
-
-  border-top:
-    1px solid #ece7ee;
-}
-
-.claude-pricing-value__bottom span {
-  color:
-    #a36bd8;
-
-  font-size:
-    clamp(10px,
-      .9vw,
-      13px);
-
-  font-weight: 500;
-}
-
-.claude-pricing-value__bottom strong {
-  color:
-    #9f65d5;
-
-  font-size:
-    clamp(15px,
-      1.4vw,
-      20px);
-
-  font-weight: 700;
-}
-
-
-/* ============================================================
-     RIGHT OFFER CARD
+  
+  .claude-pricing-benefits__list {
+    display: flex;
+  
+    flex-direction:
+      column;
+  
+    gap: 21px;
+  
+    margin-top:
+      29px;
+  }
+  
+  
+  .claude-pricing-benefit {
+    display: grid;
+  
+    grid-template-columns:
+      28px
+      minmax(0, 1fr);
+  
+    align-items:
+      flex-start;
+  
+    gap: 12px;
+  }
+  
+  
+  .claude-pricing-benefit__check {
+    width: 27px;
+    height: 27px;
+  
+    display: grid;
+  
+    place-items:
+      center;
+  
+    border-radius:
+      50%;
+  
+    background:
+      var(--claude-lime);
+  
+    color: #111;
+  
+    font-size: 11px;
+  
+    font-weight: 800;
+  }
+  
+  
+  .claude-pricing-benefit__copy
+  strong {
+    display: block;
+  
+    color:
+      var(--claude-ink);
+  
+    font-size: 14px;
+  
+    font-weight: 700;
+  
+    line-height: 1.4;
+  }
+  
+  
+  .claude-pricing-benefit__copy
+  p {
+    margin:
+      5px
+      0
+      0;
+  
+    color:
+      var(--claude-muted);
+  
+    font-size: 14px;
+  
+    line-height: 1.55;
+  }
+  
+  
+  /* TAGS */
+  
+  .claude-pricing-benefit__tags {
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    gap: 5px;
+  
+    margin-top: 9px;
+  }
+  
+  
+  .claude-pricing-benefit__tags
+  span {
+    min-height: 22px;
+  
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    padding:
+      3px
+      9px;
+  
+    border-radius:
+      999px;
+  
+    background:
+      var(
+        --claude-purple-soft
+      );
+  
+    color:
+      #62546d;
+  
+    font-size: 12px;
+  
+    font-weight: 650;
+  }
+  
+  
+  /* ============================================================
+     OFFER CARD
      ============================================================ */
-
-.claude-pricing-offer {
-  position: relative;
-
-  display: flex;
-
-  flex-direction: column;
-
-  min-height:
-    clamp(410px,
-      38vw,
-      500px);
-
-  padding:
-    clamp(27px,
-      3vw,
-      39px);
-
-  overflow: hidden;
-
-  border:
-    1.5px solid #9c69ca;
-
-  border-radius:
-    clamp(18px,
-      2vw,
-      25px);
-
-  background:
-    #050505;
-
-  color: #fff;
-
-  box-shadow:
-    0 18px 38px rgba(69, 45, 88, .14);
-}
-
-
-/* SUBTLE GLOW */
-
-.claude-pricing-offer::before {
-  content: "";
-
-  position: absolute;
-
-  top: -90px;
-  right: -70px;
-
-  width: 240px;
-  height: 240px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(169, 127, 221, .11);
-
-  filter: blur(60px);
-
-  pointer-events: none;
-}
-
-
-/* ============================================================
-     SALE BADGE
+  
+  .claude-pricing-offer {
+    position: relative;
+  
+    min-height:
+      480px;
+  
+    display: flex;
+  
+    flex-direction:
+      column;
+  
+    padding:
+      clamp(
+        26px,
+        3vw,
+        40px
+      );
+  
+    overflow: hidden;
+  
+    border-radius:
+      27px;
+  
+    background:
+      var(--claude-black);
+  
+    color: #fff;
+  }
+  
+  
+  /* PURPLE CIRCLE */
+  
+  .claude-pricing-offer__circle {
+    position: absolute;
+  
+    top: -90px;
+    right: -75px;
+  
+    width: 210px;
+    height: 210px;
+  
+    border:
+      1px solid
+      rgba(
+        169,
+        127,
+        221,
+        .4
+      );
+  
+    border-radius:
+      50%;
+  }
+  
+  
+  /* ============================================================
+     BADGE
      ============================================================ */
-
-.claude-pricing-offer__badge {
-  position: relative;
-  z-index: 2;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: fit-content;
-
-  min-height: 42px;
-
-  padding:
-    7px 17px;
-
-  border-radius: 999px;
-
-  background:
-    var(--claude-pricing-lime);
-
-  color: #111;
-
-  font-size:
-    clamp(13px,
-      1.15vw,
-      17px);
-
-  font-weight: 700;
-}
-
-
-/* ============================================================
-     LABEL
-     ============================================================ */
-
-.claude-pricing-offer__label {
-  position: relative;
-  z-index: 2;
-
-  margin-top:
-    clamp(25px,
-      2.8vw,
-      35px);
-
-  color:
-    rgba(255, 255, 255, .6);
-
-  font-size:
-    clamp(9px,
-      .78vw,
-      11px);
-
-  font-weight: 500;
-}
-
-
-/* LINE */
-
-.claude-pricing-offer__line {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-  height: 1px;
-
-  margin-top: 9px;
-
-  background:
-    rgba(255, 255, 255, .2);
-}
-
-
-/* ============================================================
+  
+  .claude-pricing-offer__top {
+    position: relative;
+  
+    z-index: 2;
+  }
+  
+  
+  .claude-pricing-offer__badge {
+    min-height: 28px;
+  
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    padding:
+      4px
+      11px;
+  
+    border-radius:
+      999px;
+  
+    background:
+      var(--claude-lime);
+  
+    color: #111;
+  
+    font-size: 10px;
+  
+    font-weight: 800;
+  
+    letter-spacing:
+      .05em;
+  }
+  
+  
+  /* ============================================================
      PRICE
      ============================================================ */
-
-.claude-pricing-offer__price {
-  position: relative;
-  z-index: 2;
-
-  display: block;
-
-  margin-top:
-    clamp(20px,
-      2.4vw,
-      30px);
-
-  color:
-    var(--claude-pricing-lime);
-
-  font-size:
-    clamp(42px,
-      5vw,
-      70px);
-
-  font-weight: 700;
-
-  line-height: .95;
-
-  letter-spacing:
-    -.06em;
-
-  white-space: nowrap;
-}
-
-
-/* ============================================================
-     NOTES
-     ============================================================ */
-
-.claude-pricing-offer__note {
-  position: relative;
-  z-index: 2;
-
-  margin:
-    clamp(18px,
-      2vw,
-      25px) 0 0;
-
-  color: #fff;
-
-  font-size:
-    clamp(10px,
-      .88vw,
-      13px);
-
-  font-weight: 600;
-
-  line-height: 1.45;
-}
-
-.claude-pricing-offer__update {
-  position: relative;
-  z-index: 2;
-
-  margin:
-    clamp(18px,
-      2vw,
-      25px) 0 0;
-
-  color:
-    rgba(255, 255, 255, .88);
-
-  font-size:
-    clamp(10px,
-      .88vw,
-      13px);
-
-  line-height: 1.5;
-}
-
-.claude-pricing-offer__update b {
-  color: #fff;
-
-  font-weight: 700;
-}
-
-
-/* ============================================================
-     CTA
-     ============================================================ */
-
-.claude-pricing-offer__button {
-  position: relative;
-  z-index: 2;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  width: 100%;
-
-  min-height:
-    clamp(52px,
-      5vw,
-      62px);
-
-  margin-top: auto;
-
-  padding:
-    0 clamp(22px,
-      2.5vw,
-      32px);
-
-  border-radius: 999px;
-
-  background:
-    var(--claude-pricing-lime);
-
-  color: #111;
-
-  font-size:
-    clamp(12px,
-      1vw,
-      15px);
-
-  font-weight: 500;
-
-  text-decoration: none;
-
-  transition:
-    transform .4s var(--claude-pricing-ease),
-
-    background-color .3s ease,
-
-    color .3s ease;
-}
-
-.claude-pricing-offer__button span:last-child {
-  font-size:
-    clamp(20px,
-      2vw,
-      27px);
-
-  line-height: 1;
-
-  transition:
-    transform .4s var(--claude-pricing-ease);
-}
-
-
-/* CTA HOVER */
-
-.claude-pricing-offer__button:hover {
-  transform:
-    translateY(-4px);
-
-  background: #fff;
-}
-
-.claude-pricing-offer__button:hover span:last-child {
-  transform:
-    translateX(7px);
-}
-
-
-/* ============================================================
-     SCROLL REVEAL
-     ============================================================ */
-
-.claude-pricing-reveal {
-  opacity: 0;
-
-  transform:
-    translateY(30px);
-}
-
-.claude-pricing-reveal.is-visible {
-  animation:
-    claudePricingReveal .85s var(--claude-pricing-ease) var(--pricing-delay,
-      0s) forwards;
-}
-
-
-@keyframes claudePricingReveal {
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(30px);
+  
+  .claude-pricing-offer__price-wrap {
+    position: relative;
+  
+    z-index: 2;
+  
+    margin-top:
+      22px;
   }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-}
-
-
-/* ============================================================
-     CARD HOVER
-     ============================================================ */
-
-.claude-pricing-value,
-.claude-pricing-offer {
-  transition:
-    transform .45s var(--claude-pricing-ease),
-
-    box-shadow .35s ease;
-}
-
-.claude-pricing-value:hover {
-  transform:
-    translateY(-5px);
-
-  box-shadow:
-    0 18px 38px rgba(75, 48, 94, .08);
-}
-
-.claude-pricing-offer:hover {
-  transform:
-    translateY(-5px);
-
-  box-shadow:
-    0 24px 48px rgba(69, 45, 88, .18);
-}
-
-
-/* ============================================================
-     TABLET
-     ============================================================ */
-
-@media (max-width: 850px) {
-  .claude-pricing__inner {
-    width:
-      min(100% - 40px,
-        760px);
-  }
-
-  .claude-pricing__grid {
-    gap: 16px;
-  }
-
-  .claude-pricing-value,
-  .claude-pricing-offer {
-    padding: 24px;
-
-    min-height: 420px;
-  }
-
+  
+  
   .claude-pricing-offer__price {
+    display: block;
+  
+    color:
+      var(--claude-lime);
+  
     font-size:
-      clamp(36px,
-        5vw,
-        48px);
+      clamp(
+        50px,
+        6vw,
+        78px
+      );
+  
+    font-weight: 650;
+  
+    line-height: .9;
+  
+    letter-spacing:
+      -.07em;
   }
-}
-
-
-/* ============================================================
-     MOBILE
-     ============================================================ */
-
-@media (max-width: 700px) {
-  .claude-pricing {
-    padding:
-      65px 0 85px;
-  }
-
-  .claude-pricing__inner {
-    width:
-      calc(100% - 30px);
-  }
-
-  .claude-pricing__grid {
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-
-    margin-top: 30px;
-  }
-
-  .claude-pricing-value,
-  .claude-pricing-offer {
-    min-height: auto;
-
-    padding:
-      25px 21px;
-
-    border-radius: 20px;
-  }
-
-  /* LEFT */
-
-  .claude-pricing-value ul {
-    gap: 16px;
-  }
-
-  .claude-pricing-value__bottom {
-    margin-top: 30px;
-  }
-
-  /* RIGHT */
-
-  .claude-pricing-offer__price {
-    margin-top: 22px;
-
-    font-size:
-      clamp(40px,
-        11vw,
-        55px);
-
-    white-space: normal;
-  }
-
-  .claude-pricing-offer__button {
-    min-height: 54px;
-
-    margin-top: 30px;
-  }
-}
-
-
-/* ============================================================
-     SMALL MOBILE
-     ============================================================ */
-
-@media (max-width: 420px) {
-  .claude-pricing__kicker {
-    padding:
-      6px 13px;
-
-    font-size: 8px;
-  }
-
-  .claude-pricing-value__top {
-    align-items: flex-start;
-  }
-
-  .claude-pricing-value__top>span {
-    font-size: 13px;
-  }
-
-  .claude-pricing-value__top strong {
-    font-size: 13px;
-  }
-
-  .claude-pricing-value li {
+  
+  
+  .claude-pricing-offer__price-meta {
+    display: flex;
+  
+    align-items:
+      center;
+  
+    flex-wrap: wrap;
+  
     gap: 10px;
-
-    font-size: 11px;
+  
+    margin-top: 13px;
   }
-
-  .claude-pricing-value__check {
-    width: 18px;
-    height: 18px;
-
-    flex-basis: 18px;
+  
+  
+  .claude-pricing-offer__price-meta
+  del {
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        .44
+      );
+  
+    font-size: 14px;
   }
-
-  .claude-pricing-offer__badge {
-    min-height: 36px;
-
+  
+  
+  .claude-pricing-offer__price-meta
+  span {
+    min-height: 24px;
+  
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
     padding:
-      6px 13px;
-
-    font-size: 12px;
+      3px
+      10px;
+  
+    border-radius:
+      999px;
+  
+    background:
+      var(--claude-purple);
+  
+    color: #fff;
+  
+    font-size: 14px;
+  
+    font-weight: 700;
   }
-
-  .claude-pricing-offer__price {
-    font-size: 37px;
+  
+  
+  /* ============================================================
+     COUNTDOWN
+     ============================================================ */
+  
+  .claude-pricing-offer__countdown-label {
+    margin-top:
+      24px;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        .67
+      );
+  
+    font-size: 14px;
+  
+    font-weight: 600;
   }
-
-  .claude-pricing-offer__note,
-  .claude-pricing-offer__update {
+  
+  
+  .claude-pricing-countdown {
+    display: grid;
+  
+    grid-template-columns:
+      repeat(
+        4,
+        1fr
+      );
+  
+    gap: 7px;
+  
+    margin-top: 10px;
+  }
+  
+  
+  .claude-pricing-countdown
+  > div {
+    min-height: 72px;
+  
+    display: flex;
+  
+    flex-direction:
+      column;
+  
+    align-items: center;
+  
+    justify-content:
+      center;
+  
+    border:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        .07
+      );
+  
+    border-radius:
+      14px;
+  
+    background:
+      #201e25;
+  }
+  
+  
+  .claude-pricing-countdown
+  strong {
+    color: #fff;
+  
+    font-size: 28px;
+  
+    font-weight: 650;
+  
+    line-height: 1;
+  }
+  
+  
+  .claude-pricing-countdown
+  span {
+    margin-top: 5px;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        .55
+      );
+  
     font-size: 10px;
   }
-}
+  
+  
+  /* ============================================================
+     CTA
+     ============================================================ */
+  
+  .claude-pricing-offer__cta-wrap {
+    position: relative;
+  
+    margin-top: auto;
+  
+    padding-top:
+      25px;
+  }
+  
+  
+  .claude-pricing-offer__button {
+    width: 100%;
+  
+    min-height: 52px;
+  
+    display: flex;
+  
+    align-items:
+      center;
+  
+    justify-content:
+      center;
+  
+    gap: 12px;
+  
+    padding:
+      0
+      22px;
+  
+    border-radius:
+      999px;
+  
+    background:
+      var(--claude-lime);
+  
+    color:
+      #111;
+  
+    font-size: 16px;
+  
+    font-weight: 800;
+  
+    transition:
+      transform .4s
+        var(--claude-ease),
+      background-color .3s;
+  }
+  
+  
+  .claude-pricing-offer__button
+  span:last-child {
+    font-size: 17px;
+  
+    transition:
+      transform .35s
+      var(--claude-ease);
 
-
-/* ============================================================
+  }
+  
+  
+  .claude-pricing-offer__button:hover {
+    transform:
+      translateY(-3px);
+    background:
+      #fff;
+  }
+  
+  
+  .claude-pricing-offer__button:hover
+  span:last-child {
+    transform:
+      translateX(4px);
+  }
+  
+  
+  /* DISCOUNT STICKER */
+  
+  .claude-pricing-offer__discount {
+    position: absolute;
+  
+    top: 9px;
+    right: 5px;
+  
+    z-index: 3;
+  
+    padding:
+      5px
+      11px;
+  
+    border-radius:
+      999px;
+  
+    background:
+      var(--claude-purple);
+  
+    color: #111;
+  
+    font-size: 14px;
+  
+    font-weight: 800;
+  
+    transform:
+      rotate(6deg);
+  }
+  
+  
+  /* FOOTNOTE */
+  
+  .claude-pricing-offer__footnote {
+    margin:
+      17px
+      0
+      0;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        .48
+      );
+  
+    font-size: 14px;
+  
+    text-align:
+      center;
+  
+    line-height: 1.5;
+  }
+  
+  
+  /* ============================================================
+     ROADMAP
+     ============================================================ */
+  
+  .claude-pricing-roadmap {
+    margin-top:
+      34px;
+  }
+  
+  
+  .claude-pricing-roadmap
+  > h3 {
+    margin:
+      0
+      0
+      15px;
+  
+    font-size: 18px;
+  
+    font-weight: 700;
+  
+    letter-spacing:
+      -.03em;
+  }
+  
+  
+  .claude-pricing-roadmap__grid {
+    display: grid;
+  
+    grid-template-columns:
+      repeat(
+        3,
+        1fr
+      );
+  
+    gap: 10px;
+  }
+  
+  
+  /* ============================================================
+     STAGE CARD
+     ============================================================ */
+  
+  .claude-pricing-stage {
+    position: relative;
+  
+    min-height: 135px;
+  
+    padding:
+      19px;
+  
+    overflow: hidden;
+  
+    border:
+      1px solid
+      var(--claude-line);
+  
+    border-radius:
+      18px;
+  
+    background: #fff;
+  
+    transition:
+      transform .35s
+        var(--claude-ease),
+      border-color .3s;
+  }
+  
+  
+  .claude-pricing-stage:hover {
+    transform:
+      translateY(-4px);
+  
+    border-color:
+      rgba(
+        169,
+        127,
+        221,
+        .4
+      );
+  }
+  
+  
+  .claude-pricing-stage--current {
+    background:
+      var(--claude-purple-soft);
+  }
+  
+  
+  .claude-pricing-stage__head {
+    display: flex;
+  
+    align-items:
+      center;
+  
+    justify-content:
+      space-between;
+  
+    gap: 10px;
+  }
+  
+  
+  .claude-pricing-stage__head
+  > span {
+    font-size: 18px;
+  
+    font-weight: 700;
+  }
+  
+  
+  .claude-pricing-stage__head
+  small {
+    min-height: 22px;
+  
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    padding:
+      5px
+      19px;
+  
+    border-radius:
+      999px;
+  
+    background:
+      var(--claude-purple-soft);
+  
+    color:
+      #8660ad;
+  
+    font-size: 16px;
+  
+    font-weight: 700;
+  }
+  
+  
+  .claude-pricing-stage--current
+  .claude-pricing-stage__head
+  small {
+    background:
+      var(--claude-lime);
+  
+    color: #111;
+  }
+  
+  
+  .claude-pricing-stage
+  > strong {
+    display: block;
+  
+    margin-top:
+      16px;
+  
+    color:
+      var(--claude-ink);
+  
+    font-size:
+      clamp(
+        23px,
+        2.4vw,
+        32px
+      );
+  
+    font-weight: 650;
+  
+    line-height: 1;
+  
+    letter-spacing:
+      -.045em;
+  }
+  
+  
+  .claude-pricing-stage
+  > p {
+    margin:
+      7px
+      0
+      0;
+  
+    color:
+      var(--claude-muted);
+  
+    font-size: 14px;
+  }
+  
+  
+  .claude-pricing-stage__status {
+    position: absolute;
+  
+    right: 13px;
+    bottom: 13px;
+  
+    color:
+      var(--claude-purple);
+  
+    font-size: 14px;
+  
+    font-weight: 800;
+  
+    letter-spacing:
+      .08em;
+  }
+  
+  
+  /* ============================================================
+     REVEAL
+     ============================================================ */
+  
+  .claude-pricing-reveal {
+    opacity: 0;
+  
+    transform:
+      translateY(28px);
+  }
+  
+  
+  .claude-pricing-reveal.is-visible {
+    animation:
+      claudePricingReveal
+      .75s
+      var(--claude-ease)
+      var(
+        --pricing-delay,
+        0s
+      )
+      forwards;
+  }
+  
+  
+  @keyframes claudePricingReveal {
+    from {
+      opacity: 0;
+  
+      transform:
+        translateY(28px);
+    }
+  
+    to {
+      opacity: 1;
+  
+      transform:
+        translateY(0);
+    }
+  }
+  
+  
+  /* ============================================================
+     TABLET
+     ============================================================ */
+  
+  @media (
+    max-width: 850px
+  ) {
+  
+    .claude-pricing-main {
+      grid-template-columns:
+        1fr;
+    }
+  
+  
+    .claude-pricing-benefits,
+    .claude-pricing-offer {
+      min-height: auto;
+    }
+  
+  
+    .claude-pricing-offer__cta-wrap {
+      margin-top:
+        28px;
+    }
+  
+  }
+  
+  
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+  
+  @media (
+    max-width: 620px
+  ) {
+  
+    .claude-pricing {
+      padding:
+        75px
+        0;
+    }
+  
+  
+    .claude-pricing__inner {
+      width:
+        calc(
+          100% - 30px
+        );
+    }
+  
+  
+    .claude-pricing-head__title {
+      font-size:
+        clamp(
+          37px,
+          11vw,
+          52px
+        );
+    }
+  
+  
+    .claude-pricing-head__outline,
+    .claude-pricing-head__lime {
+      margin-top: 5px;
+    }
+  
+  
+    .claude-pricing-main {
+      margin-top:
+        38px;
+    }
+  
+  
+    .claude-pricing-benefits {
+      padding:
+        25px
+        20px;
+  
+      border-radius:
+        22px;
+    }
+  
+  
+    .claude-pricing-offer {
+      padding:
+        26px
+        20px;
+  
+      border-radius:
+        22px;
+    }
+  
+  
+    .claude-pricing-offer__price {
+      font-size:
+        clamp(
+          50px,
+          15vw,
+          68px
+        );
+    }
+  
+  
+    .claude-pricing-countdown {
+      gap: 5px;
+    }
+  
+  
+    .claude-pricing-countdown
+    > div {
+      min-height: 65px;
+  
+      border-radius:
+        11px;
+    }
+  
+  
+    .claude-pricing-countdown
+    strong {
+      font-size: 20px;
+    }
+  
+  
+    .claude-pricing-roadmap__grid {
+      grid-template-columns:
+        1fr;
+    }
+  
+  
+    .claude-pricing-stage {
+      min-height:
+        120px;
+    }
+  
+  }
+  
+  
+  /* ============================================================
      REDUCED MOTION
      ============================================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  .claude-pricing-reveal {
-    opacity: 1;
-
-    transform: none;
-
-    animation: none !important;
+  
+  @media (
+    prefers-reduced-motion:
+    reduce
+  ) {
+  
+    .claude-pricing-reveal {
+      opacity: 1;
+  
+      transform: none;
+  
+      animation: none !important;
+    }
+  
+  
+    .claude-pricing *,
+    .claude-pricing *::before,
+    .claude-pricing *::after {
+      transition-duration:
+        .01ms !important;
+    }
+  
   }
-
-  .claude-pricing-value,
-  .claude-pricing-offer,
-  .claude-pricing-offer__button,
-  .claude-pricing-offer__button span:last-child {
-    transition: none;
-  }
-}
-
 
 /* ============================================================
    CLAUDE AI MASTERY — FEEDBACK

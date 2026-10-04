@@ -14,7 +14,7 @@ const links = [
   ["/products", "Tài liệu số"],
   ["/courses/claude-ai-mastery", "Khoá học"],
   ["/services", "Dịch vụ SMM"],
-  ["/contact", "Liên hệ"],
+  // ["/contact", "Liên hệ"],
 ] as const;
 
 type NavbarProps = {
@@ -258,12 +258,11 @@ export function Navbar({
 
         <nav className="mm-list">
           {[
-            ["#top", "Trang chủ"],
-            ["#gallery", "Tài liệu số"],
-            ["#courses", "Khóa học"],
-            ["#services", "Dịch vụ SMM"],
-            ["#projects", "Projects"],
-            ["#footer", "Liên hệ"],
+           ["/", "Trang chủ"],
+           ["/products", "Tài liệu số"],
+           ["/courses/claude-ai-mastery", "Khoá học"],
+           ["/services", "Dịch vụ SMM"],
+          //  ["/contact", "Liên hệ"],
           ].map(([href, label], i) => (
             <a
               key={href}

@@ -178,7 +178,7 @@ export function PaidProductsSection({ products: apiProducts, isLoading = false, 
             <span className="products-paid-highlight products-paid-highlight--lime">
               mức thu nhập bạn muốn
             </span>
-            .
+            
           </h2>
 
           <p className="products-paid-intro" data-rv="up" data-dl="130">

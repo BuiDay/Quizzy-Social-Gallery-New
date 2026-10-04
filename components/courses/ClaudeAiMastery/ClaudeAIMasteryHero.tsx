@@ -53,7 +53,7 @@ export function ClaudeAIMasteryHero({
               LEFT
               ========================================= */}
 
-          <div className="claude-course-hero__content">
+          <div className="claude-course-hero__content"> 
 
             {/* BREADCRUMB */}
 
@@ -176,11 +176,10 @@ export function ClaudeAIMasteryHero({
                 </span>
 
                 <a
-                  href={purchaseUrl}
                   className="claude-course-hero__button claude-course-hero__button--primary"
-                  data-cur="OPEN"
+                  // data-cur="OPEN"
                 >
-                  Đăng ký ngay
+                  Mở đăng kí 19H 05/10/2026
                 </a>
               </div>
 

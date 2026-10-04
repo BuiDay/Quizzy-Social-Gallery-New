@@ -1,15 +1,18 @@
-import { Suspense } from "react";
+import {
+  Suspense,
+} from "react";
 
-import { SiteEffects } from "@/components/SiteEffects";
 import { Navbar } from "@/components/sections/Navbar";
+
 import { Footer } from "@/components/sections/Footer";
 
-import { CheckoutStatus } from "@/components/checkout/CheckoutStatus";
+import { SiteEffects } from "@/components/SiteEffects";
 
 import "@/styles/checkout-status.css";
+import CheckoutPage from "@/components/checkout/CheckoutStatus";
 
 
-export default function CheckoutStatusPage() {
+export default function Page() {
   return (
     <>
       <SiteEffects />
@@ -19,12 +22,12 @@ export default function CheckoutStatusPage() {
       <main>
         <Suspense
           fallback={
-            <div className="checkout-status-loading">
-              Đang kiểm tra giao dịch...
+            <div className="checkout-status-page-loading">
+              Đang tải giao dịch...
             </div>
           }
         >
-          <CheckoutStatus />
+          <CheckoutPage />
         </Suspense>
       </main>
 

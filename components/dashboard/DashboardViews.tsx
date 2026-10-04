@@ -667,7 +667,7 @@ export function DashboardDocuments({
           />
         </label>
 
-        <div className="ud-filters">
+        {/* <div className="ud-filters">
           {categories.map(
             (item) => (
               <button
@@ -689,7 +689,7 @@ export function DashboardDocuments({
               </button>
             ),
           )}
-        </div>
+        </div> */}
       </div>
 
 

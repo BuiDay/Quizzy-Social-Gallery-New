@@ -48,7 +48,7 @@ export default function ClaudeAIMasteryPage() {
                     curriculumUrl="#claude-curriculum"
                 />
 
-                <ClaudeAIMasteryIntroSection profileImage={QuizzyProfile} videoSrc="https://qccagency.s3.ap-southeast-1.amazonaws.com/0410_QCC_CLAUDE+AI(2).mp4"/>
+                <ClaudeAIMasteryIntroSection profileImage={QuizzyProfile} videoSrc="https://qccagency.s3.ap-southeast-1.amazonaws.com/QCC_CLAUDE+AI.mp4"/>
                 <ClaudeAIMasteryProblemsSection />
                 <ClaudeAIMasterySolutionSection
                     productImage={productImage}
@@ -79,8 +79,8 @@ export default function ClaudeAIMasteryPage() {
 
                 <ClaudeAIMasteryBenefitsSection />
                 <ClaudeAIMasteryPricingSection
-                    originalPrice="xxx.xxx.xxxđ"
-                    currentPrice="xxx.xxx.xxxđ"
+                    originalPrice="1.590.000đ"
+                    currentPrice="790.000đ"
                     purchaseUrl="#checkout"
                 />
                 <ClaudeAIMasteryFeedbackSection />

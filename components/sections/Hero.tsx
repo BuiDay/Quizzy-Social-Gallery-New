@@ -76,8 +76,6 @@ export function Hero() {
               <Image src={QuizzyImage1} alt="" className="hero-social__image"></Image>
             </div>
 
-           
-
           </div>
           <div className="intro hero-reference-copy">
             <div className="hero-welcome">CHÀO MỪNG BẠN ĐẾN VỚI</div>
@@ -143,7 +141,7 @@ export function Hero() {
               </li>
             </ul>
             <div className="hero-cta">
-              <a href="#gallery" className="btn solid mag" data-cur="OPEN">
+              <a href="/products" className="btn solid mag" data-cur="OPEN">
                 <span>
                   Khám phá tài liệu và khoá học <ArrowRightIcon />
                 </span>
