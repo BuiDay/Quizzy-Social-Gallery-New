@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useStore } from "react-redux";
 import { useRouter } from "next/navigation";
 import type { RootState } from "@/redux/store";
 import { useCreatePaymentLinkMutation, usePaymentFreeMutation } from "@/redux/features/checkout/checkoutApi";
@@ -54,7 +54,10 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
   const [getCouponByName, { isLoading: isApplyingCoupon }] = useGetCouponMutation();
   const [loadUserById] = useLoadUserByIdMutation();
   const apiCoupon = useSelector((state: RootState) => state.coupon.coupon);
-  const paymentLink = useSelector((state: RootState) => state.checkout.paymentLink);
+
+
+  const store = useStore<RootState>();
+  const submitLock = useRef(false);
 
   useEffect(() => { setMounted(true); }, []);
   useEffect(() => {
@@ -110,7 +113,8 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!product || isSubmitting) return;
+    if (!product || submitLock.current) return;
+    submitLock.current = true;
     const order = {
       product: product.id,
       amount: total,
@@ -125,17 +129,66 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
         await loadUserById({});
         setSubmitMessage("Đã mở khóa tài liệu thành công.");
         onClose();
-      } else {
-        const response = await createPaymentLink(order).unwrap();
-        const result = response as { checkoutUrl?: string; data?: { checkoutUrl?: string } };
-        const url = result?.checkoutUrl ?? result?.data?.checkoutUrl ?? paymentLink?.checkoutUrl;
-        console.log(url)
-        if (!url) throw new Error("Chưa nhận được liên kết thanh toán. Vui lòng thử lại.");
-        window.location.assign(url);
+      } const previousLink = store.getState().checkout.paymentLink;
+
+      const response = await createPaymentLink(order).unwrap();
+
+      const result = response as {
+        checkoutUrl?: string;
+        data?: { checkoutUrl?: string };
+      };
+
+      let url = result?.checkoutUrl ?? result?.data?.checkoutUrl;
+
+      if (!url) {
+        url = await new Promise<string>((resolve, reject) => {
+          let unsubscribe: (() => void) | undefined;
+          let timer: ReturnType<typeof setTimeout> | undefined;
+          let finished = false;
+
+          const cleanup = () => {
+            unsubscribe?.();
+            if (timer) clearTimeout(timer);
+          };
+
+          const check = () => {
+            if (finished) return;
+
+            const nextLink = store.getState().checkout.paymentLink;
+
+            if (
+              nextLink &&
+              nextLink !== previousLink &&
+              nextLink.checkoutUrl &&
+              nextLink.checkoutUrl !== previousLink?.checkoutUrl
+            ) {
+              finished = true;
+              cleanup();
+              resolve(nextLink.checkoutUrl);
+            }
+          };
+
+          unsubscribe = store.subscribe(check);
+
+          timer = setTimeout(() => {
+            finished = true;
+            cleanup();
+            reject(
+              new Error(
+                "Chưa nhận được liên kết thanh toán. Vui lòng thử lại."
+              )
+            );
+          }, 10000);
+
+          check();
+        });
       }
+
+      window.location.assign(url);
     } catch (error) {
       setSubmitMessage(error instanceof Error ? error.message : errorMessage(error));
     } finally {
+      submitLock.current = false;
       setIsSubmitting(false);
     }
   };
@@ -219,7 +272,7 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
 
                 {product.originalPrice &&
                   product.originalPrice >
-                    product.price && (
+                  product.price && (
                     <del>
                       {formatVND(
                         product.originalPrice,
@@ -252,7 +305,7 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
           {/* COUPON */}
 
           {product.charge !== false && <div className="purchase-modal-block">
-        
+
             <div className="purchase-modal-coupon">
               <input
                 type="text"
@@ -284,11 +337,10 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
 
             {couponMessage && (
               <p
-                className={`purchase-modal-coupon-message ${
-                  activeCoupon
+                className={`purchase-modal-coupon-message ${activeCoupon
                     ? "is-success"
                     : "is-error"
-                }`}
+                  }`}
               >
                 {couponMessage}
               </p>

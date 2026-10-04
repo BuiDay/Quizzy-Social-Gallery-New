@@ -72,7 +72,7 @@ const benefits: Benefit[] = [
   {
     title: "THAM GIA CỘNG ĐỒNG SOCIAL MEDIA",
     description:
-      "Tham gia cộng đồng 3,000+ thành viên cùng học hỏi và thực chiến Social Media.",
+      "Tham gia cộng đồng 6,000+ thành viên cùng học hỏi và thực chiến Social Media.",
     icon: <CommunityIcon />,
   },
   {

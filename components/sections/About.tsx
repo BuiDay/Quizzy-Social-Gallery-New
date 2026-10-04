@@ -36,7 +36,7 @@ export function About() {
           </p>
 
           <p className="lead" data-rv="up" data-dl="210">
-            Hiện tại, mình là Founder của <strong> QCC Mastery Hub</strong>, nơi
+            Hiện tại, mình là Founder của <strong>QCC Mastery - Social Creative Agency</strong>, nơi
             mình hệ thống hóa những kinh nghiệm và bài học thực tế từ quá trình
             làm nghề thành các tài liệu, công cụ và sản phẩm có thể áp dụng trực
             tiếp vào công việc.

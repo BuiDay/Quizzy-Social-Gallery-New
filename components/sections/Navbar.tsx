@@ -164,7 +164,11 @@ export function Navbar({
               >
                 {label}
               </a>
+        
             ))}
+            {
+                  user && <a href="/collections">Tài liệu của bạn</a>
+            }
           </nav>
 
           <div className="nav-right">
@@ -188,8 +192,8 @@ export function Navbar({
                 </button>
                 {accountOpen && (
                   <div className="nav-account-menu" role="menu" aria-label="Tài khoản">
-                    <a role="menuitem" href={transactionHistoryHref} onClick={() => setAccountOpen(false)}>Lịch sử giao dịch</a>
-                    <a role="menuitem" href={collectionHref} onClick={() => setAccountOpen(false)}>Bộ sưu tập</a>
+                    {/* <a role="menuitem" href={transactionHistoryHref} onClick={() => setAccountOpen(false)}>Lịch sử giao dịch</a> */}
+                    <a role="menuitem" href={collectionHref} onClick={() => setAccountOpen(false)}>Tài liệu của bạn</a>
                     <button type="button" role="menuitem" onClick={handleLogout} disabled={loggingOut}>
                       {loggingOut ? "Đang đăng xuất..." : "Đăng xuất"}
                     </button>
@@ -290,8 +294,8 @@ export function Navbar({
                 )}
                 <span className="nav-account-name">{displayName}</span>
               </div>
-              <a href={transactionHistoryHref} onClick={() => setMenuOpen(false)}>Lịch sử giao dịch</a>
-              <a href={collectionHref} onClick={() => setMenuOpen(false)}>Bộ sưu tập</a>
+              {/* <a href={transactionHistoryHref} onClick={() => setMenuOpen(false)}>Lịch sử giao dịch</a> */}
+              <a href={collectionHref} onClick={() => setMenuOpen(false)}>Tài liệu của bạn</a>
               <button type="button" onClick={handleLogout} disabled={loggingOut}>
                 {loggingOut ? "Đang đăng xuất..." : "Đăng xuất"}
               </button>
