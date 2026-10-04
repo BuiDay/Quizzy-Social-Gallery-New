@@ -32,37 +32,43 @@ export function Hero() {
 
             {/* SOCIAL ICONS — TOP RIGHT */}
             <div className="hero-social-row" aria-label="Social media">
-              <span
+              <a
+                href="https://www.instagram.com/quizzy.socialtime?stkn=MWxzdXF2NWZkdWRjaQ%3D%3D&utm_source=qr"
+                target="_blank"
                 className="hero-social-chip glass"
                 data-cur="hover"
                 aria-label="Instagram"
               >
                 <InstagramIcon />
-              </span>
+              </a>
 
-              <span
+              <a
+                href="https://www.tiktok.com/@quizzy.socialtime?_r=1&_t=ZS-9ABtzLHFO7t"
+                target="_blank"
                 className="hero-social-chip glass"
                 data-cur="hover"
                 aria-label="TikTok"
               >
                 <TikTokIcon />
-              </span>
+              </a>
 
-              <span
+              <a
+                href="https://www.facebook.com/share/1P3K7658Pp/?mibextid=wwXIfr"
+                target="_blank"
                 className="hero-social-chip glass"
                 data-cur="hover"
                 aria-label="Facebook"
               >
                 <FacebookIcon />
-              </span>
+              </a>
 
-              <span
+              {/* <span
                 className="hero-social-chip glass"
                 data-cur="hover"
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon />
-              </span>
+              </span> */}
             </div>
 
             {/* IMAGE / PORTRAIT */}

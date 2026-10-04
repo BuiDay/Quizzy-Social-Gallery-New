@@ -19,8 +19,13 @@ export function ClaudeAIMasteryIntroSection({
   videoSrc,
 }: ClaudeAIMasteryIntroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const [isVisible, setIsVisible] =
+    useState(false);
+  const [isMuted, setIsMuted] =
+    useState(true);
+  const [isPlaying, setIsPlaying] =
     useState(false);
 
   useEffect(() => {
@@ -51,12 +56,55 @@ export function ClaudeAIMasteryIntroSection({
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!isVisible || !videoRef.current) return;
+
+    const video = videoRef.current;
+
+    video.muted = true;
+    setIsMuted(true);
+
+    video.play().then(() => {
+      setIsPlaying(true);
+    }).catch(() => {
+      setIsPlaying(false);
+      // Autoplay muted is normally allowed, but safely ignore if blocked.
+    });
+  }, [isVisible]);
+
+  const handleEnableSound = () => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    video.muted = false;
+    setIsMuted(false);
+
+    video.play().then(() => {
+      setIsPlaying(true);
+    }).catch(() => {
+      setIsPlaying(false);
+      // This click counts as user interaction, so playback should normally work.
+    });
+  };
+
+  const togglePlayPause = () => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    if (video.paused) {
+      video.play().catch(() => { });
+    } else {
+      video.pause();
+    }
+  };
+
   return (
     <section
       ref={sectionRef}
-      className={`claude-intro ${
-        isVisible ? "is-visible" : ""
-      }`}
+      className={`claude-intro ${isVisible ? "is-visible" : ""
+        }`}
       id="claude-intro"
     >
       <div className="claude-intro__inner">
@@ -112,7 +160,7 @@ export function ClaudeAIMasteryIntroSection({
 
             <div className="claude-intro-profile__statement">
               <strong>
-              TĂNG QUY MÔ QUẢN LÝ KHÁCH HÀNG LÊN ĐẾN 20 CLIENT/THÁNG
+                TĂNG QUY MÔ QUẢN LÝ KHÁCH HÀNG LÊN ĐẾN 20 CLIENT/THÁNG
               </strong>{" "}
               CHỈ BẰNG CÁCH ĐỔI TƯ DUY LÀM VIỆC VỚI CLAUDE
             </div>
@@ -138,46 +186,68 @@ export function ClaudeAIMasteryIntroSection({
           <div className="claude-intro-video-wrap">
             <div className="claude-intro-video">
               {videoSrc ? (
-                <video
-                  className="claude-intro-video__media"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster={
-                    typeof videoPoster === "string"
-                      ? videoPoster
-                      : undefined
-                  }
-                >
-                  <source
-                    src={videoSrc}
-                    type="video/mp4"
-                  />
-                </video>
-              ) : videoPoster ? (
-                <Image
-                  src={videoPoster}
-                  alt="Video giới thiệu khóa học Claude AI Mastery"
-                  fill
-                  sizes="(max-width: 760px) 90vw, 52vw"
-                  className="claude-intro-video__poster"
-                />
-              ) : (
-                <div className="claude-intro-video__placeholder">
-                  <div className="claude-intro-video__cloud">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
+                <>
+                  <video
+                    ref={videoRef}
+                    className="claude-intro-video__media"
+                    playsInline
+                    muted
+                    preload="metadata"
+                    poster={
+                      typeof videoPoster === "string"
+                        ? videoPoster
+                        : undefined
+                    }
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                  >
+                    <source src={videoSrc} type="video/mp4" />
+                  </video>
 
-                  <strong>
-                    VIDEO GIỚI THIỆU KHÓA HỌC
-                  </strong>
+                  <button
+                    type="button"
+                    className="claude-intro-video__playpause"
+                    onClick={togglePlayPause}
+                    aria-label={isPlaying ? "Pause video" : "Play video"}
+                  >
+                    {isPlaying ? (
+                      <span className="pause-icon">
+                        <i />
+                        <i />
+                      </span>
+                    ) : (
+                      <span className="play-icon" />
+                    )}
+                  </button>
 
-                  <div className="claude-intro-video__hill claude-intro-video__hill--back" />
-                  <div className="claude-intro-video__hill claude-intro-video__hill--front" />
-                </div>
-              )}
+                  {isMuted && isVisible && (
+                  <button
+                    type="button"
+                    onClick={handleEnableSound}
+                    aria-label="Bật âm thanh video"
+                    style={{
+                      position: "absolute",
+                      left: "50%",
+                      bottom: "20px",
+                      zIndex: 5,
+                      transform: "translateX(-50%)",
+                      border: "1px solid rgba(255, 255, 255, 0.24)",
+                      borderRadius: "999px",
+                      padding: "10px 16px",
+                      background: "rgba(0, 0, 0, 0.72)",
+                      color: "#fff",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      backdropFilter: "blur(8px)",
+                      WebkitBackdropFilter: "blur(8px)",
+                    }}
+                  >
+                    🔊 Bật âm thanh
+                  </button>
+                )}
+                </>
+              ) : null}
             </div>
           </div>
         </div>

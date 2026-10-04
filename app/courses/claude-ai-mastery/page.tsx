@@ -48,7 +48,7 @@ export default function ClaudeAIMasteryPage() {
                     curriculumUrl="#claude-curriculum"
                 />
 
-                <ClaudeAIMasteryIntroSection profileImage={QuizzyProfile} />
+                <ClaudeAIMasteryIntroSection profileImage={QuizzyProfile} videoSrc="https://qccagency.s3.ap-southeast-1.amazonaws.com/0410_QCC_CLAUDE+AI(2).mp4"/>
                 <ClaudeAIMasteryProblemsSection />
                 <ClaudeAIMasterySolutionSection
                     productImage={productImage}
