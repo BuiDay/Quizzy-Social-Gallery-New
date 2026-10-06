@@ -20,7 +20,7 @@ export function DesignThinkingHero({
   purchaseUrl,
   product,
   handleBuy
-}: DesignThinkingHeroProps) {
+}: DesignThinkingHeroProps) { 
   return (
     <section
       className="dth-hero"

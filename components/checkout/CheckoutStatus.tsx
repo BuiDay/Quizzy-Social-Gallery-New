@@ -140,14 +140,14 @@ export default function CheckoutPage() {
     useCheckPaymentLinkInfomationMutation();
 
 
-  const [
-    checkPaid,
-    {
-      isLoading:
-        isCheckingPaid,
-    },
-  ] =
-    useCheckPaidMutation();
+  // const [
+  //   checkPaid,
+  //   {
+  //     isLoading:
+  //       isCheckingPaid,
+  //   },
+  // ] =
+  //   useCheckPaidMutation();
 
 
   const [
@@ -283,12 +283,12 @@ export default function CheckoutPage() {
         try {
           setConfirmError("");
 
-          await checkPaid({
-            codeOrder:
-              apiOrderCode,
+          // await checkPaid({
+          //   codeOrder:
+          //     apiOrderCode,
 
-            status,
-          }).unwrap();
+          //   status,
+          // }).unwrap();
 
 
           /*
@@ -338,7 +338,7 @@ export default function CheckoutPage() {
     void confirmPayment();
 
   }, [
-    checkPaid,
+    // checkPaid,
     currentPaymentInfo,
     loadUserById,
   ]);
@@ -441,7 +441,7 @@ export default function CheckoutPage() {
   if (
     isCheckingPaymentInfo ||
     !currentPaymentInfo ||
-    isCheckingPaid ||
+    // isCheckingPaid ||
     !isConfirmed
   ) {
     return (

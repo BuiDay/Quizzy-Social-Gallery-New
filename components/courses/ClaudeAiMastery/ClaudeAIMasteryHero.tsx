@@ -1,3 +1,4 @@
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image, { type StaticImageData } from "next/image";
 import type { CSSProperties } from "react";
 
@@ -5,6 +6,8 @@ type ClaudeAIMasteryHeroProps = {
   imageSrc?: string | StaticImageData;
   purchaseUrl?: string;
   curriculumUrl?: string;
+  product?: any;
+  handleBuy?: any
 };
 
 const enterStyle = (delay: number): CSSProperties =>
@@ -40,6 +43,8 @@ export function ClaudeAIMasteryHero({
   imageSrc,
   purchaseUrl = "#claude-register",
   curriculumUrl = "#claude-curriculum",
+  product,
+  handleBuy
 }: ClaudeAIMasteryHeroProps) {
   return (
     <section
@@ -53,7 +58,7 @@ export function ClaudeAIMasteryHero({
               LEFT
               ========================================= */}
 
-          <div className="claude-course-hero__content"> 
+          <div className="claude-course-hero__content">
 
             {/* BREADCRUMB */}
 
@@ -172,15 +177,20 @@ export function ClaudeAIMasteryHero({
             >
               <div className="claude-course-hero__primary-wrap">
                 <span className="claude-course-hero__discount">
-                  Ưu đãi tới 30%
+                  Ưu đãi tới 50%
                 </span>
 
-                <a
+                {/* <a
                   className="claude-course-hero__button claude-course-hero__button--primary"
                   // data-cur="OPEN"
                 >
                   Mở đăng kí 19H 05/10/2026
-                </a>
+                </a> */}
+                {
+
+                  product && <PaidProductAction product={product} onBuy={handleBuy} buttonText="Đăng kí ngay" className="claude-course-hero__button"/>
+                }
+
               </div>
 
               <a

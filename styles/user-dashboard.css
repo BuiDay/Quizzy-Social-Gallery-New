@@ -3759,3 +3759,248 @@
         .01ms !important;
     }
   }
+
+  .ud-player-resources {
+    margin-top: 18px;
+  
+    padding:
+      22px
+      28px
+      26px;
+  
+    border-top:
+      1px solid
+      rgba(
+        17,
+        17,
+        17,
+        .08
+      );
+  }
+  
+  
+  .ud-player-resources__head {
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content:
+      space-between;
+  
+    gap: 16px;
+  
+    margin-bottom: 14px;
+  }
+  
+  
+  .ud-player-resources__head
+  small {
+    color: #a97fdd;
+  
+    font-size: 9px;
+  
+    font-weight: 800;
+  
+    letter-spacing:
+      .12em;
+  }
+  
+  
+  .ud-player-resources__head
+  > span {
+    color:
+      rgba(
+        17,
+        17,
+        17,
+        .5
+      );
+  
+    font-size: 10px;
+  }
+  
+  
+  .ud-player-resources__list {
+    display: flex;
+  
+    flex-direction:
+      column;
+  
+    gap: 9px;
+  }
+  
+  
+  .ud-player-resource {
+    min-height: 66px;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content:
+      space-between;
+  
+    gap: 18px;
+  
+    padding:
+      12px
+      15px;
+  
+    border:
+      1px solid
+      rgba(
+        17,
+        17,
+        17,
+        .09
+      );
+  
+    border-radius: 14px;
+  
+    background: #fafafa;
+  
+    color: #111;
+  
+    transition:
+      transform .25s ease,
+      border-color .25s ease,
+      background .25s ease;
+  }
+  
+  
+  .ud-player-resource:hover {
+    transform:
+      translateY(-2px);
+  
+    border-color:
+      rgba(
+        169,
+        127,
+        221,
+        .55
+      );
+  
+    background:
+      #fff;
+  }
+  
+  
+  .ud-player-resource
+  > div {
+    min-width: 0;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 12px;
+  }
+  
+  
+  .ud-player-resource__icon {
+    width: 42px;
+    height: 42px;
+  
+    flex:
+      0 0 42px;
+  
+    display: grid;
+  
+    place-items: center;
+  
+    border-radius: 10px;
+  
+    background:
+      #efffc0;
+  
+    color: #111;
+  
+    font-size: 8px;
+  
+    font-weight: 800;
+  
+    letter-spacing:
+      .06em;
+  }
+  
+  
+  .ud-player-resource
+  strong {
+    display: block;
+  
+    overflow: hidden;
+  
+    color: #111;
+  
+    font-size: 12px;
+  
+    font-weight: 700;
+  
+    text-overflow:
+      ellipsis;
+  
+    white-space: nowrap;
+  }
+  
+  
+  .ud-player-resource
+  small {
+    display: block;
+  
+    margin-top: 3px;
+  
+    color:
+      rgba(
+        17,
+        17,
+        17,
+        .48
+      );
+  
+    font-size: 9px;
+  }
+  
+  
+  .ud-player-resource
+  > span:last-child {
+    flex-shrink: 0;
+  
+    color: #7d55aa;
+  
+    font-size: 10px;
+  
+    font-weight: 700;
+  }
+  
+  
+  .ud-player-resource[aria-disabled="true"] {
+    opacity: .5;
+  
+    cursor: default;
+  
+    pointer-events: none;
+  }
+  
+  
+  @media (
+    max-width: 600px
+  ) {
+    .ud-player-resources {
+      padding:
+        18px
+        18px
+        22px;
+    }
+  
+  
+    .ud-player-resource {
+      align-items:
+        flex-start;
+    }
+  
+  
+    .ud-player-resource
+    > span:last-child {
+      display: none;
+    }
+  }

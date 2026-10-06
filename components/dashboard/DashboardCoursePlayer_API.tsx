@@ -48,19 +48,6 @@ type Chapter = {
 };
 
 
-type LessonResource = {
-  title?: string;
-  name?: string;
-
-  url?: string;
-
-  type?:
-    | "file"
-    | "link"
-    | "pdf";
-};
-
-
 type Lesson = {
   _id?: string;
   id?: string;
@@ -90,8 +77,6 @@ type Lesson = {
   watchedSeconds?: number;
 
   lastPosition?: number;
-
-  resources?: LessonResource[];
 };
 
 
@@ -288,8 +273,6 @@ export function DashboardCoursePlayer() {
     setError,
   ] = useState("");
 
-  const completionLock = useRef(false);
-
   const lastSentSecond =
     useRef(-1);
 
@@ -462,21 +445,6 @@ export function DashboardCoursePlayer() {
         selectedLessonId,
     ) ?? null;
 
-  const lessonResources =
-    selectedLesson?.resources ?? [];
-
-  const getResourceUrl = (
-    resource: LessonResource,
-  ) =>
-    resource.url || "";
-
-  const getResourceTitle = (
-    resource: LessonResource,
-  ) =>
-    resource.title ||
-    resource.name ||
-    "Tài liệu";
-
 
   /* ============================================================
      VIDEO URL
@@ -645,65 +613,67 @@ export function DashboardCoursePlayer() {
      COMPLETE — REDUX API
      ============================================================ */
 
-  const completeLesson = async (finalPosition?: number) => {
-    if (!selectedLessonId || selectedLesson?.isLocked || completionLock.current) return;
-    const lessonId = selectedLessonId;
-    completionLock.current = true;
-    setCompleting(true);
-    setError("");
-
-    try {
-      // onTimeUpdate only saves every 10 seconds. Save the final position too.
-      if (finalPosition !== undefined && Number.isFinite(finalPosition)) {
-        const second = Math.max(0, Math.floor(finalPosition));
-        await saveLessonProgress({
-          courseId,
-          courseClassId: courseClassId || undefined,
-          lessonId,
-          lastPosition: second,
-          watchedSeconds: second,
-        }).unwrap();
+  const completeLesson =
+    async () => {
+      if (
+        !selectedLessonId ||
+        completing
+      ) {
+        return;
       }
 
-      // The backend owns completion and unlocking permissions.
-      if (!selectedLesson?.isCompleted) {
-        await completeLessonApi({
-          courseId,
-          courseClassId: courseClassId || undefined,
-          lessonId,
-        }).unwrap();
+      try {
+        setCompleting(true);
+
+        await completeLessonApi(
+          {
+            courseId,
+
+            courseClassId:
+              courseClassId ||
+              undefined,
+
+            lessonId:
+              selectedLessonId,
+          },
+        ).unwrap();
+
+        const refreshedState =
+          await loadCourse();
+
+        const refreshedLessons =
+          refreshedState
+            ?.lessons ?? [];
+
+        const currentIndex =
+          refreshedLessons.findIndex(
+            (lesson) =>
+              idOf(lesson) ===
+              selectedLessonId,
+          );
+
+        const next =
+          refreshedLessons
+            .slice(
+              currentIndex + 1,
+            )
+            .find(
+              (lesson) =>
+                !lesson.isLocked,
+            );
+
+        if (next) {
+          lastSentSecond.current =
+            -1;
+
+          setSelectedLessonId(
+            idOf(next),
+          );
+        }
+      } finally {
+        setCompleting(false);
       }
-
-      const refreshedState = await loadCourse();
-      if (!refreshedState) return;
-
-      // Match the order displayed in the chapter sidebar.
-      const chapterOrder = new Map(
-        (refreshedState.chapters ?? []).map((chapter) => [idOf(chapter), Number(chapter.order ?? 0)]),
-      );
-      const refreshedLessons = [...(refreshedState.lessons ?? [])].sort((a, b) =>
-        (chapterOrder.get(idOf(a.chapterId)) ?? 0) - (chapterOrder.get(idOf(b.chapterId)) ?? 0) ||
-        Number(a.order ?? 0) - Number(b.order ?? 0),
-      );
-      const currentIndex = refreshedLessons.findIndex((lesson) => idOf(lesson) === lessonId);
-      const next = currentIndex >= 0 ? refreshedLessons[currentIndex + 1] : undefined;
-
-      if (next && !next.isLocked) {
-        lastSentSecond.current = -1;
-        setSelectedLessonId((current) => current === lessonId ? idOf(next) : current);
-      }
-    } catch (err: unknown) {
-      const failure = err as { data?: { message?: string }; message?: string };
-      setError(failure?.data?.message || failure?.message || "Không thể lưu hoàn thành bài học. Vui lòng thử lại.");
-    } finally {
-      completionLock.current = false;
-      setCompleting(false);
-    }
-  };
-
-  const handleVideoEnded = (video: HTMLVideoElement) => {
-    void completeLesson(Number.isFinite(video.duration) ? video.duration : video.currentTime);
-  };
+    };
 
 
   /* ============================================================
@@ -823,11 +793,6 @@ export function DashboardCoursePlayer() {
                 key={videoUrl}
                 src={videoUrl}
                 controls
-                controlsList="nodownload noremoteplayback"
-                disablePictureInPicture
-                disableRemotePlayback
-                onContextMenu={(event) => event.preventDefault()}
-                onEnded={(event) => handleVideoEnded(event.currentTarget)}
                 playsInline
                 onLoadedMetadata={(
                   event,
@@ -885,18 +850,25 @@ export function DashboardCoursePlayer() {
               </h2>
             </div>
 
-            {error && <p role="alert" className="ud-player-error">{error}</p>}
-
             {selectedLesson &&
               !selectedLesson.isCompleted &&
               !selectedLesson.isLocked && (
-              <div>
-                {/* <FiCheck /> */}
+              <button
+                type="button"
+                onClick={
+                  completeLesson
+                }
+                disabled={
+                  completing
+                }
+                data-cur="OPEN"
+              >
+                <FiCheck />
 
                 {completing
                   ? "Đang lưu..."
-                  : ""}
-              </div>
+                  : "Hoàn thành bài"}
+              </button>
             )}
 
             {selectedLesson
@@ -907,93 +879,6 @@ export function DashboardCoursePlayer() {
               </span>
             )}
           </div>
-
-          {lessonResources.length > 0 && (
-            <div className="ud-player-resources">
-              <div className="ud-player-resources__head">
-                <small>
-                  TÀI LIỆU BÀI HỌC
-                </small>
-
-                <span>
-                  {lessonResources.length} tài liệu
-                </span>
-              </div>
-
-              <div className="ud-player-resources__list">
-                {lessonResources.map(
-                  (resource, index) => {
-                    const url =
-                      getResourceUrl(
-                        resource,
-                      );
-
-                    const title =
-                      getResourceTitle(
-                        resource,
-                      );
-
-                    return (
-                      <a
-                        key={`${title}-${index}`}
-                        href={
-                          url || undefined
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ud-player-resource"
-                        aria-disabled={!url}
-                        onClick={(event) => {
-                          if (!url) {
-                            event.preventDefault();
-                          }
-                        }}
-                        data-cur={
-                          url
-                            ? "OPEN"
-                            : undefined
-                        }
-                      >
-                        <div>
-                          <span className="ud-player-resource__icon">
-                            {resource.type ===
-                            "pdf"
-                              ? "PDF"
-                              : resource.type ===
-                                  "link"
-                                ? "LINK"
-                                : "FILE"}
-                          </span>
-
-                          <div>
-                            <strong>
-                              {title}
-                            </strong>
-
-                            <small>
-                              {resource.type ===
-                              "pdf"
-                                ? "Tài liệu PDF"
-                                : resource.type ===
-                                    "link"
-                                  ? "Liên kết tài liệu"
-                                  : "Tài liệu đính kèm"}
-                            </small>
-                          </div>
-                        </div>
-
-                        <span>
-                          {url
-                            ? "Mở ↗"
-                            : "Chưa có link"}
-                        </span>
-                      </a>
-                    );
-                  },
-                )}
-              </div>
-            </div>
-          )}
         </section>
 
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import Image, { type StaticImageData } from "next/image";
 import {
   useEffect,
@@ -26,6 +27,8 @@ type Props = {
   dataImage?: CourseImage;
   careerImage?: CourseImage;
   purchaseUrl?: string;
+  product?: any;
+  handleBuy?: any
 };
 
 /* ============================================================
@@ -92,6 +95,8 @@ export function ClaudeAIMasteryApplicationsSection({
   dataImage,
   careerImage,
   purchaseUrl = "#claude-register",
+  product,
+  handleBuy
 }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const activeRef = useRef(0);
@@ -277,11 +282,10 @@ export function ClaudeAIMasteryApplicationsSection({
                 type="button"
                 role="tab"
                 aria-selected={activeIndex === index}
-                className={`claude-application-tab ${
-                  activeIndex === index
-                    ? "is-active"
-                    : ""
-                }`}
+                className={`claude-application-tab ${activeIndex === index
+                  ? "is-active"
+                  : ""
+                  }`}
                 onClick={() => selectItem(index)}
                 data-cur="OPEN"
               >
@@ -347,17 +351,20 @@ export function ClaudeAIMasteryApplicationsSection({
               CTA
               ===================================== */}
 
-          <a
-            href={purchaseUrl}
+          {/* <div
             className="claude-applications__cta"
-            data-cur="OPEN"
           >
             <span>
               MÌNH MUỐN SỞ HỮU KHÓA HỌC NGAY!
             </span>
 
+
             <span aria-hidden="true">→</span>
-          </a>
+          </div> */}
+          {
+
+            product && <PaidProductAction product={product}   buttonText="   MÌNH MUỐN SỞ HỮU KHÓA HỌC NGAY!" onBuy={handleBuy} className="claude-applications__cta"/>
+          }
         </div>
       </div>
     </section>

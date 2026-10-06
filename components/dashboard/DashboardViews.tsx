@@ -1,11 +1,24 @@
 "use client";
 
 import {
+  useEffect,
   useMemo,
   useState,
 } from "react";
 
 import Link from "next/link";
+
+import {
+  useSelector,
+} from "react-redux";
+
+import type {
+  RootState,
+} from "@/redux/store";
+
+import {
+  useGetMyCoursesMutation,
+} from "@/redux/features/course/courseApi";
 
 import {
   useParams,
@@ -38,6 +51,92 @@ import {
   useDashboardData,
   type DashboardOrder,
 } from "./DashboardDataProvider";
+
+
+type DashboardEnrollment =
+  Parameters<
+    typeof getCourse
+  >[0];
+
+
+function getCourseApiErrorMessage(
+  error: unknown,
+) {
+  if (
+    error &&
+    typeof error === "object" &&
+    "data" in error
+  ) {
+    const data =
+      (
+        error as {
+          data?: unknown;
+        }
+      ).data;
+
+    if (
+      data &&
+      typeof data === "object" &&
+      "message" in data
+    ) {
+      const message =
+        (
+          data as {
+            message?: unknown;
+          }
+        ).message;
+
+      if (
+        typeof message ===
+        "string"
+      ) {
+        return message;
+      }
+    }
+  }
+
+  return "Không thể tải khóa học.";
+}
+
+
+function useMyCoursesApi() {
+  const [
+    getMyCourses,
+    {
+      isLoading:
+        coursesLoading,
+      isError:
+        coursesIsError,
+      error:
+        coursesApiError,
+    },
+  ] =
+    useGetMyCoursesMutation();
+
+  const courses =
+    useSelector(
+      (state: RootState) =>
+        state.course
+          .myCourses ?? [],
+    ) as DashboardEnrollment[];
+
+  useEffect(() => {
+    void getMyCourses({});
+  }, [getMyCourses]);
+
+  const coursesError =
+    coursesIsError
+      ? getCourseApiErrorMessage(
+          coursesApiError,
+        )
+      : "";
+
+  return {
+    courses,
+    coursesLoading,
+    coursesError,
+  };
+}
 
 
 /* ============================================================
@@ -210,14 +309,18 @@ export function DashboardOverview() {
   const {
     user,
     documents,
-    courses,
     orders,
 
     documentsLoading,
-    coursesLoading,
     ordersLoading,
   } =
     useDashboardData();
+
+  const {
+    courses,
+    coursesLoading,
+  } =
+    useMyCoursesApi();
 
   const completedCourses =
     courses.filter(
@@ -799,7 +902,7 @@ export function DashboardCourses() {
     coursesLoading,
     coursesError,
   } =
-    useDashboardData();
+    useMyCoursesApi();
 
   const [
     search,

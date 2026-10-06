@@ -55,12 +55,12 @@ const navigation = [
     exact: true,
   },
 
-  // {
-  //   href:
-  //     "/collections/courses",
-  //   label: "Khóa học của tôi",
-  //   icon: FiBookOpen,
-  // },
+  {
+    href:
+      "/collections/courses",
+    label: "Khóa học của tôi",
+    icon: FiBookOpen,
+  },
 
   // {
   //   href:

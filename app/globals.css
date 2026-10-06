@@ -378,7 +378,7 @@
     opacity: 1;
     color: #fff;
   }
-  @media (hover: hover) and (pointer: fine) {
+  /* @media (hover: hover) and (pointer: fine) {
     html.has-custom-cursor,
     html.has-custom-cursor a,
     html.has-custom-cursor button,
@@ -392,7 +392,7 @@
     .cursor-ring {
       display: none;
     }
-  }
+  } */
   
   /* ---------- nav ---------- */
   .nav {
@@ -5965,7 +5965,7 @@
     gap: 13px;
     min-height: 49px;
   
-    margin-top: 19px;
+    /* margin-top: 19px; */
     padding: 0 24px;
   
     border: 0;

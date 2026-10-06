@@ -1,5 +1,6 @@
 "use client";
 
+import { PaidProductAction } from "@/components/ui/PaidProductAction";
 import {
   useEffect,
   useMemo,
@@ -24,7 +25,8 @@ type ClaudeAIMasteryPricingSectionProps = {
 
   finalPrice?: string;
   finalPeriod?: string;
-
+  product?: any;
+  handleBuy?: any
   offerEndAt?: string;
 };
 
@@ -92,25 +94,27 @@ export function ClaudeAIMasteryPricingSection({
   savingPrice = "800.000đ",
 
   offerStartLabel =
-    "MỞ BÁN NGÀY 19H 05/10",
+  "MỞ BÁN NGÀY 19H 05/10",
 
   offerPeriod =
-    "05/10 – 10/10",
+  "05/10 – 10/10",
 
   secondPrice =
-    "1.090.000đ",
+  "1.090.000đ",
 
   secondPeriod =
-    "11/10 – 17/10",
+  "11/10 – 17/10",
 
   finalPrice =
-    "1.590.000đ",
+  "1.590.000đ",
 
   finalPeriod =
-    "Từ 15/10",
+  "Từ 15/10",
 
   offerEndAt =
-    "2026-10-05T19:00:00+07:00",
+  "2026-10-11T00:00:00+07:00",
+  product,
+  handleBuy
 }: ClaudeAIMasteryPricingSectionProps) {
 
   const sectionRef =
@@ -244,14 +248,14 @@ export function ClaudeAIMasteryPricingSection({
       const totalSeconds =
         Math.floor(
           difference /
-            1000,
+          1000,
         );
 
 
       const days =
         Math.floor(
           totalSeconds /
-            86400,
+          86400,
         );
 
 
@@ -259,7 +263,7 @@ export function ClaudeAIMasteryPricingSection({
         Math.floor(
           (totalSeconds %
             86400) /
-            3600,
+          3600,
         );
 
 
@@ -267,7 +271,7 @@ export function ClaudeAIMasteryPricingSection({
         Math.floor(
           (totalSeconds %
             3600) /
-            60,
+          60,
         );
 
 
@@ -406,26 +410,26 @@ export function ClaudeAIMasteryPricingSection({
                       {index ===
                         0 && (
 
-                        <div className="claude-pricing-benefit__tags">
+                          <div className="claude-pricing-benefit__tags">
 
-                          {moduleTags.map(
-                            (
-                              tag,
-                            ) => (
-                              <span
-                                key={
-                                  tag
-                                }
-                              >
-                                {
-                                  tag
-                                }
-                              </span>
-                            ),
-                          )}
+                            {moduleTags.map(
+                              (
+                                tag,
+                              ) => (
+                                <span
+                                  key={
+                                    tag
+                                  }
+                                >
+                                  {
+                                    tag
+                                  }
+                                </span>
+                              ),
+                            )}
 
-                        </div>
-                      )}
+                          </div>
+                        )}
 
 
                       {item.description && (
@@ -572,12 +576,10 @@ export function ClaudeAIMasteryPricingSection({
 
             <div className="claude-pricing-offer__cta-wrap">
 
-              <a
-                href={
-                  purchaseUrl
-                }
+              {/* <div
+
                 className="claude-pricing-offer__button"
-                // data-cur="MUA"
+              // data-cur="MUA"
               >
 
                 <span>
@@ -591,7 +593,12 @@ export function ClaudeAIMasteryPricingSection({
                   →
                 </span>
 
-              </a>
+              </div> */}
+
+              {
+
+                product && <PaidProductAction product={product} buttonText={` Giữ suất giá ${currentPrice}`} onBuy={handleBuy} className="claude-pricing-offer__button"/>
+              }
 
 
               <span className="claude-pricing-offer__discount">

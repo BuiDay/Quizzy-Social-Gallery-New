@@ -7083,7 +7083,7 @@
     transform:
       translateY(-3px);
     background:
-      #fff;
+    var(--claude-lime);
   }
   
   

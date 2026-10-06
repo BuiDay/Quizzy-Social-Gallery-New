@@ -7,6 +7,7 @@ import cartSlice from './features/cart/cartSlice'
 import checkoutSlice from './features/checkout/checkoutSlice'
 import userSlice from './features/user/userSlice'
 import couponSlice from './features/coupon/couponSlice'
+import courseSlice from './features/course/courseSlice'
 
 export const store = configureStore({
   reducer: {
@@ -16,7 +17,8 @@ export const store = configureStore({
     cart:cartSlice,
     checkout:checkoutSlice,
     user:userSlice,
-    coupon:couponSlice
+    coupon:couponSlice,
+    course: courseSlice
   },
   devTools: false,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
