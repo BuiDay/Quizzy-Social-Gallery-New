@@ -115,11 +115,11 @@ const Page = () => {
   return (
     <UseCheckBoughtProduct productId={PRODUCT_ID}>
       <div className="quizzy-reader">
-        <header className="qr-header">
+        {/* <header className="qr-header">
           <Link href="/collections" className="qr-back"><Icon name="arrowLeft" size={18} /><span>Bộ sưu tập</span></Link>
           <Link href="/" className="qr-brand">QUIZZY <span>SOCIAL GALLERY</span><i>✦</i></Link>
           <span className="qr-owned"><Icon name="check" size={14} />Đã sở hữu</span>
-        </header>
+        </header> */}
 
         <div className="qr-layout">
           <aside className="qr-sidebar">

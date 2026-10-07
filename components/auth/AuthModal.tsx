@@ -48,6 +48,9 @@ export function AuthModal({
   const isRegister = mode === "register";
   const isForgot = mode === "forgot";
 
+  const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+
   /* ============================================================
      PORTAL
      ============================================================ */
@@ -66,6 +69,8 @@ export function AuthModal({
 
   useEffect(() => {
     setShowPassword(false);
+    setMessage("");
+    setIsError(false);
 
     if (!mounted) return;
 
@@ -204,7 +209,8 @@ export function AuthModal({
     event.preventDefault();
 
     if (isSubmitting) return;
-
+    setMessage("");
+    setIsError(false);
     const formData = new FormData(event.currentTarget);
 
     const name = String(
@@ -271,7 +277,8 @@ export function AuthModal({
       await forgotPassword({
         email,
       }).unwrap();
-
+      setIsError(false);
+      setMessage("Vui lòng kiểm tra email để đặt lại mật khẩu.");
       toast.success(
         "Vui lòng kiểm tra email để đặt lại mật khẩu.",
         {
@@ -292,10 +299,11 @@ export function AuthModal({
         apiError?.data?.message ??
         apiError?.message ??
         "Có lỗi xảy ra. Vui lòng thử lại.";
-
-      toast.error(errorMessage, {
-        duration: 4000,
-      });
+        setIsError(true);
+        setMessage(errorMessage)
+      // toast.error(errorMessage, {
+      //   duration: 4000,
+      // });
     } finally {
       setIsSubmitting(false);
     }
@@ -566,6 +574,25 @@ export function AuthModal({
               >
                 Quên mật khẩu?
               </button>
+            )}
+
+            {/* FORM MESSAGE */}
+
+            {message && (
+              <p
+                className={`authm-message ${
+                  isError
+                    ? "is-error"
+                    : "is-success"
+                }`}
+                role={
+                  isError
+                    ? "alert"
+                    : "status"
+                }
+              >
+                {message}
+              </p>
             )}
 
             {/* SUBMIT */}

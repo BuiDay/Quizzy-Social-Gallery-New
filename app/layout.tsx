@@ -23,7 +23,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       </head>
       <body>
         <RootLayouts>
-        <Toaster position="bottom-center" reverseOrder={false} />
+        <Toaster position="bottom-center" reverseOrder={false}  containerStyle={{
+          zIndex: 9999
+        }} />
           {children}
           {/* <FloatingCoursePromo
             title="Claude AI Mastery "

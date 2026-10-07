@@ -124,6 +124,14 @@ type LearningState = {
 };
 
 
+
+type BunnyTimingData = {
+  seconds?: number;
+  duration?: number;
+};
+
+
+
 type MyCourseEnrollment = {
   courseId?:
     | string
@@ -195,6 +203,70 @@ const normalizeLearningState = (
         }),
       ),
   };
+};
+
+
+
+const getBunnyEmbedUrl = (
+  value: string,
+) => {
+  if (!value) return "";
+
+  try {
+    const url = new URL(value);
+
+    /*
+      Bunny Direct Play URL:
+      https://player.mediadelivery.net/play/{libraryId}/{videoId}
+
+      Player.js works with the Bunny Embed iframe URL:
+      https://iframe.mediadelivery.net/embed/{libraryId}/{videoId}
+    */
+    if (
+      url.hostname ===
+        "player.mediadelivery.net" &&
+      url.pathname.startsWith(
+        "/play/",
+      )
+    ) {
+      const parts =
+        url.pathname
+          .split("/")
+          .filter(Boolean);
+
+      const libraryId =
+        parts[1] || "";
+
+      const videoId =
+        parts[2] || "";
+
+      if (
+        libraryId &&
+        videoId
+      ) {
+        const embedUrl =
+          new URL(
+            `https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}`,
+          );
+
+        /* Preserve any existing query parameters if Bunny adds them. */
+        url.searchParams.forEach(
+          (paramValue, key) => {
+            embedUrl.searchParams.set(
+              key,
+              paramValue,
+            );
+          },
+        );
+
+        return embedUrl.toString();
+      }
+    }
+
+    return value;
+  } catch {
+    return value;
+  }
 };
 
 
@@ -292,6 +364,30 @@ export function DashboardCoursePlayer() {
 
   const lastSentSecond =
     useRef(-1);
+
+  const bunnyIframeRef =
+    useRef<HTMLIFrameElement | null>(
+      null,
+    );
+
+
+  const bunnyCurrentTimeRef =
+    useRef(0);
+
+  const bunnyDurationRef =
+    useRef(0);
+
+  const autoplayNextRef =
+    useRef(false);
+
+  const bunnyCompletionTriggeredRef =
+    useRef(false);
+
+
+  const [
+    bunnyIframeLoaded,
+    setBunnyIframeLoaded,
+  ] = useState(false);
 
 
   /* ============================================================
@@ -465,6 +561,23 @@ export function DashboardCoursePlayer() {
   const lessonResources =
     selectedLesson?.resources ?? [];
 
+  const bunnyEmbedUrl =
+    useMemo(
+      () =>
+        getBunnyEmbedUrl(
+          videoUrl,
+        ),
+      [videoUrl],
+    );
+
+  useEffect(() => {
+    bunnyCompletionTriggeredRef.current =
+      false;
+
+    bunnyCurrentTimeRef.current = 0;
+    bunnyDurationRef.current = 0;
+  }, [selectedLessonId]);
+
   const getResourceUrl = (
     resource: LessonResource,
   ) =>
@@ -484,6 +597,7 @@ export function DashboardCoursePlayer() {
 
   useEffect(() => {
     setVideoLoading(true);
+    setBunnyIframeLoaded(false);
 
     if (!selectedLesson) {
       setVideoUrl("");
@@ -604,11 +718,10 @@ export function DashboardCoursePlayer() {
 
       if (
         second < 1 ||
-        second %
-          10 !==
-          0 ||
-        second ===
-          lastSentSecond.current
+        (
+          lastSentSecond.current >= 0 &&
+          second - lastSentSecond.current < 10
+        )
       ) {
         return;
       }
@@ -690,6 +803,7 @@ export function DashboardCoursePlayer() {
 
       if (next && !next.isLocked) {
         lastSentSecond.current = -1;
+        autoplayNextRef.current = true;
         setSelectedLessonId((current) => current === lessonId ? idOf(next) : current);
       }
     } catch (err: unknown) {
@@ -701,9 +815,374 @@ export function DashboardCoursePlayer() {
     }
   };
 
-  const handleVideoEnded = (video: HTMLVideoElement) => {
-    void completeLesson(Number.isFinite(video.duration) ? video.duration : video.currentTime);
+  const handleVideoEnded = (
+    finalPosition?: number,
+  ) => {
+    void completeLesson(
+      finalPosition,
+    );
   };
+
+
+  /* ============================================================
+     BUNNY STREAM — DIRECT PLAYER.JS POSTMESSAGE PROTOCOL
+     ============================================================ */
+
+  /*
+    Không dùng player-0.1.0.min.js nữa.
+
+    Lý do:
+    Khi React đổi bài, iframe cũ bị unmount. Player.js global listener
+    của instance cũ vẫn có thể nhận message và cố postMessage vào
+    iframe đã bị xoá => "Cannot read properties of null (reading 'postMessage')".
+
+    Bunny Stream hỗ trợ chuẩn Player.js qua window.postMessage, nên
+    component giao tiếp trực tiếp với iframe. Như vậy không có instance
+    Player.js cũ bị treo khi chuyển lesson.
+  */
+  useEffect(() => {
+    if (
+      !bunnyEmbedUrl ||
+      !bunnyIframeLoaded
+    ) {
+      return;
+    }
+
+    const iframe =
+      bunnyIframeRef.current;
+
+    if (
+      !iframe ||
+      !iframe.contentWindow
+    ) {
+      return;
+    }
+
+    let destroyed = false;
+
+    const PLAYER_CONTEXT =
+      "player.js";
+
+    const PLAYER_VERSION =
+      "0.0.11";
+
+    const listenerPrefix =
+      `qcc-${selectedLessonId}`;
+
+    const sendToBunny = (
+      method: string,
+      value?: unknown,
+      listener?: string,
+    ) => {
+      const target =
+        bunnyIframeRef.current
+          ?.contentWindow;
+
+      if (
+        destroyed ||
+        !target
+      ) {
+        return;
+      }
+
+      const message: Record<
+        string,
+        unknown
+      > = {
+        context:
+          PLAYER_CONTEXT,
+        version:
+          PLAYER_VERSION,
+        method,
+      };
+
+      if (
+        value !== undefined
+      ) {
+        message.value =
+          value;
+      }
+
+      if (listener) {
+        message.listener =
+          listener;
+      }
+
+      target.postMessage(
+        JSON.stringify(
+          message,
+        ),
+        "*",
+      );
+    };
+
+    const subscribe = () => {
+      sendToBunny(
+        "addEventListener",
+        "timeupdate",
+        `${listenerPrefix}-timeupdate`,
+      );
+
+      sendToBunny(
+        "addEventListener",
+        "ended",
+        `${listenerPrefix}-ended`,
+      );
+
+      sendToBunny(
+        "addEventListener",
+        "play",
+        `${listenerPrefix}-play`,
+      );
+
+      sendToBunny(
+        "addEventListener",
+        "pause",
+        `${listenerPrefix}-pause`,
+      );
+    };
+
+    const restoreAndAutoplay =
+      () => {
+        const lastPosition =
+          Number(
+            selectedLesson
+              ?.lastPosition ??
+              0,
+          );
+
+        if (
+          lastPosition > 0
+        ) {
+          sendToBunny(
+            "setCurrentTime",
+            lastPosition,
+            `${listenerPrefix}-seek`,
+          );
+        }
+
+        if (
+          autoplayNextRef.current
+        ) {
+          autoplayNextRef.current =
+            false;
+
+          sendToBunny(
+            "play",
+            undefined,
+            `${listenerPrefix}-play-command`,
+          );
+        }
+      };
+
+    const processTiming = (
+      currentTimeValue: unknown,
+      durationValue: unknown,
+    ) => {
+      const currentTime =
+        Number(
+          currentTimeValue ??
+            0,
+        );
+
+      const duration =
+        Number(
+          durationValue ??
+            bunnyDurationRef.current,
+        );
+
+      if (
+        Number.isFinite(
+          currentTime,
+        ) &&
+        currentTime >= 0
+      ) {
+        bunnyCurrentTimeRef.current =
+          currentTime;
+
+        void saveWatchingProgress(
+          currentTime,
+        );
+      }
+
+      if (
+        Number.isFinite(
+          duration,
+        ) &&
+        duration > 0
+      ) {
+        bunnyDurationRef.current =
+          duration;
+
+        const remaining =
+          duration -
+          currentTime;
+
+        const reachedEnd =
+          currentTime > 0 &&
+          (
+            currentTime /
+              duration >=
+              0.99 ||
+            remaining <= 1.5
+          );
+
+        if (
+          reachedEnd &&
+          !bunnyCompletionTriggeredRef.current
+        ) {
+          bunnyCompletionTriggeredRef.current =
+            true;
+
+          void completeLesson(
+            duration,
+          );
+        }
+      }
+    };
+
+    const handleMessage = (
+      event: MessageEvent,
+    ) => {
+      if (
+        destroyed ||
+        event.source !==
+          bunnyIframeRef.current
+            ?.contentWindow
+      ) {
+        return;
+      }
+
+      let data: any =
+        event.data;
+
+      if (
+        typeof data ===
+        "string"
+      ) {
+        try {
+          data =
+            JSON.parse(
+              data,
+            );
+        } catch {
+          return;
+        }
+      }
+
+      if (
+        !data ||
+        data.context !==
+          PLAYER_CONTEXT
+      ) {
+        return;
+      }
+
+      if (
+        data.event ===
+        "ready"
+      ) {
+        /*
+          Subscribe lại khi Bunny báo ready để tránh trường hợp
+          iframe load xong nhưng receiver chưa sẵn sàng ở lần gửi đầu.
+        */
+        subscribe();
+        restoreAndAutoplay();
+
+        return;
+      }
+
+      if (
+        data.event ===
+        "timeupdate"
+      ) {
+        const value =
+          data.value ?? {};
+
+        processTiming(
+          value.seconds,
+          value.duration,
+        );
+
+        return;
+      }
+
+      if (
+        data.event ===
+        "ended"
+      ) {
+        if (
+          bunnyCompletionTriggeredRef.current
+        ) {
+          return;
+        }
+
+        bunnyCompletionTriggeredRef.current =
+          true;
+
+        const finalPosition =
+          bunnyDurationRef.current >
+          0
+            ? bunnyDurationRef.current
+            : bunnyCurrentTimeRef.current;
+
+        void completeLesson(
+          finalPosition,
+        );
+      }
+    };
+
+    window.addEventListener(
+      "message",
+      handleMessage,
+    );
+
+    /*
+      onLoad của iframe đã chạy trước effect này. Gửi subscription ngay,
+      rồi gửi lại sau 300ms/1200ms để cover trường hợp Bunny receiver
+      chưa ready tại đúng thời điểm React effect chạy.
+    */
+    subscribe();
+
+    const timer1 =
+      window.setTimeout(
+        () => {
+          subscribe();
+          restoreAndAutoplay();
+        },
+        300,
+      );
+
+    const timer2 =
+      window.setTimeout(
+        () => {
+          subscribe();
+        },
+        1200,
+      );
+
+    return () => {
+      destroyed = true;
+
+      window.clearTimeout(
+        timer1,
+      );
+
+      window.clearTimeout(
+        timer2,
+      );
+
+      window.removeEventListener(
+        "message",
+        handleMessage,
+      );
+    };
+  }, [
+    bunnyEmbedUrl,
+    bunnyIframeLoaded,
+    selectedLessonId,
+    selectedLesson?.lastPosition,
+  ]);
 
 
   /* ============================================================
@@ -819,40 +1298,28 @@ export function DashboardCoursePlayer() {
                 Đang tải video...
               </div>
             ) : videoUrl ? (
-              <video
-                key={videoUrl}
-                src={videoUrl}
-                controls
-                controlsList="nodownload noremoteplayback"
-                disablePictureInPicture
-                disableRemotePlayback
-                onContextMenu={(event) => event.preventDefault()}
-                onEnded={(event) => handleVideoEnded(event.currentTarget)}
-                playsInline
-                onLoadedMetadata={(
-                  event,
-                ) => {
-                  if (
-                    selectedLesson
-                      ?.lastPosition
-                  ) {
-                    event.currentTarget.currentTime =
-                      Number(
-                        selectedLesson.lastPosition,
-                      );
-                  }
-                }}
-                onTimeUpdate={(
-                  event,
-                ) =>
-                  void saveWatchingProgress(
-                    event
-                      .currentTarget
-                      .currentTime,
-                  )
+              <iframe
+                id={`bunny-stream-${selectedLessonId}`}
+                ref={bunnyIframeRef}
+                key={bunnyEmbedUrl}
+                src={bunnyEmbedUrl}
+                title={
+                  selectedLesson?.title ||
+                  "Course video"
                 }
+                loading="eager"
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
+                allowFullScreen
+                onLoad={() =>
+                  setBunnyIframeLoaded(true)
+                }
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
+                }}
               />
-            ) : (
+) : (
               <div className="ud-player-video__empty">
                 <FiPlay />
 
@@ -1082,6 +1549,9 @@ export function DashboardCoursePlayer() {
                             ) {
                               lastSentSecond.current =
                                 -1;
+
+                              autoplayNextRef.current =
+                                false;
 
                               setSelectedLessonId(
                                 id,
