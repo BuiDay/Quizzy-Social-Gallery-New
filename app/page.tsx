@@ -13,6 +13,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 import { Newsletter } from "@/components/sections/Newsletter";
+import { FloatingCoursePromo } from "@/components/ui/FloatingCoursePromo";
 
 export default function Home(){
   return <ModalProvider>
@@ -30,6 +31,13 @@ export default function Home(){
       <Testimonials />
       <FinalCTA />
       <Newsletter />
+      <FloatingCoursePromo
+            title="Claude AI Mastery "
+            title1="Tự động hóa công việc với Claude AI"
+            price="1.090.000đ"
+            oldPrice="1.590.000đ"
+            href="/courses/claude-ai-mastery"
+      />
     </main>
     <Footer />
   </ModalProvider>;

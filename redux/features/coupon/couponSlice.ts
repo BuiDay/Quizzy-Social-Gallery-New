@@ -1,25 +1,35 @@
-
 import { ICoupon } from "@/type";
-import {PayloadAction, createSlice} from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 
-interface IinitialState{
-    coupon?:ICoupon
+interface IinitialState {
+    coupon?: ICoupon
 }
 
-const initialState:IinitialState = {
+const initialState: IinitialState = {
     coupon: undefined,
 };
 
 const couponSilce = createSlice({
-    name:"coupon",
+    name: "coupon",
     initialState,
-    reducers:{
-        getCouponByName:(state, action:PayloadAction<any>)=>{
+    reducers: {
+        getCouponByName: (
+            state,
+            action: PayloadAction<{ coupon: ICoupon }>
+        ) => {
             state.coupon = action.payload.coupon;
+        },
+
+        clearCoupon: (state) => {
+            state.coupon = undefined;
         },
     }
 })
 
-export const {getCouponByName} = couponSilce.actions
+export const {
+    getCouponByName,
+    clearCoupon
+} = couponSilce.actions
+
 export default couponSilce.reducer

@@ -27,13 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           zIndex: 9999
         }} />
           {children}
-          {/* <FloatingCoursePromo
-            title="Claude AI Mastery "
-            title1="Tự động hóa công việc với Claude AI"
-            price="X.XXX.000đ"
-            oldPrice="X.XXX.000đ"
-            href="/courses/claude-ai-mastery"
-          /> */}
+         
         </RootLayouts>
       </body>
     </html>

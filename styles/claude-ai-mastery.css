@@ -3896,7 +3896,7 @@
 
   color: #111;
 
-  font-size: clamp(16px, 1.8vw, 32px);
+  font-size: clamp(16px, 1.8vw, 24px);
 
   font-weight: 700;
 

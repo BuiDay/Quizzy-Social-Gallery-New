@@ -759,7 +759,9 @@ export function DashboardCoursePlayer() {
      ============================================================ */
 
   const completeLesson = async (finalPosition?: number) => {
-    if (!selectedLessonId || selectedLesson?.isLocked || completionLock.current) return;
+    // Replaying a completed lesson must not complete/unlock/advance again.
+    if (!selectedLessonId || !selectedLesson || selectedLesson.isLocked ||
+        selectedLesson.isCompleted || completionLock.current) return;
     const lessonId = selectedLessonId;
     completionLock.current = true;
     setCompleting(true);
@@ -944,15 +946,13 @@ export function DashboardCoursePlayer() {
 
     const restoreAndAutoplay =
       () => {
-        const lastPosition =
-          Number(
-            selectedLesson
-              ?.lastPosition ??
-              0,
-          );
+        // Completed lessons replay from the beginning instead of the saved end.
+        const lastPosition = selectedLesson?.isCompleted
+          ? 0
+          : Number(selectedLesson?.lastPosition ?? 0);
 
         if (
-          lastPosition > 0
+          selectedLesson?.isCompleted || lastPosition > 0
         ) {
           sendToBunny(
             "setCurrentTime",
@@ -1182,6 +1182,7 @@ export function DashboardCoursePlayer() {
     bunnyIframeLoaded,
     selectedLessonId,
     selectedLesson?.lastPosition,
+    selectedLesson?.isCompleted,
   ]);
 
 

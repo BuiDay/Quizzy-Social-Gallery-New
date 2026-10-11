@@ -177,7 +177,7 @@ export function ClaudeAIMasteryHero({
             >
               <div className="claude-course-hero__primary-wrap">
                 <span className="claude-course-hero__discount">
-                  Ưu đãi tới 50%
+                  Ưu đãi 30%
                 </span>
 
                 {/* <a
@@ -188,7 +188,7 @@ export function ClaudeAIMasteryHero({
                 </a> */}
                 {
 
-                  product && <PaidProductAction product={product} onBuy={handleBuy} buttonText="Đăng kí ngay" className="claude-course-hero__button"/>
+                  product && <PaidProductAction product={product} onBuy={handleBuy} buttonText="Đăng kí ngay với 1090K" className="claude-course-hero__button"/>
                 }
 
               </div>

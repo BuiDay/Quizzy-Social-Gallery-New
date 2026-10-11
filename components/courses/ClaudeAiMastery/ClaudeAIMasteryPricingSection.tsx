@@ -91,10 +91,10 @@ export function ClaudeAIMasteryPricingSection({
 
   purchaseUrl = "#claude-register",
 
-  savingPrice = "800.000đ",
+  savingPrice = "500.000đ",
 
   offerStartLabel =
-  "MỞ BÁN NGÀY 19H 05/10",
+  "Ưu đãi đợt 2",
 
   offerPeriod =
   "05/10 – 10/10",
@@ -112,7 +112,7 @@ export function ClaudeAIMasteryPricingSection({
   "Từ 15/10",
 
   offerEndAt =
-  "2026-10-11T00:00:00+07:00",
+  "2026-10-17T00:00:00+07:00",
   product,
   handleBuy
 }: ClaudeAIMasteryPricingSectionProps) {
@@ -602,7 +602,7 @@ export function ClaudeAIMasteryPricingSection({
 
 
               <span className="claude-pricing-offer__discount">
-                GIẢM 50%
+                GIẢM 30%
               </span>
 
             </div>
@@ -610,9 +610,8 @@ export function ClaudeAIMasteryPricingSection({
 
             <p className="claude-pricing-offer__footnote">
               Giá {currentPrice} áp
-              dụng từ 19H 05/10 đến hết
-              ngày 10/10.
-            </p>
+              dụng đến hết
+              ngày 17/10            </p>
 
           </article>
 
@@ -634,7 +633,7 @@ export function ClaudeAIMasteryPricingSection({
 
             {/* CURRENT */}
 
-            <article className="claude-pricing-stage claude-pricing-stage--current">
+            <article className="claude-pricing-stage">
 
               <div className="claude-pricing-stage__head">
 
@@ -643,14 +642,14 @@ export function ClaudeAIMasteryPricingSection({
                 </span>
 
                 <small>
-                  Mở 19H 05/10
+                 Đã đóng
                 </small>
 
               </div>
 
 
               <strong>
-                {currentPrice}
+              790.000đ
               </strong>
 
 
@@ -659,16 +658,16 @@ export function ClaudeAIMasteryPricingSection({
               </p>
 
 
-              <span className="claude-pricing-stage__status">
+              {/* <span className="claude-pricing-stage__status">
                 GIÁ HIỆN TẠI
-              </span>
+              </span> */}
 
             </article>
 
 
             {/* PHASE 2 */}
 
-            <article className="claude-pricing-stage">
+            <article className="claude-pricing-stage  claude-pricing-stage--current">
 
               <div className="claude-pricing-stage__head">
 
@@ -677,7 +676,7 @@ export function ClaudeAIMasteryPricingSection({
                 </span>
 
                 <small>
-                  Sắp tới
+                 Đang mở
                 </small>
 
               </div>
@@ -691,13 +690,15 @@ export function ClaudeAIMasteryPricingSection({
               <p>
                 {secondPeriod}
               </p>
-
+              <span className="claude-pricing-stage__status">
+                GIÁ HIỆN TẠI
+              </span>
             </article>
 
 
             {/* ORIGINAL */}
 
-            <article className="claude-pricing-stage">
+            <article className="claude-pricing-stage ">
 
               <div className="claude-pricing-stage__head">
 

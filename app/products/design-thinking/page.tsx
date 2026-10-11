@@ -21,6 +21,7 @@ import ModalNeedLogin from "@/components/ui/ModalNeedLogin";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { Product } from "@/components/ui/PaidProductAction";
+import { FloatingCoursePromo } from "@/components/ui/FloatingCoursePromo";
 
 export default function DesignThinkingPage() {
   const [getById, { isLoading }] = useGetByIdMutation();
@@ -81,6 +82,13 @@ export default function DesignThinkingPage() {
           onClose={() => setSelectedPurchaseProduct(null)}
         />
       </main>
+        <FloatingCoursePromo
+            title="Claude AI Mastery "
+            title1="Tự động hóa công việc với Claude AI"
+            price="1.090.000đ"
+            oldPrice="1.590.000đ"
+            href="/courses/claude-ai-mastery"
+        />
       <Footer />
     </ModalProvider>
   );

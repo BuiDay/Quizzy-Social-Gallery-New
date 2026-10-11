@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
-import { useSelector, useStore } from "react-redux";
+import { useStore } from "react-redux";
 import { useRouter } from "next/navigation";
 import type { RootState } from "@/redux/store";
 import { useCreatePaymentLinkMutation, usePaymentFreeMutation } from "@/redux/features/checkout/checkoutApi";
@@ -27,7 +27,11 @@ type PurchaseModalProps = {
   onClose: () => void;
 };
 
-type ApiCoupon = { discount: number; name?: string };
+type ApiCoupon = {
+  discount: number;
+  name?: string;
+  productIds?: string[];
+};
 
 const formatVND = (value: number) => new Intl.NumberFormat("vi-VN", {
   style: "currency", currency: "VND", maximumFractionDigits: 0,
@@ -53,8 +57,6 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
   const [paymentFree] = usePaymentFreeMutation();
   const [getCouponByName, { isLoading: isApplyingCoupon }] = useGetCouponMutation();
   const [loadUserById] = useLoadUserByIdMutation();
-  const apiCoupon = useSelector((state: RootState) => state.coupon.coupon);
-
 
   const store = useStore<RootState>();
   const submitLock = useRef(false);
@@ -86,29 +88,45 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
 
   const applyCoupon = async () => {
     if (!product || isApplyingCoupon) return;
+
     const code = couponInput.trim();
-    if (!code) { setCouponMessage("Bạn chưa nhập mã giảm giá."); return; }
-    // Keep the product restriction used by the old cart.
-    if (code.toLowerCase().includes("sinhvienuel") && product.id !== "67e0dc5eec49e1d578e75ff6") {
-      setActiveCoupon(null);
-      setCouponMessage("Không áp dụng được cho sản phẩm này!");
+
+    if (!code) {
+      setCouponMessage("Bạn chưa nhập mã giảm giá.");
       return;
     }
+
     try {
       setCouponMessage("");
-      await getCouponByName(code).unwrap();
-      // Coupon is stored in the Redux slice by the existing API endpoint.
+      setActiveCoupon(null);
+
+      /*
+       * Luôn gửi productId lên backend.
+       *
+       * Backend sẽ tự quyết định:
+       * - coupon.productIds không có / [] => áp dụng tất cả
+       * - coupon.productIds có ID => chỉ áp dụng đúng sản phẩm đó
+       */
+      const result = await getCouponByName({
+        couponName: code,
+        productId: product.id,
+      }).unwrap() as {
+        success?: boolean;
+        coupon?: ApiCoupon;
+      };
+
+      if (!result?.coupon) {
+        setCouponMessage("Không tìm thấy mã giảm giá.");
+        return;
+      }
+
+      setActiveCoupon(result.coupon);
       setCouponMessage("Áp dụng mã thành công!");
     } catch (error) {
       setActiveCoupon(null);
       setCouponMessage(errorMessage(error));
     }
   };
-  useEffect(() => {
-    if (!open || !couponInput.trim() || !apiCoupon) return;
-    // Only accept the result after a successful lookup for this modal.
-    if (couponMessage === "Áp dụng mã thành công!") setActiveCoupon(apiCoupon);
-  }, [apiCoupon, couponMessage, open]);
   const removeCoupon = () => { setCouponInput(""); setActiveCoupon(null); setCouponMessage(""); };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -129,7 +147,10 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
         await loadUserById({});
         setSubmitMessage("Đã mở khóa tài liệu thành công.");
         onClose();
-      } const previousLink = store.getState().checkout.paymentLink;
+        return;
+      }
+
+      const previousLink = store.getState().checkout.paymentLink;
 
       const response = await createPaymentLink(order).unwrap();
 
