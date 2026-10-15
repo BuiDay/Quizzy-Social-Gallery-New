@@ -4,6 +4,7 @@ import "./globals.css";
 import { FloatingCoursePromo } from "@/components/ui/FloatingCoursePromo";
 import RootLayouts from "./RootLayouts";
 import { Toaster } from 'react-hot-toast'
+import MetaPixel from "@/components/MetaPixel";
 
 export const metadata: Metadata = {
   title: "QUIZZY SOCIAL GALLERY — Social Media Manager & Educator",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           {children}
          
         </RootLayouts>
+        <MetaPixel />
       </body>
     </html>
   );

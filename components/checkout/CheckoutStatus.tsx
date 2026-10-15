@@ -16,7 +16,6 @@ import { useSelector } from "react-redux";
 import type { RootState } from "@/redux/store";
 
 import {
-  useCheckPaidMutation,
   useCheckPaymentLinkInfomationMutation,
 } from "@/redux/features/checkout/checkoutApi";
 
@@ -24,6 +23,61 @@ import {
   useLoadUserByIdMutation,
 } from "@/redux/features/auth/authApi";
 
+
+// Meta Pixel is initialized once in the root layout (MetaPixel.tsx).
+// This component only dispatches Purchase after the payment API confirms PAID.
+
+
+type RecordValue = Record<string, unknown>;
+
+function asRecord(value: unknown): RecordValue | null {
+  return value !== null && typeof value === "object" && !Array.isArray(value)
+    ? (value as RecordValue)
+    : null;
+}
+
+function firstValue(record: RecordValue, keys: string[]): unknown {
+  for (const key of keys) {
+    if (record[key] !== undefined && record[key] !== null) return record[key];
+  }
+  return undefined;
+}
+
+function parseAmount(value: unknown): number | null {
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value === "string" && /^\d+(?:\.\d+)?$/.test(value.trim())) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : null;
+  }
+  return null;
+}
+
+// These field names are candidates, not a confirmed API contract.
+// Prefer replacing this function with the exact backend response fields.
+function getPurchaseDetails(payment: unknown): {
+  amount: number;
+  productId: string;
+  productName: string;
+} | null {
+  const info = asRecord(payment);
+  if (!info) return null;
+
+  const order = asRecord(info.order) ?? asRecord(info.orderInfo);
+  const source = order ?? info;
+  const amount = parseAmount(firstValue(source, ["finalAmount", "amountPaid", "paidAmount", "amount", "total"]));
+  const product = asRecord(source.product) ?? asRecord(source.course);
+  const items = Array.isArray(source.items) ? source.items : [];
+  const firstItem = asRecord(items[0]);
+  const productId = firstValue(product ?? {}, ["id", "_id"])
+    ?? firstValue(source, ["productId", "courseId"])
+    ?? firstValue(firstItem ?? {}, ["productId", "id"]);
+  const productName = firstValue(product ?? {}, ["title", "name"])
+    ?? firstValue(source, ["productName", "courseName"])
+    ?? firstValue(firstItem ?? {}, ["name", "title"]);
+
+  if (amount === null || amount <= 0 || !productId || !productName) return null;
+  return { amount, productId: String(productId), productName: String(productName) };
+}
 
 type CheckoutViewStatus =
   | "success"
@@ -343,6 +397,51 @@ export default function CheckoutPage() {
     loadUserById,
   ]);
 
+
+  /* ============================================================
+     META PIXEL PURCHASE
+     Only after the current order is confirmed PAID by the API.
+     localStorage is browser-local deduplication, not server-side exactly-once.
+     ============================================================ */
+  useEffect(() => {
+    if (!isConfirmed || !currentPaymentInfo || !orderCode) return;
+    if (String(currentPaymentInfo.status ?? "").toUpperCase() !== "PAID") return;
+
+    const details = getPurchaseDetails(currentPaymentInfo);
+    if (!details) {
+      console.warn("[Meta Pixel] Purchase skipped: API response lacks verified amount/product fields.");
+      return;
+    }
+
+    const storageKey = `meta_purchase_${orderCode}`;
+    let alreadySent = false;
+    try { alreadySent = localStorage.getItem(storageKey) === "1"; } catch { /* storage disabled */ }
+    if (alreadySent) return;
+
+    let attempts = 0;
+    const send = () => {
+      if (typeof window.fbq !== "function") return false;
+      try {
+        if (localStorage.getItem(storageKey) === "1") return true;
+      } catch { /* storage disabled */ }
+      window.fbq("track", "Purchase", {
+        value: details.amount,
+        currency: "VND",
+        content_name: details.productName,
+        content_ids: [details.productId],
+        content_type: "product",
+      }, { eventID: `purchase_${orderCode}` });
+      try { localStorage.setItem(storageKey, "1"); } catch { /* storage disabled */ }
+      return true;
+    };
+
+    if (send()) return;
+    const timer = window.setInterval(() => {
+      attempts += 1;
+      if (send() || attempts >= 20) window.clearInterval(timer);
+    }, 500);
+    return () => window.clearInterval(timer);
+  }, [isConfirmed, currentPaymentInfo, orderCode]);
 
   /* ============================================================
      UI STATUS

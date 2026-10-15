@@ -10,6 +10,8 @@ import { useGetCouponMutation } from "@/redux/features/coupon/couponApi";
 import { useLoadUserByIdMutation } from "@/redux/features/auth/authApi";
 import "@/styles/purchase-modal.css";
 
+import { trackInitiateCheckout } from "@/lib/metaPixel";
+
 export type PurchaseProduct = {
   id: string;
   title: string;
@@ -205,6 +207,12 @@ export function PurchaseModal({ product, open, onClose }: PurchaseModalProps) {
         });
       }
 
+      trackInitiateCheckout({
+        id: product.id,
+        title: product.title,
+        amount: total,
+      });
+      
       window.location.assign(url);
     } catch (error) {
       setSubmitMessage(error instanceof Error ? error.message : errorMessage(error));

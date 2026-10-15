@@ -1358,13 +1358,30 @@ export function DashboardCoursePlayer() {
             {selectedLesson &&
               !selectedLesson.isCompleted &&
               !selectedLesson.isLocked && (
-              <div>
-                {/* <FiCheck /> */}
-
-                {completing
-                  ? "Đang lưu..."
-                  : ""}
-              </div>
+              <button
+                type="button"
+                className="ud-player-complete-btn"
+                disabled={completing}
+                onClick={() => { void completeLesson(); }}
+                aria-busy={completing}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "10px 16px",
+                  border: "1px solid #202020",
+                  borderRadius: 12,
+                  background: "#d2fd4b",
+                  color: "#202020",
+                  font: "inherit",
+                  fontWeight: 600,
+                  cursor: completing ? "wait" : "pointer",
+                  opacity: completing ? 0.65 : 1,
+                }}
+              >
+                <FiCheck aria-hidden="true" />
+                {completing ? "Đang lưu..." : "Hoàn thành bài"}
+              </button>
             )}
 
             {selectedLesson
