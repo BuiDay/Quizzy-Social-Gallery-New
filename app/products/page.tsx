@@ -13,6 +13,7 @@ import "../../styles/products.css";
 import { PaidProductsSection, type PaidProduct } from "@/components/products/PaidProductsSection";
 import { FreeProductsSection } from "@/components/products/FreeProductsSection";
 import { NewsletterCTA } from "@/components/ui/NewsletterCTA";
+import CourseLesson9Popup from "@/components/lesson9-popups/CourseLesson9Popup";
 
 export default function ProductsPage() {
   const [getAll, { isLoading, isError }] = useGetAllMutation();
@@ -30,6 +31,9 @@ export default function ProductsPage() {
       <PaidProductsSection products={(products ?? []) as PaidProduct[]} isLoading={isLoading} isError={isError} />
       <FreeProductsSection products={(products ?? []) as PaidProduct[]} isLoading={isLoading} isError={isError} />
       <NewsletterCTA />
+      <CourseLesson9Popup
+        href="/courses/claude-ai-mastery"
+      />
     </main>
     <Footer />
   </ModalProvider>

@@ -1,0 +1,66 @@
+.screen{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:#f7f2e6;
+  color:#111;
+  font-family:var(--font-archia,Arial,sans-serif);
+}
+.card{
+  width:min(100%,620px);
+  border:1.5px solid #111;
+  border-radius:24px;
+  background:#fff;
+  padding:clamp(24px,5vw,52px);
+  box-shadow:10px 10px 0 #c8f135;
+}
+.eyebrow{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#6b6671;
+}
+.title{
+  margin:12px 0 0;
+  font-size:clamp(28px,5vw,52px);
+  line-height:.98;
+  letter-spacing:-.04em;
+}
+.text{
+  margin:16px 0 0;
+  max-width:52ch;
+  line-height:1.6;
+  color:#55515c;
+}
+.action{
+  display:inline-flex;
+  margin-top:22px;
+  border-radius:999px;
+  background:#111;
+  color:#fff;
+  padding:12px 18px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.loading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#5f5b66;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#c8f135;
+  box-shadow:0 0 0 1px #111;
+  animation:pulse .9s ease-in-out infinite alternate;
+}
+@keyframes pulse{
+  to{transform:scale(1.45)}
+}

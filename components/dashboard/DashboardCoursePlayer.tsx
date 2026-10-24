@@ -55,9 +55,9 @@ type LessonResource = {
   url?: string;
 
   type?:
-    | "file"
-    | "link"
-    | "pdf";
+  | "file"
+  | "link"
+  | "pdf";
 };
 
 
@@ -66,11 +66,11 @@ type Lesson = {
   id?: string;
 
   chapterId?:
-    | string
-    | {
-        _id?: string;
-        id?: string;
-      };
+  | string
+  | {
+    _id?: string;
+    id?: string;
+  };
 
   title?: string;
 
@@ -134,19 +134,19 @@ type BunnyTimingData = {
 
 type MyCourseEnrollment = {
   courseId?:
-    | string
-    | {
-        _id?: string;
-        id?: string;
-      };
+  | string
+  | {
+    _id?: string;
+    id?: string;
+  };
 
   courseClassId?:
-    | string
-    | {
-        _id?: string;
-        id?: string;
-      }
-    | null;
+  | string
+  | {
+    _id?: string;
+    id?: string;
+  }
+  | null;
 };
 
 
@@ -171,8 +171,8 @@ const idOf = (
 
     return String(
       item._id ??
-        item.id ??
-        "",
+      item.id ??
+      "",
     );
   }
 
@@ -224,7 +224,7 @@ const getBunnyEmbedUrl = (
     */
     if (
       url.hostname ===
-        "player.mediadelivery.net" &&
+      "player.mediadelivery.net" &&
       url.pathname.startsWith(
         "/play/",
       )
@@ -521,9 +521,9 @@ export function DashboardCoursePlayer() {
       } catch (err: any) {
         setError(
           err?.data?.message ||
-            err?.error ||
-            err?.message ||
-            "Không thể tải khóa học.",
+          err?.error ||
+          err?.message ||
+          "Không thể tải khóa học.",
         );
 
         return null;
@@ -612,7 +612,7 @@ export function DashboardCoursePlayer() {
     */
     setVideoUrl(
       selectedLesson.videoUrl ||
-        "",
+      "",
     );
 
     setVideoLoading(false);
@@ -628,14 +628,14 @@ export function DashboardCoursePlayer() {
       const chapters =
         [...(state?.chapters ??
           [])].sort(
-          (a, b) =>
-            Number(
-              a.order ?? 0,
-            ) -
-            Number(
-              b.order ?? 0,
-            ),
-        );
+            (a, b) =>
+              Number(
+                a.order ?? 0,
+              ) -
+              Number(
+                b.order ?? 0,
+              ),
+          );
 
       if (!chapters.length) {
         return [
@@ -681,11 +681,11 @@ export function DashboardCoursePlayer() {
                   (a, b) =>
                     Number(
                       a.order ??
-                        0,
+                      0,
                     ) -
                     Number(
                       b.order ??
-                        0,
+                      0,
                     ),
                 ),
           };
@@ -761,7 +761,7 @@ export function DashboardCoursePlayer() {
   const completeLesson = async (finalPosition?: number) => {
     // Replaying a completed lesson must not complete/unlock/advance again.
     if (!selectedLessonId || !selectedLesson || selectedLesson.isLocked ||
-        selectedLesson.isCompleted || completionLock.current) return;
+      selectedLesson.isCompleted || completionLock.current) return;
     const lessonId = selectedLessonId;
     completionLock.current = true;
     setCompleting(true);
@@ -982,13 +982,13 @@ export function DashboardCoursePlayer() {
       const currentTime =
         Number(
           currentTimeValue ??
-            0,
+          0,
         );
 
       const duration =
         Number(
           durationValue ??
-            bunnyDurationRef.current,
+          bunnyDurationRef.current,
         );
 
       if (
@@ -1022,8 +1022,8 @@ export function DashboardCoursePlayer() {
           currentTime > 0 &&
           (
             currentTime /
-              duration >=
-              0.99 ||
+            duration >=
+            0.99 ||
             remaining <= 1.5
           );
 
@@ -1047,8 +1047,8 @@ export function DashboardCoursePlayer() {
       if (
         destroyed ||
         event.source !==
-          bunnyIframeRef.current
-            ?.contentWindow
+        bunnyIframeRef.current
+          ?.contentWindow
       ) {
         return;
       }
@@ -1073,7 +1073,7 @@ export function DashboardCoursePlayer() {
       if (
         !data ||
         data.context !==
-          PLAYER_CONTEXT
+        PLAYER_CONTEXT
       ) {
         return;
       }
@@ -1122,7 +1122,7 @@ export function DashboardCoursePlayer() {
 
         const finalPosition =
           bunnyDurationRef.current >
-          0
+            0
             ? bunnyDurationRef.current
             : bunnyCurrentTimeRef.current;
 
@@ -1190,41 +1190,41 @@ export function DashboardCoursePlayer() {
      LOADING
      ============================================================ */
 
-//   if (loading) {
-//     return (
-//       <div className="ud-player-loading">
-//         <span />
-//         Đang tải khóa học...
-//       </div>
-//     );
-//   }
+  //   if (loading) {
+  //     return (
+  //       <div className="ud-player-loading">
+  //         <span />
+  //         Đang tải khóa học...
+  //       </div>
+  //     );
+  //   }
 
 
-//   if (error) {
-//     return (
-//       <div className="ud-player-error">
-//         <h2>
-//           Không thể mở khóa học
-//         </h2>
+  //   if (error) {
+  //     return (
+  //       <div className="ud-player-error">
+  //         <h2>
+  //           Không thể mở khóa học
+  //         </h2>
 
-//         <p>
-//           {error}
-//         </p>
+  //         <p>
+  //           {error}
+  //         </p>
 
-//         <Link href="/collections/courses">
-//           Quay lại khóa học
-//         </Link>
-//       </div>
-//     );
-//   }
+  //         <Link href="/collections/courses">
+  //           Quay lại khóa học
+  //         </Link>
+  //       </div>
+  //     );
+  //   }
 
 
   const progress =
     Number(
       state?.stats?.progress ??
-        state?.enrollment
-          ?.progress ??
-        0,
+      state?.enrollment
+        ?.progress ??
+      0,
     );
 
   return (
@@ -1252,14 +1252,14 @@ export function DashboardCoursePlayer() {
 
           {state?.courseClass
             ?.name && (
-            <p>
-              {
-                state
-                  .courseClass
-                  .name
-              }
-            </p>
-          )}
+              <p>
+                {
+                  state
+                    .courseClass
+                    .name
+                }
+              </p>
+            )}
         </div>
 
 
@@ -1320,7 +1320,7 @@ export function DashboardCoursePlayer() {
                   border: 0,
                 }}
               />
-) : (
+            ) : (
               <div className="ud-player-video__empty">
                 <FiPlay />
 
@@ -1358,39 +1358,39 @@ export function DashboardCoursePlayer() {
             {selectedLesson &&
               !selectedLesson.isCompleted &&
               !selectedLesson.isLocked && (
-              <button
-                type="button"
-                className="ud-player-complete-btn"
-                disabled={completing}
-                onClick={() => { void completeLesson(); }}
-                aria-busy={completing}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: "10px 16px",
-                  border: "1px solid #202020",
-                  borderRadius: 12,
-                  background: "#d2fd4b",
-                  color: "#202020",
-                  font: "inherit",
-                  fontWeight: 600,
-                  cursor: completing ? "wait" : "pointer",
-                  opacity: completing ? 0.65 : 1,
-                }}
-              >
-                <FiCheck aria-hidden="true" />
-                {completing ? "Đang lưu..." : "Hoàn thành bài"}
-              </button>
-            )}
+                <button
+                  type="button"
+                  className="ud-player-complete-btn"
+                  disabled={completing}
+                  onClick={() => { void completeLesson(); }}
+                  aria-busy={completing}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "10px 16px",
+                    border: "1px solid #202020",
+                    borderRadius: 12,
+                    background: "#d2fd4b",
+                    color: "#202020",
+                    font: "inherit",
+                    fontWeight: 600,
+                    cursor: completing ? "wait" : "pointer",
+                    opacity: completing ? 0.65 : 1,
+                  }}
+                >
+                  <FiCheck aria-hidden="true" />
+                  {completing ? "Đang lưu..." : "Hoàn thành bài"}
+                </button>
+              )}
 
             {selectedLesson
               ?.isCompleted && (
-              <span className="ud-player-completed">
-                <FiCheck />
-                Đã hoàn thành
-              </span>
-            )}
+                <span className="ud-player-completed">
+                  <FiCheck />
+                  Đã hoàn thành
+                </span>
+              )}
           </div>
 
           {lessonResources.length > 0 && (
@@ -1442,10 +1442,10 @@ export function DashboardCoursePlayer() {
                         <div>
                           <span className="ud-player-resource__icon">
                             {resource.type ===
-                            "pdf"
+                              "pdf"
                               ? "PDF"
                               : resource.type ===
-                                  "link"
+                                "link"
                                 ? "LINK"
                                 : "FILE"}
                           </span>
@@ -1457,10 +1457,10 @@ export function DashboardCoursePlayer() {
 
                             <small>
                               {resource.type ===
-                              "pdf"
+                                "pdf"
                                 ? "Tài liệu PDF"
                                 : resource.type ===
-                                    "link"
+                                  "link"
                                   ? "Liên kết tài liệu"
                                   : "Tài liệu đính kèm"}
                             </small>
@@ -1477,8 +1477,16 @@ export function DashboardCoursePlayer() {
                   },
                 )}
               </div>
+
             </div>
+
           )}
+          <div className="ud-player-resources__content">
+            <p>
+              Sau khi hoàn thành khóa học Edit Video với Claude AI, mình rất mong được xem những video mà mọi người tự tay thực hiện được. Gửi thành phẩm kèm cảm nhận về khóa học, những điều hữu ích hoặc khó khăn mà bạn gặp phải trong quá trình thực hành về email <strong>quizzyneforwork@gmail.com </strong> nha!
+            </p>
+            <p>Mình sẽ rất vui nếu có cơ hội xem video và gửi đến bạn feedback để hoàn thiện sản phẩm ngày càng chỉn chu hơn. Cảm ơn mọi người đã học và thực hành cùng mình nhé! ❤️</p>
+          </div>
         </section>
 
 
@@ -1514,7 +1522,7 @@ export function DashboardCoursePlayer() {
                   <span>
                     {String(
                       chapterIndex +
-                        1,
+                      1,
                     ).padStart(
                       2,
                       "0",
@@ -1549,15 +1557,13 @@ export function DashboardCoursePlayer() {
                             id
                           }
                           type="button"
-                          className={`ud-lesson ${
-                            active
+                          className={`ud-lesson ${active
                               ? "is-active"
                               : ""
-                          } ${
-                            lesson.isCompleted
+                            } ${lesson.isCompleted
                               ? "is-completed"
                               : ""
-                          }`}
+                            }`}
                           disabled={
                             lesson.isLocked
                           }

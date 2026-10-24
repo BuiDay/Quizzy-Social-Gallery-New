@@ -3998,3 +3998,16 @@
       display: none;
     }
   }
+
+  .ud-player-resources__content{
+    padding:20px;
+  }
+
+  .ud-player-resources__content p{
+    margin-top:10px;
+    text-align: justify;
+  }
+
+  .ud-player-resources__content p strong{
+    text-decoration: underline;
+  }

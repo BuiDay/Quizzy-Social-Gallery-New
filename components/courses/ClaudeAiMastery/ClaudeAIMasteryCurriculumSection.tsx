@@ -14,6 +14,7 @@ type ModuleItem = {
   title: string;
   description: string;
   bullets: string[];
+  tag?:string,
 };
 
 type PhaseItem = {
@@ -137,6 +138,19 @@ const phases: PhaseItem[] = [
           "Tạo Project thực tế với thương hiệu bất kỳ với Claude AI.",
         ],
       },
+      {
+        number: "09",
+        title: "TỰ ĐỘNG HÓA EDIT VIDEO VỚI CLAUDE AI",
+        description:
+          "Tự động hóa quy trình edit video từ footage thô đến thành phẩm với Claude AI.",
+        bullets: [
+          "Xây dựng workflow edit video với Claude AI, đóng gói thành skill.",
+          "Thực hành edit video Talking Head kết hợp B-roll.",
+          "Tạo video Motion Graphic với Text Effect & Animation.",
+          "Tài liệu đính kèm hơn 30 hiệu ứng chữ và 20 hiệu ứng cảnh.",
+        ],
+        tag:"MỚI CẬP NHẬT!"
+      },
     ],
   },
 ];
@@ -249,6 +263,10 @@ export function ClaudeAIMasteryCurriculumSection({
                       } as CSSProperties
                     }
                   >
+                    {module.tag &&  <div className="claude-curriculum-card__content tags">
+                        {module.tag}
+                    </div>}
+                   
                     {/* LEFT */}
 
                     <div className="claude-curriculum-card__content">

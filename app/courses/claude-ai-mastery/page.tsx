@@ -37,6 +37,7 @@ import module05Image from '@/assets/images/claude ai/Buổi 5/18.png'
 import module06Image from '@/assets/images/claude ai/Buổi 6/20.png'
 import module07Image from '@/assets/images/claude ai/Buổi 7/22.png'
 import module08Image from '@/assets/images/claude ai/Buổi 8/24.png'
+import module09Image from '@/assets/images/claude ai/Buổi 9/1.png'
 
 import { useEffect, useState, type MouseEvent } from "react";
 import { useGetCourseByIdMutation } from "@/redux/features/course/courseApi";
@@ -44,6 +45,7 @@ import type { ICourse } from "@/redux/features/course/courseSlice";
 import { PurchaseModal, type PurchaseProduct } from "@/components/ui/PurchaseModal";
 import ModalNeedLogin from "@/components/ui/ModalNeedLogin";
 import UserAuth from "@/hook/userAuth";
+import CourseLesson9Popup from "@/components/lesson9-popups/CourseLesson9Popup";
 
 // Thay bằng slug hoặc _id thực tế của khóa học trong database.
 const COURSE_SLUG_OR_ID = "claude-ai-mastery";
@@ -123,7 +125,7 @@ export default function ClaudeAIMasteryPage() {
                     product={course}
                 />
 
-                <ClaudeAIMasteryIntroSection profileImage={QuizzyProfile} videoSrc="https://qccagency.s3.ap-southeast-1.amazonaws.com/QCC_CLAUDE+AI.mp4"/>
+                <ClaudeAIMasteryIntroSection profileImage={QuizzyProfile} videoSrc="https://qccagency.s3.ap-southeast-1.amazonaws.com/QCC_CLAUDE+AI.mp4" />
                 <ClaudeAIMasteryProblemsSection />
                 <ClaudeAIMasterySolutionSection
                     productImage={productImage}
@@ -151,6 +153,7 @@ export default function ClaudeAIMasteryPage() {
                         "06": module06Image,
                         "07": module07Image,
                         "08": module08Image,
+                        "09": module09Image,
                     }}
                 />
 
@@ -177,6 +180,9 @@ export default function ClaudeAIMasteryPage() {
                     open={Boolean(selectedPurchaseProduct)}
                     product={selectedPurchaseProduct}
                     onClose={() => setSelectedPurchaseProduct(null)}
+                />
+                <CourseLesson9Popup
+                    href="/courses/claude-ai-mastery"
                 />
             </main>
             <Footer />

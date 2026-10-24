@@ -14,8 +14,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { FloatingCoursePromo } from "@/components/ui/FloatingCoursePromo";
+import { CourseLesson9Popup } from "@/components/lesson9-popups";
 
-export default function Home(){
+export default function Home() {
   return <ModalProvider>
     <SiteEffects />
     <Navbar />
@@ -32,11 +33,14 @@ export default function Home(){
       <FinalCTA />
       <Newsletter />
       <FloatingCoursePromo
-            title="Claude AI Mastery "
-            title1="Tự động hóa công việc với Claude AI"
-            price="1.090.000đ"
-            oldPrice="1.590.000đ"
-            href="/courses/claude-ai-mastery"
+        title="Claude AI Mastery "
+        title1="Tự động hóa công việc với Claude AI"
+        price="1.590.000đ"
+        oldPrice="2.590.000đ"
+        href="/courses/claude-ai-mastery"
+      />
+      <CourseLesson9Popup
+        href="/courses/claude-ai-mastery"
       />
     </main>
     <Footer />
