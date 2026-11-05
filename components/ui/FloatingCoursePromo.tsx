@@ -114,11 +114,11 @@ export function FloatingCoursePromo({
 
         <div className="floating-course-promo__price">
           <strong>
-            {price}
+            2.590.000đ
           </strong>
 
           <del>
-            {oldPrice}
+            3.990.000đ
           </del>
         </div>
 

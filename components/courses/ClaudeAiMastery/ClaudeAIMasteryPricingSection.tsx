@@ -1,35 +1,17 @@
 "use client";
 
 import { PaidProductAction } from "@/components/ui/PaidProductAction";
-import {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type CSSProperties,
-} from "react";
-
 
 type ClaudeAIMasteryPricingSectionProps = {
   originalPrice?: string;
   currentPrice?: string;
   purchaseUrl?: string;
-
   savingPrice?: string;
-
-  offerStartLabel?: string;
-  offerPeriod?: string;
-
-  secondPrice?: string;
-  secondPeriod?: string;
-
-  finalPrice?: string;
-  finalPeriod?: string;
+  offerLabel?: string;
+  discountLabel?: string;
   product?: any;
-  handleBuy?: any
-  offerEndAt?: string;
+  handleBuy?: any;
 };
-
 
 const moduleTags = [
   "Hệ sinh thái Claude",
@@ -41,695 +23,136 @@ const moduleTags = [
   "Vibe coding & CV",
 ];
 
-
-const benefits = [
+const benefits: {
+  title: string;
+  description?: string;
+  isNew?: boolean;
+  withTags?: boolean;
+}[] = [
   {
-    title:
-      "8 module học, từ nền tảng đến thực chiến",
-
-    description: "",
+    title: "9 module học, từ nền tảng đến thực chiến",
+    withTags: true,
   },
-
   {
-    title:
-      "20+ tài liệu & template dùng ngay",
-
+    title: "Skills edit video + Edit Studio",
+    description:
+      "Website motion graphic, 30+ hiệu ứng chữ và 20+ hiệu ứng cảnh. Chỉnh trực tiếp trên giao diện edit trong Claude.",
+    isNew: true,
+  },
+  {
+    title: "20+ tài liệu & template dùng ngay",
     description:
       "30+ AI Skills cho Social Media, 50+ prompt thực chiến, thư viện Knowledge Base và tài nguyên Claude.",
   },
-
   {
-    title:
-      "Cộng đồng Social Media 6.000+ thành viên",
-
-    description:
-      "Hỏi đáp, chia sẻ workflow và cập nhật tính năng mới của Claude.",
+    title: "Cộng đồng Social Media 6.000+ thành viên",
+    description: "Hỏi đáp, chia sẻ workflow và cập nhật tính năng mới của Claude.",
   },
-
   {
-    title:
-      "Certificate và 6 tháng xem lại",
-
-    description:
-      "Học theo tốc độ của bạn trên hệ thống e-learning.",
+    title: "Certificate và 6 tháng xem lại",
+    description: "Học theo tốc độ của bạn trên hệ thống e-learning.",
   },
 ];
 
-
-function pad(value: number) {
-  return String(value).padStart(
-    2,
-    "0",
-  );
-}
-
-
 export function ClaudeAIMasteryPricingSection({
-  originalPrice = "1.590.000đ",
-
-  currentPrice = "790.000đ",
-
+  originalPrice = "3.990.000 ₫",
+  currentPrice = "2.590.000 ₫",
   purchaseUrl = "#claude-register",
-
-  savingPrice = "500.000đ",
-
-  offerStartLabel =
-  "Ưu đãi đợt 2",
-
-  offerPeriod =
-  "05/10 – 10/10",
-
-  secondPrice =
-  "1.090.000đ",
-
-  secondPeriod =
-  "11/10 – 17/10",
-
-  finalPrice =
-  "1.590.000đ",
-
-  finalPeriod =
-  "Từ 15/10",
-
-  offerEndAt =
-  "2026-10-17T00:00:00+07:00",
+  savingPrice = "1.400.000đ",
+  offerLabel = "Ưu đãi",
+  discountLabel = "GIẢM 35%",
   product,
-  handleBuy
+  handleBuy,
 }: ClaudeAIMasteryPricingSectionProps) {
-
-  const sectionRef =
-    useRef<HTMLElement>(null);
-
-
-  const [
-    now,
-    setNow,
-  ] = useState(
-    () => Date.now(),
-  );
-
-
-  /* ============================================================
-     REVEAL
-     ============================================================ */
-
-  useEffect(() => {
-    const section =
-      sectionRef.current;
-
-    if (!section) return;
-
-
-    const items =
-      section.querySelectorAll<HTMLElement>(
-        ".claude-pricing-reveal",
-      );
-
-
-    if (
-      !(
-        "IntersectionObserver" in
-        window
-      )
-    ) {
-      items.forEach(
-        (item) =>
-          item.classList.add(
-            "is-visible",
-          ),
-      );
-
-      return;
-    }
-
-
-    const observer =
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach(
-            (entry) => {
-              if (
-                !entry.isIntersecting
-              ) {
-                return;
-              }
-
-              entry.target.classList.add(
-                "is-visible",
-              );
-
-              observer.unobserve(
-                entry.target,
-              );
-            },
-          );
-        },
-
-        {
-          threshold: 0.12,
-
-          rootMargin:
-            "0px 0px -5% 0px",
-        },
-      );
-
-
-    items.forEach(
-      (item) =>
-        observer.observe(item),
-    );
-
-
-    return () =>
-      observer.disconnect();
-
-  }, []);
-
-
-  /* ============================================================
-     COUNTDOWN
-     ============================================================ */
-
-  useEffect(() => {
-    const timer =
-      window.setInterval(
-        () => {
-          setNow(
-            Date.now(),
-          );
-        },
-        1000,
-      );
-
-    return () =>
-      window.clearInterval(
-        timer,
-      );
-
-  }, []);
-
-
-  const countdown =
-    useMemo(() => {
-
-      const target =
-        new Date(
-          offerEndAt,
-        ).getTime();
-
-
-      const difference =
-        Math.max(
-          0,
-          target - now,
-        );
-
-
-      const totalSeconds =
-        Math.floor(
-          difference /
-          1000,
-        );
-
-
-      const days =
-        Math.floor(
-          totalSeconds /
-          86400,
-        );
-
-
-      const hours =
-        Math.floor(
-          (totalSeconds %
-            86400) /
-          3600,
-        );
-
-
-      const minutes =
-        Math.floor(
-          (totalSeconds %
-            3600) /
-          60,
-        );
-
-
-      const seconds =
-        totalSeconds %
-        60;
-
-
-      return {
-        days,
-        hours,
-        minutes,
-        seconds,
-      };
-
-    }, [
-      now,
-      offerEndAt,
-    ]);
-
-
   return (
-    <section
-      ref={sectionRef}
-      className="claude-pricing"
-      id="claude-register"
-    >
-
-      <div className="claude-pricing__inner">
-
-        {/* ====================================================
-            HEAD
-            ==================================================== */}
-
-        <header className="claude-pricing-head">
-
-          <div className="claude-pricing__kicker claude-pricing-reveal">
+    <section className="claude-price2" id="claude-register">
+      <div className="cp-inner">
+        <div className="cp-head">
+          <span className="cp-eyebrow">
             <i />
-
-            <span>
-              HỌC PHÍ &amp; ƯU ĐÃI
-              MỞ BÁN
-            </span>
-          </div>
-
-
-          <h2 className="claude-pricing-head__title claude-pricing-reveal">
-
-            Vào học sớm,{" "}
-
-            <span className="claude-pricing-head__outline">
-              trả ít hơn
-            </span>{" "}
-
-            <span className="claude-pricing-head__lime">
-              tới {savingPrice}
-            </span>
-
+            Học phí sau cập nhật
+          </span>
+          <h2 className="cp-title">
+            Đây chắc chắn là <span className="cp-pill">khoản đầu tư AI</span>
+            <br />
+            <span className="cp-pill cp-pill--lime">xứng đáng</span> trong năm nay
           </h2>
-
-
-          <p className="claude-pricing-head__description claude-pricing-reveal">
-            Học phí tăng theo từng đợt
-            mở bán. Mức giá bên dưới
-            chỉ giữ đến hết đợt hiện
-            tại.
+          <p className="cp-sub">
+            Chỉ cần học một lần là bạn có thể dùng Claude cho cả research,
+            content, design, data và giờ là edit video hoàn toàn tự động hóa,
+            với mức giá chỉ giữ đến hết đợt này.
           </p>
-
-        </header>
-
-
-        {/* ====================================================
-            MAIN GRID
-            ==================================================== */}
-
-        <div className="claude-pricing-main">
-
-          {/* ==================================================
-              LEFT — BENEFITS
-              ================================================== */}
-
-          <article
-            className="claude-pricing-benefits claude-pricing-reveal"
-
-            style={
-              {
-                "--pricing-delay":
-                  "0.08s",
-              } as CSSProperties
-            }
-          >
-
-            <div className="claude-pricing-benefits__head">
-
-              <span>
-                BẠN NHẬN ĐƯỢC GÌ
-              </span>
-
-              <h3>
-                Một lần đăng ký,
-                <br />
-                dùng trọn bộ
-                trong 6 tháng.
-              </h3>
-
-            </div>
-
-
-            <div className="claude-pricing-benefits__list">
-
-              {benefits.map(
-                (
-                  item,
-                  index,
-                ) => (
-
-                  <div
-                    key={
-                      item.title
-                    }
-                    className="claude-pricing-benefit"
-                  >
-
-                    <span className="claude-pricing-benefit__check">
-                      ✓
-                    </span>
-
-
-                    <div className="claude-pricing-benefit__copy">
-
-                      <strong>
-                        {item.title}
-                      </strong>
-
-
-                      {index ===
-                        0 && (
-
-                          <div className="claude-pricing-benefit__tags">
-
-                            {moduleTags.map(
-                              (
-                                tag,
-                              ) => (
-                                <span
-                                  key={
-                                    tag
-                                  }
-                                >
-                                  {
-                                    tag
-                                  }
-                                </span>
-                              ),
-                            )}
-
-                          </div>
-                        )}
-
-
-                      {item.description && (
-                        <p>
-                          {
-                            item.description
-                          }
-                        </p>
-                      )}
-
-                    </div>
-
-                  </div>
-
-                ),
-              )}
-
-            </div>
-
-          </article>
-
-
-          {/* ==================================================
-              RIGHT — OFFER
-              ================================================== */}
-
-          <article
-            className="claude-pricing-offer claude-pricing-reveal"
-
-            style={
-              {
-                "--pricing-delay":
-                  "0.16s",
-              } as CSSProperties
-            }
-          >
-
-            {/* DECOR */}
-
-            <span className="claude-pricing-offer__circle" />
-
-
-            <div className="claude-pricing-offer__top">
-
-              <span className="claude-pricing-offer__badge">
-                {offerStartLabel}
-              </span>
-
-            </div>
-
-
-            {/* PRICE */}
-
-            <div className="claude-pricing-offer__price-wrap">
-
-              <strong className="claude-pricing-offer__price">
-                {currentPrice}
-              </strong>
-
-
-              <div className="claude-pricing-offer__price-meta">
-
-                <del>
-                  {originalPrice}
-                </del>
-
-
-                <span>
-                  Tiết kiệm{" "}
-                  {savingPrice}
-                </span>
-
-              </div>
-
-            </div>
-
-
-            {/* COUNTDOWN LABEL */}
-
-            <div className="claude-pricing-offer__countdown-label">
-              Giá Early Bird mở sau
-            </div>
-
-
-            {/* COUNTDOWN */}
-
-            <div className="claude-pricing-countdown">
-
-              <div>
-                <strong>
-                  {pad(
-                    countdown.days,
-                  )}
-                </strong>
-
-                <span>
-                  Ngày
-                </span>
-              </div>
-
-
-              <div>
-                <strong>
-                  {pad(
-                    countdown.hours,
-                  )}
-                </strong>
-
-                <span>
-                  Giờ
-                </span>
-              </div>
-
-
-              <div>
-                <strong>
-                  {pad(
-                    countdown.minutes,
-                  )}
-                </strong>
-
-                <span>
-                  Phút
-                </span>
-              </div>
-
-
-              <div>
-                <strong>
-                  {pad(
-                    countdown.seconds,
-                  )}
-                </strong>
-
-                <span>
-                  Giây
-                </span>
-              </div>
-
-            </div>
-
-
-            {/* BUTTON */}
-
-            <div className="claude-pricing-offer__cta-wrap">
-
-              {/* <div
-
-                className="claude-pricing-offer__button"
-              // data-cur="MUA"
-              >
-
-                <span>
-                  Giữ suất giá{" "}
-                  {currentPrice}
-                </span>
-
-                <span
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-
-              </div> */}
-
-              {
-
-                product && <PaidProductAction product={product} buttonText={` Giữ suất giá ${currentPrice}`} onBuy={handleBuy} className="claude-pricing-offer__button"/>
-              }
-
-
-              <span className="claude-pricing-offer__discount">
-                GIẢM 30%
-              </span>
-
-            </div>
-
-
-            <p className="claude-pricing-offer__footnote">
-              Giá {currentPrice} áp
-              dụng đến hết
-              ngày 17/10            </p>
-
-          </article>
-
         </div>
 
+        <div className="cp-grid">
+          {/* LEFT — BENEFITS */}
+          <div className="cp-benefits">
+            <div className="cp-label">Bạn nhận được gì</div>
+            <h3>
+              Một lần đăng ký,
+              <br />
+              dùng trọn bộ trong 6 tháng.
+            </h3>
 
-        {/* ====================================================
-            PRICE JOURNEY
-            ==================================================== */}
-
-        <div className="claude-pricing-roadmap claude-pricing-reveal">
-
-          <h3>
-            Lộ trình học phí
-          </h3>
-
-
-          <div className="claude-pricing-roadmap__grid">
-
-            {/* CURRENT */}
-
-            <article className="claude-pricing-stage">
-
-              <div className="claude-pricing-stage__head">
-
-                <span>
-                  Early Bird
-                </span>
-
-                <small>
-                 Đã đóng
-                </small>
-
-              </div>
-
-
-              <strong>
-              790.000đ
-              </strong>
-
-
-              <p>
-                {offerPeriod}
-              </p>
-
-
-              {/* <span className="claude-pricing-stage__status">
-                GIÁ HIỆN TẠI
-              </span> */}
-
-            </article>
-
-
-            {/* PHASE 2 */}
-
-            <article className="claude-pricing-stage  claude-pricing-stage--current">
-
-              <div className="claude-pricing-stage__head">
-
-                <span>
-                  Ưu đãi đợt 2
-                </span>
-
-                <small>
-                 Đang mở
-                </small>
-
-              </div>
-
-
-              <strong>
-                {secondPrice}
-              </strong>
-
-
-              <p>
-                {secondPeriod}
-              </p>
-              <span className="claude-pricing-stage__status">
-                GIÁ HIỆN TẠI
-              </span>
-            </article>
-
-
-            {/* ORIGINAL */}
-
-            <article className="claude-pricing-stage ">
-
-              <div className="claude-pricing-stage__head">
-
-                <span>
-                  Giá gốc
-                </span>
-
-                <small>
-                  Sắp tới
-                </small>
-
-              </div>
-
-
-              <strong>
-                {finalPrice}
-              </strong>
-
-
-              <p>
-                {finalPeriod}
-              </p>
-
-            </article>
-
+            <ul className="cp-list">
+              {benefits.map((item) => (
+                <li key={item.title} className={item.isNew ? "is-new" : undefined}>
+                  <span className="cp-check">✓</span>
+                  <div>
+                    <b>{item.title}</b>
+                    {item.withTags && (
+                      <div className="cp-chips">
+                        {moduleTags.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
+                        <span className="is-new">Edit video</span>
+                      </div>
+                    )}
+                    {item.description && <p>{item.description}</p>}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
 
+          {/* RIGHT — OFFER */}
+          <div className="cp-offer">
+            <span className="cp-tag">{offerLabel}</span>
+
+            <div className="cp-update">
+              <small>Giá cập nhật</small>
+              <div className="cp-price">{currentPrice}</div>
+              <div className="cp-row">
+                <span className="cp-old">{originalPrice}</span>
+                <span className="cp-save">Tiết kiệm {savingPrice}</span>
+              </div>
+              <div className="cp-incl">
+                Đã gồm <b>module 09: Tự động hoá edit video với Claude</b> cùng
+                bộ skill và tài liệu đi kèm.
+              </div>
+            </div>
+
+            <div className="cp-cta-wrap">
+              <span className="cp-badge">{discountLabel}</span>
+              {product ? (
+                <PaidProductAction
+                  product={product}
+                  buttonText={`Giữ suất giá ${currentPrice}`}
+                  onBuy={handleBuy}
+                  className="cp-cta"
+                />
+              ) : (
+                <a className="cp-cta" href={purchaseUrl}>
+                  <span>Giữ suất giá {currentPrice}</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              )}
+            </div>
+
+            <p className="cp-note">Giá tăng ở đợt mở bán tiếp theo.</p>
+          </div>
         </div>
-
       </div>
-
     </section>
   );
 }

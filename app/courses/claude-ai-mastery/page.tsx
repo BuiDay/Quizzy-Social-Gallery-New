@@ -14,6 +14,7 @@ import { ClaudeAIMasteryApplicationsSection } from "@/components/courses/ClaudeA
 import { ClaudeAIMasteryCurriculumSection } from "@/components/courses/ClaudeAiMastery/ClaudeAIMasteryCurriculumSection";
 import { ClaudeAIMasteryBenefitsSection } from "@/components/courses/ClaudeAiMastery/ClaudeAIMasteryBenefitsSection";
 import { ClaudeAIMasteryPricingSection } from "@/components/courses/ClaudeAiMastery/ClaudeAIMasteryPricingSection";
+import { ClaudeAIMasteryUpdateSection } from "@/components/courses/ClaudeAiMastery/ClaudeAIMasteryUpdateSection";
 import { NewsletterCTA } from "@/components/ui/NewsletterCTA";
 import { ClaudeAIMasteryFeedbackSection } from "@/components/courses/ClaudeAiMastery/ClaudeAIMasteryFeedbackSection";
 import { ClaudeAIMasteryFAQSection } from "@/components/courses/ClaudeAiMastery/ClaudeAIMasteryFAQSection";
@@ -143,6 +144,13 @@ export default function ClaudeAIMasteryPage() {
                     product={course}
                 />
 
+                <ClaudeAIMasteryUpdateSection
+                    purchaseUrl="#claude-register"
+                    curriculumUrl="#claude-curriculum"
+                    handleBuy={handleBuy}
+                    product={course}
+                />
+
                 <ClaudeAIMasteryCurriculumSection
                     moduleImages={{
                         "01": module01Image,
@@ -168,6 +176,12 @@ export default function ClaudeAIMasteryPage() {
                 <ClaudeAIMasteryPricingSection
                     originalPrice={course ? formatPrice(course.originalPrice ?? course.price!) : "—"}
                     currentPrice={course ? formatPrice(course.price!) : "—"}
+                    {...(course?.originalPrice && course.originalPrice > course.price!
+                        ? {
+                            savingPrice: formatPrice(course.originalPrice - course.price!),
+                            discountLabel: `GIẢM ${Math.round((1 - course.price! / course.originalPrice) * 100)}%`,
+                        }
+                        : {})}
                     purchaseUrl="#checkout"
                     handleBuy={handleBuy}
                     product={course}
